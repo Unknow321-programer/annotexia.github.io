@@ -12,29 +12,9 @@ export async function POST(req) {
       message,
     } = await req.json();
 
-<<<<<<< HEAD
     const data = await resend.emails.send({
       from: "Annotexia <contact@annotexia.com>",
       to: ["contact@annotexia.com"],
-=======
-    const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    console.log(process.env.EMAIL_USER," ",process.env.EMAIL_PASS)
-    // 🔥 IMPORTANT: VERIFY CONNECTION FIRST
-    await transporter.verify();
-
-    await transporter.sendMail({
-      from: `"Annotexia" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
->>>>>>> 0d2a76f751b70619a5ab16a9aab3cd8ed2ded496
       replyTo: email,
       subject: `[Annotexia] New ${service} Inquiry`,
       html: `
