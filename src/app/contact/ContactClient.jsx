@@ -69,23 +69,24 @@ export default function ContactClient() {
 
             const data = await res.json();
 
-            if (data.success) {
-                toast.success("Message sent successfully!");
-
-                setForm({
-                    name: "",
-                    email: "",
-                    company: "",
-                    service: "Image Annotation",
-                    message: "",
-                });
-
-                setErrors({});
-            } else {
-                toast.error(data.message || "Failed to send email");
+            if (!res.ok) {
+                throw new Error(data.error || "Failed to send email");
             }
+
+            toast.success("Message sent successfully!");
+
+            setForm({
+                name: "",
+                email: "",
+                company: "",
+                service: "Image Annotation",
+                message: "",
+            });
+
+            setErrors({});
+
         } catch (error) {
-            toast.error("Server error");
+            toast.error(error.message);
         } finally {
             setLoading(false);
         }

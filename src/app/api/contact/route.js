@@ -1,48 +1,55 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
   try {
-    const { name, email, company, service, message } =
-      await req.json();
+    const {
+      name,
+      email,
+      company,
+      service,
+      message,
+    } = await req.json();
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    // 🔥 IMPORTANT: VERIFY CONNECTION FIRST
-    await transporter.verify();
-
-    await transporter.sendMail({
-      from: `"Annotexia" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
+    const data = await resend.emails.send({
+      from: "Annotexia <contact@annotexia.com>",
+      to: ["contact@annotexia.com"],
       replyTo: email,
-      subject: `New Contact Form - ${service}`,
+      subject: `[Annotexia] New ${service} Inquiry`,
       html: `
         <h2>New Inquiry</h2>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Company:</b> ${company}</p>
-        <p><b>Service:</b> ${service}</p>
-        <p><b>Message:</b> ${message}</p>
+
+        <p><strong>Name:</strong> ${name}</p>
+
+        <p><strong>Email:</strong> ${email}</p>
+
+        <p><strong>Company:</strong> ${company}</p>
+
+        <p><strong>Service:</strong> ${service}</p>
+
+        <p><strong>Message:</strong></p>
+
+        <p>${message}</p>
       `,
     });
 
-    return Response.json({ success: true });
+    return Response.json({
+      success: true,
+      data,
+    });
+
   } catch (error) {
-    console.log("EMAIL ERROR:", error);
+    console.error(error);
 
     return Response.json(
       {
         success: false,
-        message: error.message,
+        error: error.message,
       },
-      { status: 500 }
+      {
+        status: 500,
+      }
     );
   }
 }
