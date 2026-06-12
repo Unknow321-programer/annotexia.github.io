@@ -22,10 +22,13 @@ export default function Navbar() {
             >
               <Image
                 src="/images/company/CompanyLogo.svg"
-                alt="Annotexia Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
+                alt="Annotexia"
+                width={180}
+                height={60}
+                style={{
+                  height: "50px",
+                  width: "auto",
+                }}
               />
               <span className="text-2xl font-bold">
                 Annotexia
