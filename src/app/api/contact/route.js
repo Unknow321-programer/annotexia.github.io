@@ -15,6 +15,7 @@ export async function POST(req) {
       },
     });
 
+    console.log(process.env.EMAIL_USER," ",process.env.EMAIL_PASS)
     // 🔥 IMPORTANT: VERIFY CONNECTION FIRST
     await transporter.verify();
 
