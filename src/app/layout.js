@@ -92,10 +92,25 @@ export const metadata = {
     },
   },
 
+  manifest: "/site.webmanifest",
+
   icons: {
-    icon: "/images/company/CompanyLogo.svg",
-    shortcut: "/images/company/CompanyLogo.svg",
-    apple: "/images/company/CompanyLogo.svg",
+    icon: [
+      {
+        url: "/favicon.ico",
+      },
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+      {
+        url: "/favicon-96x96.png",
+        sizes: "96x96",
+        type: "image/png",
+      },
+    ],
+
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -103,6 +118,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Annotexia",
+              url: "https://www.annotexia.com",
+              logo:
+                "https://www.annotexia.com/images/company/CompanyLogo.png",
+              email: "contact@annotexia.com",
+              description:
+                "AI Data Annotation & Data Labeling Services",
+            }),
+          }}
+        />
         <Navbar />
         {children}
         <Footer />
