@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { organizationSchema } from "@/lib/schema";
 
 export const metadata = {
   metadataBase: new URL("https://www.annotexia.com"),
@@ -132,6 +133,12 @@ export default function RootLayout({ children }) {
               description:
                 "AI Data Annotation & Data Labeling Services",
             }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
           }}
         />
         <Navbar />
