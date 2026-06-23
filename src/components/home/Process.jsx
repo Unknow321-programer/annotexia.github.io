@@ -39,35 +39,31 @@ export default function Process() {
         </div>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-5 gap-6">
+        <div className="scroll-reveal grid md:grid-cols-5 gap-6">
 
           {steps.map((step, index) => (
             <div
               key={step}
               onClick={() => setActiveStep(index)}
-              className={`scroll-reveal cursor-pointer rounded-lg border p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${
-                activeStep === index
+              className={`cursor-pointer rounded-lg border p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${activeStep === index
                   ? "border-cyan-200 bg-white text-slate-950 shadow-xl"
                   : "border-white/15 bg-white/5 text-white"
-              }`}
-              style={{ "--reveal-delay": `${index * 80}ms` }}
+                }`}
             >
               <div
-                className={`text-3xl font-bold mb-3 transition-colors ${
-                  activeStep === index
+                className={`text-3xl font-bold mb-3 transition-colors ${activeStep === index
                     ? "text-teal-700"
                     : "text-cyan-100"
-                }`}
+                  }`}
               >
                 {index + 1}
               </div>
 
               <h3
-                className={`font-medium transition-colors ${
-                  activeStep === index
+                className={`font-medium transition-colors ${activeStep === index
                     ? "text-slate-950"
                     : "text-slate-200"
-                }`}
+                  }`}
               >
                 {step}
               </h3>

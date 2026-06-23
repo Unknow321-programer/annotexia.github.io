@@ -64,6 +64,7 @@ export default function Industries() {
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                   className="image-zoom object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent" />
                 <h3 className="absolute bottom-5 left-5 right-5 text-xl font-semibold text-white">

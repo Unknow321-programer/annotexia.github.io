@@ -23,6 +23,7 @@ export default function Navbar() {
                   height: "50px",
                   width: "auto",
                 }}
+                priority
               />
               <span className="text-2xl font-bold text-slate-950">
                 Annotexia

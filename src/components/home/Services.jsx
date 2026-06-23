@@ -73,6 +73,7 @@ export default function Services() {
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="image-zoom object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 to-transparent" />
               </div>
@@ -92,14 +93,14 @@ export default function Services() {
 
           <div className="card scroll-reveal flex min-h-80 flex-col justify-between bg-slate-950 p-8 text-white">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-400">
                 Custom dataset?
               </p>
-              <h3 className="mt-4 text-2xl font-bold">
+              <h3 className="mt-4 text-2xl font-bold text-gray-500/100">
                 Get a tailored labeling workflow for your model.
               </h3>
             </div>
-            <Link href="/contact" className="mt-8 inline-flex font-semibold text-cyan-200">
+            <Link href="/contact" className="mt-8 inline-flex font-semibold text-cyan-400">
               Talk to Annotexia
             </Link>
           </div>
