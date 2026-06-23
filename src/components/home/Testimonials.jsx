@@ -41,7 +41,7 @@ export default function Testimonials() {
               className="bg-white border rounded-xl p-8 shadow-sm hover:shadow-lg transition"
             >
               <p className="text-gray-600 italic mb-6">
-                "{testimonial.feedback}"
+                &quot;{testimonial.feedback}&quot;
               </p>
 
               <div>

@@ -14,19 +14,24 @@ export default function Process() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="bg-gray-50 py-20">
+    <section className="bg-slate-950 py-20 text-white">
       <div className="max-w-6xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-center mb-16">
-          Our Process
-        </h2>
+        <div className="scroll-reveal mx-auto mb-16 max-w-3xl text-center">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
+            Managed annotation workflow
+          </p>
+          <h2 className="text-4xl font-bold">
+            Our Process
+          </h2>
+        </div>
 
         {/* Progress Line */}
-        <div className="relative mb-12">
-          <div className="h-1 bg-gray-200 rounded-full"></div>
+        <div className="scroll-reveal relative mb-12">
+          <div className="h-1 bg-white/15 rounded-full"></div>
 
           <div
-            className="h-1 bg-black rounded-full absolute top-0 left-0 transition-all duration-500"
+            className="h-1 bg-gradient-to-r from-teal-300 to-blue-400 rounded-full absolute top-0 left-0 transition-all duration-500"
             style={{
               width: `${(activeStep / (steps.length - 1)) * 100}%`,
             }}
@@ -40,17 +45,18 @@ export default function Process() {
             <div
               key={step}
               onClick={() => setActiveStep(index)}
-              className={`cursor-pointer bg-white border rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
+              className={`scroll-reveal cursor-pointer rounded-lg border p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${
                 activeStep === index
-                  ? "border-black shadow-md"
-                  : "border-gray-200"
+                  ? "border-cyan-200 bg-white text-slate-950 shadow-xl"
+                  : "border-white/15 bg-white/5 text-white"
               }`}
+              style={{ "--reveal-delay": `${index * 80}ms` }}
             >
               <div
                 className={`text-3xl font-bold mb-3 transition-colors ${
                   activeStep === index
-                    ? "text-black"
-                    : "text-gray-400"
+                    ? "text-teal-700"
+                    : "text-cyan-100"
                 }`}
               >
                 {index + 1}
@@ -59,8 +65,8 @@ export default function Process() {
               <h3
                 className={`font-medium transition-colors ${
                   activeStep === index
-                    ? "text-black"
-                    : "text-gray-600"
+                    ? "text-slate-950"
+                    : "text-slate-200"
                 }`}
               >
                 {step}
@@ -71,8 +77,8 @@ export default function Process() {
         </div>
 
         {/* Description Panel */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 max-w-2xl mx-auto">
+        <div className="scroll-reveal mt-12 text-center">
+          <p className="mx-auto max-w-2xl rounded-lg border border-white/15 bg-white/5 p-6 text-slate-200">
             {activeStep === 0 && "We understand your project requirements in detail."}
             {activeStep === 1 && "We prepare and structure datasets for annotation."}
             {activeStep === 2 && "Expert annotators label data with precision."}

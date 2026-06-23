@@ -6,6 +6,10 @@ export const blogs = [
             "Learn what data annotation is, why it is important, and how annotated data powers AI and machine learning models.",
         date: "2026-06-01",
         category: "Data Annotation",
+        image:
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
+        imageAlt:
+            "Analytics dashboard showing labeled data for AI model training",
         content: `
 Data annotation is the process of labeling raw data so that machine learning and artificial intelligence systems can understand and learn from it.
 
@@ -34,6 +38,10 @@ At Annotexia, we provide scalable data annotation services for organizations bui
             "Understand image annotation techniques including bounding boxes, polygons, segmentation, and landmark annotation.",
         date: "2026-06-02",
         category: "Image Annotation",
+        image:
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+        imageAlt:
+            "Computer vision hardware and image annotation technology workspace",
         content: `
 # Complete Guide to Image Annotation
 
@@ -172,6 +180,10 @@ Investing in professional image annotation services helps improve model accuracy
             "How video annotation powers modern sports analytics and player tracking systems.",
         date: "2026-06-03",
         category: "Sports Analytics",
+        image:
+            "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1400&q=80",
+        imageAlt:
+            "Athletes on a sports field representing video annotation for sports analytics",
         content: `
 # Video Annotation for Sports Analytics
 
@@ -403,6 +415,10 @@ At Annotexia, we provide accurate and scalable sports video annotation services 
             "Explore emerging trends in AI training data, human-in-the-loop annotation, and automation.",
         date: "2026-06-04",
         category: "Artificial Intelligence",
+        image:
+            "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=80",
+        imageAlt:
+            "Artificial intelligence visualization representing the future of AI training data",
         content: `
 # The Future of AI Training Data
 
