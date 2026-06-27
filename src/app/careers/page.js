@@ -171,7 +171,14 @@ export default function CareersPage() {
                         </div>
 
                         {/* Apply */}
-                        <div className="rounded-xl bg-slate-50 p-8">
+                        <div className="rounded-xl bg-slate-50 p-8" >
+                            {/* <h3 className="text-2xl font-bold mb-6 text-center text-red-300">
+                                Current Position are close no more application<br />
+                                Thank You.<br />
+                            </h3>
+                            <h3 className="text-2xl font-bold mb-6 text-center text-cyan-300">
+                                For future opportunity stay connect with us.
+                            </h3> */}
                             <h3 className="text-2xl font-bold mb-6 text-center">
                                 Apply Now
                             </h3>
