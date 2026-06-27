@@ -44,7 +44,7 @@ export default function CareersPage() {
                                     Experience: 0–4 Years
                                 </p>
                             </div>
-
+{/* 
                             <div className="mt-4 md:mt-0">
                                 <span className="rounded-full mx-1 bg-teal-100 px-4 py-2 text-sm font-semibold text-teal-700">
                                     Contract-base
@@ -52,7 +52,7 @@ export default function CareersPage() {
                                 <span className="rounded-full bg-teal-100 px-4 py-2 text-sm font-semibold text-teal-700">
                                     Project-Base
                                 </span>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* About */}
