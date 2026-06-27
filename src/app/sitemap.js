@@ -73,5 +73,11 @@ export default function sitemap() {
       lastModified: new Date(),
       priority: 0.5,
     },
+
+    {
+      url: `${baseUrl}/careers`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
   ];
 }
