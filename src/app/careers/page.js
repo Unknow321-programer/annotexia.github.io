@@ -172,18 +172,22 @@ export default function CareersPage() {
 
                         {/* Apply */}
                         <div className="rounded-xl bg-slate-50 p-8" >
-                            {/* <h3 className="text-2xl font-bold mb-6 text-center text-red-300">
+
+                            {/* add comment if position are not full */}
+                            <h3 className="text-2xl font-bold mb-6 text-center text-red-300">
                                 Current Position are close no more application<br />
+                                For selected and rejected candidate we will inform vai email<br/>
                                 Thank You.<br />
                             </h3>
                             <h3 className="text-2xl font-bold mb-6 text-center text-cyan-300">
                                 For future opportunity stay connect with us.
-                            </h3> */}
-                            <h3 className="text-2xl font-bold mb-6 text-center">
+                            </h3>
+                            {/* add comment if position are full */}
+                            {/* <h3 className="text-2xl font-bold mb-6 text-center">
                                 Apply Now
                             </h3>
 
-                            <CareerForm />
+                            <CareerForm /> */}
                         </div>
 
                     </div>
