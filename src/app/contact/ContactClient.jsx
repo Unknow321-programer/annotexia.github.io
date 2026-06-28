@@ -115,16 +115,16 @@ export default function ContactClient() {
 
                 <div className="max-w-7xl mx-auto px-6">
 
-                    <div className="grid md:grid-cols-3 gap-8 mb-16">
+                    <div className="grid md:grid-cols-2 gap-8 mb-16">
 
-                        <div className="border rounded-xl p-8 text-center">
+                        {/* <div className="border rounded-xl p-8 text-center">
                             <h2 className="text-xl font-semibold mb-4">
                                 Email
                             </h2>
                             <p className="text-gray-600">
                                 contact@annotexia.com
                             </p>
-                        </div>
+                        </div> */}
 
                         <div className="border rounded-xl p-8 text-center">
                             <h2 className="text-xl font-semibold mb-4">
