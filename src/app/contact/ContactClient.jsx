@@ -20,6 +20,19 @@ export default function ContactClient() {
     const validate = () => {
         let newErrors = {};
 
+        const freeEmailProviders = [
+            "gmail.com",
+            "yahoo.com",
+            "outlook.com",
+            "hotmail.com",
+            "live.com",
+            "icloud.com",
+            "proton.me",
+            "protonmail.com",
+            "aol.com",
+            "yandex.com",
+        ];
+
         if (!form.name.trim()) {
             newErrors.name = "Full name is required";
         }
@@ -28,6 +41,13 @@ export default function ContactClient() {
             newErrors.email = "Email is required";
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
             newErrors.email = "Invalid email format";
+        } else {
+            const domain = form.email.split("@")[1].toLowerCase();
+
+            if (freeEmailProviders.includes(domain)) {
+                newErrors.email =
+                    "Please use your company email address.";
+            }
         }
 
         if (!form.company.trim()) {
