@@ -2,17 +2,17 @@ const resources = [
   {
     title: "Google Machine Learning Glossary",
     href: "https://developers.google.com/machine-learning/glossary",
-    text: "A useful reference for AI, ML, and training data terminology.",
+    text: "Understand essential machine learning, artificial intelligence, and data annotation terminology used across modern AI projects.",
   },
   {
     title: "Google Dataset Search",
     href: "https://datasetsearch.research.google.com/",
-    text: "Explore public datasets and compare what additional labeled data your model may need.",
+    text: "Discover publicly available datasets for AI research, computer vision, natural language processing, and machine learning applications.",
   },
   {
     title: "NIST AI Resource Center",
     href: "https://airc.nist.gov/",
-    text: "Guidance and resources for trustworthy AI programs and governance.",
+    text: "Explore best practices, AI governance, risk management, and trustworthy AI frameworks from the U.S. National Institute of Standards and Technology.",
   },
 ];
 
@@ -20,39 +20,50 @@ export default function SEOResources() {
   return (
     <section className="bg-slate-50 py-20">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="scroll-reveal mb-10 max-w-3xl">
+
+        {/* Heading */}
+        <div className="scroll-reveal mb-12 max-w-3xl">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-teal-700">
-            AI resources
+            Trusted Resources
           </p>
+
           <h2 className="text-4xl font-bold text-slate-950">
-            Helpful AI Data Annotation References
+            Learn More About Artificial Intelligence & Data Annotation
           </h2>
-          <p className="mt-4 text-slate-600">
-            These external resources help visitors understand machine learning
-            terms, dataset discovery, and trustworthy AI practices.
+
+          <p className="mt-4 text-lg text-slate-600">
+            We believe informed decisions lead to better AI solutions.
+            Explore these trusted resources to deepen your understanding
+            of machine learning, AI datasets, and industry best practices.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        {/* Cards */}
+        <div className="grid gap-8 md:grid-cols-3">
           {resources.map((resource, index) => (
             <a
               key={resource.href}
               href={resource.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="card scroll-reveal p-6"
-              style={{ "--reveal-delay": `${index * 90}ms` }}
+              className="group rounded-2xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-teal-500 hover:shadow-xl scroll-reveal"
+              style={{ "--reveal-delay": `${index * 100}ms` }}
             >
-              <h3 className="text-xl font-semibold text-slate-950">
+              <h3 className="text-xl font-semibold text-slate-900 group-hover:text-teal-700">
                 {resource.title}
               </h3>
-              <p className="mt-3 text-slate-600">{resource.text}</p>
-              <span className="mt-5 inline-flex font-semibold text-teal-700">
-                Visit resource
+
+              <p className="mt-4 leading-7 text-slate-600">
+                {resource.text}
+              </p>
+
+              <span className="mt-6 inline-flex items-center font-semibold text-teal-700 group-hover:translate-x-1 transition-transform">
+                Explore Resource →
               </span>
             </a>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -37,6 +37,24 @@ const industries = [
         description:
             "Crop monitoring, drone image annotation, disease detection, and precision agriculture datasets.",
     },
+    {
+        title: "Drone & Aerial Imagery",
+        href: "/industries/drone-aerial-imagery",
+        description:
+            "Aerial image annotation, mapping, infrastructure inspection, and remote sensing datasets.",
+    },
+    {
+        title: "Retail & E-commerce",
+        href: "/industries/retail-ecommerce",
+        description:
+            "Product labeling, shelf monitoring, OCR, inventory management, and visual search datasets.",
+    },
+    {
+        title: "Manufacturing & Industrial AI",
+        href: "/industries/robotics-ai",
+        description:
+            "Defect detection, quality inspection, assembly line monitoring, and industrial automation datasets.",
+    },
 ];
 
 export default function IndustriesPage() {

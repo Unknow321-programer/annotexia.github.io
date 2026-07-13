@@ -12,6 +12,30 @@ export async function POST(req) {
       message,
     } = await req.json();
 
+    const blockedDomains = [
+      "gmail.com",
+      "yahoo.com",
+      "outlook.com",
+      "hotmail.com",
+      "live.com",
+      "icloud.com",
+      "proton.me",
+      "protonmail.com",
+      "aol.com",
+    ];
+
+    const domain = email.split("@")[1]?.toLowerCase();
+
+    if (blockedDomains.includes(domain)) {
+      return Response.json(
+        {
+          success: false,
+          error: "Please use your company email address.",
+        },
+        { status: 400 }
+      );
+    }
+
     const data = await resend.emails.send({
       from: "Annotexia <contact@annotexia.com>",
       to: ["contact@annotexia.com"],

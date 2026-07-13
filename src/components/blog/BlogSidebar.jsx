@@ -17,7 +17,7 @@ export default function BlogSidebar({ blogs }) {
       <h3 className="text-xl font-bold text-slate-950">Recent Posts</h3>
 
       <div className="mt-5 space-y-4">
-        {blogs.slice(0, 5).map((blog) => (
+        {blogs.slice(-4).map((blog) => (
           <Link
             key={blog.slug}
             href={`/blog/${blog.slug}`}
