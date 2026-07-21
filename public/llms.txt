@@ -1,0 +1,258 @@
+# Annotexia
+
+Version: 1.0
+Last Updated: July 2026
+
+## Company
+
+Annotexia is an AI data annotation and data labeling company providing high-quality training datasets for Artificial Intelligence (AI), Machine Learning (ML), Computer Vision, Natural Language Processing (NLP), Large Language Models (LLMs), Robotics, and Generative AI applications.
+
+Our annotation teams deliver scalable, secure, and quality-controlled datasets for startups, enterprises, research organizations, and AI product companies worldwide.
+
+Website:
+https://annotexia.com
+
+Contact:
+https://annotexia.com/contact
+
+About:
+https://annotexia.com/about
+
+---
+
+# Core Services
+
+## Image Annotation
+
+High-quality image annotation services for Computer Vision AI.
+
+Includes:
+
+* Bounding Box Annotation
+* Polygon Annotation
+* Semantic Segmentation
+* Instance Segmentation
+* Keypoint Annotation
+* Landmark Annotation
+* Cuboid Annotation
+* Image Classification
+* OCR Annotation
+
+https://annotexia.com/services/image-annotation
+
+---
+
+## Video Annotation
+
+Frame-by-frame video annotation services.
+
+Includes:
+
+* Object Tracking
+* Player Tracking
+* Ball Tracking
+* Event Detection
+* Action Recognition
+* Pose Estimation
+* Lane Detection
+* Vehicle Tracking
+* Multi-object Tracking
+
+https://annotexia.com/services/video-annotation
+
+---
+
+## Text Annotation
+
+Natural Language Processing annotation services.
+
+Includes:
+
+* Named Entity Recognition
+* Text Classification
+* Intent Classification
+* Sentiment Analysis
+* Relation Extraction
+* Entity Linking
+* Prompt Annotation
+* RLHF
+* LLM Training Data
+
+https://annotexia.com/services/text-annotation
+
+---
+
+## Audio Annotation
+
+Speech and voice AI annotation services.
+
+Includes:
+
+* Speech Transcription
+* Speaker Identification
+* Intent Annotation
+* Emotion Detection
+* Audio Classification
+* Acoustic Event Detection
+
+https://annotexia.com/services/audio-annotation
+
+---
+
+## Data Labeling
+
+Enterprise data labeling solutions for AI and Machine Learning.
+
+https://annotexia.com/services/data-labeling
+
+---
+
+# Industries
+
+Annotexia provides AI training datasets for:
+
+* Healthcare
+* Agriculture
+* Autonomous Vehicles
+* Sports Analytics
+* Robotics
+* Retail & E-commerce
+* Manufacturing
+* Logistics
+* Smart Cities
+* Security & Surveillance
+* Finance
+* Insurance
+
+---
+
+# AI Technologies
+
+We support datasets for:
+
+* Artificial Intelligence
+* Machine Learning
+* Computer Vision
+* Deep Learning
+* Large Language Models
+* NLP
+* Generative AI
+* OCR
+* Autonomous Systems
+* Robotics
+* Recommendation Systems
+
+---
+
+# Annotation Formats
+
+Supported output formats include:
+
+* COCO
+* YOLO
+* Pascal VOC
+* JSON
+* XML
+* CSV
+* TXT
+* Custom Client Formats
+
+---
+
+# Annotation Tools
+
+Our teams work with:
+
+* CVAT
+* Label Studio
+* Labelbox
+* SuperAnnotate
+* Supervisely
+* Roboflow
+* V7 Darwin
+* Doccano
+* Custom Annotation Platforms
+
+---
+
+# Quality
+
+Annotexia follows structured quality assurance workflows including:
+
+* Annotation Guidelines
+* Multi-Level Review
+* Random Sampling
+* Consistency Validation
+* Client Feedback Integration
+
+---
+
+# Resources
+
+Blog
+
+https://annotexia.com/blog
+
+Services
+
+https://annotexia.com/services
+
+Industries
+
+https://annotexia.com/industries
+
+Contact
+
+https://annotexia.com/contact
+
+---
+
+# Topics
+
+Artificial Intelligence
+
+Machine Learning
+
+Computer Vision
+
+Image Annotation
+
+Video Annotation
+
+Text Annotation
+
+Audio Annotation
+
+Data Labeling
+
+Sports Analytics
+
+Healthcare AI
+
+Agriculture AI
+
+Retail AI
+
+Robotics AI
+
+Generative AI
+
+Large Language Models
+
+NLP
+
+LLM
+
+RLHF
+
+Training Data
+
+Annotation Services
+
+Human-in-the-loop AI
+
+---
+
+For additional documentation and comprehensive information, see:
+
+https://annotexia.com/llms-full.txt

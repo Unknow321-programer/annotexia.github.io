@@ -25,12 +25,12 @@ export default function Hero() {
           </p>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight [text-shadow:0_4px_22px_rgba(0,0,0,0.58)]">
-            AI Data Annotation & Data Labeling Services
+            AI Data Annotation & Data Labeling Services For Model Training . . .
           </h1>
 
           <p className="text-lg md:text-xl text-white max-w-3xl mb-8 [text-shadow:0_2px_14px_rgba(0,0,0,0.62)]">
             High-quality image, video, text, and audio annotation services for
-            Artificial Intelligence, Machine Learning, Computer Vision, and NLP
+            Artificial Intelligence, Machine Learning, LLM, Multi-Modal, Computer Vision, and NLP
             teams that need accurate, scalable datasets.
           </p>
 

@@ -44,5 +44,6 @@ export default function robots() {
       },
     ],
     sitemap: "https://www.annotexia.com/sitemap.xml",
+    Llms_txt: "https://www.annotexia.com/llms.txt",
   };
 }
