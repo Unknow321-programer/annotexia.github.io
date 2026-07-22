@@ -2,12 +2,21 @@
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import Industries from "@/components/home/Industries";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
+import WhyChooseAnnotexia from "@/components/home/WhyChooseAnnotexia";
 import Process from "@/components/home/Process";
 import Testimonials from "@/components/home/Testimonials";
 import FAQ from "@/components/home/FAQ";
 import CTA from "@/components/home/CTA";
 import SEOResources from "@/components/home/SEOResources";
+import AboutAnnotexia from "@/components/home/AboutAnnotexia";
+import AISolutions from "@/components/home/AISolutions";
+import QualityAssurance from "@/components/home/QualityAssurance";
+import SupportedTools from "@/components/home/SupportedTools";
+import SupportedFormats from "@/components/home/SupportedFormats";
+import Technologies from "@/components/home/Technologies";
+import SecurityCompliance from "@/components/home/SecurityCompliance";
+import CaseStudies from "@/components/home/CaseStudies";
+import LatestInsights from "@/components/home/LatestInsights";
 
 export const metadata = {
   title: "AI Data Annotation & Data Labeling Services",
@@ -97,12 +106,21 @@ export default function Home() {
         }}
       />
       <Hero />
+      <AboutAnnotexia/>
       <Services />
       <Industries />
-      <WhyChooseUs />
+      <AISolutions />
+      <WhyChooseAnnotexia />
+      <QualityAssurance />
+      <SupportedTools />
+      <SupportedFormats />
       <Process/>
-      {/* <Testimonials /> */}
+      <Technologies />
+      <SecurityCompliance />
+      <CaseStudies />
       <FAQ />
+      <LatestInsights />
+      {/* <Testimonials /> */}
       <SEOResources />
       <CTA />
     </>
