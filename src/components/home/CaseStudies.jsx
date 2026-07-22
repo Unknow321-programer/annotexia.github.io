@@ -84,7 +84,7 @@ export default function CaseStudies() {
 
         </div>
 
-        <div className="scroll-reveal grid lg:grid-cols-3 md:grid-cols-2 gap-8 mt-20">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mt-20">
 
           {caseStudies.map((project) => (
             <div

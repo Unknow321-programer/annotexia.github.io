@@ -98,7 +98,7 @@ export default function AISolutions() {
 
         {/* Cards */}
 
-        <div className="scroll-reveal grid lg:grid-cols-4 md:grid-cols-2 gap-8 mt-20">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mt-20">
 
           {aiSolutions.map((solution) => (
 
