@@ -128,6 +128,11 @@ export default function sitemap() {
       lastModified: new Date(),
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/services/lidar-annotation`,
+      lastModified: new Date(),
+      priority: 0.6,
+    },
   ]
   const blogPages = blogs.map((blog) => ({
     url: `${baseUrl}/blog/${blog.slug}`,
