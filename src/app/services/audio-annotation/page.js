@@ -1,1984 +1,1041 @@
 import Image from "next/image";
+import Link from "next/link";
+import {
+    ArrowRight,
+    CheckCircle2,
+    Mic2,
+    Headphones,
+    BrainCircuit,
+    ShieldCheck,
+    Layers3,
+    Zap,
+    MessageSquareText,
+    Volume2,
+    Users,
+    FileAudio,
+} from "lucide-react";
 
 export const metadata = {
-  title:
-    "Professional Audio Annotation Services | Speech Recognition & Voice AI Training Data | Annotexia",
-
-  description:
-    "Annotexia provides enterprise audio annotation services including speech transcription, speaker diarization, audio classification, emotion recognition, intent annotation, multilingual speech datasets, and conversational AI training data for machine learning.",
-
-  keywords: [
-    "Audio Annotation Services",
-    "Speech Annotation",
-    "Speech Recognition Dataset",
-    "Voice AI Annotation",
-    "Audio Labeling Company",
-    "Speech-to-Text Dataset",
-    "Speaker Diarization",
-    "Conversational AI Dataset",
-    "Audio Classification",
-    "Voice Assistant Training Data",
-    "Machine Learning Audio Dataset",
-    "NLP Audio Annotation",
-  ],
-
-  alternates: {
-    canonical:
-      "https://annotexia.com/services/audio-annotation",
-  },
+    title:
+        "Audio Annotation Services | Speech & AI Training Data | Annotexia",
+    description:
+        "Professional audio annotation and speech data labeling services for AI and machine learning. Speech transcription, speaker diarization, emotion, intent, sound event, keyword, and audio classification.",
+    keywords: [
+        "audio annotation services",
+        "audio labeling services",
+        "speech annotation",
+        "speech data annotation",
+        "audio transcription",
+        "speaker diarization",
+        "speech recognition datasets",
+        "audio classification",
+        "sound event annotation",
+        "AI audio training data",
+        "voice data labeling",
+        "NLP audio datasets",
+    ],
+    alternates: {
+        canonical: "https://annotexia.com/services/audio-annotation",
+    },
+    openGraph: {
+        title: "Audio Annotation Services | Annotexia",
+        description:
+            "High-quality audio annotation and speech data labeling for AI, ML, speech recognition, conversational AI, and voice technologies.",
+        url: "https://annotexia.com/services/audio-annotation",
+        siteName: "Annotexia",
+        type: "website",
+    },
 };
 
+const annotationTypes = [
+    {
+        title: "Speech Transcription",
+        description:
+            "Convert spoken language into accurately transcribed text for speech recognition, conversational AI, call analytics, and voice applications.",
+        icon: MessageSquareText,
+    },
+    {
+        title: "Speaker Diarization",
+        description:
+            "Identify and segment different speakers within an audio recording to help AI systems understand who said what.",
+        icon: Users,
+    },
+    {
+        title: "Audio Classification",
+        description:
+            "Categorize audio recordings based on speech, environmental sounds, music, machinery, events, or other predefined classes.",
+        icon: Volume2,
+    },
+    {
+        title: "Emotion Annotation",
+        description:
+            "Label emotional characteristics such as anger, happiness, sadness, frustration, excitement, or neutral speech.",
+        icon: BrainCircuit,
+    },
+    {
+        title: "Sound Event Annotation",
+        description:
+            "Identify and timestamp specific sounds and events within complex audio environments.",
+        icon: Headphones,
+    },
+    {
+        title: "Keyword Spotting",
+        description:
+            "Mark specific words, commands, phrases, or trigger terms for voice assistants and speech recognition systems.",
+        icon: Mic2,
+    },
+];
+
+const useCases = [
+    {
+        title: "Speech Recognition",
+        description:
+            "Build high-quality datasets for automatic speech recognition systems across languages, accents, environments, and speaking styles.",
+    },
+    {
+        title: "Conversational AI",
+        description:
+            "Train virtual assistants, AI agents, chatbots, and voice interfaces with accurately labeled conversational data.",
+    },
+    {
+        title: "Call Center Analytics",
+        description:
+            "Analyze customer conversations using transcription, speaker segmentation, sentiment, emotion, intent, and event labels.",
+    },
+    {
+        title: "Voice Assistants",
+        description:
+            "Create training datasets for voice-controlled applications, smart devices, automotive assistants, and conversational systems.",
+    },
+    {
+        title: "Emotion Recognition",
+        description:
+            "Help AI models understand tone, emotion, speaking behavior, and other characteristics contained within human speech.",
+    },
+    {
+        title: "Environmental Sound AI",
+        description:
+            "Train models to recognize alarms, machinery, vehicles, animals, footsteps, background sounds, and other real-world audio events.",
+    },
+];
+
+const workflow = [
+    {
+        number: "01",
+        title: "Project Understanding",
+        description:
+            "We analyze your audio data, annotation objectives, target classes, languages, acoustic conditions, and model requirements.",
+    },
+    {
+        number: "02",
+        title: "Guideline Creation",
+        description:
+            "Detailed annotation guidelines define labels, timestamps, speaker rules, transcription conventions, edge cases, and quality standards.",
+    },
+    {
+        number: "03",
+        title: "Annotator Training",
+        description:
+            "Annotators are trained using your project-specific guidelines before production annotation begins.",
+    },
+    {
+        number: "04",
+        title: "Audio Annotation",
+        description:
+            "Trained specialists annotate speech, speakers, emotions, keywords, sounds, events, or other required attributes.",
+    },
+    {
+        number: "05",
+        title: "Quality Assurance",
+        description:
+            "Annotations undergo systematic review, sampling, validation, and correction to maintain consistency and accuracy.",
+    },
+    {
+        number: "06",
+        title: "Final Delivery",
+        description:
+            "Validated datasets are exported in the required structure and format for your machine learning pipeline.",
+    },
+];
+
+const industries = [
+    "Healthcare & Medical AI",
+    "Automotive & Mobility",
+    "Customer Service",
+    "Conversational AI",
+    "Smart Devices",
+    "Media & Entertainment",
+    "Security & Surveillance",
+    "Retail & E-commerce",
+];
+
+const formats = [
+    "JSON",
+    "CSV",
+    "TXT",
+    "XML",
+    "SRT",
+    "VTT",
+    "WAV Metadata",
+    "Custom Formats",
+];
+
+const faqs = [
+    {
+        question: "What is audio annotation?",
+        answer:
+            "Audio annotation is the process of adding structured labels, timestamps, transcriptions, speaker information, emotions, events, or other metadata to audio recordings so machine learning models can learn from the data.",
+    },
+    {
+        question: "What types of audio can Annotexia annotate?",
+        answer:
+            "We can work with speech recordings, conversations, interviews, call-center recordings, podcasts, environmental sounds, machine sounds, automotive audio, voice commands, and other audio datasets.",
+    },
+    {
+        question: "Do you provide speech transcription?",
+        answer:
+            "Yes. We support speech transcription and can adapt the transcription workflow to project-specific requirements such as timestamps, speaker identification, language, terminology, and formatting.",
+    },
+    {
+        question: "Can you identify multiple speakers?",
+        answer:
+            "Yes. Speaker diarization and speaker segmentation can be included when your project requires the identification and separation of multiple speakers in an audio recording.",
+    },
+    {
+        question: "Can you annotate emotions in speech?",
+        answer:
+            "Yes. Audio datasets can be labeled for project-defined emotional categories such as happiness, anger, sadness, frustration, excitement, neutral, or other custom classes.",
+    },
+    {
+        question: "Can you handle large audio datasets?",
+        answer:
+            "Yes. Our annotation workflow can scale from smaller pilot datasets to large production projects while maintaining standardized guidelines and quality-control procedures.",
+    },
+    {
+        question: "Can I test your quality before starting a large project?",
+        answer:
+            "Yes. We can provide a sample annotation so you can evaluate our quality, consistency, understanding of your guidelines, and turnaround expectations before moving forward with a larger engagement.",
+    },
+];
+
 export default function AudioAnnotationPage() {
-  return (
-    <main className="min-h-screen">
+    return (
+        <main className="bg-white text-slate-900">
 
-      {/* ====================================================== */}
-      {/* HERO */}
-      {/* ====================================================== */}
+            {/* =====================================================
+                HERO
+            ====================================================== */}
 
-      <section className="bg-gradient-to-br from-orange-200 via-white to-cyan-500 py-24">
+            <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950">
 
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-                Audio Annotation Services
-
-              </span>
-
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight mt-5 mb-8">
-
-                Professional Audio Annotation Services for
-
-                <span className="text-cyan-600">
-
-                  {" "}Speech Recognition, Voice AI & Conversational AI
-
-                </span>
-
-              </h1>
-
-              <p className="text-lg text-gray-600 leading-9 mb-8">
-
-                Modern Artificial Intelligence systems learn to understand human
-                speech only when they are trained with accurately annotated audio
-                datasets.
-
-                Whether you're building voice assistants, multilingual speech
-                recognition engines, conversational AI platforms, customer support
-                automation, healthcare voice applications, or intelligent audio
-                analytics solutions, the quality of your training data directly
-                determines your model's performance.
-
-              </p>
-
-              <p className="text-lg text-gray-600 leading-9 mb-10">
-
-                At <strong>Annotexia</strong>, we deliver enterprise-grade audio
-                annotation services that transform raw audio recordings into
-                high-quality machine learning datasets through accurate speech
-                transcription, speaker identification, emotion recognition, intent
-                annotation, audio classification, and quality assurance.
-
-              </p>
-
-              <div className="flex flex-wrap gap-5">
-
-                <a
-                  href="/contact"
-                  className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 rounded-xl font-semibold transition"
-                >
-
-                  Request Free Sample
-
-                </a>
-
-                <a
-                  href="/services"
-                  className="border border-gray-300 hover:border-cyan-600 hover:text-cyan-600 px-8 py-4 rounded-xl font-semibold transition"
-                >
-
-                  Explore Services
-
-                </a>
-
-              </div>
-
-            </div>
-
-            <div>
-
-              <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
-                alt="Professional audio annotation services for voice AI and speech recognition"
-                width={900}
-                height={700}
-                className="rounded-3xl shadow-2xl"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* STORY */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-            <div>
-
-              <Image
-                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1400&q=80"
-                alt="Speech recognition AI training datasets"
-                width={800}
-                height={700}
-                className="rounded-3xl shadow-xl"
-              />
-
-            </div>
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-                Why Audio Annotation Matters
-
-              </span>
-
-              <h2 className="text-4xl font-bold mt-5 mb-8">
-
-                Every Intelligent Voice System Begins With High-Quality Audio Data
-
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                People communicate through speech every second. Businesses record
-                customer conversations, hospitals document patient interactions,
-                automotive companies build voice-controlled vehicles, and virtual
-                assistants answer millions of questions every day.
-
-              </p>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                Artificial Intelligence cannot understand these conversations unless
-                it first learns from precisely labeled examples. Audio annotation
-                creates that foundation by identifying spoken words, speakers,
-                intentions, emotions, background sounds, and acoustic events.
-
-              </p>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                Well-annotated audio datasets enable machine learning models to
-                accurately recognize speech, separate multiple speakers, detect
-                sentiment, improve transcription accuracy, understand commands, and
-                support real-world conversational AI applications.
-
-              </p>
-
-              <p className="text-gray-600 leading-9">
-
-                Annotexia combines experienced human annotators with rigorous quality
-                control processes to produce reliable training datasets for enterprise
-                AI teams worldwide.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* INDUSTRIES */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Industries We Serve
-
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-
-              Audio Annotation Solutions Across Multiple Industries
-
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-
-              From speech recognition startups to Fortune 500 enterprises,
-              organizations across industries rely on accurately annotated audio
-              datasets to build intelligent voice-enabled products.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <div className="bg-white rounded-2xl border p-8">
-              <h3 className="font-bold text-xl mb-4">
-                Voice Assistants
-              </h3>
-              <p className="text-gray-600">
-                Train Alexa-like assistants, smart speakers and conversational bots.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-              <h3 className="font-bold text-xl mb-4">
-                Healthcare AI
-              </h3>
-              <p className="text-gray-600">
-                Clinical documentation, medical dictation and physician voice systems.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-              <h3 className="font-bold text-xl mb-4">
-                Customer Support
-              </h3>
-              <p className="text-gray-600">
-                Call center analytics, quality monitoring and speech intelligence.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-              <h3 className="font-bold text-xl mb-4">
-                Automotive
-              </h3>
-              <p className="text-gray-600">
-                Voice-controlled navigation and in-car AI assistants.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-              <h3 className="font-bold text-xl mb-4">
-                Smart Devices
-              </h3>
-              <p className="text-gray-600">
-                IoT voice interfaces and embedded speech recognition.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-              <h3 className="font-bold text-xl mb-4">
-                AI Research
-              </h3>
-              <p className="text-gray-600">
-                Large-scale multilingual speech datasets for advanced ML research.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ====================================================== */}
-      {/* AUDIO ANNOTATION SERVICES */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-              Our Services
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-              Enterprise Audio Annotation Services for Artificial Intelligence
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-
-              Every AI project requires different types of audio labeling.
-              Annotexia offers end-to-end audio annotation services for
-              speech recognition, conversational AI, customer analytics,
-              multilingual NLP, voice biometrics, healthcare AI,
-              automotive assistants, and intelligent audio monitoring systems.
-
-            </p>
-
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-
-            <div className="bg-white rounded-2xl border p-8 shadow-sm">
-
-              <h3 className="text-xl font-bold mb-4">
-                Speech Transcription
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-
-                Convert spoken conversations into highly accurate text
-                transcripts for Automatic Speech Recognition (ASR),
-                speech-to-text engines, virtual assistants, and voice AI
-                platforms.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 shadow-sm">
-
-              <h3 className="text-xl font-bold mb-4">
-                Speaker Diarization
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-
-                Identify and separate multiple speakers within a single
-                recording, enabling AI systems to understand who spoke,
-                when they spoke, and how conversations flow.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 shadow-sm">
-
-              <h3 className="text-xl font-bold mb-4">
-                Audio Classification
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-
-                Categorize audio into predefined classes such as speech,
-                music, alarms, animal sounds, machinery, traffic,
-                environmental sounds, and custom categories.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 shadow-sm">
-
-              <h3 className="text-xl font-bold mb-4">
-                Emotion Annotation
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-
-                Label emotions including happiness, anger, sadness,
-                excitement, frustration, confidence, and neutrality to
-                improve conversational AI and customer sentiment analysis.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 shadow-sm">
-
-              <h3 className="text-xl font-bold mb-4">
-                Intent Annotation
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-
-                Identify customer intent, commands, questions, requests,
-                confirmations, complaints, greetings, and conversational
-                outcomes for NLP and chatbot training.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 shadow-sm">
-
-              <h3 className="text-xl font-bold mb-4">
-                Acoustic Event Detection
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-
-                Detect important acoustic events including alarms,
-                sirens, gunshots, footsteps, vehicle sounds, machinery,
-                crowd noise, and industrial safety events.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* IMAGE + AUDIO TYPES */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-            <div>
-
-              <Image
-                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1400&q=80"
-                alt="Audio waveform annotation for machine learning"
-                width={900}
-                height={700}
-                className="rounded-3xl shadow-xl"
-              />
-
-            </div>
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-                Annotation Types
-
-              </span>
-
-              <h2 className="text-4xl font-bold mt-5 mb-8">
-
-                Comprehensive Audio Annotation Capabilities
-
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-8">
-
-                Different AI applications require different levels of annotation.
-                Our specialists can work with raw audio, podcasts, customer calls,
-                medical dictation, interviews, multilingual recordings, smart device
-                interactions, and real-world environmental audio.
-
-              </p>
-
-              <div className="grid grid-cols-2 gap-5">
-
-                <div className="bg-white rounded-xl p-5 border">
-                  ✓ Speech Transcription
+                <div className="absolute inset-0">
+                    <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-[120px]" />
+                    <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-[120px]" />
                 </div>
 
-                <div className="bg-white rounded-xl p-5 border">
-                  ✓ Timestamp Annotation
-                </div>
+                <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
+
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+                        <div>
+
+                            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300 mb-7">
+                                <Mic2 size={16} />
+                                AI Audio Data Annotation
+                            </div>
+
+                            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.05] text-white">
+
+                                Turn Audio Into
+
+                                <span className="block text-cyan-400 mt-2">
+                                    AI-Ready Data
+                                </span>
+
+                            </h1>
 
-                <div className="bg-white rounded-xl p-5 border">
-                  ✓ Speaker Labels
-                </div>
+                            <p className="mt-8 max-w-2xl text-lg lg:text-xl leading-8 text-slate-300">
+                                Transform speech, conversations, sounds, and voice
+                                recordings into structured training data for
+                                speech recognition, conversational AI, voice
+                                assistants, audio intelligence, and machine
+                                learning applications.
+                            </p>
 
-                <div className="bg-white rounded-xl p-5 border">
-                  ✓ Intent Recognition
-                </div>
+                            <div className="flex flex-wrap gap-4 mt-10">
 
-                <div className="bg-white rounded-xl p-5 border">
-                  ✓ Emotion Detection
-                </div>
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-7 py-4 font-semibold text-white shadow-xl shadow-cyan-500/20 transition hover:bg-cyan-600"
+                                >
+                                    Get Free Sample
+                                    <ArrowRight size={19} />
+                                </Link>
 
-                <div className="bg-white rounded-xl p-5 border">
-                  ✓ Sound Event Labels
-                </div>
+                                <Link
+                                    href="/services"
+                                    className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-7 py-4 font-semibold text-white transition hover:border-cyan-400 hover:bg-white/5"
+                                >
+                                    Explore Services
+                                </Link>
 
-                <div className="bg-white rounded-xl p-5 border">
-                  ✓ Voice Activity Detection
-                </div>
+                            </div>
 
-                <div className="bg-white rounded-xl p-5 border">
-                  ✓ Conversation Segmentation
-                </div>
+                            <div className="grid sm:grid-cols-3 gap-6 mt-12 pt-10 border-t border-white/10">
 
-              </div>
+                                <div>
+                                    <p className="text-2xl font-bold text-white">
+                                        Speech
+                                    </p>
+                                    <p className="text-sm text-slate-400 mt-1">
+                                        & Transcription
+                                    </p>
+                                </div>
 
-            </div>
+                                <div>
+                                    <p className="text-2xl font-bold text-white">
+                                        Speaker
+                                    </p>
+                                    <p className="text-sm text-slate-400 mt-1">
+                                        Diarization
+                                    </p>
+                                </div>
 
-          </div>
+                                <div>
+                                    <p className="text-2xl font-bold text-white">
+                                        Sound
+                                    </p>
+                                    <p className="text-sm text-slate-400 mt-1">
+                                        Event Detection
+                                    </p>
+                                </div>
 
-        </div>
+                            </div>
 
-      </section>
+                        </div>
 
+                        <div className="relative">
 
+                            <div className="absolute inset-0 rounded-[40px] bg-cyan-500/20 blur-3xl" />
 
-      {/* ====================================================== */}
-      {/* DATASET FORMATS */}
-      {/* ====================================================== */}
+                            <div className="relative rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-4 shadow-2xl">
 
-      <section className="py-24">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Audio annotation and speech data labeling for artificial intelligence"
+                                    width={900}
+                                    height={700}
+                                    priority
+                                    className="w-full h-[500px] object-cover rounded-[24px]"
+                                />
 
-        <div className="max-w-7xl mx-auto px-6">
+                                <div className="absolute -bottom-7 -left-7 rounded-2xl border border-white/10 bg-slate-900 px-6 py-5 shadow-2xl">
 
-          <div className="text-center mb-16">
+                                    <div className="flex items-center gap-3">
 
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
+                                        <div className="w-11 h-11 rounded-xl bg-cyan-500/10 flex items-center justify-center">
+                                            <Volume2 className="text-cyan-400" />
+                                        </div>
 
-              Supported Formats
+                                        <div>
+                                            <p className="text-sm text-slate-400">
+                                                Audio Intelligence
+                                            </p>
+                                            <p className="font-bold text-white">
+                                                Structured Training Data
+                                            </p>
+                                        </div>
 
-            </span>
+                                    </div>
 
-            <h2 className="text-4xl font-bold mt-5 mb-6">
+                                </div>
 
-              Flexible Output Formats for Machine Learning Pipelines
+                            </div>
 
-            </h2>
+                        </div>
 
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-
-              Every AI workflow is different. We deliver annotation outputs that
-              integrate seamlessly with your existing machine learning pipeline,
-              annotation platform, or custom data processing workflow.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div className="bg-white border rounded-2xl p-8">
-
-              <h3 className="font-bold text-lg mb-4">
-                JSON
-              </h3>
-
-              <p className="text-gray-600">
-                Structured annotation files for NLP and conversational AI systems.
-              </p>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8">
-
-              <h3 className="font-bold text-lg mb-4">
-                CSV
-              </h3>
-
-              <p className="text-gray-600">
-                Timestamp-based annotation datasets for analytics workflows.
-              </p>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8">
-
-              <h3 className="font-bold text-lg mb-4">
-                XML
-              </h3>
-
-              <p className="text-gray-600">
-                Compatible with enterprise annotation systems and legacy workflows.
-              </p>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8">
-
-              <h3 className="font-bold text-lg mb-4">
-                Custom Formats
-              </h3>
-
-              <p className="text-gray-600">
-                Deliver annotations according to your proprietary schema or AI
-                training pipeline.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ====================================================== */}
-      {/* AI APPLICATIONS */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              AI Applications
-
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-
-              Powering Next-Generation Voice AI Applications
-
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-
-              Audio annotation is the foundation behind modern voice-enabled
-              technologies. Accurate labeling enables machine learning models to
-              understand human conversations, recognize different speakers,
-              interpret emotions, classify sounds, and automate communication
-              across industries.
-
-            </p>
-
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-            <div>
-
-              <Image
-                src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1400&q=80"
-                alt="Conversational AI training data and speech annotation"
-                width={900}
-                height={700}
-                className="rounded-3xl shadow-xl"
-              />
-
-            </div>
-
-            <div>
-
-              <div className="space-y-8">
-
-                <div>
-
-                  <h3 className="text-xl font-bold mb-3">
-                    Speech Recognition Systems
-                  </h3>
-
-                  <p className="text-gray-600 leading-8">
-
-                    Improve Automatic Speech Recognition (ASR) engines by training
-                    models with accurately transcribed speech datasets across multiple
-                    languages and accents.
-
-                  </p>
+                    </div>
 
                 </div>
 
-                <div>
+            </section>
 
-                  <h3 className="text-xl font-bold mb-3">
-                    Voice Assistants
-                  </h3>
+            {/* =====================================================
+                INTRO
+            ====================================================== */}
 
-                  <p className="text-gray-600 leading-8">
+            <section className="py-24">
 
-                    Train intelligent virtual assistants capable of understanding user
-                    commands, natural conversations, contextual intent, and spoken
-                    questions.
+                <div className="max-w-5xl mx-auto px-6 text-center">
 
-                  </p>
+                    <span className="text-cyan-600 font-semibold uppercase tracking-widest text-sm">
+                        Audio Data That AI Can Understand
+                    </span>
 
-                </div>
+                    <h2 className="text-4xl lg:text-5xl font-bold mt-4 leading-tight">
+                        Great Voice AI Starts With
+                        <span className="text-cyan-600"> Great Audio Data</span>
+                    </h2>
 
-                <div>
-
-                  <h3 className="text-xl font-bold mb-3">
-                    Call Center Intelligence
-                  </h3>
-
-                  <p className="text-gray-600 leading-8">
-
-                    Automatically analyze customer conversations, detect sentiment,
-                    measure agent performance, and improve customer experience.
-
-                  </p>
-
-                </div>
-
-                <div>
-
-                  <h3 className="text-xl font-bold mb-3">
-                    Conversational AI
-                  </h3>
-
-                  <p className="text-gray-600 leading-8">
-
-                    Build intelligent chatbots and voice bots capable of understanding
-                    real-world conversations with higher accuracy.
-
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* INDUSTRIES */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Industries
-
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-
-              Industries Benefiting From Audio Annotation
-
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-
-              Organizations across multiple industries rely on annotated audio
-              datasets to improve customer engagement, automate operations,
-              increase accessibility, and build intelligent AI-powered products.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Healthcare
-              </h3>
-
-              <p className="text-gray-600">
-
-                Medical dictation, clinical documentation,
-                doctor-patient conversations, voice-enabled healthcare assistants.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Banking & Finance
-              </h3>
-
-              <p className="text-gray-600">
-
-                Customer verification, call center analytics,
-                fraud detection and intelligent IVR systems.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Automotive
-              </h3>
-
-              <p className="text-gray-600">
-
-                Voice-controlled infotainment,
-                navigation systems,
-                in-car AI assistants.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Telecommunications
-              </h3>
-
-              <p className="text-gray-600">
-
-                Speech analytics,
-                customer interaction analysis,
-                multilingual support systems.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Education
-              </h3>
-
-              <p className="text-gray-600">
-
-                Language learning platforms,
-                pronunciation assessment,
-                AI tutoring systems.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Technology
-              </h3>
-
-              <p className="text-gray-600">
-
-                Conversational AI,
-                smart speakers,
-                voice search,
-                LLM training,
-                speech analytics.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* LANGUAGES */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-6xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Multilingual Annotation
-
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-
-              Support for Multiple Languages & Regional Accents
-
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-
-              Modern AI products operate globally. We help organizations build
-              speech recognition systems capable of understanding multiple
-              languages, dialects, regional accents, and pronunciation variations.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold mb-4">
-                Indian Languages
-              </h3>
-
-              <ul className="space-y-2 text-gray-600">
-
-                <li>Hindi</li>
-                <li>Marathi</li>
-                <li>Tamil</li>
-                <li>Telugu</li>
-                <li>Gujarati</li>
-                <li>Kannada</li>
-
-              </ul>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold mb-4">
-                International Languages
-              </h3>
-
-              <ul className="space-y-2 text-gray-600">
-
-                <li>English</li>
-                <li>Spanish</li>
-                <li>French</li>
-                <li>German</li>
-                <li>Italian</li>
-                <li>Portuguese</li>
-
-              </ul>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold mb-4">
-                Custom Language Projects
-              </h3>
-
-              <p className="text-gray-600">
-
-                Need another language?
-
-                Our annotation workflow supports custom multilingual projects,
-                regional dialects, and language-specific AI datasets.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* WORKFLOW */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Workflow
-
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-
-              Our Audio Annotation Workflow
-
-            </h2>
-
-          </div>
-
-          <div className="grid md:grid-cols-5 gap-6 text-center">
-
-            <div className="bg-cyan-50 rounded-2xl p-8">
-              <h3 className="font-bold mb-3">1. Dataset Review</h3>
-              <p className="text-gray-600">
-                Understand project scope and annotation guidelines.
-              </p>
-            </div>
-
-            <div className="bg-cyan-50 rounded-2xl p-8">
-              <h3 className="font-bold mb-3">2. Pilot Sample</h3>
-              <p className="text-gray-600">
-                Free sample annotation for approval.
-              </p>
-            </div>
-
-            <div className="bg-cyan-50 rounded-2xl p-8">
-              <h3 className="font-bold mb-3">3. Annotation</h3>
-              <p className="text-gray-600">
-                Dedicated annotation specialists label audio.
-              </p>
-            </div>
-
-            <div className="bg-cyan-50 rounded-2xl p-8">
-              <h3 className="font-bold mb-3">4. QA Review</h3>
-              <p className="text-gray-600">
-                Multiple quality assurance checks.
-              </p>
-            </div>
-
-            <div className="bg-cyan-50 rounded-2xl p-8">
-              <h3 className="font-bold mb-3">5. Delivery</h3>
-              <p className="text-gray-600">
-                Production-ready datasets delivered securely.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ====================================================== */}
-      {/* PLATFORMS */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Platforms We Support
-
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-
-              Flexible Annotation Workflow with Your Preferred Platform
-
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-
-              Every AI team follows a unique workflow. Whether you already have an
-              annotation platform or require us to work within your internal
-              environment, our team adapts to your preferred tools and quality
-              standards.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
-
-            <div className="bg-white rounded-2xl border p-8 text-center">
-              <h3 className="font-bold text-lg">
-                CVAT
-              </h3>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 text-center">
-              <h3 className="font-bold text-lg">
-                Label Studio
-              </h3>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 text-center">
-              <h3 className="font-bold text-lg">
-                Labelbox
-              </h3>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 text-center">
-              <h3 className="font-bold text-lg">
-                SuperAnnotate
-              </h3>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 text-center">
-              <h3 className="font-bold text-lg">
-                Roboflow
-              </h3>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 text-center">
-              <h3 className="font-bold text-lg">
-                Amazon SageMaker
-              </h3>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 text-center">
-              <h3 className="font-bold text-lg">
-                Custom Tools
-              </h3>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8 text-center">
-              <h3 className="font-bold text-lg">
-                Client Platforms
-              </h3>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* WHY ANNOTEXIA */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-            <div>
-
-              <Image
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80"
-                alt="Quality assurance for audio annotation datasets"
-                width={900}
-                height={700}
-                className="rounded-3xl shadow-xl"
-              />
-
-            </div>
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-                Why Annotexia
-
-              </span>
-
-              <h2 className="text-4xl font-bold mt-5 mb-8">
-
-                Why AI Companies Choose Annotexia
-
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                Building reliable AI starts with reliable data. At Annotexia, we
-                focus on delivering annotation quality rather than simply processing
-                large volumes of data. Every project follows documented workflows,
-                quality checkpoints, and client-specific annotation guidelines.
-
-              </p>
-
-              <p className="text-gray-600 leading-9 mb-8">
-
-                Whether you require a few thousand audio recordings or millions of
-                speech samples, our dedicated annotation specialists provide
-                consistent, scalable, and production-ready datasets that integrate
-                directly into your machine learning pipeline.
-
-              </p>
-
-              <div className="space-y-5">
-
-                <div className="flex gap-4">
-
-                  <div className="text-cyan-600 font-bold">✓</div>
-
-                  <div>
-
-                    <h3 className="font-semibold mb-1">
-                      Dedicated Annotation Teams
-                    </h3>
-
-                    <p className="text-gray-600">
-
-                      Specialists assigned specifically to your project.
-
+                    <p className="mt-7 text-lg text-slate-600 leading-8">
+                        A voice recording may sound simple to a human, but an AI
+                        model needs much more than raw audio. It needs to understand
+                        words, speakers, timing, emotions, events, background noise,
+                        and context.
                     </p>
 
-                  </div>
-
-                </div>
-
-                <div className="flex gap-4">
-
-                  <div className="text-cyan-600 font-bold">✓</div>
-
-                  <div>
-
-                    <h3 className="font-semibold mb-1">
-                      Scalable Workforce
-                    </h3>
-
-                    <p className="text-gray-600">
-
-                      Support for pilot projects through enterprise-scale datasets.
-
+                    <p className="mt-5 text-lg text-slate-600 leading-8">
+                        Annotexia transforms raw audio into structured datasets
+                        designed around your machine learning objectives. From
+                        speech recognition and conversational AI to environmental
+                        sound detection, our annotation workflows help turn
+                        unstructured audio into useful training signals.
                     </p>
 
-                  </div>
+                </div>
+
+            </section>
+
+            {/* =====================================================
+                ANNOTATION TYPES
+            ====================================================== */}
+
+            <section className="py-24 bg-slate-50">
+
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="max-w-3xl mb-16">
+
+                        <span className="text-cyan-600 font-semibold uppercase tracking-widest text-sm">
+                            Our Capabilities
+                        </span>
+
+                        <h2 className="text-4xl lg:text-5xl font-bold mt-4">
+                            Audio Annotation Services
+                        </h2>
+
+                        <p className="mt-6 text-lg text-slate-600 leading-8">
+                            Build specialized datasets for speech, sound,
+                            conversational intelligence, and voice-based AI
+                            applications.
+                        </p>
+
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+                        {annotationTypes.map((item) => {
+
+                            const Icon = item.icon;
+
+                            return (
+                                <div
+                                    key={item.title}
+                                    className="group rounded-3xl bg-white border border-slate-200 p-8 shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                                >
+
+                                    <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center transition group-hover:bg-cyan-500">
+
+                                        <Icon
+                                            size={27}
+                                            className="text-cyan-600 group-hover:text-white"
+                                        />
+
+                                    </div>
+
+                                    <h3 className="text-2xl font-bold mt-7">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="mt-4 text-slate-600 leading-7">
+                                        {item.description}
+                                    </p>
+
+                                    <div className="mt-7 flex items-center gap-2 text-cyan-600 font-semibold">
+                                        Learn More
+                                        <ArrowRight
+                                            size={18}
+                                            className="transition group-hover:translate-x-2"
+                                        />
+                                    </div>
+
+                                </div>
+                            );
+                        })}
+
+                    </div>
 
                 </div>
 
-                <div className="flex gap-4">
+            </section>
 
-                  <div className="text-cyan-600 font-bold">✓</div>
+            {/* =====================================================
+                USE CASES
+            ====================================================== */}
 
-                  <div>
+            <section className="py-24">
 
-                    <h3 className="font-semibold mb-1">
-                      Fast Turnaround
-                    </h3>
+                <div className="max-w-7xl mx-auto px-6">
 
-                    <p className="text-gray-600">
+                    <div className="text-center max-w-3xl mx-auto mb-16">
 
-                      Efficient workflows without compromising annotation quality.
+                        <span className="text-cyan-600 font-semibold uppercase tracking-widest text-sm">
+                            Applications
+                        </span>
 
+                        <h2 className="text-4xl lg:text-5xl font-bold mt-4">
+                            Where Audio Annotation Makes a Difference
+                        </h2>
+
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        {useCases.map((item, index) => (
+
+                            <div
+                                key={item.title}
+                                className="relative overflow-hidden rounded-3xl border border-slate-200 p-8 hover:shadow-xl transition"
+                            >
+
+                                <span className="text-5xl font-black text-slate-100">
+                                    0{index + 1}
+                                </span>
+
+                                <h3 className="text-2xl font-bold mt-3">
+                                    {item.title}
+                                </h3>
+
+                                <p className="mt-4 text-slate-600 leading-7">
+                                    {item.description}
+                                </p>
+
+                            </div>
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =====================================================
+                WORKFLOW
+            ====================================================== */}
+
+            <section className="py-24 bg-slate-950 text-white">
+
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="max-w-3xl mb-16">
+
+                        <span className="text-cyan-400 font-semibold uppercase tracking-widest text-sm">
+                            Our Process
+                        </span>
+
+                        <h2 className="text-4xl lg:text-5xl font-bold mt-4">
+                            From Raw Audio to
+                            <span className="text-cyan-400">
+                                {" "}AI-Ready Dataset
+                            </span>
+                        </h2>
+
+                        <p className="mt-6 text-lg text-slate-400 leading-8">
+                            A structured workflow keeps your annotation project
+                            consistent from the first audio file to the final
+                            validated dataset.
+                        </p>
+
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+                        {workflow.map((item) => (
+
+                            <div
+                                key={item.number}
+                                className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 hover:bg-white/[0.06] transition"
+                            >
+
+                                <span className="text-cyan-400 text-sm font-bold">
+                                    STEP {item.number}
+                                </span>
+
+                                <h3 className="text-2xl font-bold mt-5">
+                                    {item.title}
+                                </h3>
+
+                                <p className="mt-4 text-slate-400 leading-7">
+                                    {item.description}
+                                </p>
+
+                            </div>
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =====================================================
+                QUALITY
+            ====================================================== */}
+
+            <section className="py-24">
+
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+                        <div>
+
+                            <span className="text-cyan-600 font-semibold uppercase tracking-widest text-sm">
+                                Quality Assurance
+                            </span>
+
+                            <h2 className="text-4xl lg:text-5xl font-bold mt-4 leading-tight">
+                                Audio Quality Is
+                                <span className="text-cyan-600">
+                                    {" "}AI Quality
+                                </span>
+                            </h2>
+
+                            <p className="mt-6 text-lg text-slate-600 leading-8">
+                                Even a small transcription error, incorrect speaker
+                                boundary, or missed sound event can introduce noise
+                                into a machine learning dataset.
+                            </p>
+
+                            <p className="mt-5 text-lg text-slate-600 leading-8">
+                                That&apos;s why our workflow incorporates structured
+                                guidelines, trained annotators, quality reviews,
+                                sampling, corrections, and project-specific
+                                validation criteria.
+                            </p>
+
+                            <div className="mt-9 space-y-4">
+
+                                {[
+                                    "Project-specific annotation guidelines",
+                                    "Trained audio annotation specialists",
+                                    "Multi-level quality review",
+                                    "Consistency and edge-case checks",
+                                    "Structured dataset validation",
+                                    "Custom quality requirements",
+                                ].map((item) => (
+
+                                    <div
+                                        key={item}
+                                        className="flex items-center gap-3"
+                                    >
+
+                                        <CheckCircle2
+                                            size={21}
+                                            className="text-cyan-600 shrink-0"
+                                        />
+
+                                        <span className="font-medium text-slate-700">
+                                            {item}
+                                        </span>
+
+                                    </div>
+
+                                ))}
+
+                            </div>
+
+                        </div>
+
+                        <div className="rounded-[32px] bg-slate-50 border border-slate-200 p-10">
+
+                            <div className="grid sm:grid-cols-2 gap-6">
+
+                                {[
+                                    {
+                                        title: "Accuracy",
+                                        desc: "Consistent labels and transcription",
+                                        icon: CheckCircle2,
+                                    },
+                                    {
+                                        title: "Security",
+                                        desc: "Confidential project workflows",
+                                        icon: ShieldCheck,
+                                    },
+                                    {
+                                        title: "Scalability",
+                                        desc: "Small pilots to large datasets",
+                                        icon: Layers3,
+                                    },
+                                    {
+                                        title: "Turnaround",
+                                        desc: "Efficient production workflows",
+                                        icon: Zap,
+                                    },
+                                ].map((item) => {
+
+                                    const Icon = item.icon;
+
+                                    return (
+                                        <div
+                                            key={item.title}
+                                            className="rounded-2xl bg-white p-7 border border-slate-200"
+                                        >
+
+                                            <Icon
+                                                className="text-cyan-600"
+                                                size={28}
+                                            />
+
+                                            <h3 className="font-bold text-xl mt-5">
+                                                {item.title}
+                                            </h3>
+
+                                            <p className="text-slate-600 mt-2 leading-6">
+                                                {item.desc}
+                                            </p>
+
+                                        </div>
+                                    );
+                                })}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =====================================================
+                INDUSTRIES
+            ====================================================== */}
+
+            <section className="py-24 bg-slate-50">
+
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="text-center max-w-3xl mx-auto mb-14">
+
+                        <span className="text-cyan-600 font-semibold uppercase tracking-widest text-sm">
+                            Industries
+                        </span>
+
+                        <h2 className="text-4xl lg:text-5xl font-bold mt-4">
+                            Built for Real-World AI Applications
+                        </h2>
+
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                        {industries.map((industry) => (
+
+                            <div
+                                key={industry}
+                                className="bg-white rounded-2xl border border-slate-200 p-6 flex items-center gap-3 hover:shadow-lg hover:-translate-y-1 transition"
+                            >
+
+                                <CheckCircle2
+                                    size={20}
+                                    className="text-cyan-600 shrink-0"
+                                />
+
+                                <span className="font-semibold">
+                                    {industry}
+                                </span>
+
+                            </div>
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =====================================================
+                FORMATS
+            ====================================================== */}
+
+            <section className="py-20">
+
+                <div className="max-w-5xl mx-auto px-6 text-center">
+
+                    <FileAudio
+                        size={42}
+                        className="mx-auto text-cyan-600"
+                    />
+
+                    <h2 className="text-3xl lg:text-4xl font-bold mt-5">
+                        Flexible Data Delivery Formats
+                    </h2>
+
+                    <p className="mt-5 text-lg text-slate-600">
+                        Receive validated annotation outputs in formats that
+                        integrate with your existing machine learning pipeline.
                     </p>
 
-                  </div>
+                    <div className="flex flex-wrap justify-center gap-3 mt-9">
+
+                        {formats.map((format) => (
+
+                            <span
+                                key={format}
+                                className="rounded-full border border-slate-200 bg-slate-50 px-5 py-3 font-semibold text-slate-700"
+                            >
+                                {format}
+                            </span>
+
+                        ))}
+
+                    </div>
 
                 </div>
 
-                <div className="flex gap-4">
+            </section>
 
-                  <div className="text-cyan-600 font-bold">✓</div>
+            {/* =====================================================
+                RELATED SERVICES
+            ====================================================== */}
 
-                  <div>
+            <section className="py-20 bg-white">
 
-                    <h3 className="font-semibold mb-1">
-                      Flexible Delivery
-                    </h3>
+                <div className="max-w-7xl mx-auto px-6">
 
-                    <p className="text-gray-600">
+                    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
 
-                      Receive data in the format required by your ML pipeline.
+                        <div>
 
+                            <span className="text-cyan-600 font-semibold uppercase tracking-widest text-sm">
+                                Explore More
+                            </span>
+
+                            <h2 className="text-4xl font-bold mt-3">
+                                More Data Annotation Services
+                            </h2>
+
+                        </div>
+
+                        <Link
+                            href="/services"
+                            className="inline-flex items-center gap-2 font-semibold text-cyan-600"
+                        >
+                            View All Services
+                            <ArrowRight size={18} />
+                        </Link>
+
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6">
+
+                        {[
+                            {
+                                title: "Image Annotation",
+                                href: "/services/image-annotation",
+                                description:
+                                    "Create high-quality computer vision datasets with bounding boxes, polygons, segmentation, keypoints, and more.",
+                            },
+                            {
+                                title: "Video Annotation",
+                                href: "/services/video-annotation",
+                                description:
+                                    "Track objects, events, actions, and movements across video sequences for advanced AI applications.",
+                            },
+                            {
+                                title: "Text Annotation",
+                                href: "/services/text-annotation",
+                                description:
+                                    "Build NLP and language datasets using entity labeling, sentiment, intent, classification, and text categorization.",
+                            },
+                        ].map((service) => (
+
+                            <Link
+                                key={service.title}
+                                href={service.href}
+                                className="group rounded-3xl border border-slate-200 p-8 hover:shadow-xl hover:-translate-y-1 transition"
+                            >
+
+                                <h3 className="text-2xl font-bold">
+                                    {service.title}
+                                </h3>
+
+                                <p className="mt-4 text-slate-600 leading-7">
+                                    {service.description}
+                                </p>
+
+                                <div className="mt-6 flex items-center gap-2 text-cyan-600 font-semibold">
+
+                                    Explore Service
+
+                                    <ArrowRight
+                                        size={18}
+                                        className="group-hover:translate-x-2 transition"
+                                    />
+
+                                </div>
+
+                            </Link>
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =====================================================
+                FAQ
+            ====================================================== */}
+
+            <section className="py-24 bg-slate-50">
+
+                <div className="max-w-4xl mx-auto px-6">
+
+                    <div className="text-center mb-14">
+
+                        <span className="text-cyan-600 font-semibold uppercase tracking-widest text-sm">
+                            FAQ
+                        </span>
+
+                        <h2 className="text-4xl lg:text-5xl font-bold mt-4">
+                            Audio Annotation Questions
+                        </h2>
+
+                    </div>
+
+                    <div className="space-y-4">
+
+                        {faqs.map((faq) => (
+
+                            <details
+                                key={faq.question}
+                                className="group bg-white rounded-2xl border border-slate-200 p-6 shadow-sm"
+                            >
+
+                                <summary className="cursor-pointer list-none flex items-center justify-between gap-6 text-lg font-semibold">
+
+                                    {faq.question}
+
+                                    <span className="text-cyan-600 text-2xl transition group-open:rotate-45">
+                                        +
+                                    </span>
+
+                                </summary>
+
+                                <p className="mt-5 text-slate-600 leading-8">
+                                    {faq.answer}
+                                </p>
+
+                            </details>
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =====================================================
+                FINAL CTA
+            ====================================================== */}
+
+            <section className="py-24 bg-gradient-to-br from-cyan-600 via-sky-600 to-blue-700">
+
+                <div className="max-w-5xl mx-auto px-6 text-center text-white">
+
+                    <span className="uppercase tracking-widest text-sm font-semibold text-cyan-100">
+                        Ready to Start?
+                    </span>
+
+                    <h2 className="text-4xl lg:text-6xl font-bold mt-5 leading-tight">
+                        Turn Your Audio Into
+                        <span className="block">
+                            Training Data
+                        </span>
+                    </h2>
+
+                    <p className="text-lg lg:text-xl text-cyan-50 leading-8 max-w-3xl mx-auto mt-7">
+                        Share your audio dataset, annotation requirements,
+                        target classes, and timeline. Our team can help you
+                        define the right annotation workflow for your AI project.
                     </p>
 
-                  </div>
+                    <div className="flex flex-wrap justify-center gap-4 mt-10">
+
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 font-bold text-cyan-700 shadow-xl hover:bg-slate-100 transition"
+                        >
+                            Request Free Sample
+                            <ArrowRight size={19} />
+                        </Link>
+
+                        <Link
+                            href="/industries"
+                            className="inline-flex items-center gap-2 rounded-xl border border-white/40 px-8 py-4 font-bold text-white hover:bg-white/10 transition"
+                        >
+                            Explore Industries
+                        </Link>
+
+                    </div>
 
                 </div>
 
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* QUALITY ASSURANCE */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Quality Assurance
-
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-
-              Multi-Level Quality Review Process
-
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-
-              Annotation accuracy is one of the most important factors affecting AI
-              performance. Our quality assurance framework minimizes inconsistencies
-              and helps clients receive production-ready datasets.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold mb-4">
-
-                Level 1
-
-              </h3>
-
-              <p className="text-gray-600">
-
-                Primary annotation performed by trained specialists.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold mb-4">
-
-                Level 2
-
-              </h3>
-
-              <p className="text-gray-600">
-
-                Peer review for consistency and guideline compliance.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold mb-4">
-
-                Level 3
-
-              </h3>
-
-              <p className="text-gray-600">
-
-                Senior QA validation and random quality sampling.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold mb-4">
-
-                Final Review
-
-              </h3>
-
-              <p className="text-gray-600">
-
-                Dataset verification before secure delivery.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* SECURITY */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-6xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Security
-
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-
-              Enterprise Data Security & Confidentiality
-
-            </h2>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-10">
-
-            <div className="bg-white border rounded-2xl p-8">
-
-              <h3 className="font-bold text-xl mb-5">
-
-                Your Data Remains Protected
-
-              </h3>
-
-              <ul className="space-y-4 text-gray-600">
-
-                <li>✓ NDA available upon request</li>
-
-                <li>✓ Secure file transfer</li>
-
-                <li>✓ Restricted project access</li>
-
-                <li>✓ Confidential data handling</li>
-
-                <li>✓ Client ownership of datasets</li>
-
-                <li>✓ No dataset reuse</li>
-
-              </ul>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8">
-
-              <h3 className="font-bold text-xl mb-5">
-
-                Designed for Enterprise AI Teams
-
-              </h3>
-
-              <ul className="space-y-4 text-gray-600">
-
-                <li>✓ Dedicated Project Manager</li>
-
-                <li>✓ Weekly progress reports</li>
-
-                <li>✓ Flexible scaling</li>
-
-                <li>✓ Custom annotation guidelines</li>
-
-                <li>✓ Long-term collaboration</li>
-
-                <li>✓ Worldwide delivery</li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ====================================================== */}
-      {/* PROJECT ENGAGEMENT TIMELINE */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-              Getting Started
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-              Start Your Audio Annotation Project in Five Simple Steps
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-              We keep the onboarding process simple, transparent, and fast.
-              From the first discussion to the final delivery, every project
-              follows a structured workflow designed to minimize delays and
-              maximize annotation quality.
-            </p>
-
-          </div>
-
-          <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8">
-
-            <div className="bg-white border rounded-2xl p-8 text-center">
-
-              <div className="w-14 h-14 rounded-full bg-cyan-600 text-white flex items-center justify-center text-xl font-bold mx-auto mb-5">
-                1
-              </div>
-
-              <h3 className="font-bold mb-3">
-                Consultation
-              </h3>
-
-              <p className="text-gray-600">
-                Share your project goals, dataset size, annotation requirements,
-                preferred format, and timeline.
-              </p>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8 text-center">
-
-              <div className="w-14 h-14 rounded-full bg-cyan-600 text-white flex items-center justify-center text-xl font-bold mx-auto mb-5">
-                2
-              </div>
-
-              <h3 className="font-bold mb-3">
-                Pilot Project
-              </h3>
-
-              <p className="text-gray-600">
-                We prepare a small pilot dataset so your team can validate
-                annotation quality before production begins.
-              </p>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8 text-center">
-
-              <div className="w-14 h-14 rounded-full bg-cyan-600 text-white flex items-center justify-center text-xl font-bold mx-auto mb-5">
-                3
-              </div>
-
-              <h3 className="font-bold mb-3">
-                Production
-              </h3>
-
-              <p className="text-gray-600">
-                Dedicated annotation specialists process your audio files using
-                documented annotation guidelines.
-              </p>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8 text-center">
-
-              <div className="w-14 h-14 rounded-full bg-cyan-600 text-white flex items-center justify-center text-xl font-bold mx-auto mb-5">
-                4
-              </div>
-
-              <h3 className="font-bold mb-3">
-                Quality Review
-              </h3>
-
-              <p className="text-gray-600">
-                Every dataset undergoes multiple quality checks before delivery.
-              </p>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8 text-center">
-
-              <div className="w-14 h-14 rounded-full bg-cyan-600 text-white flex items-center justify-center text-xl font-bold mx-auto mb-5">
-                5
-              </div>
-
-              <h3 className="font-bold mb-3">
-                Secure Delivery
-              </h3>
-
-              <p className="text-gray-600">
-                Receive production-ready datasets in your preferred format
-                through secure delivery channels.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* WHY CLIENTS TRUST US */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Trusted Partner
-
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-
-              Why Organizations Choose Annotexia
-
-            </h2>
-
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-
-            <div className="bg-white rounded-2xl border p-10">
-
-              <h3 className="text-2xl font-bold mb-6">
-
-                Built Around Quality
-
-              </h3>
-
-              <p className="text-gray-600 leading-9">
-
-                Rather than maximizing annotation speed alone,
-                our workflow prioritizes annotation consistency,
-                clear communication, and quality assurance.
-                This enables machine learning teams to spend
-                less time cleaning datasets and more time
-                training high-performing AI models.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-10">
-
-              <h3 className="text-2xl font-bold mb-6">
-
-                Flexible Engagement Models
-
-              </h3>
-
-              <p className="text-gray-600 leading-9">
-
-                Whether you require hourly support,
-                dedicated annotators,
-                project-based pricing,
-                or a long-term annotation partner,
-                our team adapts to your preferred engagement model.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* FREE PILOT */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-6xl mx-auto px-6">
-
-          <div className="bg-gradient-to-r from-cyan-600 to-blue-700 rounded-3xl p-16 text-white">
-
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-              <div>
-
-                <h2 className="text-4xl font-bold mb-8">
-
-                  Start With a Free Sample Annotation
-
-                </h2>
-
-                <p className="text-cyan-100 leading-9 text-lg mb-8">
-
-                  Choosing an annotation partner should never be a guess.
-
-                  We provide a free pilot sample so your AI team can
-                  evaluate annotation quality,
-                  communication,
-                  delivery format,
-                  and overall workflow before moving forward with
-                  a larger production project.
-
-                </p>
-
-                <a
-                  href="/contact"
-                  className="inline-flex bg-white text-black px-8 py-4 rounded-xl font-semibold"
-                >
-
-                  Request Free Sample
-
-                </a>
-
-              </div>
-
-              <div>
-
-                <ul className="space-y-5 text-lg">
-
-                  <li>✓ No long-term commitment</li>
-
-                  <li>✓ Evaluate annotation quality</li>
-
-                  <li>✓ Validate project guidelines</li>
-
-                  <li>✓ Review delivery format</li>
-
-                  <li>✓ Meet your dedicated project manager</li>
-
-                  <li>✓ Scale only when you're satisfied</li>
-
-                </ul>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* FINAL CTA */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-5xl mx-auto px-6 text-center">
-
-          <h2 className="text-5xl font-bold mb-8">
-
-            Build Better AI Models With Better Audio Data
-
-          </h2>
-
-          <p className="text-xl text-gray-600 leading-10 mb-10">
-
-            Whether you're developing conversational AI,
-            speech recognition software,
-            voice assistants,
-            call center analytics,
-            or multilingual language models,
-            Annotexia delivers accurate,
-            scalable,
-            and enterprise-ready audio annotation services
-            that accelerate machine learning development.
-
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-5">
-
-            <a
-              href="/contact"
-              className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 rounded-xl font-semibold transition"
-            >
-
-              Talk to Our Experts
-
-            </a>
-
-            <a
-              href="/services"
-              className="border border-gray-300 hover:border-cyan-600 px-8 py-4 rounded-xl font-semibold transition"
-            >
-
-              Explore All Annotation Services
-
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ====================================================== */}
-      {/* FAQ */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-5xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-              Frequently Asked Questions
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-              Audio Annotation Services FAQ
-            </h2>
-
-            <p className="text-lg text-gray-600">
-              Answers to the most common questions about professional audio
-              annotation services, speech datasets, conversational AI, and
-              machine learning training data.
-            </p>
-
-          </div>
-
-          <div className="space-y-8">
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="text-xl font-bold mb-4">
-                What is audio annotation?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Audio annotation is the process of labeling speech,
-                conversations, speakers, emotions, sounds, timestamps,
-                and acoustic events so artificial intelligence models can
-                understand and interpret audio accurately.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="text-xl font-bold mb-4">
-                What industries use audio annotation?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Audio annotation is widely used in healthcare,
-                banking, customer support, automotive,
-                telecommunications, education,
-                smart devices, conversational AI,
-                voice assistants, and security systems.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="text-xl font-bold mb-4">
-                Which annotation formats do you support?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                We deliver annotation datasets in JSON,
-                CSV, XML,
-                plain text,
-                timestamp-based formats,
-                and custom schemas based on your AI pipeline.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="text-xl font-bold mb-4">
-                Can Annotexia annotate multilingual audio?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Yes.
-                We support multilingual speech datasets,
-                regional dialects,
-                accented speech,
-                and language-specific annotation projects
-                for global AI applications.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="text-xl font-bold mb-4">
-                How do you ensure annotation quality?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Every dataset passes through multiple quality assurance
-                stages including annotation review,
-                peer verification,
-                senior QA validation,
-                and final dataset inspection before delivery.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="text-xl font-bold mb-4">
-                Is my audio data secure?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Absolutely.
-                Client confidentiality is a priority.
-                We support NDA agreements,
-                secure file transfer,
-                restricted access workflows,
-                and confidential data handling throughout
-                every project.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="text-xl font-bold mb-4">
-                Can you scale to millions of audio files?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Yes.
-                Our scalable annotation teams can support
-                pilot datasets,
-                enterprise-scale projects,
-                and long-term annotation partnerships.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="text-xl font-bold mb-4">
-                Do you provide a free sample?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Yes.
-                We provide a pilot annotation sample so clients
-                can review annotation quality,
-                workflow,
-                and output format before production begins.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Audio Annotation Services",
-            "provider": {
-              "@type": "Organization",
-              "name": "Annotexia",
-              "url": "https://annotexia.com"
-            },
-            "areaServed": "Worldwide",
-            "description":
-              "Professional audio annotation services including speech transcription, speaker diarization, audio classification, emotion annotation, intent annotation, and conversational AI datasets.",
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock"
-            }
-          }),
-        }}
-      />
-      </main>
-  );
+            </section>
+
+            {/* =====================================================
+                SEO CONTENT
+            ====================================================== */}
+
+            <section className="py-20">
+
+                <div className="max-w-5xl mx-auto px-6">
+
+                    <h2 className="text-3xl font-bold">
+                        Professional Audio Annotation Services for AI
+                    </h2>
+
+                    <p className="mt-6 text-slate-600 leading-8">
+                        Annotexia provides professional audio annotation and
+                        speech data labeling services for organizations building
+                        artificial intelligence and machine learning systems.
+                        Our services support speech recognition, conversational
+                        AI, voice assistants, call-center analytics, audio
+                        classification, emotion recognition, keyword spotting,
+                        speaker diarization, and sound event detection.
+                    </p>
+
+                    <p className="mt-5 text-slate-600 leading-8">
+                        High-quality audio datasets require more than simply
+                        converting speech into text. Depending on the application,
+                        machine learning models may need information about
+                        speakers, timestamps, emotions, keywords, background
+                        sounds, acoustic events, and other project-specific
+                        attributes.
+                    </p>
+
+                    <p className="mt-5 text-slate-600 leading-8">
+                        Our structured annotation workflow combines detailed
+                        project guidelines, trained annotation specialists,
+                        quality assurance reviews, and validated data delivery.
+                        Whether you are developing a voice assistant, speech
+                        recognition model, conversational AI platform, or
+                        environmental sound detection system, Annotexia can help
+                        transform raw audio into reliable AI training data.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+    );
 }

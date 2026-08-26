@@ -55,18 +55,16 @@ export default function Services() {
 
           <h2 className="mt-5 text-4xl lg:text-5xl font-black">
 
-            Enterprise AI Data Annotation Services
+            Choose the annotation service your AI project needs.
 
           </h2>
 
           <p className="mt-6 text-lg text-slate-600 leading-8">
 
-            Annotexia delivers high-quality AI training datasets
-            through professional image, video, text, audio,
-            LiDAR, OCR, and RLHF annotation services.
-            Our scalable annotation teams support AI companies,
-            startups, enterprises, and research organizations
-            worldwide.
+            From individual image labeling to large-scale video, 
+            NLP, audio and multimodal datasets, 
+            Annotexia provides project-specific annotation workflows designed around your data, 
+            guidelines, quality requirements and delivery format.
 
           </p>
 

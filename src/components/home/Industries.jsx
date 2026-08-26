@@ -86,21 +86,15 @@ export default function Industries() {
 
           <h2 className="mt-5 text-4xl lg:text-5xl font-black text-slate-900">
 
-            AI Data Annotation Solutions
-            <br />
-            Across Multiple Industries
+            Industry-specific annotation<br /> For real-world AI applications.
 
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
 
-            Annotexia delivers industry-focused AI data annotation and
-            data labeling services that help organizations build
-            accurate, scalable, and production-ready machine learning
-            datasets. From computer vision and healthcare AI to
-            agriculture, manufacturing, and autonomous vehicles,
-            our expert annotation teams support organizations
-            worldwide.
+            Different AI applications require different annotation expertise. 
+            Our teams work with project-specific guidelines to create datasets for Computer Vision, 
+            Sports Analytics, Healthcare, Agriculture, Robotics, Retail, Manufacturing and Autonomous Systems.
 
           </p>
 
@@ -182,7 +176,7 @@ export default function Industries() {
               <p className="mt-8 text-lg leading-8 text-slate-300 max-w-3xl mx-auto">
 
                 Every AI project requires domain-specific expertise.
-                Whether you're building Computer Vision models,
+                Whether you&apos;re building Computer Vision models,
                 Healthcare AI solutions, Sports Analytics platforms,
                 Agriculture AI systems, Retail automation,
                 Manufacturing inspection tools, or Autonomous Vehicle

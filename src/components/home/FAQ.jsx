@@ -5,51 +5,51 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "What is data annotation?",
+    question: "What types of data can Annotexia annotate?",
     answer:
-      "Data annotation is the process of labeling images, videos, text, audio, LiDAR, or documents so AI and machine learning models can learn to recognize patterns and make accurate predictions.",
+      "Annotexia provides annotation and labeling services for images, videos, text, audio, LiDAR and other structured or unstructured data. We support AI applications across Computer Vision, NLP, LLMs, Robotics, Healthcare, Sports Analytics, Agriculture, Retail and other industries.",
   },
 
   {
-    question: "Why is high-quality data annotation important for AI?",
+    question: "What annotation services do you provide?",
     answer:
-      "AI models are only as good as the data used to train them. Accurate annotation improves model performance, reduces bias, increases prediction accuracy, and accelerates AI development.",
+      "Our services include bounding box annotation, polygon annotation, semantic and instance segmentation, keypoint annotation, image and video classification, object tracking, OCR, text annotation, NLP labeling, audio annotation and LLM-related data evaluation.",
   },
 
   {
-    question: "Which data annotation services does Annotexia provide?",
+    question: "Can you work with our existing annotation platform?",
     answer:
-      "Annotexia provides Image Annotation, Video Annotation, Text Annotation, Audio Annotation, and Data Labeling services for Computer Vision, NLP, Healthcare AI, Sports Analytics, Agriculture AI, Retail AI, and Manufacturing AI projects.",
+      "Yes. Our teams can work with platforms such as CVAT, Label Studio, Labelbox, Roboflow, SuperAnnotate, Supervisely and customer-specific annotation platforms.",
   },
 
   {
-    question: "Which industries do you support?",
+    question: "Can you follow our existing annotation guidelines?",
     answer:
-      "We support Sports Analytics, Healthcare AI, Autonomous Vehicles, Computer Vision, Agriculture, Drone & Aerial Imagery, Retail & E-commerce, Manufacturing, and Industrial AI applications.",
+      "Yes. We can work from customer-provided annotation guidelines, class definitions, attributes and edge-case instructions. We can also help identify unclear cases during project setup.",
   },
 
   {
-    question: "Which annotation tools do you use?",
+    question: "How do you maintain annotation quality?",
     answer:
-      "Our team has experience with CVAT, Label Studio, Labelbox, Roboflow, Supervisely, SuperAnnotate, and customer-specific annotation platforms.",
+      "We establish project-specific guidelines, validate the workflow using sample data and use quality-review processes during production. Client feedback can also be incorporated into the workflow to improve consistency.",
   },
 
   {
-    question: "Which annotation formats do you support?",
+    question: "Can I start with a small pilot project?",
     answer:
-      "We support COCO, YOLO, Pascal VOC, JSON, XML, CSV, JSONL, and custom formats depending on your AI pipeline.",
+      "Yes. A pilot project can help validate the annotation approach, quality expectations, workflow and estimated turnaround before scaling to a larger dataset.",
   },
 
   {
-    question: "Can you work on our annotation platform?",
+    question: "What dataset formats do you deliver?",
     answer:
-      "Yes. Our team can work directly within your preferred annotation platform or enterprise workflow, reducing migration effort and maintaining project consistency.",
+      "Depending on the project, we can provide formats such as COCO, YOLO, Pascal VOC, JSON, XML, CSV, JSONL and custom schemas based on your requirements.",
   },
 
   {
-    question: "How do you ensure annotation quality?",
+    question: "How is annotation pricing calculated?",
     answer:
-      "We follow multi-level quality assurance workflows including annotation guidelines, reviewer validation, quality sampling, feedback loops, and final verification before dataset delivery.",
+      "Pricing depends on factors such as data type, annotation complexity, dataset volume, quality requirements and turnaround time. Contact us with your project details and we can provide a project-specific estimate.",
   },
 
   {
@@ -208,14 +208,14 @@ export default function HomeFAQ() {
 
               <h3 className="mt-5 text-3xl lg:text-4xl font-black text-white">
 
-                Let's Discuss Your
+                Let&apos;s Discuss Your
                 AI Annotation Project
 
               </h3>
 
               <p className="mt-8 text-lg leading-8 text-slate-300">
 
-                Every AI project is unique. Whether you're building
+                Every AI project is unique. Whether you&apos;re building
                 Computer Vision models, Healthcare AI, Sports Analytics,
                 Agriculture AI, Manufacturing AI, or Large Language Models,
                 our experts are ready to understand your requirements and

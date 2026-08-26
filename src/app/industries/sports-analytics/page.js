@@ -1,1831 +1,1076 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+    ArrowRight,
+    CheckCircle2,
+    Trophy,
+    Target,
+    Users,
+    Activity,
+    ShieldCheck,
+    BrainCircuit,
+    Video,
+    BarChart3,
+    Zap,
+} from "lucide-react";
 
 export const metadata = {
-  title:
-    "Sports Video Annotation Services | Player Tracking, Ball Tracking & Sports Analytics | Annotexia",
-
-  description:
-    "Professional sports video annotation services for football, soccer, basketball, cricket, tennis, hockey and AI-powered sports analytics. We provide player tracking, ball tracking, event tagging, pose estimation and computer vision datasets for sports technology companies worldwide.",
-
-  keywords: [
-    "sports annotation services",
-    "sports video annotation",
-    "football player tracking",
-    "soccer annotation company",
-    "sports AI datasets",
-    "sports computer vision",
-    "player tracking annotation",
-    "ball tracking annotation",
-    "sports event tagging",
-    "sports video labeling",
-    "AI sports analytics datasets",
-    "football tracking datasets",
-    "cricket annotation",
-    "basketball tracking",
-    "sports machine learning datasets",
-    "computer vision sports"
-  ],
-
-  openGraph: {
     title:
-      "Sports Video Annotation Services | Annotexia",
+        "Sports Analytics Data Annotation Services | Player & Ball Tracking AI | Annotexia",
 
     description:
-      "Enterprise sports video annotation services for AI-powered sports analytics, player tracking, ball tracking and event detection.",
+        "Annotexia provides professional sports data annotation services including player tracking, ball tracking, pose estimation, event detection, jersey number annotation, and sports video labeling for AI and machine learning.",
 
-    images: [
-      "/images/industries/sports/sports-hero.webp",
+    keywords: [
+        "sports data annotation",
+        "sports analytics annotation",
+        "sports video annotation",
+        "player tracking annotation",
+        "ball tracking annotation",
+        "football annotation",
+        "soccer data annotation",
+        "sports AI training data",
+        "player tracking dataset",
+        "sports video labeling",
+        "pose estimation sports",
+        "sports event annotation",
+        "jersey number annotation",
+        "sports computer vision",
+        "AI sports analytics",
     ],
-  },
+
+    alternates: {
+        canonical: "https://www.annotexia.com/industries/sports-analytics",
+    },
+
+    openGraph: {
+        title:
+            "Sports Analytics Data Annotation Services | Annotexia",
+        description:
+            "Build reliable sports AI systems with accurate player tracking, ball tracking, event detection, pose estimation, and sports video annotation.",
+        url: "https://www.annotexia.com/industries/sports-analytics",
+        siteName: "Annotexia",
+        type: "website",
+        images: [
+            {
+                url:
+                    "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1400&q=80",
+                width: 1400,
+                height: 933,
+                alt:
+                    "Sports analytics player tracking and video annotation",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title:
+            "Sports Analytics Data Annotation Services | Annotexia",
+        description:
+            "Accurate sports video annotation for player tracking, ball tracking, pose estimation, event detection, and AI sports analytics.",
+    },
 };
 
+const services = [
+    {
+        title: "Player Tracking",
+        description:
+            "Track players consistently across video frames to create reliable datasets for sports analytics, tactical analysis, and performance monitoring.",
+        icon: Users,
+    },
+    {
+        title: "Ball Tracking",
+        description:
+            "Accurately annotate and track the ball across challenging sports footage, including fast movement, occlusion, and crowded scenes.",
+        icon: Target,
+    },
+    {
+        title: "Event Annotation",
+        description:
+            "Label important sports events such as passes, shots, goals, tackles, fouls, substitutions, and other game-changing moments.",
+        icon: Activity,
+    },
+    {
+        title: "Pose Estimation",
+        description:
+            "Annotate body keypoints and player poses to support biomechanics, movement analysis, action recognition, and performance AI.",
+        icon: BrainCircuit,
+    },
+    {
+        title: "Jersey Number Annotation",
+        description:
+            "Identify and label player jersey numbers to support player identification, tracking, statistics, and automated sports analytics.",
+        icon: Trophy,
+    },
+    {
+        title: "Sports Video Annotation",
+        description:
+            "Convert raw sports footage into structured machine learning datasets for computer vision and automated sports intelligence.",
+        icon: Video,
+    },
+];
+
+const useCases = [
+    "Player Performance Analysis",
+    "Tactical Analysis",
+    "Automated Match Statistics",
+    "Player Identification",
+    "Action Recognition",
+    "Sports Broadcast Analytics",
+    "Athlete Performance Tracking",
+    "Automatic Highlight Generation",
+    "Team Strategy Analysis",
+    "Computer Vision Research",
+    "Sports AI Model Training",
+    "Video Intelligence",
+];
+
+const sports = [
+    "Football / Soccer",
+    "Basketball",
+    "Cricket",
+    "Tennis",
+    "Hockey",
+    "Baseball",
+    "Rugby",
+    "American Football",
+];
+
+const workflow = [
+    {
+        number: "01",
+        title: "Understand Your Requirements",
+        description:
+            "We first understand your sport, video characteristics, annotation classes, tracking requirements, output format, and project objectives.",
+    },
+    {
+        number: "02",
+        title: "Create Annotation Guidelines",
+        description:
+            "Our team develops clear annotation instructions covering player identification, tracking rules, event definitions, occlusion handling, and edge cases.",
+    },
+    {
+        number: "03",
+        title: "Annotate Sports Footage",
+        description:
+            "Trained annotators label images or video frames according to your project-specific guidelines using professional annotation workflows.",
+    },
+    {
+        number: "04",
+        title: "Quality Assurance",
+        description:
+            "Multiple quality checks help identify missed objects, incorrect labels, tracking inconsistencies, and other annotation errors.",
+    },
+    {
+        number: "05",
+        title: "Validate & Deliver",
+        description:
+            "Final datasets are reviewed, validated, and delivered in the required format for your machine learning or sports analytics pipeline.",
+    },
+];
+
+const formats = [
+    "XML",
+    "JSON",
+    "COCO",
+    "YOLO",
+    "CSV",
+    "Pascal VOC",
+    "Custom Formats",
+];
+
+const faqs = [
+    {
+        question:
+            "What sports data annotation services does Annotexia provide?",
+        answer:
+            "Annotexia provides player tracking, ball tracking, jersey number annotation, event detection, pose estimation, sports video annotation, object detection, and custom sports dataset annotation.",
+    },
+    {
+        question:
+            "Can you annotate complete sports matches?",
+        answer:
+            "Yes. We can annotate complete matches or selected portions of sports footage depending on your project requirements, annotation classes, frame rate, and required output.",
+    },
+    {
+        question:
+            "Can you track players across multiple video frames?",
+        answer:
+            "Yes. Our sports video annotation workflows can support frame-by-frame player tracking, ball tracking, identity consistency, and event annotation across video sequences.",
+    },
+    {
+        question:
+            "Can you annotate jersey numbers?",
+        answer:
+            "Yes. Jersey number annotation can be included to help identify individual players and connect tracking information with player-level statistics.",
+    },
+    {
+        question:
+            "Which sports can you support?",
+        answer:
+            "We can support projects across football, basketball, cricket, tennis, hockey, baseball, rugby, American football, and other sports depending on the annotation requirements.",
+    },
+    {
+        question:
+            "What annotation formats do you support?",
+        answer:
+            "We can deliver datasets in formats such as XML, JSON, COCO, YOLO, CSV, Pascal VOC, and project-specific custom formats.",
+    },
+    {
+        question:
+            "Can you handle large sports video annotation projects?",
+        answer:
+            "Yes. Our annotation workflows can scale from small proof-of-concept datasets to large sports video and machine learning projects.",
+    },
+    {
+        question:
+            "Can we test your annotation quality before starting a large project?",
+        answer:
+            "Yes. A small sample annotation can be used to evaluate annotation quality, consistency, communication, and workflow before moving forward with a larger engagement.",
+    },
+];
+
 export default function SportsAnalyticsPage() {
+    return (
+        <main className="bg-white text-slate-900">
 
-  return (
+            {/* =========================================================
+                HERO
+            ========================================================= */}
 
-    <main className="min-h-screen bg-white">
+            <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950">
 
-      {/* HERO */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-blue-600/20 blur-[120px]" />
+                    <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[140px]" />
+                </div>
 
-      <section className="bg-gradient-to-b from-green-400 to-blue-500 py-20">
+                <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
 
-        <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        {/* LEFT */}
 
-            {/* LEFT */}
+                        <div>
 
-            <div>
+                            <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 mb-7">
 
-              <span className="inline-flex items-center rounded-full bg-cyan-50 px-4 py-2 text-cyan-700 font-medium mb-6">
+                                <Trophy size={16} />
 
-                Sports AI • Computer Vision • Video Annotation
+                                Sports AI Data Annotation
 
-              </span>
+                            </div>
 
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-8">
+                            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
 
-                Sports Video Annotation Services
+                                Turn Sports Video Into
 
-                for AI Powered Sports Analytics
+                                <span className="block text-blue-400">
+                                    Actionable AI Data
+                                </span>
 
-              </h1>
+                            </h1>
 
-              <p className="text-xl text-gray-300 leading-9 mb-8">
+                            <p className="mt-8 max-w-2xl text-lg lg:text-xl leading-8 text-slate-300">
 
-                Transform raw match footage into structured AI training datasets with
-                professional sports annotation services from Annotexia.
+                                Build powerful sports analytics and computer vision
+                                systems with accurately annotated player tracking,
+                                ball tracking, events, poses, jersey numbers, and
+                                sports video datasets.
 
-                We help sports technology companies, AI startups,
-                professional clubs, broadcasters and research organizations
-                develop intelligent computer vision models through
-                high-quality sports data annotation.
+                            </p>
 
-              </p>
+                            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-400">
 
-              <div className="flex flex-wrap gap-4">
+                                From a single match to large-scale sports datasets,
+                                Annotexia helps transform raw video into structured
+                                training data for AI-powered sports intelligence.
 
-                <Link
-                  href="/contact"
-                  className="bg-cyan-600 hover:bg-cyan-300 transition text-white px-8 py-4 rounded-lg font-semibold"
-                >
+                            </p>
 
-                  Request Free Consultation
+                            <div className="mt-10 flex flex-wrap gap-4">
 
-                </Link>
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700"
+                                >
+                                    Start Your Sports AI Project
 
-                <Link
-                  href="/services"
-                  className="border border-black-300 hover:border-cyan-600 px-8 py-4 rounded-lg font-semibold"
-                >
+                                    <ArrowRight size={19} />
+                                </Link>
 
-                  Explore Services
+                                <Link
+                                    href="/services/video-annotation"
+                                    className="rounded-xl border border-white/20 px-7 py-4 font-semibold text-white transition hover:border-blue-400 hover:bg-white/5"
+                                >
+                                    Explore Video Annotation
+                                </Link>
 
-                </Link>
+                            </div>
 
-              </div>
+                        </div>
 
-            </div>
+                        {/* RIGHT */}
 
-            {/* RIGHT */}
+                        <div className="relative">
 
-            <div className="relative">
+                            <div className="absolute -inset-5 rounded-[2rem] bg-blue-500/20 blur-3xl" />
 
-              <Image
+                            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
 
-                src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80"
+                                <Image
+                                    src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Sports analytics player tracking and AI video annotation"
+                                    width={1400}
+                                    height={933}
+                                    priority
+                                    className="h-[430px] w-full rounded-2xl object-cover"
+                                />
 
-                alt="Sports Video Annotation Services"
+                            </div>
 
-                width={720}
+                            {/* Floating card */}
 
-                height={620}
+                            <div className="absolute -left-7 top-10 hidden rounded-2xl border border-white/10 bg-slate-900 px-6 py-5 shadow-2xl md:block">
 
-                className="rounded-3xl shadow-2xl"
+                                <div className="flex items-center gap-3">
 
-                priority
+                                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10">
+                                        <Users className="text-blue-400" size={22} />
+                                    </div>
 
-              />
+                                    <div>
+                                        <p className="text-xs text-slate-400">
+                                            Tracking
+                                        </p>
 
-            </div>
+                                        <p className="font-bold text-white">
+                                            Players + Ball
+                                        </p>
+                                    </div>
 
-          </div>
+                                </div>
 
-        </div>
+                            </div>
 
-      </section>
-      {/* STORY */}
+                            {/* Floating card */}
 
-      <section className="py-24">
+                            <div className="absolute -right-7 bottom-10 hidden rounded-2xl border border-white/10 bg-slate-900 px-6 py-5 shadow-2xl md:block">
 
-        <div className="max-w-7xl mx-auto px-6">
+                                <div className="flex items-center gap-3">
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+                                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/10">
+                                        <BarChart3 className="text-cyan-400" size={22} />
+                                    </div>
 
-            <div>
+                                    <div>
+                                        <p className="text-xs text-slate-400">
+                                            Dataset
+                                        </p>
 
-              <Image
+                                        <p className="font-bold text-white">
+                                            AI-Ready Data
+                                        </p>
+                                    </div>
 
-                src="https://images.unsplash.com/photo-1565992441121-4367c2967103?auto=format&fit=crop&w=1200&q=80"
+                                </div>
 
-                alt="Player Tracking Annotation"
+                            </div>
 
-                width={650}
+                        </div>
 
-                height={520}
+                    </div>
 
-                className="rounded-3xl shadow-lg"
+                </div>
 
-              />
+            </section>
 
-            </div>
+            {/* =========================================================
+                INTRO
+            ========================================================= */}
 
-            <div>
+            <section className="py-24">
 
-              <h2 className="text-4xl font-bold mb-8">
+                <div className="max-w-5xl mx-auto px-6 text-center">
 
-                Building the Future of Sports Intelligence
+                    <span className="font-semibold uppercase tracking-widest text-blue-600">
+                        Sports Computer Vision
+                    </span>
 
-              </h2>
+                    <h2 className="mt-4 text-4xl lg:text-5xl font-bold tracking-tight">
+                        Every Movement Can Become Data
+                    </h2>
 
-              <p className="text-lg text-gray-600 leading-9 mb-6">
+                    <p className="mt-7 text-lg leading-8 text-slate-600">
+                        A sports video contains far more information than what
+                        viewers see on the screen. Player movement, ball position,
+                        team formations, actions, events, and physical movement
+                        can all become structured data for artificial intelligence.
+                    </p>
 
-                Every professional sporting event generates thousands of valuable
-                moments every minute. Player movements, tactical formations,
-                passing sequences, ball trajectories, defensive transitions,
-                goal opportunities and positional changes all contain insights
-                that can transform coaching, broadcasting and fan engagement.
+                    <p className="mt-5 text-lg leading-8 text-slate-600">
+                        Annotexia helps convert this visual information into
+                        high-quality datasets that can be used to train and
+                        evaluate sports computer vision and machine learning models.
+                    </p>
 
-              </p>
+                </div>
 
-              <p className="text-lg text-gray-600 leading-9 mb-6">
+            </section>
 
-                Artificial Intelligence has changed the way clubs,
-                sports analysts and broadcasters understand these moments.
-                However, every intelligent sports analytics platform begins
-                with one critical component — accurately annotated training data.
+            {/* =========================================================
+                SERVICES
+            ========================================================= */}
 
-              </p>
+            <section className="bg-slate-50 py-24">
 
-              <p className="text-lg text-gray-600 leading-9">
+                <div className="max-w-7xl mx-auto px-6">
 
-                At Annotexia, we convert raw sports footage into structured,
-                high-quality datasets that enable computer vision models to
-                recognize players, track ball movement, understand tactical
-                patterns and automatically detect key match events with
-                exceptional accuracy.
+                    <div className="max-w-3xl mb-14">
 
-              </p>
+                        <span className="font-semibold uppercase tracking-widest text-blue-600">
+                            What We Annotate
+                        </span>
 
-            </div>
+                        <h2 className="mt-4 text-4xl lg:text-5xl font-bold">
+                            Sports Data Annotation Services
+                        </h2>
 
-          </div>
+                        <p className="mt-6 text-lg leading-8 text-slate-600">
+                            Build the datasets your sports AI models need with
+                            annotation workflows designed around your specific
+                            sport, video, and analytical requirements.
+                        </p>
 
-        </div>
+                    </div>
 
-      </section>
-      {/* ====================== */}
-      {/* INDUSTRY STATS */}
-      {/* ====================== */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
 
-      <section className="bg-slate-300 py-24">
+                        {services.map((service) => {
 
-        <div className="max-w-7xl mx-auto px-6">
+                            const Icon = service.icon;
 
-          <div className="text-center mb-16">
+                            return (
+                                <div
+                                    key={service.title}
+                                    className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                                >
 
-            <span className="text-cyan-600 font-semibold uppercase tracking-wider">
-              Why Sports AI Matters
-            </span>
+                                    <div className="absolute left-0 top-0 h-1 w-0 bg-blue-600 transition-all duration-500 group-hover:w-full" />
 
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              Transform Every Match into Actionable AI Insights
-            </h2>
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 transition group-hover:bg-blue-600">
 
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
+                                        <Icon
+                                            size={27}
+                                            className="text-blue-600 transition group-hover:text-white"
+                                        />
 
-              Sports organizations now rely on Artificial Intelligence to
-              improve athlete performance, automate video analysis,
-              generate tactical insights and create immersive fan
-              experiences. High-quality annotated datasets are the
-              foundation behind every successful sports AI platform.
+                                    </div>
 
-            </p>
+                                    <h3 className="mt-7 text-2xl font-bold">
+                                        {service.title}
+                                    </h3>
 
-          </div>
+                                    <p className="mt-4 leading-7 text-slate-600">
+                                        {service.description}
+                                    </p>
 
-          <div className="grid md:grid-cols-4 gap-8">
+                                </div>
+                            );
+                        })}
 
-            <div className="bg-white rounded-2xl shadow-md p-8 text-center">
+                    </div>
 
-              <h3 className="text-5xl font-bold text-cyan-600 mb-3">
-                99%
-              </h3>
+                </div>
 
-              <p className="text-gray-600">
-                Annotation Accuracy
-              </p>
+            </section>
 
-            </div>
+            {/* =========================================================
+                USE CASES
+            ========================================================= */}
 
-            <div className="bg-white rounded-2xl shadow-md p-8 text-center">
+            <section className="py-24">
 
-              <h3 className="text-5xl font-bold text-cyan-600 mb-3">
-                25+
-              </h3>
+                <div className="max-w-7xl mx-auto px-6">
 
-              <p className="text-gray-600">
-                Sports Supported
-              </p>
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            </div>
+                        <div>
 
-            <div className="bg-white rounded-2xl shadow-md p-8 text-center">
+                            <span className="font-semibold uppercase tracking-widest text-blue-600">
+                                Applications
+                            </span>
 
-              <h3 className="text-5xl font-bold text-cyan-600 mb-3">
-                Millions
-              </h3>
+                            <h2 className="mt-4 text-4xl lg:text-5xl font-bold">
+                                Where Sports AI Data Makes an Impact
+                            </h2>
 
-              <p className="text-gray-600">
-                Video Frames Processed
-              </p>
+                            <p className="mt-6 text-lg leading-8 text-slate-600">
+                                Structured sports datasets can power everything
+                                from automated match statistics to advanced
+                                player performance and tactical analysis.
+                            </p>
 
-            </div>
+                            <div className="mt-10 grid sm:grid-cols-2 gap-4">
 
-            <div className="bg-white rounded-2xl shadow-md p-8 text-center">
+                                {useCases.map((item) => (
 
-              <h3 className="text-5xl font-bold text-cyan-600 mb-3">
-                24/7
-              </h3>
+                                    <div
+                                        key={item}
+                                        className="flex items-start gap-3"
+                                    >
 
-              <p className="text-gray-600">
-                Dedicated Production Teams
-              </p>
+                                        <CheckCircle2
+                                            size={21}
+                                            className="mt-1 shrink-0 text-blue-600"
+                                        />
 
-            </div>
+                                        <span className="font-medium text-slate-700">
+                                            {item}
+                                        </span>
 
-          </div>
+                                    </div>
 
-        </div>
+                                ))}
 
-      </section>
+                            </div>
 
+                        </div>
 
+                        <div className="relative">
 
-      {/* ====================== */}
-      {/* SERVICES */}
-      {/* ====================== */}
+                            <div className="rounded-3xl bg-slate-900 p-8 lg:p-10 shadow-2xl">
 
-      <section className="py-24">
+                                <div className="flex items-center gap-4 mb-8">
 
-        <div className="max-w-7xl mx-auto px-6">
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600">
 
-          <div className="text-center mb-20">
+                                        <Activity
+                                            className="text-white"
+                                            size={27}
+                                        />
 
-            <span className="text-cyan-600 font-semibold uppercase tracking-widest">
+                                    </div>
 
-              Our Expertise
+                                    <div>
 
-            </span>
+                                        <p className="text-sm text-blue-400">
+                                            Sports AI Dataset
+                                        </p>
 
-            <h2 className="text-4xl font-bold mt-4 mb-6">
+                                        <h3 className="text-2xl font-bold text-white">
+                                            From Video to Intelligence
+                                        </h3>
 
-              Sports Annotation Services
+                                    </div>
 
-            </h2>
+                                </div>
 
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
+                                <div className="space-y-4">
 
-              Our annotation specialists create production-ready datasets
-              for AI-powered sports analytics platforms, automated
-              broadcasting systems, performance analysis software,
-              sports betting intelligence and computer vision research.
+                                    {[
+                                        ["Players", "Track identities & movement"],
+                                        ["Ball", "Track position & trajectory"],
+                                        ["Events", "Identify game actions"],
+                                        ["Pose", "Capture player keypoints"],
+                                        ["Jersey", "Identify players"],
+                                    ].map(([label, value]) => (
 
-            </p>
+                                        <div
+                                            key={label}
+                                            className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-5 py-4"
+                                        >
 
-          </div>
+                                            <span className="font-semibold text-white">
+                                                {label}
+                                            </span>
 
-          <div className="grid lg:grid-cols-2 gap-10">
+                                            <span className="text-sm text-slate-400">
+                                                {value}
+                                            </span>
 
-            {/* CARD */}
+                                        </div>
 
-            <div className="border rounded-3xl p-8 hover:shadow-xl transition">
+                                    ))}
 
-              <h3 className="text-2xl font-bold mb-4">
+                                </div>
 
-                ⚽ Player Tracking Annotation
+                            </div>
 
-              </h3>
+                        </div>
 
-              <p className="text-gray-600 leading-8">
+                    </div>
 
-                Frame-by-frame tracking of every player throughout the match.
-                Generate accurate movement trajectories, positional heatmaps,
-                running distance analytics and tactical formations for football,
-                basketball, hockey and many other sports.
+                </div>
 
-              </p>
+            </section>
 
-            </div>
+            {/* =========================================================
+                SPORTS
+            ========================================================= */}
 
+            <section className="bg-slate-50 py-24">
 
+                <div className="max-w-7xl mx-auto px-6 text-center">
 
-            <div className="border rounded-3xl p-8 hover:shadow-xl transition">
+                    <span className="font-semibold uppercase tracking-widest text-blue-600">
+                        Sports We Support
+                    </span>
 
-              <h3 className="text-2xl font-bold mb-4">
+                    <h2 className="mt-4 text-4xl lg:text-5xl font-bold">
+                        Built for Different Sports
+                    </h2>
 
-                🏀 Ball Tracking
+                    <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+                        Annotation requirements change significantly from one
+                        sport to another. Our workflows can be adapted to the
+                        rules, objects, events, and analytical requirements of
+                        your project.
+                    </p>
 
-              </h3>
+                    <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5">
 
-              <p className="text-gray-600 leading-8">
+                        {sports.map((sport) => (
 
-                High-frequency ball tracking enables AI models to learn ball
-                trajectory prediction, possession analysis, shot detection,
-                pass completion and automated highlight generation.
+                            <div
+                                key={sport}
+                                className="rounded-2xl border border-slate-200 bg-white p-6 font-semibold shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                            >
 
-              </p>
+                                <Trophy
+                                    size={24}
+                                    className="mx-auto mb-3 text-blue-600"
+                                />
 
-            </div>
+                                {sport}
 
+                            </div>
 
+                        ))}
 
-            <div className="border rounded-3xl p-8 hover:shadow-xl transition">
+                    </div>
 
-              <h3 className="text-2xl font-bold mb-4">
+                </div>
 
-                🎯 Event Detection
+            </section>
 
-              </h3>
+            {/* =========================================================
+                WORKFLOW
+            ========================================================= */}
 
-              <p className="text-gray-600 leading-8">
+            <section className="py-24">
 
-                Annotate goals, assists, tackles, passes,
-                fouls, offsides, penalties, corners,
-                free kicks, substitutions and hundreds
-                of customizable sporting events.
+                <div className="max-w-7xl mx-auto px-6">
 
-              </p>
+                    <div className="text-center max-w-3xl mx-auto mb-16">
 
-            </div>
+                        <span className="font-semibold uppercase tracking-widest text-blue-600">
+                            Our Workflow
+                        </span>
 
+                        <h2 className="mt-4 text-4xl lg:text-5xl font-bold">
+                            From Raw Footage to AI-Ready Dataset
+                        </h2>
 
+                        <p className="mt-6 text-lg leading-8 text-slate-600">
+                            A structured annotation process helps maintain
+                            consistency across every frame and every project.
+                        </p>
 
-            <div className="border rounded-3xl p-8 hover:shadow-xl transition">
+                    </div>
 
-              <h3 className="text-2xl font-bold mb-4">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
 
-                🧍 Pose Estimation
+                        {workflow.map((item) => (
 
-              </h3>
+                            <div
+                                key={item.number}
+                                className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"
+                            >
 
-              <p className="text-gray-600 leading-8">
+                                <div className="text-4xl font-extrabold text-blue-600">
+                                    {item.number}
+                                </div>
 
-                Human keypoint annotation for biomechanics,
-                injury prevention, movement recognition,
-                player performance evaluation and sports science.
+                                <h3 className="mt-6 text-xl font-bold">
+                                    {item.title}
+                                </h3>
 
-              </p>
+                                <p className="mt-4 text-sm leading-7 text-slate-600">
+                                    {item.description}
+                                </p>
 
-            </div>
+                            </div>
 
+                        ))}
 
+                    </div>
 
-            <div className="border rounded-3xl p-8 hover:shadow-xl transition">
+                </div>
 
-              <h3 className="text-2xl font-bold mb-4">
+            </section>
 
-                👕 Jersey Number Recognition
+            {/* =========================================================
+                QUALITY + SECURITY
+            ========================================================= */}
 
-              </h3>
+            <section className="bg-slate-900 py-24 text-white">
 
-              <p className="text-gray-600 leading-8">
+                <div className="max-w-7xl mx-auto px-6">
 
-                Label player identities, jersey numbers,
-                team affiliation and role classification for
-                automated player recognition systems.
+                    <div className="grid lg:grid-cols-2 gap-16">
 
-              </p>
+                        <div>
 
-            </div>
+                            <span className="font-semibold uppercase tracking-widest text-blue-400">
+                                Quality First
+                            </span>
 
+                            <h2 className="mt-4 text-4xl lg:text-5xl font-bold">
+                                Annotation Quality Matters
+                            </h2>
 
+                            <p className="mt-6 text-lg leading-8 text-slate-300">
+                                Sports AI models depend on consistent annotations.
+                                A missed player, incorrect identity, broken track,
+                                or incorrectly labeled event can affect downstream
+                                model performance.
+                            </p>
 
-            <div className="border rounded-3xl p-8 hover:shadow-xl transition">
+                            <div className="mt-10 space-y-5">
 
-              <h3 className="text-2xl font-bold mb-4">
+                                {[
+                                    "Project-specific annotation guidelines",
+                                    "Trained sports annotation teams",
+                                    "Multi-level quality review",
+                                    "Tracking consistency checks",
+                                    "Edge-case and occlusion review",
+                                    "Final dataset validation",
+                                ].map((item) => (
 
-                📊 Tactical Position Analysis
+                                    <div
+                                        key={item}
+                                        className="flex items-center gap-3"
+                                    >
 
-              </h3>
+                                        <CheckCircle2
+                                            className="shrink-0 text-blue-400"
+                                            size={22}
+                                        />
 
-              <p className="text-gray-600 leading-8">
+                                        <span className="text-slate-200">
+                                            {item}
+                                        </span>
 
-                Generate structured positional datasets that enable AI
-                to understand formations, spacing, defensive structure,
-                passing lanes and attacking movement.
+                                    </div>
 
-              </p>
+                                ))}
 
-            </div>
+                            </div>
 
-          </div>
+                        </div>
 
-        </div>
+                        <div>
 
-      </section>
+                            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 lg:p-10">
 
+                                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500/10">
 
+                                    <ShieldCheck
+                                        className="text-blue-400"
+                                        size={28}
+                                    />
 
+                                </div>
 
-      {/* ====================== */}
-      {/* WORKFLOW */}
-      {/* ====================== */}
+                                <h3 className="mt-7 text-3xl font-bold">
+                                    Secure & Confidential Workflows
+                                </h3>
 
-      <section className="bg-slate-50 py-24">
+                                <p className="mt-5 leading-8 text-slate-300">
+                                    Sports organizations and technology companies
+                                    may work with proprietary footage, unreleased
+                                    matches, athlete data, or commercially sensitive
+                                    information.
+                                </p>
 
-        <div className="max-w-7xl mx-auto px-6">
+                                <p className="mt-5 leading-8 text-slate-300">
+                                    Annotexia supports confidential project
+                                    workflows and can work under NDA requirements
+                                    when requested.
+                                </p>
 
-          <div className="text-center mb-16">
+                                <div className="mt-8 grid sm:grid-cols-2 gap-4">
 
-            <h2 className="text-4xl font-bold">
+                                    {[
+                                        "NDA Support",
+                                        "Confidential Workflows",
+                                        "Controlled Access",
+                                        "Quality Monitoring",
+                                    ].map((item) => (
 
-              How We Deliver Sports AI Datasets
+                                        <div
+                                            key={item}
+                                            className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm font-medium"
+                                        >
+                                            {item}
+                                        </div>
 
-            </h2>
+                                    ))}
 
-            <p className="text-gray-600 mt-6 text-lg max-w-4xl mx-auto">
+                                </div>
 
-              Every project follows a structured production workflow
-              to ensure consistency, scalability and enterprise-grade quality.
+                            </div>
 
-            </p>
+                        </div>
 
-          </div>
+                    </div>
 
-          <div className="grid md:grid-cols-5 gap-8">
+                </div>
 
-            <div className="bg-white rounded-2xl shadow-md p-8">
+            </section>
 
-              <div className="text-5xl font-bold text-cyan-600 mb-5">
+            {/* =========================================================
+                OUTPUT FORMATS
+            ========================================================= */}
 
-                01
+            <section className="py-20">
 
-              </div>
+                <div className="max-w-5xl mx-auto px-6 text-center">
 
-              <h3 className="font-bold text-xl mb-3">
+                    <span className="font-semibold uppercase tracking-widest text-blue-600">
+                        Dataset Delivery
+                    </span>
 
-                Requirement Analysis
+                    <h2 className="mt-4 text-4xl font-bold">
+                        Flexible Annotation Output
+                    </h2>
 
-              </h3>
+                    <p className="mt-5 text-lg leading-8 text-slate-600">
+                        We can structure annotated sports datasets according to
+                        your machine learning pipeline and project requirements.
+                    </p>
 
-              <p className="text-gray-600">
+                    <div className="mt-10 flex flex-wrap justify-center gap-3">
 
-                Understand sports type,
-                events, annotation guidelines,
-                output format and KPIs.
+                        {formats.map((format) => (
 
-              </p>
+                            <span
+                                key={format}
+                                className="rounded-full border border-slate-200 bg-slate-50 px-5 py-3 font-medium text-slate-700"
+                            >
+                                {format}
+                            </span>
 
-            </div>
+                        ))}
 
-            <div className="bg-white rounded-2xl shadow-md p-8">
+                    </div>
 
-              <div className="text-5xl font-bold text-cyan-600 mb-5">
+                </div>
 
-                02
+            </section>
 
-              </div>
+            {/* =========================================================
+                CTA
+            ========================================================= */}
 
-              <h3 className="font-bold text-xl mb-3">
+            <section className="px-6 py-24">
 
-                Pilot Dataset
+                <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600 px-8 py-16 text-white lg:px-16">
 
-              </h3>
+                    <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
 
-              <p className="text-gray-600">
+                    <div className="relative grid lg:grid-cols-2 gap-12 items-center">
 
-                We prepare a free sample dataset
-                to validate annotation quality before
-                large-scale production begins.
+                        <div>
 
-              </p>
+                            <div className="flex items-center gap-2 text-blue-100 font-semibold">
+                                <Zap size={20} />
+                                Build Your Sports AI Dataset
+                            </div>
 
-            </div>
+                            <h2 className="mt-5 text-4xl lg:text-5xl font-bold leading-tight">
+                                Have Sports Data?
+                                <span className="block">
+                                    Let&apos;s Turn It Into AI.
+                                </span>
+                            </h2>
 
-            <div className="bg-white rounded-2xl shadow-md p-8">
+                            <p className="mt-6 text-lg leading-8 text-blue-100">
+                                Share your sports video, annotation requirements,
+                                target classes, and expected dataset size. Our
+                                team can help you define an annotation workflow
+                                tailored to your AI project.
+                            </p>
 
-              <div className="text-5xl font-bold text-cyan-600 mb-5">
+                        </div>
 
-                03
+                        <div className="lg:text-right">
 
-              </div>
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center gap-3 rounded-2xl bg-white px-8 py-5 text-lg font-bold text-blue-700 shadow-xl transition hover:scale-105"
+                            >
+                                Request a Free Consultation
 
-              <h3 className="font-bold text-xl mb-3">
+                                <ArrowRight size={21} />
 
-                Production
+                            </Link>
 
-              </h3>
+                            <p className="mt-5 text-sm text-blue-100">
+                                Discuss your project requirements with our team.
+                            </p>
 
-              <p className="text-gray-600">
+                        </div>
 
-                Dedicated annotation specialists
-                process millions of sports frames
-                using standardized workflows.
+                    </div>
 
-              </p>
+                </div>
 
-            </div>
+            </section>
 
-            <div className="bg-white rounded-2xl shadow-md p-8">
+            {/* =========================================================
+                FAQ
+            ========================================================= */}
 
-              <div className="text-5xl font-bold text-cyan-600 mb-5">
+            <section className="bg-slate-50 py-24">
 
-                04
+                <div className="max-w-5xl mx-auto px-6">
 
-              </div>
+                    <div className="text-center mb-14">
 
-              <h3 className="font-bold text-xl mb-3">
+                        <span className="font-semibold uppercase tracking-widest text-blue-600">
+                            Frequently Asked Questions
+                        </span>
 
-                Quality Review
+                        <h2 className="mt-4 text-4xl lg:text-5xl font-bold">
+                            Sports Annotation FAQs
+                        </h2>
 
-              </h3>
+                    </div>
 
-              <p className="text-gray-600">
+                    <div className="space-y-5">
 
-                Multiple QA reviewers verify
-                annotation consistency,
-                accuracy and project guidelines.
+                        {faqs.map((faq) => (
 
-              </p>
+                            <details
+                                key={faq.question}
+                                className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                            >
 
-            </div>
+                                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-semibold">
 
-            <div className="bg-white rounded-2xl shadow-md p-8">
+                                    {faq.question}
 
-              <div className="text-5xl font-bold text-cyan-600 mb-5">
+                                    <span className="text-2xl font-normal text-blue-600 transition group-open:rotate-45">
+                                        +
+                                    </span>
 
-                05
+                                </summary>
 
-              </div>
+                                <p className="mt-5 leading-8 text-slate-600">
+                                    {faq.answer}
+                                </p>
 
-              <h3 className="font-bold text-xl mb-3">
+                            </details>
 
-                Dataset Delivery
+                        ))}
 
-              </h3>
+                    </div>
 
-              <p className="text-gray-600">
+                </div>
 
-                Receive production-ready
-                datasets in YOLO, COCO,
-                CVAT XML, JSON or custom formats.
+            </section>
 
-              </p>
+            {/* =========================================================
+                SEO CONTENT
+            ========================================================= */}
 
-            </div>
+            <section className="py-20 bg-white">
 
-          </div>
+                <div className="max-w-5xl mx-auto px-6">
 
-        </div>
+                    <h2 className="text-3xl font-bold">
+                        Sports Analytics Data Annotation Services
+                    </h2>
 
-      </section>
-      {/* ======================================================= */}
-      {/* SPORTS WE SUPPORT */}
-      {/* ======================================================= */}
+                    <p className="mt-6 leading-8 text-slate-600">
+                        Annotexia provides sports data annotation and video
+                        labeling services for organizations developing sports
+                        analytics, computer vision, and artificial intelligence
+                        applications. Our annotation workflows support player
+                        tracking, ball tracking, event detection, pose estimation,
+                        jersey number annotation, object detection, and other
+                        sports-specific labeling requirements.
+                    </p>
 
-      <section className="py-24 bg-white">
+                    <p className="mt-5 leading-8 text-slate-600">
+                        Sports video contains complex visual information including
+                        player movement, ball trajectories, team formations,
+                        actions, and events. Converting this information into
+                        structured training data enables machine learning models
+                        to understand and analyze sports footage at scale.
+                    </p>
 
-        <div className="max-w-7xl mx-auto px-6">
+                    <p className="mt-5 leading-8 text-slate-600">
+                        Our sports annotation services can support football,
+                        basketball, cricket, tennis, hockey, baseball, rugby,
+                        American football, and other sports. Projects can be
+                        customized around your annotation taxonomy, tracking
+                        requirements, quality standards, dataset size, and output
+                        format.
+                    </p>
 
-          <div className="text-center mb-20">
+                    <p className="mt-5 leading-8 text-slate-600">
+                        Whether you are building an automated sports analytics
+                        platform, player performance system, tactical analysis
+                        solution, sports broadcast technology, or computer vision
+                        model, Annotexia can help transform raw sports footage
+                        into structured AI training data.
+                    </p>
 
-            <span className="text-cyan-600 uppercase tracking-widest font-semibold">
-              Sports We Support
-            </span>
+                </div>
 
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              AI Annotation Solutions for Every Major Sport
-            </h2>
+            </section>
 
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-              Every sport presents unique challenges for computer vision models.
-              Player density, ball speed, camera movement, lighting conditions,
-              occlusions and tactical complexity require specialized annotation
-              strategies. Our experienced annotation teams understand these
-              differences and produce consistent, production-ready datasets
-              for sports AI companies worldwide.
-            </p>
+            {/* =========================================================
+                FINAL CTA
+            ========================================================= */}
 
-          </div>
+            <section className="bg-slate-950 py-24 text-white">
 
-        </div>
+                <div className="max-w-5xl mx-auto px-6 text-center">
 
-      </section>
+                    <Trophy
+                        size={42}
+                        className="mx-auto text-blue-400"
+                    />
 
+                    <h2 className="mt-7 text-4xl lg:text-5xl font-bold">
+                        Build Smarter Sports AI With Better Data
+                    </h2>
 
+                    <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+                        Your sports AI model is only as reliable as the data
+                        behind it. Let Annotexia help you build accurate,
+                        consistent, and scalable sports training datasets.
+                    </p>
 
-      {/* ======================================================= */}
-      {/* FOOTBALL */}
-      {/* ======================================================= */}
+                    <Link
+                        href="/contact"
+                        className="mt-10 inline-flex items-center gap-3 rounded-xl bg-blue-600 px-8 py-4 font-bold text-white transition hover:bg-blue-700"
+                    >
+                        Talk to Our Sports AI Team
 
-      <section className="py-20 bg-slate-50">
+                        <ArrowRight size={20} />
 
-        <div className="max-w-7xl mx-auto px-6">
+                    </Link>
 
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
+                </div>
 
-            <div>
+            </section>
 
-              <img
-                src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1200&q=80"
-                alt="Football Player Tracking AI Annotation"
-                className="rounded-3xl shadow-xl w-full"
-              />
-
-            </div>
-
-            <div>
-
-              <h2 className="text-4xl font-bold mb-6">
-
-                Football (Soccer) Video Annotation
-
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                Football is currently one of the fastest-growing applications of
-                computer vision. Professional clubs, broadcasters and sports
-                analytics companies rely on AI systems capable of tracking
-                every player, identifying tactical formations, analysing passing
-                networks and detecting match events automatically.
-
-              </p>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                Annotexia specializes in football annotation projects including
-                player tracking, ball tracking, jersey recognition, tactical
-                positioning, heatmaps, expected goals datasets,
-                offside detection and event tagging.
-
-              </p>
-
-              <ul className="space-y-3 text-gray-700">
-
-                <li>✓ Frame-by-frame player tracking</li>
-
-                <li>✓ Ball trajectory annotation</li>
-
-                <li>✓ Jersey number recognition</li>
-
-                <li>✓ Tactical formation analysis</li>
-
-                <li>✓ Goal, assist, foul & pass events</li>
-
-                <li>✓ Heatmap dataset generation</li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ======================================================= */}
-      {/* CRICKET */}
-      {/* ======================================================= */}
-
-      <section className="py-20">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-            <div>
-
-              <h2 className="text-4xl font-bold mb-6">
-
-                Cricket Computer Vision Annotation
-
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                AI-powered cricket analytics continues to evolve with automatic
-                ball tracking, shot classification, player positioning,
-                fielding analysis and predictive performance modelling.
-                Accurate annotations are essential for training reliable
-                machine learning models.
-
-              </p>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                Our annotation team labels every critical cricket event,
-                allowing AI systems to understand match situations,
-                batting behaviour, bowling patterns and field positioning.
-
-              </p>
-
-              <ul className="space-y-3 text-gray-700">
-
-                <li>✓ Ball tracking</li>
-
-                <li>✓ Bat swing annotation</li>
-
-                <li>✓ Player movement tracking</li>
-
-                <li>✓ Field position labeling</li>
-
-                <li>✓ Shot classification</li>
-
-                <li>✓ Match event tagging</li>
-
-              </ul>
-
-            </div>
-
-            <div>
-
-              <img
-                src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1200&q=80"
-                alt="Cricket AI Annotation"
-                className="rounded-3xl shadow-xl w-full"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-
-      {/* ======================================================= */}
-      {/* BASKETBALL */}
-      {/* ======================================================= */}
-
-      <section className="py-20 bg-slate-50">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-            <div>
-
-              <img
-                src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80"
-                alt="Basketball AI Annotation"
-                className="rounded-3xl shadow-xl w-full"
-              />
-
-            </div>
-
-            <div>
-
-              <h2 className="text-4xl font-bold mb-6">
-
-                Basketball Video Annotation
-
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                Basketball AI applications demand highly accurate tracking due to
-                rapid player movement, frequent occlusions and continuous camera
-                motion. We annotate every frame with consistent player identities,
-                ball positions and tactical events.
-
-              </p>
-
-              <ul className="space-y-3 text-gray-700">
-
-                <li>✓ Ball possession tracking</li>
-
-                <li>✓ Player movement</li>
-
-                <li>✓ Shot detection</li>
-
-                <li>✓ Pass detection</li>
-
-                <li>✓ Defensive positioning</li>
-
-                <li>✓ Offensive play analysis</li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-
-      {/* ======================================================= */}
-      {/* HOCKEY */}
-      {/* ======================================================= */}
-
-      <section className="py-20">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-            <div>
-
-              <h2 className="text-4xl font-bold mb-6">
-
-                Ice Hockey & Field Hockey Annotation
-
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                Fast-moving pucks, sticks, aggressive player movement and
-                frequent collisions make hockey one of the most difficult sports
-                for computer vision. Our annotators accurately label
-                players, puck positions and match events frame by frame.
-
-              </p>
-
-              <ul className="space-y-3 text-gray-700">
-
-                <li>✓ Puck tracking</li>
-
-                <li>✓ Stick detection</li>
-
-                <li>✓ Goal detection</li>
-
-                <li>✓ Penalty events</li>
-
-                <li>✓ Player trajectories</li>
-
-                <li>✓ Team recognition</li>
-
-              </ul>
-
-            </div>
-
-            <div>
-
-              <img
-                src="https://images.unsplash.com/photo-1515703407324-5f753afd8be8?auto=format&fit=crop&w=1200&q=80"
-                alt="Hockey Annotation"
-                className="rounded-3xl shadow-xl w-full"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ======================================================= */}
-      {/* TENNIS */}
-      {/* ======================================================= */}
-
-      <section className="py-20 bg-slate-50">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-            <div>
-
-              <img
-                src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1400&q=80"
-                alt="Tennis AI Annotation Services"
-                className="rounded-3xl shadow-xl w-full"
-              />
-
-            </div>
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-                Tennis Analytics
-              </span>
-
-              <h2 className="text-4xl font-bold mt-3 mb-6">
-                Tennis Computer Vision Annotation
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-6">
-                Modern tennis analytics extends far beyond simple scoreboards.
-                AI-powered systems now analyze player movement, racket position,
-                ball trajectory, shot placement, court coverage, and rally
-                performance. These capabilities depend on highly accurate,
-                frame-by-frame annotation.
-              </p>
-
-              <p className="text-gray-600 leading-9 mb-6">
-                Annotexia delivers production-ready datasets for tennis AI
-                companies developing automated match analysis, coaching
-                platforms, player performance dashboards, and broadcast
-                enhancement solutions.
-              </p>
-
-              <ul className="space-y-3 text-gray-700">
-
-                <li>✓ Tennis ball tracking</li>
-                <li>✓ Player tracking</li>
-                <li>✓ Court keypoint annotation</li>
-                <li>✓ Shot classification</li>
-                <li>✓ Rally event detection</li>
-                <li>✓ Pose estimation</li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ======================================================= */}
-      {/* VOLLEYBALL */}
-      {/* ======================================================= */}
-
-      <section className="py-20">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-                Volleyball Analytics
-              </span>
-
-              <h2 className="text-4xl font-bold mt-3 mb-6">
-                Volleyball AI Annotation Services
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-6">
-                Volleyball presents unique computer vision challenges including
-                rapid ball movement, jumping players, occlusions around the net,
-                and continuous team rotations. Training reliable AI models
-                requires consistent annotation across thousands of match frames.
-              </p>
-
-              <p className="text-gray-600 leading-9 mb-6">
-                Our annotation specialists accurately label athletes, volleyballs,
-                court markings, serving events, blocking actions, spikes,
-                defensive plays, and tactical positioning.
-              </p>
-
-              <ul className="space-y-3 text-gray-700">
-
-                <li>✓ Ball trajectory annotation</li>
-                <li>✓ Court line labeling</li>
-                <li>✓ Player tracking</li>
-                <li>✓ Spike detection</li>
-                <li>✓ Block detection</li>
-                <li>✓ Team movement analysis</li>
-
-              </ul>
-
-            </div>
-
-            <div>
-
-              <img
-                src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=1400&q=80"
-                alt="Volleyball Annotation"
-                className="rounded-3xl shadow-xl w-full"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ======================================================= */}
-      {/* RUGBY */}
-      {/* ======================================================= */}
-
-      <section className="py-20 bg-slate-50">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-            <div>
-
-              <img
-                src="https://images.unsplash.com/photo-1558151507-c1aa3d917dbb?auto=format&fit=crop&w=1400&q=80"
-                alt="Rugby AI Annotation"
-                className="rounded-3xl shadow-xl w-full"
-              />
-
-            </div>
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-                Rugby Analytics
-              </span>
-
-              <h2 className="text-4xl font-bold mt-3 mb-6">
-                Rugby Computer Vision Datasets
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-6">
-                Rugby analytics involves tracking player formations, collisions,
-                tackles, scrums, line-outs, passes, and ball movement throughout
-                highly dynamic gameplay.
-              </p>
-
-              <p className="text-gray-600 leading-9 mb-6">
-                Annotexia creates structured datasets that help AI systems
-                understand match situations, player positioning, and tactical
-                decision-making while maintaining consistent identity tracking
-                across long video sequences.
-              </p>
-
-              <ul className="space-y-3 text-gray-700">
-
-                <li>✓ Player identification</li>
-                <li>✓ Ball tracking</li>
-                <li>✓ Scrum annotation</li>
-                <li>✓ Try event labeling</li>
-                <li>✓ Pass detection</li>
-                <li>✓ Tactical positioning</li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ======================================================= */}
-      {/* MULTI SPORT */}
-      {/* ======================================================= */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-              Multi-Sport Expertise
-            </span>
-
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              Supporting Every Stage of Sports AI Development
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-              Whether you're developing a next-generation player tracking
-              platform, an automated broadcast solution, a tactical analytics
-              engine, or an AI-powered coaching assistant, Annotexia provides
-              scalable annotation workflows tailored to your sport and model
-              requirements.
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div className="bg-white border rounded-2xl p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Computer Vision
-              </h3>
-
-              <p className="text-gray-600">
-                Object detection, segmentation, tracking,
-                pose estimation and player recognition.
-              </p>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Broadcast AI
-              </h3>
-
-              <p className="text-gray-600">
-                Automated highlights, replay generation,
-                graphics and television analytics.
-              </p>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Coaching Platforms
-              </h3>
-
-              <p className="text-gray-600">
-                Tactical datasets, movement analysis,
-                formation recognition and performance metrics.
-              </p>
-
-            </div>
-
-            <div className="bg-white border rounded-2xl p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Research Labs
-              </h3>
-
-              <p className="text-gray-600">
-                High-quality benchmark datasets for academic
-                and commercial sports AI research.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ========================================================= */}
-      {/* OUR SPORTS ANNOTATION WORKFLOW */}
-      {/* ========================================================= */}
-
-      <section className="py-24 bg-gray-50 bg-slate-700 text-white">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-              Our Workflow
-            </span>
-
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              Sports Data Annotation Workflow Designed for Production AI
-            </h2>
-
-            <p className="text-lg max-w-4xl mx-auto leading-9">
-              Successful sports AI projects require more than simply drawing
-              bounding boxes around players. They demand consistent annotation
-              standards, domain knowledge, rigorous quality assurance, and
-              scalable production workflows. Annotexia follows a structured
-              multi-stage process that ensures every dataset is accurate,
-              consistent, and ready for machine learning.
-            </p>
-
-          </div>
-
-          <div className="grid lg:grid-cols-5 gap-8">
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <div className="text-5xl font-bold text-cyan-600 mb-4">01</div>
-
-              <h3 className="font-bold text-xl mb-4">
-                Requirement Analysis
-              </h3>
-
-              <p className="text-gray-600">
-                We understand your AI model objectives, annotation guidelines,
-                ontology, classes, quality expectations, output format, and
-                delivery schedule.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <div className="text-5xl font-bold text-cyan-600 mb-4">02</div>
-
-              <h3 className="font-bold text-xl mb-4">
-                Pilot Annotation
-              </h3>
-
-              <p className="text-gray-600">
-                Our team prepares a free sample dataset so your AI engineers
-                can validate quality, consistency, and labeling standards
-                before production begins.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <div className="text-5xl font-bold text-cyan-600 mb-4">03</div>
-
-              <h3 className="font-bold text-xl mb-4">
-                Large-Scale Production
-              </h3>
-
-              <p className="text-gray-600">
-                Dedicated annotation specialists label thousands of sports
-                images and videos following strict project guidelines.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <div className="text-5xl font-bold text-cyan-600 mb-4">04</div>
-
-              <h3 className="font-bold text-xl mb-4">
-                Multi-Level QA
-              </h3>
-
-              <p className="text-gray-600">
-                Every annotation passes multiple review stages to eliminate
-                inconsistencies and maintain enterprise-grade accuracy.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <div className="text-5xl font-bold text-cyan-600 mb-4">05</div>
-
-              <h3 className="font-bold text-xl mb-4">
-                Delivery
-              </h3>
-
-              <p className="text-gray-600">
-                Datasets are delivered in your preferred format including
-                COCO, YOLO, Pascal VOC, JSON, XML, CSV, or custom schemas.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ========================================================= */}
-      {/* SPORTS ANNOTATION TYPES */}
-      {/* ========================================================= */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-              Annotation Types
-            </span>
-
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              Sports Data Annotation Services We Provide
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Our annotation specialists support virtually every computer
-              vision task required for modern sports analytics platforms.
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <div className="border rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-3">Bounding Box Annotation</h3>
-              <p className="text-gray-600">
-                Detect players, referees, goals, equipment, and sports objects.
-              </p>
-            </div>
-
-            <div className="border rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-3">Polygon Annotation</h3>
-              <p className="text-gray-600">
-                High-precision object boundaries for segmentation models.
-              </p>
-            </div>
-
-            <div className="border rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-3">Semantic Segmentation</h3>
-              <p className="text-gray-600">
-                Pixel-level understanding of fields, courts, players and equipment.
-              </p>
-            </div>
-
-            <div className="border rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-3">Instance Segmentation</h3>
-              <p className="text-gray-600">
-                Separate overlapping athletes and objects individually.
-              </p>
-            </div>
-
-            <div className="border rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-3">Keypoint Annotation</h3>
-              <p className="text-gray-600">
-                Human pose estimation and biomechanics analysis.
-              </p>
-            </div>
-
-            <div className="border rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-3">Video Object Tracking</h3>
-              <p className="text-gray-600">
-                Persistent player and ball tracking across thousands of frames.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ========================================================= */}
-      {/* TOOLS */}
-      {/* ========================================================= */}
-
-      <section className="py-24 bg-slate-50">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-            <div>
-
-              <img
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80"
-                alt="Sports Annotation Workflow"
-                className="rounded-3xl shadow-xl w-full"
-              />
-
-            </div>
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-                Annotation Platforms
-              </span>
-
-              <h2 className="text-4xl font-bold mt-4 mb-6">
-                Compatible With Your Existing Annotation Pipeline
-              </h2>
-
-              <p className="text-gray-600 leading-9 mb-8">
-                Our team works with leading annotation platforms as well as
-                custom proprietary tools developed by sports analytics
-                companies. This allows us to integrate seamlessly into your
-                production workflow without disrupting existing operations.
-              </p>
-
-              <div className="grid grid-cols-2 gap-4">
-
-                <div className="border rounded-xl p-4 font-semibold">CVAT</div>
-                <div className="border rounded-xl p-4 font-semibold">Labelbox</div>
-                <div className="border rounded-xl p-4 font-semibold">SuperAnnotate</div>
-                <div className="border rounded-xl p-4 font-semibold">Roboflow</div>
-                <div className="border rounded-xl p-4 font-semibold">Label Studio</div>
-                <div className="border rounded-xl p-4 font-semibold">Custom Platforms</div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ========================================================= */}
-      {/* QUALITY */}
-      {/* ========================================================= */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-              Quality Assurance
-            </span>
-
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              Enterprise-Level Quality Control
-            </h2>
-
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-
-            <div className="border rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-4">Annotation Review</h3>
-              <p className="text-gray-600">
-                Every task is reviewed by experienced quality analysts.
-              </p>
-            </div>
-
-            <div className="border rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-4">Guideline Validation</h3>
-              <p className="text-gray-600">
-                Continuous compliance with client annotation guidelines.
-              </p>
-            </div>
-
-            <div className="border rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-4">Random Audits</h3>
-              <p className="text-gray-600">
-                Random sampling ensures consistency across large datasets.
-              </p>
-            </div>
-
-            <div className="border rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-4">Final Approval</h3>
-              <p className="text-gray-600">
-                Production-ready datasets before client delivery.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ========================================================= */}
-      {/* WHY GLOBAL AI COMPANIES CHOOSE ANNOTEXIA */}
-      {/* ========================================================= */}
-
-      <section className="py-24 bg-gray-50">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-              Why Annotexia
-            </span>
-
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              Why AI Companies Choose Annotexia for Sports Annotation
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-              Choosing the right annotation partner directly impacts the
-              accuracy of your computer vision models. At Annotexia, we focus
-              on precision, scalability, transparency, and long-term
-              collaboration. Whether you're building a sports analytics
-              platform, an AI-powered coaching solution, or an automated
-              broadcasting system, our dedicated annotation specialists help
-              accelerate your development with reliable, production-ready
-              datasets.
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div className="bg-white rounded-2xl border p-8">
-              <h3 className="font-bold text-xl mb-4">
-                Domain Expertise
-              </h3>
-
-              <p className="text-gray-600">
-                Experienced annotators familiar with football, cricket,
-                basketball, tennis, hockey, rugby, volleyball and multi-sport
-                analytics projects.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-              <h3 className="font-bold text-xl mb-4">
-                Production Scale
-              </h3>
-
-              <p className="text-gray-600">
-                From pilot projects to millions of annotated video frames,
-                our workflow scales with your business.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-              <h3 className="font-bold text-xl mb-4">
-                Flexible Output
-              </h3>
-
-              <p className="text-gray-600">
-                COCO, YOLO, Pascal VOC, XML, JSON, CSV and custom annotation
-                formats supported.
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-              <h3 className="font-bold text-xl mb-4">
-                Dedicated Team
-              </h3>
-
-              <p className="text-gray-600">
-                Work with a consistent annotation team that understands your
-                project requirements and quality standards.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ========================================================= */}
-      {/* FREE SAMPLE */}
-      {/* ========================================================= */}
-
-      <section className="py-24">
-
-        <div className="max-w-5xl mx-auto px-6">
-
-          <div className="bg-cyan-50 border border-cyan-200 rounded-3xl p-12 text-center">
-
-            <h2 className="text-4xl font-bold mb-6">
-              Not Sure About Our Annotation Quality?
-            </h2>
-
-            <p className="text-lg text-gray-700 leading-9 mb-8">
-
-              We understand that choosing a data annotation partner is an
-              important decision.
-
-              That's why Annotexia offers a completely <strong>FREE sample
-                annotation service</strong> before any commercial engagement.
-
-              Send us a small dataset, and our team will annotate it according
-              to your project guidelines so you can evaluate our quality,
-              consistency, turnaround time, and communication—without any cost
-              or obligation.
-
-            </p>
-
-            <a
-              href="/contact"
-              className="inline-block bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 rounded-xl font-semibold transition"
-            >
-              Request Free Sample Dataset
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ========================================================= */}
-      {/* FAQ */}
-      {/* ========================================================= */}
-
-      <section className="py-24 bg-gray-50">
-
-        <div className="max-w-5xl mx-auto px-6">
-
-          <h2 className="text-4xl font-bold text-center mb-14">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="space-y-8">
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                What sports do you support?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                We provide annotation services for football (soccer), cricket,
-                basketball, volleyball, rugby, tennis, badminton, baseball, hockey,
-                American football and many other sports.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                What annotation types do you provide?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Bounding boxes, polygons, semantic segmentation, instance
-                segmentation, keypoints, pose estimation, player tracking, ball
-                tracking, event tagging and custom annotation workflows.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                Can you annotate sports videos frame-by-frame?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Yes. We specialize in video annotation for sports AI applications,
-                including frame-by-frame tracking, event detection and player
-                identification.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                Which annotation formats do you support?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                We support COCO, YOLO, Pascal VOC, JSON, XML, CSV and custom formats.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                How do you ensure annotation quality?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Every project undergoes multiple quality review stages with dedicated
-                QA specialists before final delivery.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                Can you work with our annotation platform?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Yes. Our team has experience with CVAT, Labelbox,
-                SuperAnnotate, Label Studio, Roboflow and proprietary annotation
-                platforms.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                How can we trust Annotexia?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Trust is earned through quality, transparency, and consistency. We
-                offer a free sample annotation service so you can evaluate our work
-                before committing to a project. This allows your team to review our
-                accuracy, communication, turnaround time, and adherence to your
-                annotation guidelines without any financial risk.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                Is the sample annotation really free?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Yes. We provide a small sample annotation completely free of charge.
-                There are no hidden costs or obligations. Our goal is to demonstrate
-                the quality of our services before moving into full-scale production.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                Do you sign NDAs?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Absolutely. We are happy to sign Non-Disclosure Agreements (NDAs) and
-                follow strict confidentiality practices to protect your data and
-                intellectual property.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">
-                Can you handle enterprise-scale annotation projects?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Yes. Annotexia supports startups, research labs, and enterprise AI
-                companies with scalable annotation teams capable of handling millions
-                of images and video frames.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ========================================================= */}
-      {/* FINAL CTA */}
-      {/* ========================================================= */}
-
-      <section className="bg-gray-900 text-white py-24">
-
-        <div className="max-w-5xl mx-auto px-6 text-center">
-
-          <h2 className="text-5xl font-bold mb-8">
-            Build Better Sports AI with Better Training Data
-          </h2>
-
-          <p className="text-xl text-gray-300 leading-9 mb-10">
-
-            Whether you're developing player tracking systems, sports computer
-            vision models, automated broadcasting solutions, or next-generation
-            performance analytics platforms, Annotexia provides high-quality
-            sports annotation services that help AI models learn faster and
-            perform more accurately.
-
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-
-            <a
-              href="/contact"
-              className="bg-cyan-600 hover:bg-cyan-700 px-8 py-4 rounded-xl font-semibold"
-            >
-
-              Request Free Sample
-
-            </a>
-
-            <a
-              href="/services"
-              className="border border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-black transition"
-            >
-
-              Explore Annotation Services
-
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
-    </main>
-  );
+        </main>
+    );
 }

@@ -89,20 +89,16 @@ export default function QualityAssurance() {
 
           <h2 className="mt-5 text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
 
-            Enterprise-Grade Quality
-            <br />
-            for Every Annotation Project
+            How We Maintain Annotation Quality
 
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
 
-            High-performing AI models require accurate, consistent,
-            and reliable training data. Annotexia follows a structured
-            quality assurance workflow that combines experienced
-            annotators, multi-level human reviews, project-specific
-            guidelines, and continuous feedback to deliver datasets
-            that meet enterprise AI standards.
+            Quality starts before annotation begins. 
+            We first understand your requirements, 
+            establish clear labeling guidelines, validate a sample, 
+            review production annotations and incorporate feedback before final delivery.
 
           </p>
 

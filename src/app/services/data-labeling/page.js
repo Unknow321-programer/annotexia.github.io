@@ -1,1233 +1,961 @@
 import Image from "next/image";
+import Link from "next/link";
+import {
+    ArrowRight,
+    CheckCircle2,
+    ShieldCheck,
+    Target,
+    Layers3,
+    BrainCircuit,
+    Database,
+    ImageIcon,
+    Video,
+    FileText,
+    Mic,
+    ScanLine,
+    Workflow,
+    Users,
+    Zap,
+    BarChart3,
+} from "lucide-react";
 
 export const metadata = {
-  title: "Data Labeling Services | AI & Machine Learning Training Data | Annotexia",
-  description:
-    "Professional data labeling services for AI, machine learning, computer vision, NLP, speech AI, autonomous vehicles, healthcare, retail, agriculture, robotics, and enterprise AI applications. High-quality, scalable, and secure training data solutions.",
+    title:
+        "Data Labeling Services | AI Training Data & Machine Learning | Annotexia",
+    description:
+        "Annotexia provides accurate and scalable data labeling services for AI and machine learning, including image, video, text, audio, LiDAR, OCR, segmentation, object detection, and custom datasets.",
+    keywords: [
+        "data labeling services",
+        "data annotation services",
+        "AI data labeling",
+        "machine learning data labeling",
+        "image labeling services",
+        "video labeling services",
+        "text annotation services",
+        "audio annotation services",
+        "LiDAR labeling",
+        "OCR annotation",
+        "AI training data",
+        "custom data labeling",
+    ],
 };
 
+const services = [
+    {
+        title: "Image Data Labeling",
+        description:
+            "Create high-quality computer vision datasets using bounding boxes, polygons, segmentation, keypoints, classification, and object detection.",
+        icon: ImageIcon,
+        features: [
+            "Bounding Boxes",
+            "Polygon Annotation",
+            "Semantic Segmentation",
+            "Keypoint Annotation",
+        ],
+    },
+    {
+        title: "Video Data Labeling",
+        description:
+            "Turn video content into structured training data through object tracking, event detection, action recognition, and frame-level annotation.",
+        icon: Video,
+        features: [
+            "Object Tracking",
+            "Event Detection",
+            "Action Recognition",
+            "Frame Annotation",
+        ],
+    },
+    {
+        title: "Text Data Labeling",
+        description:
+            "Build NLP and language AI datasets with entity labeling, sentiment analysis, intent classification, categorization, and custom text annotation.",
+        icon: FileText,
+        features: [
+            "Named Entity Recognition",
+            "Sentiment Analysis",
+            "Intent Classification",
+            "Text Categorization",
+        ],
+    },
+    {
+        title: "Audio Data Labeling",
+        description:
+            "Prepare speech and audio datasets for AI applications using transcription, speaker identification, emotion, and sound classification.",
+        icon: Mic,
+        features: [
+            "Speech Transcription",
+            "Speaker Identification",
+            "Audio Classification",
+            "Emotion Detection",
+        ],
+    },
+    {
+        title: "LiDAR & 3D Labeling",
+        description:
+            "Generate structured 3D training data for autonomous systems, robotics, mapping, and perception models.",
+        icon: ScanLine,
+        features: [
+            "3D Bounding Boxes",
+            "Point Cloud Annotation",
+            "Cuboids",
+            "3D Object Tracking",
+        ],
+    },
+    {
+        title: "OCR & Document Labeling",
+        description:
+            "Transform documents, invoices, forms, receipts, and scanned content into structured datasets for document AI systems.",
+        icon: FileText,
+        features: [
+            "Text Extraction",
+            "Document Classification",
+            "Entity Labeling",
+            "Layout Annotation",
+        ],
+    },
+];
+
+const process = [
+    {
+        number: "01",
+        title: "Understand",
+        description:
+            "We analyze your dataset, annotation requirements, classes, edge cases, output format, and project objectives.",
+        icon: BrainCircuit,
+    },
+    {
+        number: "02",
+        title: "Define Guidelines",
+        description:
+            "Clear annotation guidelines are created so every annotator follows the same rules throughout the project.",
+        icon: Workflow,
+    },
+    {
+        number: "03",
+        title: "Annotate",
+        description:
+            "Trained annotation specialists label your data using professional annotation tools and project-specific workflows.",
+        icon: Target,
+    },
+    {
+        number: "04",
+        title: "Quality Review",
+        description:
+            "Annotations go through structured quality checks to identify missing labels, inconsistencies, and incorrect classifications.",
+        icon: ShieldCheck,
+    },
+    {
+        number: "05",
+        title: "Validate",
+        description:
+            "Our team validates the final dataset against your guidelines and project requirements before delivery.",
+        icon: CheckCircle2,
+    },
+    {
+        number: "06",
+        title: "Deliver",
+        description:
+            "Validated datasets are delivered in your required format and prepared for model training or further processing.",
+        icon: Database,
+    },
+];
+
+const benefits = [
+    {
+        title: "High-Quality Training Data",
+        description:
+            "Structured annotation workflows and quality checks help create consistent datasets for machine learning.",
+        icon: Target,
+    },
+    {
+        title: "Scalable Workforce",
+        description:
+            "Scale annotation capacity according to your project volume, from small pilot datasets to large production workloads.",
+        icon: Users,
+    },
+    {
+        title: "Multiple Data Types",
+        description:
+            "Work with image, video, text, audio, LiDAR, OCR, and custom annotation requirements under one partner.",
+        icon: Layers3,
+    },
+    {
+        title: "Secure Workflows",
+        description:
+            "Confidential project handling, controlled access, NDA support, and secure data workflows help protect your datasets.",
+        icon: ShieldCheck,
+    },
+    {
+        title: "Faster AI Development",
+        description:
+            "Reliable labeled data helps your machine learning team spend less time preparing datasets and more time improving models.",
+        icon: Zap,
+    },
+    {
+        title: "Production-Ready Delivery",
+        description:
+            "Receive validated datasets in formats and structures designed around your downstream machine learning workflow.",
+        icon: BarChart3,
+    },
+];
+
+const formats = [
+    "COCO",
+    "YOLO",
+    "Pascal VOC",
+    "JSON",
+    "XML",
+    "CSV",
+    "Label Studio",
+    "CVAT",
+    "Roboflow",
+    "Custom Formats",
+];
+
+const industries = [
+    "Autonomous Vehicles",
+    "Healthcare AI",
+    "Sports Analytics",
+    "Agriculture AI",
+    "Retail & E-commerce",
+    "Robotics",
+    "Drone & Aerial Imaging",
+    "Manufacturing",
+];
+
 export default function DataLabelingPage() {
-  return (
-    <main className="min-h-screen">
+    return (
+        <main className="bg-white text-slate-900">
 
-      {/* ====================================================== */}
-      {/* HERO */}
-      {/* ====================================================== */}
+            {/* =========================================================
+                HERO
+            ========================================================= */}
 
-      <section className="bg-gradient-to-br from-orange-200 via-white to-cyan-500 py-24">
+            <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950">
 
-        <div className="max-w-7xl mx-auto px-6">
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-cyan-500/20 blur-[130px]" />
+                    <div className="absolute bottom-0 right-0 w-[550px] h-[550px] rounded-full bg-blue-600/20 blur-[140px]" />
+                </div>
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+                <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-28">
 
-            <div>
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-              <span className="uppercase tracking-[0.25em] text-cyan-600 font-semibold">
-                AI Training Data Solutions
-              </span>
+                        <div>
 
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight mt-6 mb-8">
-                Professional Data Labeling Services for AI & Machine Learning
-              </h1>
+                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-500/10 text-cyan-300 text-sm font-semibold mb-7">
+                                <Database size={16} />
+                                AI Training Data Services
+                            </span>
 
-              <p className="text-xl text-gray-600 leading-9 mb-8">
+                            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-[1.08]">
 
-                Build better Artificial Intelligence with high-quality
-                labeled datasets. Annotexia provides scalable data
-                labeling services for Computer Vision, Natural Language
-                Processing (NLP), Speech AI, Autonomous Vehicles,
-                Healthcare AI, Retail Analytics, Agriculture, Robotics,
-                and enterprise machine learning applications.
+                                Data Labeling
 
-              </p>
+                                <span className="block text-cyan-400">
+                                    Built for Better AI
+                                </span>
 
-              <p className="text-lg text-gray-600 leading-9 mb-10">
+                            </h1>
 
-                From pilot projects to enterprise-scale datasets
-                containing millions of annotations, our experienced
-                specialists deliver accurate, consistent, and production-ready
-                training data that improves AI model performance while
-                reducing development time.
+                            <p className="mt-8 text-lg lg:text-xl text-slate-300 leading-8 max-w-2xl">
 
-              </p>
+                                Raw data doesn&apos;t train an AI model.
 
-              <div className="flex flex-wrap gap-5">
+                                <span className="text-white font-semibold">
+                                    {" "}Well-labeled data does.
+                                </span>
 
-                <a
-                  href="/contact"
-                  className="bg-cyan-600 hover:bg-cyan-700 transition text-white px-8 py-4 rounded-xl font-semibold"
-                >
-                  Request Free Consultation
-                </a>
+                                {" "}Annotexia helps AI teams transform images,
+                                videos, text, audio, LiDAR, and documents into
+                                accurate, structured training datasets.
 
-                <a
-                  href="/services"
-                  className="border border-gray-300 hover:border-cyan-600 transition px-8 py-4 rounded-xl font-semibold"
-                >
-                  Explore Our Services
-                </a>
+                            </p>
 
-              </div>
+                            <div className="flex flex-wrap gap-4 mt-10">
 
-            </div>
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white font-bold transition shadow-xl shadow-cyan-500/20"
+                                >
+                                    Get Free Consultation
+                                    <ArrowRight size={19} />
+                                </Link>
 
-            <div>
+                                <Link
+                                    href="/services"
+                                    className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-white/20 text-white hover:bg-white/10 hover:border-cyan-400/50 transition font-semibold"
+                                >
+                                    Explore Services
+                                </Link>
 
-              <Image
-                src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1400&q=80"
-                alt="Professional AI data labeling services for machine learning"
-                width={900}
-                height={700}
-                className="rounded-3xl shadow-2xl"
-              />
+                            </div>
 
-            </div>
+                            <div className="flex flex-wrap gap-x-8 gap-y-4 mt-10 text-sm text-slate-300">
 
-          </div>
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={18}
+                                        className="text-cyan-400"
+                                    />
+                                    Multi-level QA
+                                </div>
 
-        </div>
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={18}
+                                        className="text-cyan-400"
+                                    />
+                                    Scalable Workforce
+                                </div>
 
-      </section>
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={18}
+                                        className="text-cyan-400"
+                                    />
+                                    Secure Workflows
+                                </div>
 
+                            </div>
 
+                        </div>
 
-      {/* ====================================================== */}
-      {/* WHAT IS DATA LABELING */}
-      {/* ====================================================== */}
+                        <div className="relative">
 
-      <section className="py-24">
+                            <div className="absolute inset-0 bg-cyan-500/20 blur-3xl rounded-full" />
 
-        <div className="max-w-7xl mx-auto px-6">
+                            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl p-3 shadow-2xl">
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80"
+                                    alt="AI data labeling and machine learning training data"
+                                    width={900}
+                                    height={650}
+                                    priority
+                                    className="w-full h-[420px] lg:h-[500px] object-cover rounded-2xl"
+                                />
 
-            <div>
+                            </div>
 
-              <Image
-                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1400&q=80"
-                alt="AI training data labeling workflow"
-                width={900}
-                height={700}
-                className="rounded-3xl shadow-xl"
-              />
+                            <div className="absolute -left-6 top-12 hidden md:block bg-slate-900 border border-white/10 rounded-2xl px-6 py-5 shadow-2xl">
 
-            </div>
+                                <p className="text-cyan-400 text-sm font-semibold">
+                                    Data Types
+                                </p>
 
-            <div>
+                                <p className="text-white text-xl font-bold">
+                                    Image • Video • Text
+                                </p>
 
-              <span className="uppercase tracking-[0.25em] text-cyan-600 font-semibold">
-                Understanding Data Labeling
-              </span>
+                            </div>
 
-              <h2 className="text-4xl font-bold mt-5 mb-8">
+                            <div className="absolute -right-6 bottom-12 hidden md:block bg-slate-900 border border-white/10 rounded-2xl px-6 py-5 shadow-2xl">
 
-                What is Data Labeling?
+                                <p className="text-cyan-400 text-sm font-semibold">
+                                    Workflow
+                                </p>
 
-              </h2>
+                                <p className="text-white text-xl font-bold">
+                                    Label → Review → Validate
+                                </p>
 
-              <p className="text-gray-600 leading-9 mb-6">
+                            </div>
 
-                Every intelligent AI system begins with data. Before an
-                Artificial Intelligence model can recognize people,
-                understand language, detect diseases, identify products,
-                or analyze videos, it must first learn from accurately
-                labeled examples. This learning process is only possible
-                through high-quality data labeling.
+                        </div>
 
-              </p>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                Data labeling is the process of assigning meaningful
-                information to raw datasets such as images, videos,
-                text documents, audio recordings, LiDAR point clouds,
-                and multimodal data. These annotations teach machine
-                learning algorithms what objects exist, where they are
-                located, how they relate to one another, and how they
-                should be interpreted.
-
-              </p>
-
-              <p className="text-gray-600 leading-9 mb-6">
-
-                Without accurate labeled data, even the most advanced
-                AI models struggle to deliver reliable predictions.
-                High-quality annotations directly influence model
-                accuracy, reduce training errors, and improve overall
-                system performance.
-
-              </p>
-
-              <p className="text-gray-600 leading-9">
-
-                At Annotexia, we combine skilled human annotators,
-                structured workflows, detailed annotation guidelines,
-                and multi-level quality assurance to create datasets
-                that organizations can confidently use to develop
-                production-ready AI systems.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ====================================================== */}
-      {/* WHY DATA LABELING MATTERS */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-[0.25em] text-cyan-600 font-semibold">
-              Why It Matters
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-
-              Why High-Quality Data Labeling is Critical for AI Success
-
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-
-              The quality of your AI model depends on the quality of
-              your training data. Accurate annotations help machine
-              learning models recognize patterns faster, reduce bias,
-              improve prediction accuracy, and accelerate deployment.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Better Model Accuracy
-              </h3>
-
-              <p className="text-gray-600">
-
-                Precise labels enable AI models to learn meaningful
-                patterns, resulting in higher prediction accuracy.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Faster AI Development
-              </h3>
-
-              <p className="text-gray-600">
-
-                High-quality datasets reduce retraining cycles,
-                saving engineering time and development costs.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Reliable Predictions
-              </h3>
-
-              <p className="text-gray-600">
-
-                Consistent annotation improves AI reliability across
-                real-world production environments.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl border p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Enterprise Scalability
-              </h3>
-
-              <p className="text-gray-600">
-
-                Structured labeling workflows support projects from
-                thousands to millions of annotations.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ====================================================== */}
-      {/* DATA LABELING SERVICES */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <span className="uppercase tracking-[0.25em] text-cyan-600 font-semibold">
-              Comprehensive Services
-            </span>
-
-            <h2 className="text-4xl font-bold mt-5 mb-6">
-              Data Labeling Services for Every AI Project
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
-
-              Every machine learning project requires different types of
-              training data. Our dedicated annotation specialists support
-              computer vision, natural language processing, speech AI,
-              autonomous systems, and multimodal artificial intelligence
-              with scalable data labeling solutions.
-
-            </p>
-
-          </div>
-
-
-
-          <div className="space-y-24">
-
-            {/* IMAGE LABELING */}
-
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-              <div>
-
-                <Image
-                  src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=1400&q=80"
-                  alt="Image labeling services for computer vision"
-                  width={900}
-                  height={700}
-                  className="rounded-3xl shadow-xl"
-                />
-
-              </div>
-
-              <div>
-
-                <h3 className="text-3xl font-bold mb-6">
-
-                  Image Labeling Services
-
-                </h3>
-
-                <p className="text-gray-600 leading-9 mb-6">
-
-                  Image labeling forms the foundation of modern computer
-                  vision. AI models learn to recognize objects, people,
-                  products, animals, vehicles, medical structures,
-                  infrastructure, and countless other visual elements
-                  through accurately labeled images.
-
-                </p>
-
-                <p className="text-gray-600 leading-9 mb-8">
-
-                  Annotexia creates high-quality image datasets using
-                  project-specific guidelines that ensure consistency,
-                  precision, and production-ready quality.
-
-                </p>
-
-                <ul className="space-y-3 text-gray-700">
-
-                  <li>✓ Bounding Box Annotation</li>
-                  <li>✓ Polygon Annotation</li>
-                  <li>✓ Semantic Segmentation</li>
-                  <li>✓ Instance Segmentation</li>
-                  <li>✓ Keypoint Annotation</li>
-                  <li>✓ Image Classification</li>
-
-                </ul>
-
-              </div>
-
-            </div>
-
-
-
-            {/* VIDEO LABELING */}
-
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-              <div className="order-2 lg:order-1">
-
-                <h3 className="text-3xl font-bold mb-6">
-
-                  Video Labeling Services
-
-                </h3>
-
-                <p className="text-gray-600 leading-9 mb-6">
-
-                  Video datasets require frame-by-frame annotation,
-                  temporal consistency, object tracking,
-                  and event recognition.
-                  Our experienced teams create reliable datasets
-                  for autonomous systems,
-                  surveillance,
-                  sports analytics,
-                  manufacturing,
-                  robotics,
-                  and intelligent transportation.
-
-                </p>
-
-                <ul className="space-y-3 text-gray-700">
-
-                  <li>✓ Object Tracking</li>
-                  <li>✓ Player Tracking</li>
-                  <li>✓ Ball Tracking</li>
-                  <li>✓ Activity Recognition</li>
-                  <li>✓ Event Detection</li>
-                  <li>✓ Multi-object Tracking</li>
-
-                </ul>
-
-              </div>
-
-              <div className="order-1 lg:order-2">
-
-                <Image
-                  src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1400&q=80"
-                  alt="Video labeling services"
-                  width={900}
-                  height={700}
-                  className="rounded-3xl shadow-xl"
-                />
-
-              </div>
-
-            </div>
-
-
-
-            {/* TEXT LABELING */}
-
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-              <div>
-
-                <Image
-                  src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=1400&q=80"
-                  alt="Natural language processing data labeling"
-                  width={900}
-                  height={700}
-                  className="rounded-3xl shadow-xl"
-                />
-
-              </div>
-
-              <div>
-
-                <h3 className="text-3xl font-bold mb-6">
-
-                  Text Labeling Services
-
-                </h3>
-
-                <p className="text-gray-600 leading-9 mb-6">
-
-                  Natural Language Processing models depend on
-                  carefully labeled text datasets.
-                  We support conversational AI,
-                  chatbots,
-                  search engines,
-                  document intelligence,
-                  large language models,
-                  and enterprise NLP applications.
-
-                </p>
-
-                <ul className="space-y-3 text-gray-700">
-
-                  <li>✓ Named Entity Recognition (NER)</li>
-                  <li>✓ Sentiment Analysis</li>
-                  <li>✓ Intent Classification</li>
-                  <li>✓ Topic Classification</li>
-                  <li>✓ Document Categorization</li>
-                  <li>✓ Question & Answer Labeling</li>
-
-                </ul>
-
-              </div>
-
-            </div>
-
-
-
-            {/* AUDIO */}
-
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-              <div className="order-2 lg:order-1">
-
-                <h3 className="text-3xl font-bold mb-6">
-
-                  Audio Labeling Services
-
-                </h3>
-
-                <p className="text-gray-600 leading-9 mb-6">
-
-                  Speech AI and conversational systems require
-                  accurately labeled voice recordings.
-                  We annotate speech,
-                  conversations,
-                  emotions,
-                  acoustic events,
-                  speaker identities,
-                  and multilingual datasets.
-
-                </p>
-
-                <ul className="space-y-3 text-gray-700">
-
-                  <li>✓ Speech Transcription</li>
-                  <li>✓ Speaker Diarization</li>
-                  <li>✓ Intent Annotation</li>
-                  <li>✓ Emotion Detection</li>
-                  <li>✓ Audio Classification</li>
-                  <li>✓ Timestamp Annotation</li>
-
-                </ul>
-
-              </div>
-
-              <div className="order-1 lg:order-2">
-
-                <Image
-                  src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1400&q=80"
-                  alt="Audio labeling services"
-                  width={900}
-                  height={700}
-                  className="rounded-3xl shadow-xl"
-                />
-
-              </div>
-
-            </div>
-
-
-
-            {/* LIDAR */}
-
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-              <div>
-
-                <Image
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80"
-                  alt="LiDAR annotation services"
-                  width={900}
-                  height={700}
-                  className="rounded-3xl shadow-xl"
-                />
-
-              </div>
-
-              <div>
-
-                <h3 className="text-3xl font-bold mb-6">
-
-                  LiDAR Annotation
-
-                </h3>
-
-                <p className="text-gray-600 leading-9 mb-6">
-
-                  Autonomous vehicles,
-                  robotics,
-                  mapping,
-                  and industrial automation
-                  rely on accurately labeled
-                  three-dimensional point cloud datasets.
-
-                </p>
-
-                <ul className="space-y-3 text-gray-700">
-
-                  <li>✓ Cuboid Annotation</li>
-                  <li>✓ Point Cloud Segmentation</li>
-                  <li>✓ Sensor Fusion</li>
-                  <li>✓ Object Classification</li>
-                  <li>✓ Autonomous Driving Datasets</li>
-
-                </ul>
-
-              </div>
-
-            </div>
-
-
-
-            {/* MULTIMODAL */}
-
-            <div className="bg-slate-50 rounded-3xl p-14">
-
-              <h3 className="text-3xl font-bold mb-6">
-
-                Multimodal Data Labeling
-
-              </h3>
-
-              <p className="text-gray-600 leading-9 mb-8">
-
-                The latest generation of Artificial Intelligence models
-                combines images,
-                videos,
-                documents,
-                audio,
-                LiDAR,
-                and text into a unified learning system.
-
-                Annotexia supports multimodal annotation workflows
-                that connect multiple data sources into
-                high-quality AI training datasets.
-
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-8">
-
-                <div className="bg-white rounded-xl p-8 border">
-
-                  <h4 className="font-bold mb-3">
-                    Vision + Language
-                  </h4>
-
-                  <p className="text-gray-600">
-                    Images paired with text prompts,
-                    captions,
-                    and descriptions.
-                  </p>
+                    </div>
 
                 </div>
 
-                <div className="bg-white rounded-xl p-8 border">
+            </section>
 
-                  <h4 className="font-bold mb-3">
-                    Audio + Text
-                  </h4>
+            {/* =========================================================
+                INTRO
+            ========================================================= */}
 
-                  <p className="text-gray-600">
-                    Speech aligned with transcripts
-                    and intent labels.
-                  </p>
+            <section className="py-24">
+
+                <div className="max-w-6xl mx-auto px-6">
+
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+                        <div>
+
+                            <span className="text-cyan-600 font-bold uppercase tracking-widest text-sm">
+                                Why Data Labeling Matters
+                            </span>
+
+                            <h2 className="text-4xl lg:text-5xl font-bold mt-4 leading-tight">
+                                Your AI model can only learn from what you teach it.
+                            </h2>
+
+                        </div>
+
+                        <div className="text-lg text-slate-600 leading-8">
+
+                            <p className="mb-6">
+                                A machine learning model doesn&apos;t automatically know
+                                what a pedestrian, product, tumor, crop, document,
+                                player, or vehicle represents.
+                            </p>
+
+                            <p>
+                                Data labeling converts raw information into structured
+                                training examples that allow AI systems to recognize
+                                patterns, understand objects, and make better predictions.
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <div className="bg-white rounded-xl p-8 border">
+            </section>
 
-                  <h4 className="font-bold mb-3">
-                    Video + Sensor Data
-                  </h4>
+            {/* =========================================================
+                SERVICES
+            ========================================================= */}
 
-                  <p className="text-gray-600">
-                    Camera footage synchronized
-                    with LiDAR,
-                    GPS,
-                    and telemetry.
-                  </p>
+            <section className="py-24 bg-slate-50">
+
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+
+                        <span className="text-cyan-600 font-bold uppercase tracking-widest text-sm">
+                            Our Data Labeling Services
+                        </span>
+
+                        <h2 className="text-4xl lg:text-5xl font-bold mt-4">
+                            Label Almost Any Data Your AI Needs
+                        </h2>
+
+                        <p className="mt-6 text-lg text-slate-600 leading-8">
+                            From computer vision and NLP to speech, LiDAR, and
+                            document AI, our annotation workflows can be customized
+                            around your model requirements.
+                        </p>
+
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        {services.map((service) => {
+
+                            const Icon = service.icon;
+
+                            return (
+                                <div
+                                    key={service.title}
+                                    className="group bg-white rounded-3xl border border-slate-200 p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                                >
+
+                                    <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-500 transition">
+
+                                        <Icon
+                                            size={28}
+                                            className="text-cyan-600 group-hover:text-white transition"
+                                        />
+
+                                    </div>
+
+                                    <h3 className="text-2xl font-bold mt-7">
+                                        {service.title}
+                                    </h3>
+
+                                    <p className="mt-4 text-slate-600 leading-7">
+                                        {service.description}
+                                    </p>
+
+                                    <div className="mt-7 space-y-3">
+
+                                        {service.features.map((feature) => (
+
+                                            <div
+                                                key={feature}
+                                                className="flex items-center gap-3 text-sm font-medium"
+                                            >
+
+                                                <CheckCircle2
+                                                    size={17}
+                                                    className="text-cyan-600 shrink-0"
+                                                />
+
+                                                {feature}
+
+                                            </div>
+
+                                        ))}
+
+                                    </div>
+
+                                </div>
+                            );
+                        })}
+
+                    </div>
 
                 </div>
 
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* Industries We Serve */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-14">
-            <span className="inline-block bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              Industries We Support
-            </span>
-
-            <h2 className="text-4xl font-bold mb-6">
-              Data Labeling Solutions Across Multiple Industries
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We provide industry-specific annotation services tailored to
-              unique datasets, business requirements, and AI use cases across
-              healthcare, autonomous driving, retail, agriculture, robotics,
-              manufacturing, logistics, and more.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            {/* Healthcare */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md border hover:shadow-xl transition">
-
-              <img
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80&auto=format&fit=crop"
-                alt="Healthcare AI Data Labeling"
-                className="w-full h-56 object-cover"
-              />
-
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">
-                  Healthcare AI
-                </h3>
-
-                <p className="text-gray-600">
-                  Medical image annotation, radiology datasets,
-                  pathology labeling, organ segmentation,
-                  disease detection, and healthcare NLP.
-                </p>
-              </div>
-
-            </div>
-
-            {/* Automotive */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md border hover:shadow-xl transition">
-
-              <img
-                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=700&q=80&auto=format&fit=crop"
-                alt="Autonomous Driving Data Labeling"
-                className="w-full h-56 object-cover"
-              />
-
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">
-                  Autonomous Driving
-                </h3>
-
-                <p className="text-gray-600">
-                  Bounding boxes, lane detection, LiDAR
-                  annotation, traffic signs, pedestrians,
-                  vehicles, and road scene segmentation.
-                </p>
-              </div>
-
-            </div>
-
-            {/* Retail */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md border hover:shadow-xl transition">
-
-              <img
-                src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=700&q=80&auto=format&fit=crop"
-                alt="Retail Product Annotation"
-                className="w-full h-56 object-cover"
-              />
-
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">
-                  Retail & E-commerce
-                </h3>
-
-                <p className="text-gray-600">
-                  Product recognition, shelf monitoring,
-                  OCR, barcode annotation, inventory AI,
-                  and visual search datasets.
-                </p>
-              </div>
-
-            </div>
-
-            {/* Agriculture */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md border hover:shadow-xl transition">
-
-              <img
-                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&q=80&auto=format&fit=crop"
-                alt="Agriculture Data Annotation"
-                className="w-full h-56 object-cover"
-              />
-
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">
-                  Agriculture
-                </h3>
-
-                <p className="text-gray-600">
-                  Crop monitoring, disease detection,
-                  drone imagery annotation, weed detection,
-                  field segmentation, and precision farming.
-                </p>
-              </div>
-
-            </div>
-
-            {/* Sports */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md border hover:shadow-xl transition">
-
-              <img
-                src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=700&q=80&auto=format&fit=crop"
-                alt="Sports Video Annotation"
-                className="w-full h-56 object-cover"
-              />
-
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">
-                  Sports Analytics
-                </h3>
-
-                <p className="text-gray-600">
-                  Player tracking, ball tracking,
-                  event annotation, pose estimation,
-                  tactical analysis, and performance AI.
-                </p>
-              </div>
-
-            </div>
-
-            {/* Robotics */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md border hover:shadow-xl transition">
-
-              <img
-                src="https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?w=700&q=80&auto=format&fit=crop"
-                alt="Robotics Vision Annotation"
-                className="w-full h-56 object-cover"
-              />
-
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">
-                  Robotics
-                </h3>
-
-                <p className="text-gray-600">
-                  Robot perception, grasp detection,
-                  navigation datasets, warehouse automation,
-                  SLAM, and industrial robotics.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-      {/* Industries We Serve */}
-
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              Industries Using Our Data Labeling Services
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We support organizations across multiple industries by providing
-              domain-specific datasets that improve AI accuracy, automation,
-              and business intelligence.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-            <div className="rounded-xl overflow-hidden shadow-md border bg-white">
-              <img
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80"
-                alt="Healthcare AI Data Labeling"
-                className="h-56 w-full object-cover"
-                loading="lazy"
-              />
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-3">Healthcare</h3>
-                <p className="text-gray-600">
-                  Medical imaging, radiology, pathology, diagnostics,
-                  disease detection, and clinical AI datasets.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-xl overflow-hidden shadow-md border bg-white">
-              <img
-                src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=900&q=80"
-                alt="Retail AI Data Labeling"
-                className="h-56 w-full object-cover"
-                loading="lazy"
-              />
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-3">Retail & E-commerce</h3>
-                <p className="text-gray-600">
-                  Product recognition, shelf monitoring,
-                  OCR, checkout AI, and inventory automation.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-xl overflow-hidden shadow-md border bg-white">
-              <img
-                src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80"
-                alt="Agriculture Data Labeling"
-                className="h-56 w-full object-cover"
-                loading="lazy"
-              />
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-3">Agriculture</h3>
-                <p className="text-gray-600">
-                  Crop monitoring, disease detection,
-                  drone imagery, precision farming,
-                  and yield prediction.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-xl overflow-hidden shadow-md border bg-white">
-              <img
-                src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80"
-                alt="Sports Analytics Data Labeling"
-                className="h-56 w-full object-cover"
-                loading="lazy"
-              />
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-3">Sports Analytics</h3>
-                <p className="text-gray-600">
-                  Player tracking, event detection,
-                  ball tracking, pose estimation,
-                  and tactical analysis.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-xl overflow-hidden shadow-md border bg-white">
-              <img
-                src="https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?auto=format&fit=crop&w=900&q=80"
-                alt="Robotics AI Data Labeling"
-                className="h-56 w-full object-cover"
-                loading="lazy"
-              />
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-3">Robotics</h3>
-                <p className="text-gray-600">
-                  Robot vision, grasp detection,
-                  warehouse automation,
-                  industrial robotics,
-                  and autonomous systems.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-xl overflow-hidden shadow-md border bg-white">
-              <img
-                src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80"
-                alt="Automotive AI Data Labeling"
-                className="h-56 w-full object-cover"
-                loading="lazy"
-              />
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-3">Automotive</h3>
-                <p className="text-gray-600">
-                  Autonomous driving datasets,
-                  lane detection,
-                  traffic signs,
-                  LiDAR annotation,
-                  and ADAS.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-
-
-      {/* Our Process */}
-
-      <section className="bg-gray-50 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <h2 className="text-4xl font-bold mb-6">
-              Our AI Data Labeling Workflow
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Every dataset passes through a structured workflow designed
-              to maximize annotation accuracy, consistency, and scalability.
-            </p>
-
-          </div>
-
-          <div className="grid lg:grid-cols-4 gap-10">
-
-            <div className="bg-white rounded-xl shadow-md border p-8">
-              <div className="text-4xl font-bold text-blue-600 mb-5">01</div>
-
-              <h3 className="font-bold text-xl mb-4">
-                Requirement Analysis
-              </h3>
-
-              <p className="text-gray-600">
-                We understand your AI objectives, annotation guidelines,
-                ontology, labeling rules, output format,
-                and quality expectations.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-md border p-8">
-              <div className="text-4xl font-bold text-blue-600 mb-5">02</div>
-
-              <h3 className="font-bold text-xl mb-4">
-                Dataset Preparation
-              </h3>
-
-              <p className="text-gray-600">
-                Images, videos, text,
-                LiDAR, audio, or documents
-                are organized before annotation
-                begins.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-md border p-8">
-              <div className="text-4xl font-bold text-blue-600 mb-5">03</div>
-
-              <h3 className="font-bold text-xl mb-4">
-                Expert Annotation
-              </h3>
-
-              <p className="text-gray-600">
-                Skilled annotators create
-                accurate labels using
-                industry-standard annotation
-                platforms and client guidelines.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-md border p-8">
-              <div className="text-4xl font-bold text-blue-600 mb-5">04</div>
-
-              <h3 className="font-bold text-xl mb-4">
-                QA & Delivery
-              </h3>
-
-              <p className="text-gray-600">
-                Every project undergoes
-                multi-level quality reviews,
-                validation, and secure delivery
-                in your preferred format.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-      {/* FAQ */}
-      <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-14">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="space-y-8">
-
-            <div className="border rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-3">
-                What is data labeling?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Data labeling is the process of adding meaningful tags or
-                annotations to raw datasets such as images, videos, text,
-                audio, or LiDAR data. These labels enable AI and machine
-                learning models to recognize patterns and make accurate
-                predictions.
-              </p>
-            </div>
-
-            <div className="border rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-3">
-                Which annotation formats do you support?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                We support COCO, YOLO, Pascal VOC, LabelMe, CVAT, JSON,
-                XML, CSV, TXT, KITTI, Open Images, custom schemas, and
-                project-specific formats required by your machine learning
-                pipeline.
-              </p>
-            </div>
-
-            <div className="border rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-3">
-                Can you work with our annotation platform?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Yes. Our annotation teams work with Labelbox,
-                SuperAnnotate, CVAT, Label Studio, V7 Darwin, Roboflow,
-                Encord, Scale AI, Dataloop, and many custom annotation
-                platforms.
-              </p>
-            </div>
-
-            <div className="border rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-3">
-                How do you ensure annotation quality?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Every project follows detailed annotation guidelines,
-                multiple quality review stages, senior QA verification,
-                random sampling, and continuous feedback loops to maintain
-                consistent annotation accuracy.
-              </p>
-            </div>
-
-            <div className="border rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-3">
-                Can you scale to millions of annotations?
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-                Absolutely. Annotexia supports startups, enterprise AI
-                teams, and research organizations with scalable annotation
-                teams capable of handling projects ranging from hundreds to
-                millions of labeled data points.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Related Services */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <h2 className="text-4xl font-bold text-center mb-14">
-            Explore Related Annotation Services
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <a
-              href="/services/image-annotation"
-              className="bg-white border rounded-xl p-6 hover:shadow-lg transition"
-            >
-              <h3 className="font-semibold text-xl mb-3">
-                Image Annotation
-              </h3>
-
-              <p className="text-gray-600">
-                Bounding boxes, polygons, segmentation, landmarks,
-                OCR, and classification.
-              </p>
-            </a>
-
-            <a
-              href="/services/video-annotation"
-              className="bg-white border rounded-xl p-6 hover:shadow-lg transition"
-            >
-              <h3 className="font-semibold text-xl mb-3">
-                Video Annotation
-              </h3>
-
-              <p className="text-gray-600">
-                Object tracking, event detection, activity recognition,
-                and sports analytics.
-              </p>
-            </a>
-
-            <a
-              href="/services/text-annotation"
-              className="bg-white border rounded-xl p-6 hover:shadow-lg transition"
-            >
-              <h3 className="font-semibold text-xl mb-3">
-                Text Annotation
-              </h3>
-
-              <p className="text-gray-600">
-                NLP datasets including sentiment analysis, NER,
-                intent detection, and classification.
-              </p>
-            </a>
-
-            <a
-              href="/services/audio-annotation"
-              className="bg-white border rounded-xl p-6 hover:shadow-lg transition"
-            >
-              <h3 className="font-semibold text-xl mb-3">
-                Audio Annotation
-              </h3>
-
-              <p className="text-gray-600">
-                Speech transcription, speaker labeling,
-                emotion recognition, and acoustic events.
-              </p>
-            </a>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-24">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-
-          <h2 className="text-4xl font-bold mb-6">
-            Build Better AI with High-Quality Data Labeling
-          </h2>
-
-          <p className="text-xl text-blue-100 leading-8 mb-10">
-            Whether you're training computer vision systems,
-            conversational AI, autonomous vehicles, healthcare AI,
-            retail analytics, robotics, agriculture solutions, or
-            enterprise machine learning models, Annotexia provides
-            scalable, accurate, and secure data labeling services
-            tailored to your business goals.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4">
-
-            <a
-              href="/contact"
-              className="bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition"
-            >
-              Request Free Consultation
-            </a>
-
-            <a
-              href="/industries"
-              className="border border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition"
-            >
-              Explore Industries
-            </a>
-
-          </div>
-
-        </div>
-      </section>
-
-    </main>
-  );
+            </section>
+
+            {/* =========================================================
+                PROCESS
+            ========================================================= */}
+
+            <section className="py-24 bg-white">
+
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+
+                        <span className="text-cyan-600 font-bold uppercase tracking-widest text-sm">
+                            Our Workflow
+                        </span>
+
+                        <h2 className="text-4xl lg:text-5xl font-bold mt-4">
+                            From Raw Data to AI-Ready Dataset
+                        </h2>
+
+                        <p className="mt-6 text-lg text-slate-600 leading-8">
+                            A structured workflow keeps annotation projects
+                            consistent, measurable, and ready for production.
+                        </p>
+
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        {process.map((item) => {
+
+                            const Icon = item.icon;
+
+                            return (
+                                <div
+                                    key={item.number}
+                                    className="relative rounded-3xl border border-slate-200 p-8 hover:shadow-xl transition"
+                                >
+
+                                    <div className="flex items-center justify-between">
+
+                                        <span className="text-5xl font-black text-slate-100">
+                                            {item.number}
+                                        </span>
+
+                                        <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center">
+                                            <Icon
+                                                className="text-cyan-600"
+                                                size={24}
+                                            />
+                                        </div>
+
+                                    </div>
+
+                                    <h3 className="text-2xl font-bold mt-6">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="text-slate-600 leading-7 mt-4">
+                                        {item.description}
+                                    </p>
+
+                                </div>
+                            );
+                        })}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =========================================================
+                BENEFITS
+            ========================================================= */}
+
+            <section className="py-24 bg-slate-950 text-white">
+
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+                        <div>
+
+                            <span className="text-cyan-400 font-bold uppercase tracking-widest text-sm">
+                                Why Annotexia
+                            </span>
+
+                            <h2 className="text-4xl lg:text-5xl font-bold mt-4 leading-tight">
+                                More Than Labeling.
+                                <span className="block text-cyan-400">
+                                    A Better Data Pipeline.
+                                </span>
+                            </h2>
+
+                            <p className="mt-7 text-lg text-slate-300 leading-8">
+                                Your annotation partner should understand more than
+                                where to draw a box or assign a label. We focus on
+                                consistency, quality, scalability, and the requirements
+                                of your downstream AI system.
+                            </p>
+
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center gap-2 mt-9 px-7 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-600 font-bold transition"
+                            >
+                                Discuss Your Dataset
+                                <ArrowRight size={19} />
+                            </Link>
+
+                        </div>
+
+                        <div className="grid sm:grid-cols-2 gap-6">
+
+                            {benefits.map((benefit) => {
+
+                                const Icon = benefit.icon;
+
+                                return (
+                                    <div
+                                        key={benefit.title}
+                                        className="rounded-2xl border border-white/10 bg-white/5 p-7 hover:bg-white/10 transition"
+                                    >
+
+                                        <Icon
+                                            size={28}
+                                            className="text-cyan-400"
+                                        />
+
+                                        <h3 className="text-xl font-bold mt-5">
+                                            {benefit.title}
+                                        </h3>
+
+                                        <p className="mt-3 text-sm text-slate-300 leading-6">
+                                            {benefit.description}
+                                        </p>
+
+                                    </div>
+                                );
+                            })}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =========================================================
+                INDUSTRIES
+            ========================================================= */}
+
+            <section className="py-24">
+
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="text-center max-w-3xl mx-auto mb-14">
+
+                        <span className="text-cyan-600 font-bold uppercase tracking-widest text-sm">
+                            Industry Applications
+                        </span>
+
+                        <h2 className="text-4xl font-bold mt-4">
+                            Data Labeling Across AI Industries
+                        </h2>
+
+                        <p className="mt-5 text-lg text-slate-600">
+                            Our workflows can be adapted to different industries,
+                            datasets, annotation standards, and model objectives.
+                        </p>
+
+                    </div>
+
+                    <div className="flex flex-wrap justify-center gap-4">
+
+                        {industries.map((industry) => (
+
+                            <div
+                                key={industry}
+                                className="flex items-center gap-3 px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-cyan-400 hover:bg-cyan-50 transition"
+                            >
+
+                                <CheckCircle2
+                                    size={19}
+                                    className="text-cyan-600"
+                                />
+
+                                <span className="font-semibold">
+                                    {industry}
+                                </span>
+
+                            </div>
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =========================================================
+                FORMATS
+            ========================================================= */}
+
+            <section className="py-20 bg-slate-50">
+
+                <div className="max-w-6xl mx-auto px-6 text-center">
+
+                    <span className="text-cyan-600 font-bold uppercase tracking-widest text-sm">
+                        Output Formats
+                    </span>
+
+                    <h2 className="text-4xl font-bold mt-4">
+                        Dataset Formats That Fit Your Workflow
+                    </h2>
+
+                    <p className="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
+                        We can deliver annotated datasets in commonly used formats
+                        or work with your custom schema and output requirements.
+                    </p>
+
+                    <div className="flex flex-wrap justify-center gap-4 mt-10">
+
+                        {formats.map((format) => (
+
+                            <span
+                                key={format}
+                                className="px-5 py-3 rounded-xl bg-white border border-slate-200 font-semibold text-slate-700 shadow-sm"
+                            >
+                                {format}
+                            </span>
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =========================================================
+                CTA
+            ========================================================= */}
+
+            <section className="py-24">
+
+                <div className="max-w-7xl mx-auto px-6">
+
+                    <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-r from-cyan-600 via-sky-600 to-blue-700 text-white p-12 lg:p-20">
+
+                        <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-white/10 blur-3xl" />
+
+                        <div className="relative grid lg:grid-cols-2 gap-12 items-center">
+
+                            <div>
+
+                                <span className="text-cyan-100 font-semibold uppercase tracking-widest text-sm">
+                                    Start Your AI Project
+                                </span>
+
+                                <h2 className="text-4xl lg:text-5xl font-extrabold mt-4 leading-tight">
+                                    Have Data?
+                                    <span className="block">
+                                        Let&apos;s Make It AI-Ready.
+                                    </span>
+                                </h2>
+
+                                <p className="mt-6 text-lg text-cyan-50 leading-8 max-w-2xl">
+                                    Share your dataset, annotation requirements,
+                                    expected volume, and timeline. Our team will
+                                    help you determine the right labeling workflow
+                                    for your AI project.
+                                </p>
+
+                            </div>
+
+                            <div className="lg:text-right">
+
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center gap-3 bg-white text-cyan-700 px-9 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition shadow-xl"
+                                >
+                                    Request Free Consultation
+                                    <ArrowRight size={21} />
+                                </Link>
+
+                                <p className="mt-5 text-sm text-cyan-100">
+                                    Discuss your project with our annotation specialists.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =========================================================
+                FAQ
+            ========================================================= */}
+
+            <section className="py-24 bg-slate-50">
+
+                <div className="max-w-5xl mx-auto px-6">
+
+                    <div className="text-center mb-14">
+
+                        <span className="text-cyan-600 font-bold uppercase tracking-widest text-sm">
+                            Frequently Asked Questions
+                        </span>
+
+                        <h2 className="text-4xl lg:text-5xl font-bold mt-4">
+                            Data Labeling Questions
+                        </h2>
+
+                    </div>
+
+                    <div className="space-y-5">
+
+                        {[
+                            {
+                                q: "What types of data can Annotexia label?",
+                                a: "We support image, video, text, audio, LiDAR, documents, OCR, and custom datasets for AI and machine learning applications.",
+                            },
+                            {
+                                q: "Can you handle large-scale data labeling projects?",
+                                a: "Yes. Our workflows are designed to scale according to project volume and requirements, from small proof-of-concept datasets to large production workloads.",
+                            },
+                            {
+                                q: "Which annotation formats do you support?",
+                                a: "We support formats such as COCO, YOLO, Pascal VOC, JSON, XML, CSV, Label Studio, CVAT, Roboflow, and custom formats.",
+                            },
+                            {
+                                q: "How do you maintain annotation quality?",
+                                a: "We use project-specific guidelines, trained annotators, quality reviews, validation workflows, and feedback loops to maintain annotation consistency.",
+                            },
+                            {
+                                q: "Can you sign an NDA before receiving our data?",
+                                a: "Yes. NDA and confidential project workflows can be arranged before accessing sensitive project datasets.",
+                            },
+                            {
+                                q: "Can we test your annotation quality before starting a large project?",
+                                a: "Yes. You can discuss a sample annotation or pilot project with our team before committing to a larger production workflow.",
+                            },
+                        ].map((faq) => (
+
+                            <details
+                                key={faq.q}
+                                className="group bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"
+                            >
+
+                                <summary className="cursor-pointer list-none flex items-center justify-between gap-6 font-bold text-lg">
+
+                                    {faq.q}
+
+                                    <span className="text-cyan-600 text-2xl group-open:rotate-45 transition-transform">
+                                        +
+                                    </span>
+
+                                </summary>
+
+                                <p className="mt-5 text-slate-600 leading-7">
+                                    {faq.a}
+                                </p>
+
+                            </details>
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =========================================================
+                SEO CONTENT
+            ========================================================= */}
+
+            <section className="py-20 bg-white">
+
+                <div className="max-w-5xl mx-auto px-6">
+
+                    <h2 className="text-3xl font-bold">
+                        Professional Data Labeling Services for AI
+                    </h2>
+
+                    <p className="mt-6 text-slate-600 leading-8">
+                        Annotexia provides professional data labeling and data
+                        annotation services for organizations developing Artificial
+                        Intelligence and Machine Learning applications. Our services
+                        cover image labeling, video annotation, text annotation,
+                        audio labeling, LiDAR annotation, OCR, document AI,
+                        segmentation, object detection, classification, tracking,
+                        and custom annotation workflows.
+                    </p>
+
+                    <p className="mt-6 text-slate-600 leading-8">
+                        High-quality labeled data is essential for training reliable
+                        machine learning models. Our annotation workflows combine
+                        trained annotation specialists, detailed project guidelines,
+                        quality assurance processes, and scalable production workflows
+                        to help businesses create consistent AI training datasets.
+                    </p>
+
+                    <p className="mt-6 text-slate-600 leading-8">
+                        Whether you are developing autonomous vehicles, healthcare AI,
+                        sports analytics, agriculture systems, robotics, retail
+                        applications, computer vision models, or document intelligence,
+                        Annotexia can help transform your raw data into structured,
+                        machine-learning-ready datasets.
+                    </p>
+
+                </div>
+
+            </section>
+
+            {/* =========================================================
+                FINAL CTA
+            ========================================================= */}
+
+            <section className="py-20 bg-slate-950 text-white">
+
+                <div className="max-w-5xl mx-auto px-6 text-center">
+
+                    <Database
+                        size={42}
+                        className="mx-auto text-cyan-400"
+                    />
+
+                    <h2 className="text-4xl lg:text-5xl font-bold mt-7">
+                        Your AI Starts With Your Data.
+                    </h2>
+
+                    <p className="mt-6 text-lg text-slate-300 leading-8 max-w-3xl mx-auto">
+                        Turn raw datasets into reliable training data with
+                        Annotexia&apos;s professional data labeling services.
+                    </p>
+
+                    <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-3 mt-9 px-9 py-5 rounded-2xl bg-cyan-500 hover:bg-cyan-600 text-white font-bold text-lg transition shadow-xl shadow-cyan-500/20"
+                    >
+                        Start Your Project
+                        <ArrowRight size={21} />
+                    </Link>
+
+                </div>
+
+            </section>
+
+        </main>
+    );
 }

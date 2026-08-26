@@ -26,7 +26,7 @@ export default function CTA() {
 
           <h2 className="mt-6 text-4xl lg:text-6xl font-black text-white leading-tight">
 
-            Let's Build
+            Let&apos;s Build
             <br />
 
             High-Quality AI
@@ -36,7 +36,7 @@ export default function CTA() {
 
           <p className="mt-8 text-xl leading-9 text-blue-50">
 
-            Whether you're developing Computer Vision,
+            Whether you&apos;re developing Computer Vision,
             Machine Learning, Healthcare AI,
             Sports Analytics, Agriculture,
             Manufacturing, Retail,

@@ -1,1106 +1,1107 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  CheckCircle2,
-  ArrowRight,
+    ArrowRight,
+    CheckCircle2,
+    ShieldCheck,
+    Target,
+    Sprout,
+    ScanLine,
+    BrainCircuit,
+    Layers3,
+    Workflow,
+    Database,
+    Clock3,
 } from "lucide-react";
 
 export const metadata = {
-  title:
-    "Agriculture AI Annotation Services | Crop Monitoring & Precision Farming | Annotexia",
+    title:
+        "Agriculture AI Data Annotation Services | Crop & Drone Imagery | Annotexia",
 
-  description:
-    "Professional agriculture AI annotation services including crop monitoring, plant disease detection, weed detection, drone image annotation, satellite imagery labeling, precision farming datasets, and agricultural machine learning data labeling.",
+    description:
+        "Annotexia provides high-quality agriculture data annotation services for crop monitoring, plant disease detection, weed identification, drone imagery, segmentation, object detection, and precision agriculture AI.",
 
-  keywords: [
-    "Agriculture AI Annotation",
-    "Crop Annotation Services",
-    "Plant Disease Annotation",
-    "Drone Agriculture Annotation",
-    "Agriculture Image Annotation",
-    "Precision Farming Annotation",
-    "Satellite Image Annotation",
-    "Agricultural Data Labeling",
-    "Computer Vision Agriculture",
-    "Agritech Annotation Company",
-  ],
+    keywords: [
+        "agriculture data annotation",
+        "agriculture AI annotation",
+        "crop image annotation",
+        "plant disease annotation",
+        "weed detection annotation",
+        "drone imagery annotation",
+        "precision agriculture datasets",
+        "agriculture computer vision",
+        "crop segmentation",
+        "plant detection dataset",
+        "farm AI training data",
+        "agricultural image labeling",
+    ],
+
+    alternates: {
+        canonical: "https://www.annotexia.com/industries/agriculture",
+    },
+
+    openGraph: {
+        title:
+            "Agriculture AI Data Annotation Services | Annotexia",
+        description:
+            "Build reliable agricultural AI with accurately annotated crop, plant, drone, and field imagery datasets.",
+        url: "https://www.annotexia.com/industries/agriculture",
+        siteName: "Annotexia",
+        type: "website",
+        images: [
+            {
+                url: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1400&q=80",
+                width: 1400,
+                height: 900,
+                alt: "Agriculture AI crop monitoring and data annotation",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title:
+            "Agriculture AI Data Annotation Services | Annotexia",
+        description:
+            "Accurate training datasets for crop monitoring, disease detection, drone imagery and precision agriculture AI.",
+        images: [
+            "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1400&q=80",
+        ],
+    },
 };
+
+const annotationServices = [
+    {
+        title: "Crop Detection & Annotation",
+        description:
+            "Identify and label crops, plants, fields, and agricultural objects to create reliable datasets for computer vision models.",
+        icon: Sprout,
+    },
+    {
+        title: "Plant Disease Detection",
+        description:
+            "Annotate visible symptoms, damaged leaves, infected plants, and disease patterns for AI-powered crop health monitoring.",
+        icon: ScanLine,
+    },
+    {
+        title: "Weed Detection",
+        description:
+            "Create labeled datasets that help AI systems distinguish weeds from crops for precision weed management.",
+        icon: Target,
+    },
+    {
+        title: "Crop Segmentation",
+        description:
+            "Use semantic and instance segmentation to precisely identify crop regions, plant structures, leaves, and field boundaries.",
+        icon: Layers3,
+    },
+    {
+        title: "Drone Image Annotation",
+        description:
+            "Transform drone and aerial imagery into structured datasets for crop monitoring, field analysis, mapping, and inspection.",
+        icon: Database,
+    },
+    {
+        title: "Object Detection",
+        description:
+            "Annotate agricultural equipment, plants, fruits, irrigation systems, livestock, and other objects required by your AI model.",
+        icon: ScanLine,
+    },
+    {
+        title: "Field Boundary Annotation",
+        description:
+            "Create accurate field and land-use boundaries for agricultural mapping, crop classification, and geospatial AI applications.",
+        icon: Target,
+    },
+    {
+        title: "Custom Agriculture Annotation",
+        description:
+            "Build project-specific annotation workflows around your agricultural datasets, taxonomy, guidelines, and model requirements.",
+        icon: Workflow,
+    },
+];
+
+const applications = [
+    "Crop Health Monitoring",
+    "Plant Disease Detection",
+    "Weed Identification",
+    "Precision Agriculture",
+    "Yield Prediction",
+    "Smart Farming",
+    "Agricultural Robotics",
+    "Drone-Based Crop Analysis",
+    "Field Mapping",
+    "Fruit & Vegetable Detection",
+    "Irrigation Monitoring",
+    "Agricultural Research",
+];
+
+const annotationTypes = [
+    "Bounding Boxes",
+    "Polygon Annotation",
+    "Semantic Segmentation",
+    "Instance Segmentation",
+    "Keypoint Annotation",
+    "Classification",
+    "Object Detection",
+    "Image Segmentation",
+    "Video Annotation",
+    "Aerial Image Annotation",
+];
+
+const workflow = [
+    {
+        number: "01",
+        title: "Understand Your Agriculture AI Project",
+        description:
+            "We review your dataset, target objects, annotation taxonomy, model requirements, quality expectations, and delivery format.",
+    },
+    {
+        number: "02",
+        title: "Create Annotation Guidelines",
+        description:
+            "Clear project-specific instructions define how crops, diseases, weeds, field boundaries, and other agricultural objects should be labeled.",
+    },
+    {
+        number: "03",
+        title: "Annotate the Dataset",
+        description:
+            "Trained annotation specialists process your images, videos, drone imagery, or other agricultural data according to the approved guidelines.",
+    },
+    {
+        number: "04",
+        title: "Quality Assurance",
+        description:
+            "Annotations pass through structured quality checks to identify missing labels, incorrect classes, boundary errors, and inconsistencies.",
+    },
+    {
+        number: "05",
+        title: "Validate & Deliver",
+        description:
+            "The final dataset is reviewed and delivered in your required format so it can move directly into your machine learning workflow.",
+    },
+];
+
+const whyAnnotexia = [
+    {
+        title: "Agriculture-Specific Workflows",
+        description:
+            "Agricultural datasets contain complex visual conditions. Our workflows can be adapted to crop types, disease classes, field environments, and project-specific requirements.",
+        icon: Sprout,
+    },
+    {
+        title: "High-Quality Annotation",
+        description:
+            "Structured guidelines and multi-level quality checks help maintain consistent annotations across large agricultural datasets.",
+        icon: CheckCircle2,
+    },
+    {
+        title: "Scalable Delivery",
+        description:
+            "Whether you're preparing a small research dataset or scaling a production AI model, our workflows can grow with your project.",
+        icon: Layers3,
+    },
+    {
+        title: "Secure Data Handling",
+        description:
+            "Confidential project workflows, controlled access, and NDA support help protect your agricultural imagery and business data.",
+        icon: ShieldCheck,
+    },
+    {
+        title: "Multiple Data Types",
+        description:
+            "We support image, video, drone, aerial, and other visual datasets used by modern agricultural AI systems.",
+        icon: Database,
+    },
+    {
+        title: "Flexible Requirements",
+        description:
+            "Your taxonomy, annotation guidelines, quality thresholds, tools, and output formats can be incorporated into the workflow.",
+        icon: Workflow,
+    },
+];
+
+const faqs = [
+    {
+        question:
+            "What agriculture data can Annotexia annotate?",
+        answer:
+            "We can work with crop images, plant images, drone imagery, aerial imagery, field photographs, agricultural videos, and other visual datasets used for AI and machine learning applications.",
+    },
+    {
+        question:
+            "Can you annotate plant diseases?",
+        answer:
+            "Yes. We can create datasets for plant disease detection by labeling infected plants, affected leaves, disease symptoms, damaged regions, and other project-specific classes.",
+    },
+    {
+        question:
+            "Do you provide drone imagery annotation for agriculture?",
+        answer:
+            "Yes. Drone and aerial imagery can be annotated for crop monitoring, field mapping, plant detection, disease identification, land-use classification, and other precision agriculture applications.",
+    },
+    {
+        question:
+            "Which annotation techniques do you support?",
+        answer:
+            "Depending on the project, we support bounding boxes, polygons, semantic segmentation, instance segmentation, classification, keypoints, object tracking, and custom annotation workflows.",
+    },
+    {
+        question:
+            "Can you handle large agricultural datasets?",
+        answer:
+            "Yes. Our workflows are designed to support projects ranging from smaller research datasets to large-scale commercial AI training datasets.",
+    },
+    {
+        question:
+            "Can I provide my own annotation guidelines?",
+        answer:
+            "Absolutely. Your existing taxonomy and annotation guidelines can be incorporated into the project workflow. We can also help structure guidelines when you are starting from scratch.",
+    },
+    {
+        question:
+            "Which output formats do you support?",
+        answer:
+            "Depending on project requirements, we can support formats such as COCO, YOLO, Pascal VOC, JSON, XML, CSV, and other custom formats.",
+    },
+    {
+        question:
+            "Can I test your annotation quality before starting a large project?",
+        answer:
+            "Yes. We can provide a sample annotation workflow so you can evaluate quality, consistency, communication, and turnaround before moving forward with a larger engagement.",
+    },
+];
 
 export default function AgriculturePage() {
-  return (
-    <main className="min-h-screen bg-white">
+    return (
+        <main className="bg-white text-slate-900">
 
-      {/* ====================================================== */}
-      {/* HERO */}
-      {/* ====================================================== */}
+            {/* =========================================================
+                HERO
+            ========================================================= */}
 
-      <section className="relative overflow-hidden">
+            <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950">
 
-        <div className="absolute inset-0">
+                <div className="absolute inset-0">
+                    <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-emerald-500/20 blur-[120px]" />
+                    <div className="absolute right-0 top-1/3 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[140px]" />
+                    <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-green-500/10 blur-[120px]" />
+                </div>
 
-          <Image
-            src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=80"
-            alt="Agriculture AI Annotation"
-            fill
-            priority
-            className="object-cover"
-          />
+                <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-28">
 
-          <div className="absolute inset-0 bg-slate-900/75" />
+                    <div className="grid items-center gap-16 lg:grid-cols-2">
 
-        </div>
+                        {/* LEFT */}
 
-        <div className="relative max-w-7xl mx-auto px-6 py-32">
+                        <div>
 
-          <div className="max-w-3xl">
+                            <span className="mb-7 inline-flex items-center rounded-full border border-emerald-400/20 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-300">
+                                Agriculture AI Data Annotation
+                            </span>
 
-            <span className="inline-flex bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-semibold tracking-widest uppercase">
+                            <h1 className="text-5xl font-extrabold leading-tight text-white lg:text-6xl">
 
-              Agriculture AI Training Data
+                                Teaching AI to
 
-            </span>
+                                <span className="block text-emerald-400">
+                                    Understand Every Field
+                                </span>
 
-            <h1 className="text-5xl lg:text-7xl font-black text-white mt-8 leading-tight">
+                            </h1>
 
-              Agriculture &
-              Precision Farming
-              Annotation Services
+                            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 lg:text-xl">
 
-            </h1>
+                                From healthy crops and plant diseases to weeds,
+                                field boundaries, and drone imagery, Annotexia
+                                transforms agricultural data into high-quality
+                                training datasets for computer vision and
+                                precision agriculture AI.
 
-            <p className="text-xl text-slate-300 leading-9 mt-8">
+                            </p>
 
-              Transform drone imagery, satellite imagery,
-              field photographs, and agricultural datasets into
-              accurate AI training data for precision farming,
-              crop monitoring, disease detection, agricultural robotics,
-              yield prediction, and next-generation AgriTech solutions.
+                            <div className="mt-10 flex flex-wrap gap-4">
 
-            </p>
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center rounded-xl bg-emerald-500 px-7 py-4 font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-600"
+                                >
+                                    Request Free Sample
 
-            <div className="flex flex-wrap gap-5 mt-12">
+                                    <ArrowRight
+                                        className="ml-2"
+                                        size={19}
+                                    />
+                                </Link>
 
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 px-8 py-4 rounded-xl font-semibold text-white transition"
-              >
+                                <Link
+                                    href="/services"
+                                    className="rounded-xl border border-white/20 px-7 py-4 font-semibold text-white transition hover:border-emerald-400 hover:bg-white/5"
+                                >
+                                    Explore Annotation Services
+                                </Link>
 
-                Request Free Sample
+                            </div>
 
-                <ArrowRight size={20} />
+                            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-400">
 
-              </Link>
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={17}
+                                        className="text-emerald-400"
+                                    />
+                                    Image & Video
+                                </div>
 
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 border border-white/20 hover:bg-white/10 px-8 py-4 rounded-xl text-white transition"
-              >
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={17}
+                                        className="text-emerald-400"
+                                    />
+                                    Drone Imagery
+                                </div>
 
-                Explore Services
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={17}
+                                        className="text-emerald-400"
+                                    />
+                                    Segmentation
+                                </div>
 
-              </Link>
+                            </div>
 
-            </div>
+                        </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mt-16 text-white">
+                        {/* RIGHT */}
 
-              <div>
+                        <div className="relative">
 
-                <h3 className="text-4xl font-bold">
+                            <div className="absolute -inset-5 rounded-[40px] bg-emerald-500/10 blur-3xl" />
 
-                  99%
+                            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
 
-                </h3>
+                                <Image
+                                    src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Agricultural field used for agriculture AI crop monitoring and data annotation"
+                                    width={1400}
+                                    height={900}
+                                    priority
+                                    className="h-[420px] w-full rounded-[24px] object-cover"
+                                />
 
-                <p className="text-slate-300 mt-2">
+                            </div>
 
-                  Annotation Accuracy
+                            {/* Floating card */}
 
-                </p>
+                            <div className="absolute -left-6 top-10 hidden rounded-2xl border border-white/10 bg-slate-900/95 px-6 py-5 shadow-2xl backdrop-blur md:block">
 
-              </div>
+                                <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+                                    AI Dataset
+                                </p>
 
-              <div>
+                                <p className="mt-1 text-lg font-bold text-white">
+                                    Crop Detection
+                                </p>
 
-                <h3 className="text-4xl font-bold">
+                            </div>
 
-                  10M+
+                            <div className="absolute -bottom-6 right-5 rounded-2xl border border-white/10 bg-slate-900/95 px-6 py-5 shadow-2xl backdrop-blur">
 
-                </h3>
+                                <p className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
+                                    Annotation
+                                </p>
 
-                <p className="text-slate-300 mt-2">
+                                <p className="mt-1 text-lg font-bold text-white">
+                                    Field + Plant Data
+                                </p>
 
-                  Images Scalable
+                            </div>
 
-                </p>
+                        </div>
 
-              </div>
-
-              <div>
-
-                <h3 className="text-4xl font-bold">
-
-                  24/7
-
-                </h3>
-
-                <p className="text-slate-300 mt-2">
-
-                  Dedicated Support
-
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* STORY */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-                Helping Agriculture Become Smarter
-
-              </span>
-
-              <h2 className="text-5xl font-bold mt-5 mb-8">
-
-                Every Intelligent Farm
-                Starts with
-                Reliable Data
-
-              </h2>
-
-              <p className="text-lg leading-9 text-gray-600 mb-6">
-
-                Agriculture is experiencing one of the largest digital
-                transformations in history. Farmers, agritech startups,
-                research institutions, and global food companies are adopting
-                Artificial Intelligence to maximize crop yields, reduce operational
-                costs, improve sustainability, and make better farming decisions.
-
-              </p>
-
-              <p className="text-lg leading-9 text-gray-600 mb-6">
-
-                Modern AI systems analyze thousands of aerial drone images,
-                satellite imagery, greenhouse photographs, and field inspection
-                images every day. However, these intelligent systems cannot learn
-                without accurately annotated datasets.
-
-              </p>
-
-              <p className="text-lg leading-9 text-gray-600">
-
-                At Annotexia, we partner with agriculture technology companies
-                to create enterprise-quality training datasets that power
-                computer vision models capable of identifying crop diseases,
-                monitoring plant health, detecting weeds, estimating crop yield,
-                tracking irrigation systems, and automating farm operations.
-
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-5 mt-10">
-
-                {[
-                  "Crop Monitoring",
-                  "Plant Disease Detection",
-                  "Weed Detection",
-                  "Drone Mapping",
-                  "Fruit Detection",
-                  "Yield Prediction",
-                  "Livestock Monitoring",
-                  "Satellite Image Annotation",
-                ].map((item) => (
-
-                  <div
-                    key={item}
-                    className="flex items-center gap-3"
-                  >
-
-                    <CheckCircle2 className="text-cyan-500" />
-
-                    <span>{item}</span>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </div>
-
-            <div>
-
-              <Image
-                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80"
-                alt="Agriculture AI"
-                width={700}
-                height={800}
-                className="rounded-3xl shadow-2xl"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ====================================================== */}
-      {/* AGRICULTURE AI SERVICES */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center max-w-4xl mx-auto mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Agriculture AI Services
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4 mb-8">
-
-              Complete Annotation Solutions for
-              Smart Agriculture
-
-            </h2>
-
-            <p className="text-lg leading-9 text-gray-600">
-
-              From drone imagery to satellite imagery, greenhouse monitoring,
-              crop disease detection and agricultural robotics, Annotexia
-              provides end-to-end annotation services that enable AI models
-              to understand farms with exceptional accuracy.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-
-            {[
-              {
-                title: "Crop Detection",
-                desc: "Identify and label crops, plantations and vegetation for precision farming AI."
-              },
-              {
-                title: "Plant Disease Annotation",
-                desc: "Detect diseases, leaf infections, discoloration, pest damage and nutrient deficiencies."
-              },
-              {
-                title: "Weed Detection",
-                desc: "Create datasets that distinguish crops from weeds for automated spraying systems."
-              },
-              {
-                title: "Fruit Detection & Counting",
-                desc: "Annotate fruits for harvesting robots, yield estimation and inventory management."
-              },
-              {
-                title: "Drone Image Annotation",
-                desc: "High-resolution aerial image annotation for precision agriculture and farm analytics."
-              },
-              {
-                title: "Satellite Image Labeling",
-                desc: "Land cover classification, vegetation analysis and remote sensing datasets."
-              },
-              {
-                title: "Field Segmentation",
-                desc: "Pixel-perfect segmentation of crop fields, irrigation systems and farming zones."
-              },
-              {
-                title: "Livestock Monitoring",
-                desc: "Detect cattle, poultry, sheep and livestock for smart farm management."
-              },
-              {
-                title: "Yield Prediction",
-                desc: "Training datasets for estimating production volumes and crop maturity."
-              },
-              {
-                title: "Agricultural Machinery",
-                desc: "Annotate tractors, harvesters, irrigation equipment and autonomous farm vehicles."
-              },
-              {
-                title: "Greenhouse Monitoring",
-                desc: "AI datasets for indoor farming, vertical farming and greenhouse automation."
-              },
-              {
-                title: "Multispectral & Hyperspectral Annotation",
-                desc: "Advanced annotation for vegetation health analysis using multispectral imagery."
-              }
-
-            ].map((item) => (
-
-              <div
-                key={item.title}
-                className="bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-              >
-
-                <div className="w-16 h-16 rounded-xl bg-cyan-50 flex items-center justify-center mb-6">
-
-                  🌱
+                    </div>
 
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4">
+            </section>
 
-                  {item.title}
 
-                </h3>
+            {/* =========================================================
+                INTRO / STORY
+            ========================================================= */}
 
-                <p className="text-gray-600 leading-8">
+            <section className="py-24">
 
-                  {item.desc}
+                <div className="mx-auto max-w-5xl px-6 text-center">
 
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* LARGE IMAGE SECTION */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-            <div>
-
-              <Image
-                src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1400&q=80"
-                alt="Precision Agriculture AI"
-                width={700}
-                height={900}
-                className="rounded-3xl shadow-2xl"
-              />
-
-            </div>
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-                Precision Farming
-
-              </span>
-
-              <h2 className="text-5xl font-bold mt-5 mb-8">
-
-                Turning Agricultural
-                Images Into
-                Actionable AI Insights
-
-              </h2>
-
-              <p className="text-lg leading-9 text-gray-600 mb-6">
-
-                Every drone flight, satellite image, greenhouse inspection,
-                and field survey generates valuable agricultural information.
-                Our annotation specialists transform these raw images into
-                structured datasets that enable AI systems to identify crop
-                health, estimate yield, detect weeds, monitor irrigation,
-                and optimize farming operations.
-
-              </p>
-
-              <p className="text-lg leading-9 text-gray-600 mb-8">
-
-                Whether you're developing precision agriculture software,
-                autonomous farming robots, smart irrigation platforms,
-                or crop disease detection systems, high-quality annotated
-                datasets are the foundation of accurate machine learning
-                models.
-
-              </p>
-
-              <div className="space-y-5">
-
-                {[
-                  "Drone Imagery Annotation",
-                  "Satellite Image Analysis",
-                  "Precision Farming AI",
-                  "Smart Irrigation Systems",
-                  "Agricultural Robotics",
-                  "Crop Health Monitoring",
-
-                ].map((item) => (
-
-                  <div
-                    key={item}
-                    className="flex items-center gap-4"
-                  >
-
-                    <CheckCircle2 className="text-cyan-500" />
-
-                    <span className="text-lg">
-
-                      {item}
-
+                    <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">
+                        The Challenge
                     </span>
 
-                  </div>
+                    <h2 className="mt-5 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                        A Farmer Sees a Field.
+                        <span className="block text-emerald-600">
+                            AI Sees Millions of Pixels.
+                        </span>
+                    </h2>
 
-                ))}
+                    <p className="mx-auto mt-8 max-w-4xl text-lg leading-9 text-slate-600">
 
-              </div>
+                        A single agricultural image can contain healthy plants,
+                        damaged leaves, weeds, soil, irrigation equipment,
+                        shadows, and dozens of other visual patterns.
 
-            </div>
+                        For an AI model to understand those differences,
+                        someone needs to teach it what each pattern represents.
 
-          </div>
+                    </p>
 
-        </div>
+                    <p className="mx-auto mt-6 max-w-4xl text-lg leading-9 text-slate-600">
 
-      </section>
-      {/* ====================================================== */}
-      {/* AGRICULTURE AI APPLICATIONS */}
-      {/* ====================================================== */}
+                        That&apos;s where agricultural data annotation becomes
+                        critical. Annotexia helps transform raw field,
+                        crop, aerial, and drone imagery into structured
+                        datasets that machine learning systems can learn from.
 
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center max-w-4xl mx-auto mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              AI Applications
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4 mb-8">
-
-              Supporting Every Stage of
-              Modern Agriculture
-
-            </h2>
-
-            <p className="text-lg text-gray-600 leading-9">
-
-              Agriculture Artificial Intelligence is rapidly transforming
-              how farms monitor crops, manage resources, predict yields,
-              and improve productivity. Our annotation services support
-              AI systems across every stage of the agricultural lifecycle.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            {[
-              "Precision Farming",
-              "Crop Health Monitoring",
-              "Plant Disease Detection",
-              "Weed Detection",
-              "Fruit Counting",
-              "Yield Prediction",
-              "Greenhouse Automation",
-              "Drone Mapping",
-              "Satellite Monitoring",
-              "Livestock Monitoring",
-              "Agricultural Robotics",
-              "Smart Irrigation",
-            ].map((item) => (
-
-              <div
-                key={item}
-                className="bg-white rounded-2xl border p-8 hover:shadow-xl transition"
-              >
-
-                <div className="text-4xl mb-5">
-
-                  🌾
+                    </p>
 
                 </div>
 
-                <h3 className="font-bold text-xl">
+            </section>
 
-                  {item}
 
-                </h3>
+            {/* =========================================================
+                STATS
+            ========================================================= */}
 
-              </div>
+            <section className="bg-slate-50 py-20">
 
-            ))}
+                <div className="mx-auto max-w-7xl px-6">
 
-          </div>
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 
-        </div>
+                        {[
+                            {
+                                value: "99%",
+                                title: "Quality-Focused",
+                                description:
+                                    "Structured QA workflows help maintain annotation consistency.",
+                            },
+                            {
+                                value: "10+",
+                                title: "Annotation Types",
+                                description:
+                                    "Bounding boxes, polygons, segmentation, classification and more.",
+                            },
+                            {
+                                value: "Multi",
+                                title: "Data Sources",
+                                description:
+                                    "Ground imagery, drone footage, aerial imagery and video.",
+                            },
+                            {
+                                value: "Scalable",
+                                title: "AI Workflows",
+                                description:
+                                    "Designed for research, startups and production-scale projects.",
+                            },
+                        ].map((stat) => (
+                            <div
+                                key={stat.title}
+                                className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                            >
 
-      </section>
+                                <div className="text-4xl font-extrabold text-emerald-600">
+                                    {stat.value}
+                                </div>
 
-      {/* ====================================================== */}
-      {/* ANNOTATION TYPES */}
-      {/* ====================================================== */}
+                                <h3 className="mt-3 text-xl font-bold">
+                                    {stat.title}
+                                </h3>
 
-      <section className="py-24">
+                                <p className="mt-3 leading-7 text-slate-600">
+                                    {stat.description}
+                                </p>
 
-        <div className="max-w-7xl mx-auto px-6">
+                            </div>
+                        ))}
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+                    </div>
 
-            <div>
+                </div>
 
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
+            </section>
 
-                Annotation Expertise
 
-              </span>
+            {/* =========================================================
+                ANNOTATION SERVICES
+            ========================================================= */}
 
-              <h2 className="text-5xl font-bold mt-5 mb-8">
+            <section className="py-24">
 
-                Every Annotation Type
-                Required for
-                Agriculture AI
+                <div className="mx-auto max-w-7xl px-6">
 
-              </h2>
+                    <div className="mx-auto mb-16 max-w-3xl text-center">
 
-              <p className="text-lg leading-9 text-gray-600 mb-10">
+                        <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">
+                            Agriculture Annotation Services
+                        </span>
 
-                Different agricultural AI models require different annotation
-                techniques. Our specialists create precise datasets using
-                industry-standard annotation methods tailored to your
-                machine learning objectives.
+                        <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
+                            Turn Agricultural Data Into
+                            <span className="block text-emerald-600">
+                                AI-Ready Training Data
+                            </span>
+                        </h2>
 
-              </p>
+                        <p className="mt-6 text-lg leading-8 text-slate-600">
+                            Different agriculture AI applications require
+                            different annotation strategies. Our workflows
+                            can be adapted to your crops, environment,
+                            taxonomy, and machine learning objectives.
+                        </p>
 
-              <div className="grid md:grid-cols-2 gap-5">
+                    </div>
 
-                {[
-                  "Bounding Boxes",
-                  "Polygon Annotation",
-                  "Semantic Segmentation",
-                  "Instance Segmentation",
-                  "Image Classification",
-                  "Keypoint Annotation",
-                  "3D Cuboids",
-                  "LiDAR Annotation",
-                  "Multispectral Images",
-                  "Hyperspectral Images",
-                  "Satellite Imagery",
-                  "Drone Video Tracking",
+                    <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
 
-                ].map((item) => (
+                        {annotationServices.map((service) => {
 
-                  <div
-                    key={item}
-                    className="flex items-center gap-3"
-                  >
+                            const Icon = service.icon;
 
-                    <CheckCircle2 className="text-cyan-500" />
+                            return (
+                                <div
+                                    key={service.title}
+                                    className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                                >
 
-                    <span>
+                                    <div className="absolute left-0 top-0 h-1 w-0 bg-emerald-500 transition-all duration-500 group-hover:w-full" />
 
-                      {item}
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 transition group-hover:bg-emerald-500">
 
+                                        <Icon
+                                            size={27}
+                                            className="text-emerald-600 transition group-hover:text-white"
+                                        />
+
+                                    </div>
+
+                                    <h3 className="mt-7 text-xl font-bold">
+                                        {service.title}
+                                    </h3>
+
+                                    <p className="mt-4 leading-7 text-slate-600">
+                                        {service.description}
+                                    </p>
+
+                                </div>
+                            );
+                        })}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =========================================================
+                APPLICATIONS
+            ========================================================= */}
+
+            <section className="bg-slate-950 py-24 text-white">
+
+                <div className="mx-auto max-w-7xl px-6">
+
+                    <div className="grid items-center gap-16 lg:grid-cols-2">
+
+                        <div>
+
+                            <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
+                                AI Applications
+                            </span>
+
+                            <h2 className="mt-5 text-4xl font-bold leading-tight lg:text-5xl">
+                                Built for the Way
+                                <span className="block text-emerald-400">
+                                    Agricultural AI Is Used
+                                </span>
+                            </h2>
+
+                            <p className="mt-7 text-lg leading-8 text-slate-300">
+                                From monitoring crop health from the sky to
+                                identifying diseases at plant level, accurate
+                                training data helps agricultural AI systems
+                                understand real-world conditions.
+                            </p>
+
+                            <Link
+                                href="/contact"
+                                className="mt-9 inline-flex items-center rounded-xl bg-emerald-500 px-7 py-4 font-semibold text-white transition hover:bg-emerald-600"
+                            >
+                                Discuss Your Agriculture Project
+                                <ArrowRight
+                                    className="ml-2"
+                                    size={19}
+                                />
+                            </Link>
+
+                        </div>
+
+                        <div className="grid gap-4 sm:grid-cols-2">
+
+                            {applications.map((application) => (
+                                <div
+                                    key={application}
+                                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-emerald-400/40 hover:bg-white/10"
+                                >
+
+                                    <CheckCircle2
+                                        size={19}
+                                        className="shrink-0 text-emerald-400"
+                                    />
+
+                                    <span className="font-medium">
+                                        {application}
+                                    </span>
+
+                                </div>
+                            ))}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =========================================================
+                ANNOTATION TYPES
+            ========================================================= */}
+
+            <section className="py-24">
+
+                <div className="mx-auto max-w-7xl px-6">
+
+                    <div className="grid gap-14 lg:grid-cols-2">
+
+                        <div>
+
+                            <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">
+                                Annotation Techniques
+                            </span>
+
+                            <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
+                                The Right Label for
+                                <span className="block text-emerald-600">
+                                    Every Agricultural Dataset
+                                </span>
+                            </h2>
+
+                            <p className="mt-7 text-lg leading-8 text-slate-600">
+                                Your AI model may need to detect an entire
+                                crop, isolate a diseased leaf, identify
+                                individual plants, or understand the exact
+                                boundary of an agricultural field.
+                            </p>
+
+                            <p className="mt-5 text-lg leading-8 text-slate-600">
+                                We select annotation approaches based on
+                                the actual requirements of your model and
+                                dataset.
+                            </p>
+
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4">
+
+                            {annotationTypes.map((type) => (
+                                <div
+                                    key={type}
+                                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-5 font-semibold transition hover:border-emerald-300 hover:bg-emerald-50"
+                                >
+
+                                    <Target
+                                        size={18}
+                                        className="shrink-0 text-emerald-600"
+                                    />
+
+                                    {type}
+
+                                </div>
+                            ))}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =========================================================
+                WORKFLOW
+            ========================================================= */}
+
+            <section className="bg-slate-50 py-24">
+
+                <div className="mx-auto max-w-6xl px-6">
+
+                    <div className="mx-auto mb-16 max-w-3xl text-center">
+
+                        <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">
+                            Our Workflow
+                        </span>
+
+                        <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
+                            From Raw Field Imagery
+                            <span className="block text-emerald-600">
+                                to AI-Ready Dataset
+                            </span>
+                        </h2>
+
+                    </div>
+
+                    <div className="space-y-6">
+
+                        {workflow.map((step) => (
+                            <div
+                                key={step.number}
+                                className="group flex flex-col gap-6 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-xl md:flex-row md:items-start"
+                            >
+
+                                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-xl font-extrabold text-emerald-600 transition group-hover:bg-emerald-500 group-hover:text-white">
+                                    {step.number}
+                                </div>
+
+                                <div>
+
+                                    <h3 className="text-2xl font-bold">
+                                        {step.title}
+                                    </h3>
+
+                                    <p className="mt-3 max-w-4xl leading-8 text-slate-600">
+                                        {step.description}
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =========================================================
+                WHY ANNOTEXIA
+            ========================================================= */}
+
+            <section className="py-24">
+
+                <div className="mx-auto max-w-7xl px-6">
+
+                    <div className="mx-auto mb-16 max-w-3xl text-center">
+
+                        <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">
+                            Why Annotexia
+                        </span>
+
+                        <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
+                            More Than Just
+                            <span className="block text-emerald-600">
+                                Data Labeling
+                            </span>
+                        </h2>
+
+                        <p className="mt-6 text-lg leading-8 text-slate-600">
+                            Agricultural AI depends on datasets that reflect
+                            the complexity of real-world environments.
+                            Our workflow focuses on quality, consistency,
+                            scalability, and project-specific requirements.
+                        </p>
+
+                    </div>
+
+                    <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+
+                        {whyAnnotexia.map((item) => {
+
+                            const Icon = item.icon;
+
+                            return (
+                                <div
+                                    key={item.title}
+                                    className="group rounded-3xl border border-slate-200 bg-white p-9 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                                >
+
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 transition group-hover:bg-emerald-500">
+
+                                        <Icon
+                                            size={26}
+                                            className="text-emerald-600 transition group-hover:text-white"
+                                        />
+
+                                    </div>
+
+                                    <h3 className="mt-7 text-2xl font-bold">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="mt-4 leading-8 text-slate-600">
+                                        {item.description}
+                                    </p>
+
+                                </div>
+                            );
+                        })}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =========================================================
+                FREE SAMPLE CTA
+            ========================================================= */}
+
+            <section className="py-10">
+
+                <div className="mx-auto max-w-7xl px-6">
+
+                    <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-r from-emerald-600 via-green-600 to-cyan-700 px-8 py-16 text-white lg:px-16">
+
+                        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+
+                        <div className="relative grid items-center gap-12 lg:grid-cols-2">
+
+                            <div>
+
+                                <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-100">
+                                    Start With a Sample
+                                </span>
+
+                                <h2 className="mt-5 text-4xl font-bold leading-tight lg:text-5xl">
+                                    See the Quality Before You Scale
+                                </h2>
+
+                                <p className="mt-6 text-lg leading-8 text-emerald-50">
+                                    Share a small sample of your agricultural
+                                    dataset and annotation requirements.
+                                    Evaluate our approach before committing
+                                    to a larger project.
+                                </p>
+
+                            </div>
+
+                            <div className="lg:text-right">
+
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center rounded-2xl bg-white px-8 py-5 text-lg font-bold text-emerald-700 shadow-xl transition hover:scale-105"
+                                >
+                                    Request Free Sample
+
+                                    <ArrowRight
+                                        className="ml-2"
+                                        size={20}
+                                    />
+                                </Link>
+
+                                <p className="mt-4 text-sm text-emerald-100">
+                                    No long-term commitment required.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =========================================================
+                FAQ
+            ========================================================= */}
+
+            <section className="bg-slate-50 py-24">
+
+                <div className="mx-auto max-w-5xl px-6">
+
+                    <div className="mb-16 text-center">
+
+                        <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">
+                            Frequently Asked Questions
+                        </span>
+
+                        <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
+                            Agriculture AI Annotation FAQ
+                        </h2>
+
+                        <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+                            Answers to common questions about agricultural
+                            data annotation, datasets, workflows, and
+                            project requirements.
+                        </p>
+
+                    </div>
+
+                    <div className="space-y-5">
+
+                        {faqs.map((faq) => (
+                            <details
+                                key={faq.question}
+                                className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-lg"
+                            >
+
+                                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-bold">
+
+                                    <span>
+                                        {faq.question}
+                                    </span>
+
+                                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-xl font-normal text-emerald-600 transition group-open:rotate-45">
+                                        +
+                                    </span>
+
+                                </summary>
+
+                                <p className="mt-5 max-w-4xl leading-8 text-slate-600">
+                                    {faq.answer}
+                                </p>
+
+                            </details>
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =========================================================
+                SEO CONTENT
+            ========================================================= */}
+
+            <section className="py-20">
+
+                <div className="mx-auto max-w-5xl px-6">
+
+                    <h2 className="text-3xl font-bold">
+                        Agriculture Data Annotation Services for AI and
+                        Machine Learning
+                    </h2>
+
+                    <div className="mt-8 space-y-6 text-lg leading-9 text-slate-600">
+
+                        <p>
+                            Agriculture is becoming increasingly data-driven.
+                            Computer vision, drones, satellite imagery,
+                            robotics, and machine learning are helping
+                            agricultural organizations monitor crops,
+                            identify diseases, detect weeds, analyze fields,
+                            and improve farming decisions.
+                        </p>
+
+                        <p>
+                            However, agricultural AI models require large
+                            amounts of accurately labeled training data.
+                            Annotexia provides agriculture data annotation
+                            services for crop images, plant disease datasets,
+                            drone imagery, field mapping, object detection,
+                            segmentation, and other computer vision
+                            applications.
+                        </p>
+
+                        <p>
+                            Our agriculture annotation workflows can support
+                            bounding boxes, polygons, semantic segmentation,
+                            instance segmentation, classification,
+                            keypoints, and custom labeling requirements.
+                            Projects can be delivered in formats such as
+                            COCO, YOLO, Pascal VOC, JSON, XML, CSV, or
+                            customer-specific formats.
+                        </p>
+
+                        <p>
+                            Whether you are developing a precision agriculture
+                            platform, crop monitoring system, agricultural
+                            robot, disease detection model, or drone-based
+                            farming solution, Annotexia can help transform
+                            raw agricultural data into structured training
+                            datasets for machine learning.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =========================================================
+                FINAL CTA
+            ========================================================= */}
+
+            <section className="bg-slate-950 py-24 text-white">
+
+                <div className="mx-auto max-w-5xl px-6 text-center">
+
+                    <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-400">
+                        Build Better Agriculture AI
                     </span>
 
-                  </div>
+                    <h2 className="mt-5 text-4xl font-extrabold lg:text-5xl">
+                        Your Agriculture AI Starts With Better Data
+                    </h2>
 
-                ))}
+                    <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-slate-300">
+                        Whether you are working with crop images, drone
+                        imagery, plant disease datasets, or agricultural
+                        video, Annotexia can help create accurate,
+                        scalable, and machine-learning-ready training data.
+                    </p>
 
-              </div>
+                    <div className="mt-10 flex flex-wrap justify-center gap-4">
 
-            </div>
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center rounded-xl bg-emerald-500 px-8 py-4 font-bold text-white transition hover:bg-emerald-600"
+                        >
+                            Get Free Consultation
 
-            <div>
+                            <ArrowRight
+                                className="ml-2"
+                                size={20}
+                            />
+                        </Link>
 
-              <Image
-                src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1200&q=80"
-                alt="Crop Disease Detection"
-                width={700}
-                height={850}
-                className="rounded-3xl shadow-2xl"
-              />
+                        <Link
+                            href="/services/data-labeling"
+                            className="rounded-xl border border-white/20 px-8 py-4 font-bold text-white transition hover:border-emerald-400 hover:bg-white/5"
+                        >
+                            Explore Data Labeling
+                        </Link>
 
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* DATASET FORMATS */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-900 py-24 text-white">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-400 font-semibold">
-
-              Dataset Formats
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4">
-
-              Delivered In Your Preferred Format
-
-            </h2>
-
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-
-            {[
-              "YOLO",
-              "COCO",
-              "Pascal VOC",
-              "GeoJSON",
-              "GeoTIFF",
-              "JSON",
-              "CSV",
-              "XML",
-              "CVAT",
-              "Label Studio",
-
-            ].map((item) => (
-
-              <div
-                key={item}
-                className="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-cyan-600 transition"
-              >
-
-                <h3 className="font-semibold">
-
-                  {item}
-
-                </h3>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* WORKFLOW */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center max-w-4xl mx-auto mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Our Workflow
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4 mb-8">
-
-              How We Deliver
-              Enterprise Quality
-              Datasets
-
-            </h2>
-
-          </div>
-
-          <div className="grid md:grid-cols-5 gap-8">
-
-            {[
-              {
-                step: "01",
-                title: "Requirement Analysis",
-              },
-              {
-                step: "02",
-                title: "Pilot Annotation",
-              },
-              {
-                step: "03",
-                title: "Production Labeling",
-              },
-              {
-                step: "04",
-                title: "Multi-Level QA",
-              },
-              {
-                step: "05",
-                title: "Dataset Delivery",
-              },
-
-            ].map((item) => (
-
-              <div
-                key={item.step}
-                className="text-center"
-              >
-
-                <div className="w-20 h-20 mx-auto rounded-full bg-cyan-500 text-white flex items-center justify-center text-2xl font-bold">
-
-                  {item.step}
+                    </div>
 
                 </div>
 
-                <h3 className="font-bold text-xl mt-6">
-
-                  {item.title}
-
-                </h3>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ====================================================== */}
-      {/* WHY ANNOTEXIA */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center max-w-4xl mx-auto mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Why Annotexia
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4 mb-8">
-
-              Why Agriculture AI Companies
-              Choose Annotexia
-
-            </h2>
-
-            <p className="text-lg text-gray-600 leading-9">
-
-              Building successful agriculture AI solutions requires more than
-              just annotations. It requires a partner who understands quality,
-              scalability, security, and AI training data standards.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            {[
-              {
-                title: "99% Annotation Accuracy",
-                desc: "Every dataset goes through multiple quality assurance reviews before delivery."
-              },
-              {
-                title: "Agriculture Domain Experts",
-                desc: "Experienced annotators familiar with crops, plants, irrigation systems, weeds and agricultural equipment."
-              },
-              {
-                title: "Scalable Workforce",
-                desc: "Whether your project contains 5,000 images or 5 million images, we scale seamlessly."
-              },
-              {
-                title: "Fast Turnaround",
-                desc: "Optimized production workflows ensure timely delivery without compromising quality."
-              },
-              {
-                title: "Enterprise Security",
-                desc: "Strict NDA compliance, secure infrastructure and confidential project handling."
-              },
-              {
-                title: "Dedicated Project Manager",
-                desc: "One point of contact throughout the project for transparent communication."
-              }
-
-            ].map((item) => (
-
-              <div
-                key={item.title}
-                className="bg-white rounded-2xl border p-8 hover:shadow-xl transition"
-              >
-
-                <h3 className="text-2xl font-bold mb-4">
-
-                  {item.title}
-
-                </h3>
-
-                <p className="text-gray-600 leading-8">
-
-                  {item.desc}
-
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* FREE SAMPLE */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-            <div>
-
-              <Image
-                src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1200&q=80"
-                alt="Agriculture Dataset"
-                width={700}
-                height={850}
-                className="rounded-3xl shadow-2xl"
-              />
-
-            </div>
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-                Try Before You Commit
-
-              </span>
-
-              <h2 className="text-5xl font-bold mt-5 mb-8">
-
-                Get Your First
-                Sample Dataset
-                Completely Free
-
-              </h2>
-
-              <p className="text-lg leading-9 text-gray-600 mb-6">
-
-                Choosing an annotation partner is an important decision.
-                Instead of asking you to trust our claims, we invite you to
-                experience our quality firsthand.
-
-              </p>
-
-              <p className="text-lg leading-9 text-gray-600 mb-10">
-
-                Send us a small batch of your agriculture images,
-                drone imagery, satellite images, or crop datasets.
-                We'll annotate them completely free so you can
-                evaluate our accuracy, consistency, and delivery
-                speed before starting your full project.
-
-              </p>
-
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-xl font-semibold transition"
-              >
-
-                Request Free Sample Dataset
-
-                <ArrowRight size={20} />
-
-              </Link>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* FAQ */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-5xl mx-auto px-6">
-
-          <h2 className="text-5xl font-bold text-center mb-16">
-
-            Frequently Asked Questions
-
-          </h2>
-
-          <div className="space-y-8">
-
-            <div>
-
-              <h3 className="text-2xl font-semibold mb-4">
-
-                How can we trust Annotexia?
-
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-
-                We understand that selecting an annotation partner
-                requires confidence. That's why we offer a completely
-                free sample annotation service. You can evaluate our
-                accuracy, consistency, communication, and turnaround
-                time before committing to a larger engagement.
-
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="text-2xl font-semibold mb-4">
-
-                Do you provide a free sample?
-
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-
-                Yes. We provide a free sample dataset so your team can
-                verify annotation quality before placing a production order.
-
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="text-2xl font-semibold mb-4">
-
-                Can you handle enterprise-scale agriculture datasets?
-
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-
-                Absolutely. Our scalable annotation workforce can process
-                millions of images, drone videos, satellite imagery,
-                and agricultural datasets while maintaining strict
-                quality standards.
-
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="text-2xl font-semibold mb-4">
-
-                Which annotation formats do you support?
-
-              </h3>
-
-              <p className="text-gray-600 leading-8">
-
-                We support COCO, YOLO, Pascal VOC, GeoJSON,
-                GeoTIFF, CVAT, Label Studio, XML, JSON,
-                CSV and custom formats.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* FINAL CTA */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-900 text-white py-24">
-
-        <div className="max-w-5xl mx-auto px-6 text-center">
-
-          <h2 className="text-5xl font-bold mb-8">
-
-            Ready to Build
-            Next-Generation
-            Agriculture AI?
-
-          </h2>
-
-          <p className="text-xl text-slate-300 leading-9 mb-10">
-
-            Whether you're developing precision farming software,
-            drone analytics platforms, crop monitoring solutions,
-            or autonomous agricultural robots, Annotexia provides
-            the high-quality training data your AI models need
-            to achieve production-level performance.
-
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-5">
-
-            <Link
-              href="/contact"
-              className="bg-cyan-500 hover:bg-cyan-600 px-8 py-4 rounded-xl font-semibold transition"
-            >
-
-              Request Free Consultation
-
-            </Link>
-
-            <Link
-              href="/services"
-              className="border border-white/20 hover:bg-white/10 px-8 py-4 rounded-xl transition"
-            >
-
-              Explore Services
-
-            </Link>
-
-          </div>
-
-        </div>
-
-      </section>
-      </main>
-  )
-};
+            </section>
+
+        </main>
+    );
+}

@@ -1,1333 +1,1062 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight,
-  CheckCircle2,
-  Eye,
-  Brain,
-  Cpu,
-  ScanSearch,
+    ArrowRight,
+    CheckCircle2,
+    BrainCircuit,
+    Eye,
+    ScanSearch,
+    Target,
+    ShieldCheck,
+    Layers3,
+    Cpu,
+    Boxes,
 } from "lucide-react";
 
 export const metadata = {
-  title:
-    "Computer Vision Annotation Services | Image Annotation for AI & Machine Learning | Annotexia",
-  description:
-    "Professional Computer Vision Annotation Services including Image Annotation, Bounding Box, Polygon Annotation, Semantic Segmentation, OCR, Keypoint Labeling, Object Detection, Image Classification, and AI Training Data for Machine Learning.",
-  keywords: [
-    "Computer Vision Annotation Services",
-    "Image Annotation Services",
-    "Image Labeling Company",
-    "AI Training Data",
-    "Bounding Box Annotation",
-    "Semantic Segmentation",
-    "Polygon Annotation",
-    "Image Classification",
-    "Object Detection Dataset",
-    "Computer Vision Dataset",
-    "Machine Learning Annotation",
-    "AI Dataset Annotation",
-  ],
+    title:
+        "Computer Vision Data Annotation Services | AI Training Data | Annotexia",
+
+    description:
+        "Annotexia provides high-quality computer vision data annotation services including image labeling, bounding boxes, segmentation, polygons, keypoints, OCR, object detection, and video annotation for AI and machine learning models.",
+
+    keywords: [
+        "computer vision annotation services",
+        "computer vision data labeling",
+        "computer vision datasets",
+        "image annotation services",
+        "AI training data",
+        "object detection annotation",
+        "image segmentation",
+        "semantic segmentation",
+        "instance segmentation",
+        "polygon annotation",
+        "keypoint annotation",
+        "OCR annotation",
+        "video annotation",
+        "machine learning training data",
+        "computer vision AI",
+    ],
+
+    alternates: {
+        canonical: "https://annotexia.com/industries/computer-vision",
+    },
+
+    openGraph: {
+        title:
+            "Computer Vision Data Annotation Services | Annotexia",
+        description:
+            "Build reliable computer vision models with accurate image, video, segmentation, object detection, OCR, and keypoint annotation services.",
+        url: "https://annotexia.com/industries/computer-vision",
+        siteName: "Annotexia",
+        type: "website",
+        images: [
+            {
+                url: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
+                width: 1400,
+                height: 800,
+                alt: "Computer vision AI data annotation",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title:
+            "Computer Vision Data Annotation Services | Annotexia",
+        description:
+            "Accurate training data for computer vision, object detection, segmentation, OCR, keypoints, and AI applications.",
+    },
 };
 
+const annotationTypes = [
+    {
+        title: "Bounding Box Annotation",
+        description:
+            "Identify and localize objects with precise rectangular bounding boxes for object detection models.",
+        icon: Boxes,
+        features: [
+            "Object Detection",
+            "Vehicle Detection",
+            "People Detection",
+            "Product Detection",
+        ],
+    },
+
+    {
+        title: "Polygon Annotation",
+        description:
+            "Create accurate object boundaries for complex shapes where rectangular bounding boxes are not sufficient.",
+        icon: Target,
+        features: [
+            "Irregular Objects",
+            "Product Outlines",
+            "Road Features",
+            "Industrial Objects",
+        ],
+    },
+
+    {
+        title: "Semantic Segmentation",
+        description:
+            "Assign pixel-level classes to images to help models understand the complete visual environment.",
+        icon: Layers3,
+        features: [
+            "Pixel-Level Labels",
+            "Road Segmentation",
+            "Background Separation",
+            "Scene Understanding",
+        ],
+    },
+
+    {
+        title: "Instance Segmentation",
+        description:
+            "Separate individual objects of the same class with precise pixel-level masks.",
+        icon: ScanSearch,
+        features: [
+            "Individual Objects",
+            "Crowd Analysis",
+            "Medical Imaging",
+            "Retail Products",
+        ],
+    },
+
+    {
+        title: "Keypoint & Landmark Annotation",
+        description:
+            "Mark important points on objects, humans, products, and structures for pose estimation and visual understanding.",
+        icon: Eye,
+        features: [
+            "Human Pose",
+            "Facial Landmarks",
+            "Object Keypoints",
+            "Gesture Recognition",
+        ],
+    },
+
+    {
+        title: "OCR & Text Annotation",
+        description:
+            "Label text regions and characters in images to train OCR and document intelligence systems.",
+        icon: ScanSearch,
+        features: [
+            "Text Detection",
+            "Document OCR",
+            "License Plates",
+            "Scene Text",
+        ],
+    },
+];
+
+const applications = [
+    {
+        title: "Object Detection",
+        description:
+            "Train models to identify and locate objects across images and video streams.",
+    },
+    {
+        title: "Image Classification",
+        description:
+            "Create structured datasets for classifying images into predefined categories.",
+    },
+    {
+        title: "Visual Search",
+        description:
+            "Build datasets that help AI systems identify and retrieve visually similar products or objects.",
+    },
+    {
+        title: "Face & Human Analysis",
+        description:
+            "Support facial landmark detection, human pose estimation, gesture recognition, and people analytics.",
+    },
+    {
+        title: "Industrial Inspection",
+        description:
+            "Train computer vision systems to detect defects, anomalies, and quality issues in manufacturing.",
+    },
+    {
+        title: "Retail Intelligence",
+        description:
+            "Develop AI systems for shelf monitoring, product recognition, inventory analysis, and checkout automation.",
+    },
+];
+
+const industries = [
+    "Healthcare",
+    "Autonomous Vehicles",
+    "Retail & E-commerce",
+    "Agriculture",
+    "Manufacturing",
+    "Sports Analytics",
+    "Robotics",
+    "Drone & Aerial Imaging",
+];
+
+const workflow = [
+    {
+        number: "01",
+        title: "Understand Your Vision Task",
+        description:
+            "We review your model objectives, classes, annotation requirements, dataset characteristics, and expected output.",
+    },
+    {
+        number: "02",
+        title: "Define Annotation Guidelines",
+        description:
+            "Clear project-specific guidelines are created to ensure every annotator follows the same labeling rules.",
+    },
+    {
+        number: "03",
+        title: "Annotate & Label",
+        description:
+            "Trained annotation specialists label your images and videos using the required annotation methodology.",
+    },
+    {
+        number: "04",
+        title: "Quality Assurance",
+        description:
+            "Annotations pass through structured review processes to identify missing labels, incorrect classes, and boundary errors.",
+    },
+    {
+        number: "05",
+        title: "Validation & Delivery",
+        description:
+            "Validated datasets are exported in your required format and prepared for machine learning pipelines.",
+    },
+];
+
+const faqs = [
+    {
+        question:
+            "What computer vision annotation services does Annotexia provide?",
+        answer:
+            "Annotexia provides bounding box annotation, polygon annotation, semantic segmentation, instance segmentation, keypoint annotation, landmark annotation, OCR labeling, image classification, video annotation, and custom computer vision data labeling.",
+    },
+    {
+        question:
+            "Can Annotexia annotate datasets for object detection models?",
+        answer:
+            "Yes. We provide precise bounding box and polygon annotation for object detection applications involving vehicles, people, products, industrial components, animals, road objects, and other custom classes.",
+    },
+    {
+        question:
+            "Do you provide pixel-level segmentation?",
+        answer:
+            "Yes. Our annotation workflows support both semantic and instance segmentation for applications that require detailed pixel-level understanding of objects and environments.",
+    },
+    {
+        question:
+            "Which annotation formats do you support?",
+        answer:
+            "Depending on project requirements, datasets can be delivered in formats such as COCO JSON, YOLO, Pascal VOC, JSON, XML, CSV, and custom formats.",
+    },
+    {
+        question:
+            "Can you handle large computer vision datasets?",
+        answer:
+            "Yes. Annotexia can support projects ranging from smaller proof-of-concept datasets to large-scale image and video annotation programs.",
+    },
+    {
+        question:
+            "Can I test your annotation quality before starting a large project?",
+        answer:
+            "Yes. We can provide a sample annotation so you can evaluate labeling quality, consistency, communication, and workflow before moving forward with a larger project.",
+    },
+];
+
 export default function ComputerVisionPage() {
-  return (
-    <main className="min-h-screen">
+    return (
+        <main className="bg-white text-slate-900">
 
-      {/* ===================================================== */}
-      {/* HERO */}
-      {/* ===================================================== */}
+            {/* =====================================================
+                HERO
+            ====================================================== */}
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 py-24">
+            <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950">
 
-        <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10" />
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-blue-600/20 blur-[140px]" />
+                    <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-cyan-500/15 blur-[140px]" />
+                </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+                <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="grid items-center gap-16 lg:grid-cols-2">
 
-            {/* LEFT */}
+                        {/* LEFT */}
 
-            <div>
+                        <div>
 
-              <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-sm font-semibold mb-8">
+                            <span className="mb-7 inline-flex items-center rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-300">
+                                Computer Vision AI Data
+                            </span>
 
-                <Eye className="w-5 h-5" />
+                            <h1 className="text-5xl font-extrabold leading-tight text-white lg:text-6xl">
 
-                Enterprise Computer Vision Annotation
+                                Build Smarter
 
-              </div>
+                                <span className="block text-blue-400">
+                                    Computer Vision AI
+                                </span>
 
-              <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight">
+                            </h1>
 
-                Computer Vision
-                <span className="block text-cyan-400">
+                            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 lg:text-xl">
 
-                  Annotation Services
+                                Computer vision models do not learn from pixels
+                                alone. They learn from the information hidden
+                                inside those pixels.
 
-                </span>
+                                Annotexia transforms raw images and videos into
+                                accurate, structured training datasets that help
+                                AI systems detect, classify, segment, and understand
+                                the world around them.
 
-              </h1>
+                            </p>
 
-              <p className="text-slate-300 text-xl leading-9 mt-10">
+                            <div className="mt-10 flex flex-wrap gap-4">
 
-                Build reliable Computer Vision AI with accurately labeled
-                training datasets. Annotexia provides enterprise-grade
-                image annotation, semantic segmentation, object detection,
-                OCR labeling, polygon annotation, keypoint annotation,
-                and custom AI data labeling services that help machine
-                learning models achieve higher accuracy and faster deployment.
+                                <Link
+                                    href="/contact"
+                                    className="rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-xl shadow-blue-900/30 transition hover:bg-blue-700"
+                                >
+                                    Start Your Project
+                                </Link>
 
-              </p>
+                                <Link
+                                    href="/services/image-annotation"
+                                    className="rounded-xl border border-white/20 px-8 py-4 font-semibold text-white transition hover:border-blue-400 hover:bg-white/5"
+                                >
+                                    Explore Image Annotation
+                                </Link>
 
-              <div className="flex flex-wrap gap-5 mt-12">
+                            </div>
 
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-3 bg-cyan-500 hover:bg-cyan-600 px-8 py-4 rounded-xl text-white font-semibold transition"
-                >
-                  Request Free Sample
+                            <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-4">
 
-                  <ArrowRight className="w-5 h-5" />
+                                <div>
+                                    <p className="text-2xl font-bold text-white">
+                                        2D
+                                    </p>
+                                    <p className="mt-1 text-sm text-slate-400">
+                                        Annotation
+                                    </p>
+                                </div>
 
-                </Link>
+                                <div>
+                                    <p className="text-2xl font-bold text-white">
+                                        3D
+                                    </p>
+                                    <p className="mt-1 text-sm text-slate-400">
+                                        Vision Data
+                                    </p>
+                                </div>
 
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-3 border border-white/20 hover:bg-white/10 px-8 py-4 rounded-xl text-white transition"
-                >
-                  Explore Services
+                                <div>
+                                    <p className="text-2xl font-bold text-white">
+                                        Pixel
+                                    </p>
+                                    <p className="mt-1 text-sm text-slate-400">
+                                        Segmentation
+                                    </p>
+                                </div>
 
-                </Link>
+                                <div>
+                                    <p className="text-2xl font-bold text-white">
+                                        OCR
+                                    </p>
+                                    <p className="mt-1 text-sm text-slate-400">
+                                        Text Data
+                                    </p>
+                                </div>
 
-              </div>
+                            </div>
 
-              <div className="grid grid-cols-2 gap-6 mt-14">
+                        </div>
 
-                {[
-                  "99% Annotation Accuracy",
-                  "Enterprise Security",
-                  "Fast Delivery",
-                  "Scalable Workforce",
-                ].map((item) => (
+                        {/* RIGHT */}
 
-                  <div
-                    key={item}
-                    className="flex items-center gap-3"
-                  >
+                        <div className="relative">
 
-                    <CheckCircle2 className="text-cyan-400" />
+                            <div className="absolute -inset-5 rounded-[40px] bg-blue-500/20 blur-3xl" />
 
-                    <span className="text-slate-300">
+                            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-xl">
 
-                      {item}
+                                <Image
+                                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Computer vision artificial intelligence data annotation"
+                                    width={1400}
+                                    height={900}
+                                    priority
+                                    className="h-[460px] w-full rounded-[24px] object-cover"
+                                />
 
+                            </div>
+
+                            <div className="absolute -left-8 top-12 hidden rounded-2xl border border-white/10 bg-slate-900/95 px-6 py-5 shadow-2xl md:block">
+
+                                <p className="text-sm text-blue-400">
+                                    AI Vision
+                                </p>
+
+                                <p className="mt-1 text-lg font-bold text-white">
+                                    Object Detection
+                                </p>
+
+                            </div>
+
+                            <div className="absolute -bottom-8 right-0 rounded-2xl border border-white/10 bg-slate-900/95 px-6 py-5 shadow-2xl">
+
+                                <p className="text-sm text-cyan-400">
+                                    Training Data
+                                </p>
+
+                                <p className="mt-1 text-lg font-bold text-white">
+                                    Pixel-Level Labels
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =====================================================
+                INTRODUCTION
+            ====================================================== */}
+
+            <section className="py-24">
+
+                <div className="mx-auto max-w-5xl px-6 text-center">
+
+                    <span className="font-semibold uppercase tracking-widest text-blue-600">
+                        Why Data Matters
                     </span>
 
-                  </div>
+                    <h2 className="mt-4 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
 
-                ))}
+                        Computer Vision Starts With
+                        <span className="text-blue-600">
+                            {" "}Better Training Data
+                        </span>
 
-              </div>
+                    </h2>
 
-            </div>
+                    <p className="mx-auto mt-7 max-w-4xl text-lg leading-9 text-slate-600">
 
-            {/* RIGHT */}
+                        A computer vision model may process millions of pixels,
+                        but pixels alone do not tell the model what those pixels
+                        represent.
 
-            <div className="relative">
+                        Annotation gives those pixels meaning.
 
-              <div className="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-cyan-500 blur-[120px] opacity-30" />
+                        Whether the goal is detecting a pedestrian, identifying
+                        a manufacturing defect, recognizing a product, segmenting
+                        a road, or estimating human pose, high-quality annotation
+                        provides the structured information AI models need to learn.
 
-              <div className="absolute -bottom-10 right-0 h-40 w-40 rounded-full bg-blue-500 blur-[120px] opacity-30" />
-
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-
-                <Image
-                  src="/images/industries/computervision/hero-computer-vision.webp"
-                  alt="Computer Vision Annotation Services"
-                  width={900}
-                  height={850}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ===================================================== */}
-      {/* WHY COMPUTER VISION */}
-      {/* ===================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-            <div>
-
-              <Image
-                src="/images/industries/computervision/ai-vision.webp"
-                alt="Computer Vision AI Training"
-                width={900}
-                height={700}
-                className="rounded-3xl shadow-xl"
-              />
-
-            </div>
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-                Why It Matters
-
-              </span>
-
-              <h2 className="text-5xl font-bold mt-5 mb-8">
-
-                Every Intelligent Vision System
-                Starts With High-Quality Data
-
-              </h2>
-
-              <p className="text-lg text-gray-600 leading-9 mb-8">
-
-                Modern Artificial Intelligence relies on computer vision
-                to understand images, videos, documents, medical scans,
-                industrial equipment, retail shelves, sports broadcasts,
-                agricultural fields, and autonomous vehicles.
-
-                However, AI models can only perform as well as the data
-                they learn from.
-
-              </p>
-
-              <p className="text-lg text-gray-600 leading-9 mb-8">
-
-                Poor annotations lead to inaccurate predictions,
-                inconsistent object detection, reduced segmentation
-                quality, and lower production performance.
-
-                That's why organizations across the world invest in
-                professional annotation partners capable of producing
-                highly consistent, scalable, and enterprise-quality
-                training datasets.
-
-              </p>
-
-              <p className="text-lg text-gray-600 leading-9">
-
-                At Annotexia, we transform raw visual data into structured,
-                AI-ready datasets that improve model performance,
-                reduce training iterations, and accelerate deployment.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ===================================================== */}
-      {/* CORE EXPERTISE */}
-      {/* ===================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Core Expertise
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4">
-
-              Powering Modern Computer Vision AI
-
-            </h2>
-
-            <p className="text-lg text-gray-600 mt-8 max-w-3xl mx-auto leading-9">
-
-              Our annotation specialists work across diverse industries,
-              helping AI teams build reliable Computer Vision solutions
-              with accurate, scalable, and production-ready datasets.
-
-            </p>
-
-          </div>
-
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-
-            {[
-              {
-                icon: Eye,
-                title: "Image Recognition",
-              },
-              {
-                icon: Brain,
-                title: "Deep Learning",
-              },
-              {
-                icon: Cpu,
-                title: "Machine Learning",
-              },
-              {
-                icon: ScanSearch,
-                title: "AI Perception",
-              },
-            ].map((item) => {
-
-              const Icon = item.icon;
-
-              return (
-
-                <div
-                  key={item.title}
-                  className="bg-white rounded-3xl shadow-lg p-10 text-center hover:-translate-y-2 transition"
-                >
-
-                  <Icon className="w-12 h-12 text-cyan-600 mx-auto mb-6" />
-
-                  <h3 className="text-2xl font-bold">
-
-                    {item.title}
-
-                  </h3>
+                    </p>
 
                 </div>
 
-              );
+            </section>
 
-            })}
 
-          </div>
+            {/* =====================================================
+                ANNOTATION TYPES
+            ====================================================== */}
 
-        </div>
+            <section className="bg-slate-50 py-24">
 
-      </section>
-            {/* ===================================================== */}
-      {/* COMPUTER VISION SERVICES */}
-      {/* ===================================================== */}
+                <div className="mx-auto max-w-7xl px-6">
 
-      <section className="py-24">
+                    <div className="mx-auto mb-16 max-w-3xl text-center">
 
-        <div className="max-w-7xl mx-auto px-6">
+                        <span className="font-semibold uppercase tracking-widest text-blue-600">
+                            Annotation Capabilities
+                        </span>
 
-          <div className="text-center mb-20">
+                        <h2 className="mt-4 text-4xl font-bold text-slate-900 lg:text-5xl">
+                            Computer Vision Annotation Services
+                        </h2>
 
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
+                        <p className="mt-6 text-lg leading-8 text-slate-600">
+                            Choose the annotation technique that matches your
+                            computer vision model and application.
+                        </p>
 
-              Our Services
+                    </div>
 
-            </span>
+                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-            <h2 className="text-5xl font-bold mt-4">
+                        {annotationTypes.map((item) => {
 
-              Computer Vision Annotation Services
+                            const Icon = item.icon;
 
-            </h2>
+                            return (
+                                <div
+                                    key={item.title}
+                                    className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                                >
 
-            <p className="text-lg text-gray-600 mt-8 max-w-3xl mx-auto leading-9">
+                                    <div className="absolute left-0 top-0 h-1 w-0 bg-blue-600 transition-all duration-500 group-hover:w-full" />
 
-              From simple image classification to pixel-perfect segmentation,
-              Annotexia provides comprehensive annotation services that support
-              every stage of computer vision AI development.
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 transition group-hover:bg-blue-600">
 
-            </p>
+                                        <Icon className="text-blue-600 transition group-hover:text-white" />
 
-          </div>
+                                    </div>
 
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                                    <h3 className="mt-7 text-2xl font-bold text-slate-900">
+                                        {item.title}
+                                    </h3>
 
-            {[
-              {
-                title: "Bounding Box Annotation",
-                image: "/images/industries/computervision/object-detection.webp",
-                desc: "Accurate object localization for vehicles, humans, products, animals, industrial equipment, and retail products.",
-              },
-              {
-                title: "Polygon Annotation",
-                image: "/images/industries/computervision/polygon.webp",
-                desc: "High-precision polygon labeling for irregular object boundaries requiring detailed segmentation.",
-              },
-              {
-                title: "Semantic Segmentation",
-                image: "/images/industries/computervision/segmentation.webp",
-                desc: "Pixel-level annotation for scene understanding, autonomous systems, medical AI, and robotics.",
-              },
-              {
-                title: "Instance Segmentation",
-                image: "/images/industries/computervision/instance-segmentation.webp",
-                desc: "Identify and separate multiple objects individually, even within the same category.",
-              },
-              {
-                title: "Keypoint Annotation",
-                image: "/images/industries/computervision/pose-estimation.webp",
-                desc: "Human pose estimation, body joints, facial landmarks, and gesture recognition datasets.",
-              },
-              {
-                title: "Image Classification",
-                image: "/images/industries/computervision/classification.webp",
-                desc: "Categorize images into predefined classes for supervised machine learning models.",
-              },
-              {
-                title: "OCR Annotation",
-                image: "/images/industries/computervision/ocr-document.webp",
-                desc: "Document labeling, handwriting recognition, invoices, receipts, IDs, and forms.",
-              },
-              {
-                title: "Video Annotation",
-                image: "/images/industries/computervision/video-analysis.webp",
-                desc: "Frame-by-frame object tracking, activity recognition, and motion analysis datasets.",
-              },
-              {
-                title: "Object Tracking",
-                image: "/images/industries/computervision/tracking.webp",
-                desc: "Track moving objects across video sequences for surveillance, sports, and autonomous systems.",
-              },
-              {
-                title: "Facial Landmark Annotation",
-                image: "/images/industries/computervision/face-landmark.webp",
-                desc: "Precise facial keypoint annotation for emotion detection, biometrics, and AR applications.",
-              },
-              {
-                title: "Medical Image Annotation",
-                image: "/images/industries/computervision/medical-imaging.webp",
-                desc: "Medical imaging datasets including CT, MRI, X-ray, ultrasound, and pathology slides.",
-              },
-              {
-                title: "Satellite & Aerial Annotation",
-                image: "/images/industries/computervision/satellite.webp",
-                desc: "Satellite imagery labeling for agriculture, mapping, urban planning, and environmental monitoring.",
-              },
-            ].map((service) => (
+                                    <p className="mt-4 leading-8 text-slate-600">
+                                        {item.description}
+                                    </p>
 
-              <div
-                key={service.title}
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2"
-              >
+                                    <div className="mt-7 space-y-3">
 
-                <div className="overflow-hidden">
+                                        {item.features.map((feature) => (
+                                            <div
+                                                key={feature}
+                                                className="flex items-center gap-3"
+                                            >
+                                                <CheckCircle2
+                                                    size={18}
+                                                    className="shrink-0 text-blue-600"
+                                                />
 
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    width={700}
-                    height={450}
-                    className="group-hover:scale-110 transition duration-500 w-full h-56 object-cover"
-                  />
+                                                <span className="text-sm font-medium text-slate-700">
+                                                    {feature}
+                                                </span>
+                                            </div>
+                                        ))}
+
+                                    </div>
+
+                                </div>
+                            );
+                        })}
+
+                    </div>
 
                 </div>
 
-                <div className="p-8">
+            </section>
 
-                  <h3 className="text-2xl font-bold mb-4">
 
-                    {service.title}
+            {/* =====================================================
+                APPLICATIONS
+            ====================================================== */}
 
-                  </h3>
+            <section className="py-24">
 
-                  <p className="text-gray-600 leading-8">
+                <div className="mx-auto max-w-7xl px-6">
 
-                    {service.desc}
+                    <div className="grid items-center gap-16 lg:grid-cols-2">
 
-                  </p>
+                        <div>
+
+                            <span className="font-semibold uppercase tracking-widest text-blue-600">
+                                Real-World Applications
+                            </span>
+
+                            <h2 className="mt-4 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+
+                                From Raw Images to
+                                <span className="text-blue-600">
+                                    {" "}AI Intelligence
+                                </span>
+
+                            </h2>
+
+                            <p className="mt-7 text-lg leading-8 text-slate-600">
+
+                                Computer vision is no longer limited to research
+                                laboratories. It is powering real-world systems
+                                across healthcare, transportation, retail,
+                                manufacturing, agriculture, robotics, and
+                                sports.
+
+                            </p>
+
+                            <Link
+                                href="/contact"
+                                className="mt-8 inline-flex items-center rounded-xl bg-slate-900 px-7 py-4 font-semibold text-white transition hover:bg-blue-700"
+                            >
+                                Discuss Your Use Case
+                                <ArrowRight className="ml-2" size={20} />
+                            </Link>
+
+                        </div>
+
+                        <div className="grid gap-5 sm:grid-cols-2">
+
+                            {applications.map((application) => (
+                                <div
+                                    key={application.title}
+                                    className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                                >
+
+                                    <h3 className="text-xl font-bold text-slate-900">
+                                        {application.title}
+                                    </h3>
+
+                                    <p className="mt-3 leading-7 text-slate-600">
+                                        {application.description}
+                                    </p>
+
+                                </div>
+                            ))}
+
+                        </div>
+
+                    </div>
 
                 </div>
 
-              </div>
+            </section>
 
-            ))}
 
-          </div>
+            {/* =====================================================
+                INDUSTRIES
+            ====================================================== */}
 
-        </div>
+            <section className="bg-slate-950 py-24 text-white">
 
-      </section>
+                <div className="mx-auto max-w-7xl px-6">
 
-      {/* ===================================================== */}
-      {/* AI APPLICATIONS */}
-      {/* ===================================================== */}
+                    <div className="mx-auto max-w-3xl text-center">
 
-      <section className="bg-slate-950 text-white py-24">
+                        <span className="font-semibold uppercase tracking-widest text-blue-400">
+                            Industry Applications
+                        </span>
 
-        <div className="max-w-7xl mx-auto px-6">
+                        <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
+                            Computer Vision Across Industries
+                        </h2>
 
-          <div className="text-center mb-20">
+                        <p className="mt-6 text-lg leading-8 text-slate-300">
+                            Our annotation workflows can be adapted to different
+                            visual environments, object classes, and AI use cases.
+                        </p>
 
-            <span className="uppercase tracking-widest text-cyan-400 font-semibold">
+                    </div>
 
-              AI Applications
+                    <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
-            </span>
+                        {industries.map((industry) => (
+                            <div
+                                key={industry}
+                                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-6 py-5 transition hover:border-blue-400/40 hover:bg-white/10"
+                            >
 
-            <h2 className="text-5xl font-bold mt-4">
+                                <CheckCircle2
+                                    size={20}
+                                    className="shrink-0 text-blue-400"
+                                />
 
-              Where Computer Vision Powers Innovation
+                                <span className="font-medium">
+                                    {industry}
+                                </span>
 
-            </h2>
+                            </div>
+                        ))}
 
-          </div>
+                    </div>
 
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                </div>
 
-            {[
-              "Autonomous Vehicles",
-              "Medical Imaging",
-              "Retail Analytics",
-              "Sports Analytics",
-              "Agriculture AI",
-              "Manufacturing Inspection",
-              "Robotics",
-              "Smart Cities",
-              "Document AI & OCR",
-              "Security & Surveillance",
-              "Drone Analytics",
-              "Industrial Automation",
-            ].map((item) => (
+            </section>
 
-              <div
-                key={item}
-                className="border border-slate-700 rounded-2xl p-8 hover:bg-cyan-600 hover:border-cyan-600 transition"
-              >
 
-                <CheckCircle2 className="mb-5 text-cyan-400" />
+            {/* =====================================================
+                WORKFLOW
+            ====================================================== */}
 
-                <h3 className="text-xl font-semibold">
+            <section className="py-24">
 
-                  {item}
+                <div className="mx-auto max-w-7xl px-6">
 
-                </h3>
+                    <div className="mx-auto mb-16 max-w-3xl text-center">
 
-              </div>
+                        <span className="font-semibold uppercase tracking-widest text-blue-600">
+                            Our Process
+                        </span>
 
-            ))}
+                        <h2 className="mt-4 text-4xl font-bold text-slate-900 lg:text-5xl">
+                            A Structured Annotation Workflow
+                        </h2>
 
-          </div>
+                        <p className="mt-6 text-lg leading-8 text-slate-600">
+                            Reliable computer vision datasets require more than
+                            simply drawing boxes. Our workflow focuses on
+                            consistency, accuracy, validation, and delivery.
+                        </p>
 
-        </div>
+                    </div>
 
-      </section>
+                    <div className="grid gap-8 md:grid-cols-5">
 
-      {/* ===================================================== */}
-      {/* DATASET TYPES */}
-      {/* ===================================================== */}
+                        {workflow.map((step) => (
+                            <div
+                                key={step.number}
+                                className="relative rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"
+                            >
 
-      <section className="py-24">
+                                <span className="text-4xl font-extrabold text-blue-100">
+                                    {step.number}
+                                </span>
 
-        <div className="max-w-7xl mx-auto px-6">
+                                <h3 className="mt-5 text-xl font-bold text-slate-900">
+                                    {step.title}
+                                </h3>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+                                <p className="mt-4 text-sm leading-7 text-slate-600">
+                                    {step.description}
+                                </p>
 
-            <div>
+                            </div>
+                        ))}
 
-              <Image
-                src="/images/industries/computervision/dataset-types.avif"
-                alt="Computer Vision Dataset Types"
-                width={900}
-                height={700}
-                className="rounded-3xl shadow-xl"
-              />
+                    </div>
 
-            </div>
+                </div>
 
-            <div>
+            </section>
 
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
 
-                Dataset Expertise
+            {/* =====================================================
+                QUALITY + SECURITY
+            ====================================================== */}
 
-              </span>
+            <section className="bg-slate-50 py-24">
 
-              <h2 className="text-5xl font-bold mt-5 mb-8">
+                <div className="mx-auto max-w-7xl px-6">
 
-                We Annotate Every
-                Type of Visual Data
+                    <div className="grid gap-10 md:grid-cols-3">
 
-              </h2>
+                        <div className="rounded-3xl bg-white p-9 shadow-sm">
 
-              <p className="text-lg text-gray-600 leading-9 mb-10">
+                            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50">
+                                <CheckCircle2 className="text-blue-600" />
+                            </div>
 
-                Our experienced annotation specialists work with diverse
-                datasets collected from cameras, smartphones, drones,
-                satellites, industrial sensors, medical devices, and
-                surveillance systems.
+                            <h3 className="mt-7 text-2xl font-bold">
+                                Quality Assurance
+                            </h3>
 
-              </p>
+                            <p className="mt-4 leading-8 text-slate-600">
+                                Structured reviews help identify missing objects,
+                                incorrect classes, inaccurate boundaries, and
+                                inconsistent annotations before delivery.
+                            </p>
 
-              <div className="grid grid-cols-2 gap-6">
+                        </div>
 
-                {[
-                  "Images",
-                  "Videos",
-                  "Medical Scans",
-                  "Satellite Images",
-                  "Drone Imagery",
-                  "Retail Shelf Images",
-                  "Industrial Cameras",
-                  "Smart City Footage",
-                  "Sports Broadcasts",
-                  "OCR Documents",
-                ].map((item) => (
+                        <div className="rounded-3xl bg-white p-9 shadow-sm">
 
-                  <div
-                    key={item}
-                    className="flex items-center gap-3"
-                  >
+                            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50">
+                                <ShieldCheck className="text-blue-600" />
+                            </div>
 
-                    <CheckCircle2 className="text-cyan-600" />
+                            <h3 className="mt-7 text-2xl font-bold">
+                                Secure Workflows
+                            </h3>
 
-                    <span className="text-lg">
+                            <p className="mt-4 leading-8 text-slate-600">
+                                Confidential project workflows, controlled access,
+                                and NDA support help protect sensitive datasets
+                                throughout the annotation process.
+                            </p>
 
-                      {item}
+                        </div>
 
+                        <div className="rounded-3xl bg-white p-9 shadow-sm">
+
+                            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50">
+                                <Cpu className="text-blue-600" />
+                            </div>
+
+                            <h3 className="mt-7 text-2xl font-bold">
+                                AI-Focused Teams
+                            </h3>
+
+                            <p className="mt-4 leading-8 text-slate-600">
+                                Our annotation workflows are designed around the
+                                requirements of machine learning and computer
+                                vision development teams.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =====================================================
+                FORMATS
+            ====================================================== */}
+
+            <section className="py-20">
+
+                <div className="mx-auto max-w-5xl px-6 text-center">
+
+                    <span className="font-semibold uppercase tracking-widest text-blue-600">
+                        Flexible Delivery
                     </span>
 
-                  </div>
+                    <h2 className="mt-4 text-4xl font-bold">
+                        Annotation Formats for Your ML Pipeline
+                    </h2>
 
-                ))}
+                    <p className="mt-6 text-lg leading-8 text-slate-600">
+                        We can prepare annotated datasets according to your
+                        existing machine learning workflow and technical
+                        requirements.
+                    </p>
 
-              </div>
+                    <div className="mt-10 flex flex-wrap justify-center gap-4">
 
-            </div>
+                        {[
+                            "COCO JSON",
+                            "YOLO",
+                            "Pascal VOC",
+                            "JSON",
+                            "XML",
+                            "CSV",
+                            "Label Studio",
+                            "CVAT",
+                            "Custom Formats",
+                        ].map((format) => (
+                            <span
+                                key={format}
+                                className="rounded-full border border-slate-200 bg-slate-50 px-5 py-3 font-medium text-slate-700"
+                            >
+                                {format}
+                            </span>
+                        ))}
 
-          </div>
-
-        </div>
-
-      </section>
-            {/* ===================================================== */}
-      {/* WORKFLOW */}
-      {/* ===================================================== */}
-
-      <section className="bg-slate-950 text-white py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-400 font-semibold">
-
-              Enterprise Workflow
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4">
-
-              Our Computer Vision Annotation Process
-
-            </h2>
-
-            <p className="text-slate-300 mt-8 max-w-3xl mx-auto text-lg leading-9">
-
-              Every computer vision dataset follows a structured annotation
-              workflow designed to maximize accuracy, consistency, scalability,
-              and delivery speed while meeting enterprise AI standards.
-
-            </p>
-
-          </div>
-
-          <div className="grid lg:grid-cols-6 md:grid-cols-3 gap-8">
-
-            {[
-              {
-                step: "01",
-                title: "Requirement Analysis",
-                desc: "Understand annotation guidelines, AI objectives, dataset size, and delivery format.",
-              },
-              {
-                step: "02",
-                title: "Pilot Dataset",
-                desc: "Annotate a small sample dataset for client approval before production begins.",
-              },
-              {
-                step: "03",
-                title: "Production",
-                desc: "Dedicated annotation specialists label datasets according to approved guidelines.",
-              },
-              {
-                step: "04",
-                title: "Quality Review",
-                desc: "Senior reviewers verify annotation consistency and correctness.",
-              },
-              {
-                step: "05",
-                title: "Client Validation",
-                desc: "Pilot review and continuous feedback ensure complete alignment with project goals.",
-              },
-              {
-                step: "06",
-                title: "Dataset Delivery",
-                desc: "Final datasets delivered in the required annotation format with QA reports.",
-              },
-            ].map((item) => (
-
-              <div
-                key={item.step}
-                className="bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:border-cyan-500 transition"
-              >
-
-                <div className="text-5xl font-black text-cyan-500 mb-6">
-
-                  {item.step}
+                    </div>
 
                 </div>
 
-                <h3 className="text-xl font-bold mb-4">
+            </section>
 
-                  {item.title}
 
-                </h3>
+            {/* =====================================================
+                CTA
+            ====================================================== */}
 
-                <p className="text-slate-300 leading-8">
+            <section className="bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600 py-24">
 
-                  {item.desc}
+                <div className="mx-auto max-w-6xl px-6 text-center text-white">
 
-                </p>
+                    <h2 className="text-4xl font-bold lg:text-5xl">
+                        Your Computer Vision Model
+                        <span className="block text-blue-100">
+                            Starts With Better Data
+                        </span>
+                    </h2>
 
-              </div>
+                    <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-blue-50 lg:text-xl">
 
-            ))}
+                        Whether you&apos;re developing an object detection system,
+                        visual inspection solution, medical AI application,
+                        retail vision platform, or next-generation robotics
+                        system, Annotexia can help transform your raw visual
+                        data into machine-learning-ready training datasets.
 
-          </div>
+                    </p>
 
-        </div>
+                    <div className="mt-10 flex flex-wrap justify-center gap-5">
 
-      </section>
+                        <Link
+                            href="/contact"
+                            className="rounded-xl bg-white px-8 py-4 font-bold text-blue-700 shadow-xl transition hover:bg-slate-100"
+                        >
+                            Request a Free Consultation
+                        </Link>
 
-      {/* ===================================================== */}
-      {/* QUALITY ASSURANCE */}
-      {/* ===================================================== */}
+                        <Link
+                            href="/services"
+                            className="rounded-xl border border-white/40 px-8 py-4 font-bold text-white transition hover:bg-white/10"
+                        >
+                            Explore All Services
+                        </Link>
 
-      <section className="py-24">
+                    </div>
 
-        <div className="max-w-7xl mx-auto px-6">
+                </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            </section>
 
-            <div>
 
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
+            {/* =====================================================
+                FAQ
+            ====================================================== */}
 
-                Quality Assurance
+            <section className="bg-slate-50 py-24">
 
-              </span>
+                <div className="mx-auto max-w-5xl px-6">
 
-              <h2 className="text-5xl font-bold mt-5 mb-8">
+                    <div className="mb-14 text-center">
 
-                Every Dataset Undergoes
-                Multiple Quality Reviews
+                        <span className="font-semibold uppercase tracking-widest text-blue-600">
+                            FAQ
+                        </span>
 
-              </h2>
+                        <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
+                            Computer Vision Annotation FAQs
+                        </h2>
 
-              <p className="text-lg text-gray-600 leading-9 mb-10">
+                        <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+                            Answers to common questions about our computer vision
+                            annotation services.
+                        </p>
 
-                High-performing computer vision models depend on precise,
-                consistent, and unbiased annotations. Our quality assurance
-                process combines human expertise with structured validation
-                to ensure production-ready datasets.
+                    </div>
 
-              </p>
+                    <div className="space-y-5">
 
-              <div className="space-y-6">
+                        {faqs.map((faq) => (
+                            <details
+                                key={faq.question}
+                                className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                            >
 
-                {[
-                  "Primary annotation by trained specialists",
-                  "Peer review for consistency",
-                  "Dedicated Quality Assurance verification",
-                  "Random sampling and audit checks",
-                  "Client feedback integration",
-                  "Final validation before delivery",
-                ].map((item) => (
+                                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-semibold text-slate-900">
 
-                  <div
-                    key={item}
-                    className="flex items-start gap-4"
-                  >
+                                    <span>
+                                        {faq.question}
+                                    </span>
 
-                    <CheckCircle2 className="text-cyan-600 mt-1" />
+                                    <span className="text-2xl font-normal text-blue-600 transition-transform duration-300 group-open:rotate-45">
+                                        +
+                                    </span>
 
-                    <span className="text-lg text-gray-700">
+                                </summary>
 
-                      {item}
+                                <p className="mt-5 max-w-4xl leading-8 text-slate-600">
+                                    {faq.answer}
+                                </p>
 
-                    </span>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </div>
-
-            <div>
-
-              <Image
-                src="/images/industries/computervision/quality-cv.webp"
-                alt="Computer Vision Quality Assurance"
-                width={900}
-                height={700}
-                className="rounded-3xl shadow-xl"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ===================================================== */}
-      {/* SUPPORTED FORMATS */}
-      {/* ===================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Annotation Formats
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4">
-
-              Formats We Support
-
-            </h2>
-
-            <p className="text-lg text-gray-600 mt-8 max-w-3xl mx-auto">
-
-              We deliver datasets compatible with the world's leading AI
-              frameworks and annotation platforms.
-
-            </p>
-
-          </div>
-
-          <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-6">
-
-            {[
-              "COCO",
-              "YOLO",
-              "Pascal VOC",
-              "JSON",
-              "XML",
-              "CSV",
-              "TXT",
-              "KITTI",
-              "CVAT",
-              "Label Studio",
-            ].map((format) => (
-
-              <div
-                key={format}
-                className="bg-white rounded-2xl shadow-md py-10 text-center text-xl font-bold hover:bg-cyan-600 hover:text-white transition"
-              >
-
-                {format}
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ===================================================== */}
-      {/* WHY ANNOTEXIA */}
-      {/* ===================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Why Annotexia
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4">
-
-              Your Trusted Computer Vision
-              Annotation Partner
-
-            </h2>
-
-          </div>
-
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-
-            {[
-              {
-                title: "99% Annotation Accuracy",
-                desc: "Rigorous QA ensures highly reliable AI training datasets.",
-              },
-              {
-                title: "Enterprise Security",
-                desc: "NDA protection, secure infrastructure, and controlled workflows.",
-              },
-              {
-                title: "Scalable Workforce",
-                desc: "Handle projects from thousands to millions of images.",
-              },
-              {
-                title: "Fast Turnaround",
-                desc: "Efficient workflows reduce project delivery time.",
-              },
-              {
-                title: "Dedicated Project Manager",
-                desc: "A single point of contact throughout the project lifecycle.",
-              },
-              {
-                title: "Flexible Teams",
-                desc: "Resources scale according to project complexity and deadlines.",
-              },
-              {
-                title: "Custom Guidelines",
-                desc: "We strictly follow your annotation specifications and QA standards.",
-              },
-              {
-                title: "Free Sample Project",
-                desc: "Evaluate our annotation quality before committing to production.",
-              },
-            ].map((item) => (
-
-              <div
-                key={item.title}
-                className="group bg-white rounded-3xl border p-8 shadow-lg hover:bg-cyan-600 hover:text-white hover:-translate-y-2 transition-all"
-              >
-
-                <Brain className="w-10 h-10 mb-6 text-cyan-500 group-hover:text-white" />
-
-                <h3 className="text-xl font-bold mb-4">
-
-                  {item.title}
-
-                </h3>
-
-                <p className="leading-8 text-gray-600 group-hover:text-white">
-
-                  {item.desc}
-
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ===================================================== */}
-      {/* STATS */}
-      {/* ===================================================== */}
-
-      <section className="bg-gradient-to-r from-cyan-600 to-blue-700 py-20 text-white">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 text-center">
-
-            <div>
-
-              <h3 className="text-5xl font-black">
-
-                99%
-
-              </h3>
-
-              <p className="mt-4 text-lg">
-
-                Annotation Accuracy
-
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="text-5xl font-black">
-
-                24/7
-
-              </h3>
-
-              <p className="mt-4 text-lg">
-
-                Project Support
-
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="text-5xl font-black">
-
-                Multi-Level
-
-              </h3>
-
-              <p className="mt-4 text-lg">
-
-                Quality Assurance
-
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="text-5xl font-black">
-
-                NDA
-
-              </h3>
-
-              <p className="mt-4 text-lg">
-
-                Enterprise Security
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-            {/* ===================================================== */}
-      {/* FREE SAMPLE CTA */}
-      {/* ===================================================== */}
-
-      <section className="py-24 bg-slate-50">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="rounded-3xl overflow-hidden bg-gradient-to-r from-cyan-700 to-blue-800 text-white">
-
-            <div className="grid lg:grid-cols-2 items-center">
-
-              <div className="p-16">
-
-                <span className="uppercase tracking-widest text-cyan-200 font-semibold">
-
-                  FREE QUALITY EVALUATION
-
-                </span>
-
-                <h2 className="text-5xl font-bold mt-6 mb-8">
-
-                  Evaluate Our Annotation
-                  Quality Before You Commit
-
-                </h2>
-
-                <p className="text-xl leading-9 text-cyan-100 mb-10">
-
-                  We understand that selecting the right annotation
-                  partner is an important decision.
-
-                  That's why Annotexia offers a
-
-                  <strong className="text-white">
-
-                    {" "}FREE sample annotation service
-
-                  </strong>
-
-                  allowing your team to evaluate our quality,
-                  consistency, turnaround time, and communication
-                  before starting production.
-
-                </p>
-
-                <ul className="space-y-4 mb-10">
-
-                  {[
-                    "No hidden cost",
-                    "No obligation",
-                    "Enterprise-quality review",
-                    "Delivered in your preferred format",
-                  ].map((item) => (
-
-                    <li
-                      key={item}
-                      className="flex items-center gap-3"
+                            </details>
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =====================================================
+                INTERNAL SEO CONTENT
+            ====================================================== */}
+
+            <section className="border-t border-slate-100 bg-white py-20">
+
+                <div className="mx-auto max-w-5xl px-6">
+
+                    <h2 className="text-3xl font-bold text-slate-900">
+                        Computer Vision Data Annotation Services
+                    </h2>
+
+                    <div className="mt-7 space-y-6 text-lg leading-9 text-slate-600">
+
+                        <p>
+                            Annotexia provides professional computer vision data
+                            annotation services for organizations developing
+                            artificial intelligence and machine learning
+                            applications. Our services cover image annotation,
+                            object detection, bounding boxes, polygon annotation,
+                            semantic segmentation, instance segmentation,
+                            keypoint annotation, OCR, and video annotation.
+                        </p>
+
+                        <p>
+                            High-quality training data is essential for computer
+                            vision models because machine learning algorithms
+                            depend on accurately labeled examples to learn visual
+                            patterns. Consistent annotation helps models recognize
+                            objects, understand scenes, detect anomalies, classify
+                            images, and interpret visual information more reliably.
+                        </p>
+
+                        <p>
+                            Our computer vision annotation workflows can support
+                            applications across healthcare, autonomous vehicles,
+                            retail, agriculture, manufacturing, robotics,
+                            sports analytics, and drone imagery. We can also
+                            adapt annotation guidelines and output formats to
+                            specific model requirements.
+                        </p>
+
+                        <p>
+                            If you are looking for a reliable computer vision
+                            annotation partner,{" "}
+                            <Link
+                                href="/contact"
+                                className="font-semibold text-blue-600 hover:underline"
+                            >
+                                contact Annotexia
+                            </Link>{" "}
+                            to discuss your dataset, annotation requirements,
+                            expected volume, and project timeline.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =====================================================
+                FINAL CTA
+            ====================================================== */}
+
+            <section className="bg-slate-950 py-24 text-white">
+
+                <div className="mx-auto max-w-6xl px-6 text-center">
+
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600/20">
+                        <BrainCircuit className="text-blue-400" size={32} />
+                    </div>
+
+                    <h2 className="mt-8 text-4xl font-bold lg:text-5xl">
+                        Have a Computer Vision Project?
+                    </h2>
+
+                    <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+                        Share your dataset and annotation requirements with our
+                        team. We&apos;ll help you determine the right annotation
+                        approach for your AI project.
+                    </p>
+
+                    <Link
+                        href="/contact"
+                        className="mt-10 inline-flex items-center rounded-xl bg-blue-600 px-9 py-4 font-bold text-white transition hover:bg-blue-700"
                     >
+                        Talk to an AI Data Expert
+                        <ArrowRight className="ml-2" size={20} />
+                    </Link>
 
-                      <CheckCircle2 className="text-green-300" />
+                </div>
 
-                      {item}
+            </section>
 
-                    </li>
-
-                  ))}
-
-                </ul>
-
-                <Link
-                  href="/contact"
-                  className="inline-flex px-8 py-4 bg-white text-slate-900 rounded-xl font-semibold hover:bg-slate-100 transition"
-                >
-
-                  Request Free Sample
-
-                </Link>
-
-              </div>
-
-              <div>
-
-                <Image
-                  src="/images/industries/computervision/cta-cv.webp"
-                  width={900}
-                  height={750}
-                  alt="Computer Vision Annotation Services"
-                  className="w-full h-full object-cover"
-                />
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ===================================================== */}
-      {/* FAQ */}
-      {/* ===================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-5xl mx-auto px-6">
-
-          <div className="text-center mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Frequently Asked Questions
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4">
-
-              Questions We Often Receive
-
-            </h2>
-
-          </div>
-
-          <div className="space-y-8">
-
-            {[
-              {
-                q: "How can we trust Annotexia with our AI datasets?",
-                a: "We work under strict NDAs, secure workflows, and enterprise-level quality assurance processes. Every dataset is reviewed multiple times before delivery.",
-              },
-              {
-                q: "Can we test your service before placing a project?",
-                a: "Yes. We provide FREE sample annotation so you can evaluate our annotation quality, consistency, and delivery speed before committing to a full project.",
-              },
-              {
-                q: "Which annotation formats do you support?",
-                a: "We support COCO, YOLO, Pascal VOC, JSON, XML, CSV, KITTI, CVAT, Label Studio, and custom client-specific formats.",
-              },
-              {
-                q: "Can you handle enterprise-scale datasets?",
-                a: "Absolutely. Our scalable annotation team supports projects ranging from thousands to millions of images while maintaining consistent quality.",
-              },
-              {
-                q: "Do you follow custom annotation guidelines?",
-                a: "Yes. Every project follows client-specific annotation instructions and validation criteria.",
-              },
-              {
-                q: "What industries do you serve?",
-                a: "Healthcare, Autonomous Vehicles, Manufacturing, Retail, Agriculture, Sports Analytics, Robotics, Smart Cities, Document AI, and many more.",
-              },
-            ].map((faq) => (
-
-              <div
-                key={faq.q}
-                className="border rounded-2xl p-8 hover:shadow-lg transition"
-              >
-
-                <h3 className="text-2xl font-bold mb-4">
-
-                  {faq.q}
-
-                </h3>
-
-                <p className="text-gray-600 leading-8">
-
-                  {faq.a}
-
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ===================================================== */}
-      {/* SEO CONTENT */}
-      {/* ===================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-5xl mx-auto px-6">
-
-          <h2 className="text-4xl font-bold mb-10">
-
-            Professional Computer Vision Annotation Services for AI & Machine Learning
-
-          </h2>
-
-          <div className="space-y-8 text-lg leading-9 text-gray-600">
-
-            <p>
-
-              Computer vision is transforming industries by enabling machines
-              to interpret and understand visual information with remarkable
-              accuracy. From autonomous vehicles and medical imaging to retail
-              analytics, robotics, agriculture, manufacturing, and smart city
-              applications, computer vision technologies rely on high-quality
-              annotated datasets to train reliable artificial intelligence
-              models.
-
-            </p>
-
-            <p>
-
-              Annotexia provides professional computer vision annotation
-              services designed to support every stage of AI model development.
-              Our experienced annotation specialists create accurate datasets
-              using bounding boxes, polygons, semantic segmentation, instance
-              segmentation, keypoint annotation, OCR labeling, image
-              classification, object tracking, and custom annotation workflows.
-              Every annotation project follows detailed client guidelines and
-              undergoes multiple quality assurance reviews to ensure exceptional
-              consistency and production-ready results.
-
-            </p>
-
-            <p>
-
-              We support startups, research organizations, enterprise AI teams,
-              and Fortune 500 companies building advanced computer vision
-              systems. Whether you are developing intelligent surveillance,
-              autonomous driving solutions, healthcare AI, retail automation,
-              agricultural analytics, industrial inspection systems, or smart
-              robotics, our scalable workforce delivers high-quality training
-              datasets in COCO, YOLO, Pascal VOC, JSON, XML, KITTI, CVAT, Label
-              Studio, and custom formats.
-
-            </p>
-
-            <p>
-
-              At Annotexia, we believe trust is earned through quality. That is
-              why every new client can evaluate our annotation quality with a
-              FREE sample dataset before committing to a production project.
-              Our mission is to become your long-term annotation partner by
-              delivering accurate datasets, transparent communication, and
-              reliable project execution that accelerates AI innovation.
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ===================================================== */}
-      {/* FINAL CTA */}
-      {/* ===================================================== */}
-
-      <section className="bg-slate-950 py-24 text-white">
-
-        <div className="max-w-5xl mx-auto px-6 text-center">
-
-          <h2 className="text-5xl font-bold mb-8">
-
-            Build Better Computer Vision Models
-            With High-Quality Training Data
-
-          </h2>
-
-          <p className="text-xl leading-9 text-slate-300 max-w-3xl mx-auto mb-10">
-
-            Whether you're developing next-generation AI products,
-            enterprise automation, medical imaging solutions, or
-            intelligent robotics, Annotexia provides reliable,
-            scalable, and enterprise-grade computer vision annotation
-            services tailored to your project requirements.
-
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-6">
-
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-cyan-500 rounded-xl hover:bg-cyan-600 transition font-semibold"
-            >
-              Request Free Consultation
-            </Link>
-
-            <Link
-              href="/services"
-              className="px-8 py-4 border border-white/20 rounded-xl hover:bg-white/10 transition"
-            >
-              Explore All Services
-            </Link>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </main>
-  );
+        </main>
+    );
 }

@@ -1,1065 +1,1104 @@
 import Image from "next/image";
+import Link from "next/link";
+import {
+    ArrowRight,
+    CheckCircle2,
+    PlayCircle,
+    Target,
+    Layers3,
+    ShieldCheck,
+    BrainCircuit,
+    Clock3,
+    Users,
+    BarChart3,
+} from "lucide-react";
 
 export const metadata = {
-  title: "Video Annotation Services | AI Video Labeling Company | Annotexia",
-  description:
-    "Professional video annotation services for AI and computer vision. Object tracking, frame-by-frame annotation, action recognition, event detection, semantic segmentation, and autonomous vehicle datasets.",
-  keywords: [
-    "Video Annotation Services",
-    "Video Labeling",
-    "Object Tracking",
-    "Frame Annotation",
-    "Video Dataset",
-    "Computer Vision",
-    "AI Training Data",
-    "Video Annotation Company",
-    "Machine Learning Datasets",
-  ],
+    title: "Video Annotation Services | AI & ML Training Data | Annotexia",
+    description:
+        "Professional video annotation services for AI and machine learning. Annotexia provides object tracking, action recognition, event detection, pose estimation, segmentation, and frame-by-frame video labeling.",
+    keywords: [
+        "video annotation services",
+        "video labeling services",
+        "AI video annotation",
+        "machine learning video annotation",
+        "video object tracking",
+        "action recognition annotation",
+        "event detection annotation",
+        "pose estimation annotation",
+        "sports video annotation",
+        "computer vision video datasets",
+        "video training data",
+    ],
+    alternates: {
+        canonical: "https://annotexia.com/services/video-annotation",
+    },
+    openGraph: {
+        title: "Video Annotation Services | Annotexia",
+        description:
+            "Accurate and scalable video annotation services for computer vision, sports analytics, autonomous systems, robotics, surveillance, and AI applications.",
+        url: "https://annotexia.com/services/video-annotation",
+        siteName: "Annotexia",
+        type: "website",
+        images: [
+            {
+                url: "https://annotexia.com/images/services/video-annotation.webp",
+                width: 1200,
+                height: 630,
+                alt: "Professional video annotation services for AI and machine learning",
+            },
+        ],
+    },
 };
 
+const annotationTypes = [
+    {
+        title: "Object Tracking",
+        description:
+            "Track vehicles, people, products, animals, sports players, and other objects consistently across video frames.",
+        icon: Target,
+    },
+    {
+        title: "Action Recognition",
+        description:
+            "Label human actions, activities, gestures, movements, and events to train AI systems for activity recognition.",
+        icon: PlayCircle,
+    },
+    {
+        title: "Event Detection",
+        description:
+            "Identify important events and temporal activities within long or complex video sequences.",
+        icon: Clock3,
+    },
+    {
+        title: "Pose Estimation",
+        description:
+            "Annotate human body keypoints and movement patterns for sports, healthcare, robotics, and human activity analysis.",
+        icon: Users,
+    },
+    {
+        title: "Video Segmentation",
+        description:
+            "Create pixel-level or object-level segmentation masks across video frames for advanced computer vision models.",
+        icon: Layers3,
+    },
+    {
+        title: "Object Classification",
+        description:
+            "Classify and categorize objects throughout video datasets using project-specific labeling taxonomies.",
+        icon: BrainCircuit,
+    },
+];
+
+const useCases = [
+    {
+        title: "Sports Analytics",
+        description:
+            "Track players, ball movement, actions, formations, and game events to build advanced sports intelligence systems.",
+        image:
+            "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1200&q=80",
+        href: "/industries/sports-analytics",
+    },
+    {
+        title: "Autonomous Vehicles",
+        description:
+            "Annotate vehicles, pedestrians, cyclists, road signs, traffic lights, lanes, and other objects across driving sequences.",
+        image:
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+        href: "/industries/autonomous-vehicles",
+    },
+    {
+        title: "Robotics & Computer Vision",
+        description:
+            "Create high-quality video datasets for robots and intelligent systems that need to understand dynamic environments.",
+        image:
+            "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+        href: "/industries/computer-vision",
+    },
+    {
+        title: "Retail & E-commerce",
+        description:
+            "Support customer behavior analysis, shelf monitoring, product interaction detection, and retail automation.",
+        image:
+            "https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1200&q=80",
+        href: "/industries/retail-ecommerce",
+    },
+];
+
+const workflow = [
+    {
+        number: "01",
+        title: "Project Discovery",
+        description:
+            "We understand your video data, annotation objectives, classes, labeling rules, output format, and model requirements.",
+    },
+    {
+        number: "02",
+        title: "Guideline Creation",
+        description:
+            "Our team converts your requirements into clear annotation guidelines covering edge cases, object definitions, and tracking rules.",
+    },
+    {
+        number: "03",
+        title: "Video Annotation",
+        description:
+            "Trained annotators label and track objects, actions, events, poses, and other required elements across video sequences.",
+    },
+    {
+        number: "04",
+        title: "Quality Assurance",
+        description:
+            "Multiple quality checks identify missing labels, inconsistent tracking, incorrect classifications, and guideline deviations.",
+    },
+    {
+        number: "05",
+        title: "Validation",
+        description:
+            "Samples and completed datasets are reviewed against project-specific quality requirements before delivery.",
+    },
+    {
+        number: "06",
+        title: "Dataset Delivery",
+        description:
+            "Validated annotations are delivered in your required format and organized for direct integration into your ML workflow.",
+    },
+];
+
+const formats = [
+    "COCO",
+    "YOLO",
+    "Pascal VOC",
+    "JSON",
+    "XML",
+    "CSV",
+    "Label Studio",
+    "CVAT",
+    "Custom Formats",
+];
+
+const faqs = [
+    {
+        question: "What is video annotation?",
+        answer:
+            "Video annotation is the process of labeling objects, actions, events, movements, or other information across video frames so machine learning and computer vision models can learn from temporal data.",
+    },
+    {
+        question: "What types of video annotation do you provide?",
+        answer:
+            "Annotexia provides object tracking, action recognition, event detection, pose estimation, video segmentation, object classification, keypoint annotation, and custom video labeling services.",
+    },
+    {
+        question: "Can you track objects across multiple video frames?",
+        answer:
+            "Yes. Object tracking across consecutive frames is a core video annotation capability. We can maintain object identities and project-specific tracking attributes throughout video sequences.",
+    },
+    {
+        question: "Do you support sports video annotation?",
+        answer:
+            "Yes. We support sports analytics datasets including player tracking, ball tracking, event annotation, pose estimation, jersey identification, and other project-specific requirements.",
+    },
+    {
+        question: "Which annotation formats do you support?",
+        answer:
+            "Depending on the project, we can work with formats such as COCO, YOLO, Pascal VOC, JSON, XML, CSV, Label Studio, CVAT, and custom formats.",
+    },
+    {
+        question: "Can you handle large video annotation projects?",
+        answer:
+            "Yes. Our annotation workflows are designed to scale from small pilot datasets to large video annotation projects. Project capacity is planned according to volume, complexity, timeline, and quality requirements.",
+    },
+    {
+        question: "Can I test your quality before starting a large project?",
+        answer:
+            "Yes. We can provide a sample annotation so you can evaluate annotation quality, consistency, communication, and workflow before moving forward with a larger project.",
+    },
+];
+
 export default function VideoAnnotationPage() {
-  return (
-    <main className="min-h-screen">
+    return (
+        <main className="bg-white text-slate-900">
 
-      {/* ================= HERO ================= */}
+            {/* =========================================================
+                HERO
+            ========================================================= */}
 
-      <section className="bg-gradient-to-br from-orange-200 via-white to-cyan-500 py-24">
+            <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950">
 
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-            <div>
-
-              <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-blue-700 font-semibold mb-6">
-                AI Video Training Data
-              </span>
-
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-
-                Professional
-                <span className="text-blue-600">
-                  {" "}Video Annotation{" "}
-                </span>
-                Services for AI & Computer Vision
-
-              </h1>
-
-              <p className="mt-8 text-xl text-gray-600 leading-8">
-
-                Annotexia delivers enterprise-grade video annotation
-                services that help organizations build accurate AI
-                models for autonomous vehicles, surveillance,
-                robotics, healthcare, sports analytics, retail,
-                manufacturing, agriculture, and intelligent
-                automation systems.
-
-              </p>
-
-              <p className="mt-6 text-lg text-gray-600 leading-8">
-
-                Our experienced annotation specialists provide
-                frame-by-frame labeling, multi-object tracking,
-                activity recognition, semantic segmentation,
-                lane annotation, and custom video labeling
-                solutions tailored to your AI project.
-
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-5">
-
-                <a
-                  href="/contact"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition"
-                >
-                  Get Free Consultation
-                </a>
-
-                <a
-                  href="/services"
-                  className="border border-gray-300 hover:border-gray-500 px-8 py-4 rounded-xl font-semibold transition"
-                >
-                  Explore Services
-                </a>
-
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-
-                <div>
-                  <h3 className="text-3xl font-bold text-blue-600">
-                    99%
-                  </h3>
-
-                  <p className="text-sm text-gray-600">
-                    Annotation Accuracy
-                  </p>
+                <div className="absolute inset-0">
+                    <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-blue-600/20 blur-[120px]" />
+                    <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[140px]" />
                 </div>
 
-                <div>
-                  <h3 className="text-3xl font-bold text-blue-600">
-                    50K+
-                  </h3>
+                <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-28">
 
-                  <p className="text-sm text-gray-600">
-                    Hours Annotated
-                  </p>
+                    <div className="grid items-center gap-16 lg:grid-cols-2">
+
+                        {/* LEFT */}
+
+                        <div>
+
+                            <span className="mb-7 inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-300">
+                                AI Video Annotation Services
+                            </span>
+
+                            <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-white lg:text-6xl">
+
+                                Turn Video Into
+
+                                <span className="block text-blue-400">
+                                    AI-Ready Data
+                                </span>
+
+                            </h1>
+
+                            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300">
+                                Transform raw video into structured training data
+                                for computer vision and machine learning models.
+                                Annotexia provides accurate video annotation,
+                                object tracking, action recognition, event detection,
+                                pose estimation, and segmentation.
+                            </p>
+
+                            <div className="mt-10 flex flex-wrap gap-4">
+
+                                <Link
+                                    href="/contact"
+                                    className="rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-xl shadow-blue-900/30 transition hover:bg-blue-700"
+                                >
+                                    Get a Free Quote
+                                </Link>
+
+                                <Link
+                                    href="#annotation-types"
+                                    className="rounded-xl border border-white/20 px-8 py-4 font-semibold text-white transition hover:border-blue-400 hover:bg-white/5"
+                                >
+                                    Explore Services
+                                </Link>
+
+                            </div>
+
+                            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-400">
+
+                                <span className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={17}
+                                        className="text-cyan-400"
+                                    />
+                                    Frame-by-frame labeling
+                                </span>
+
+                                <span className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={17}
+                                        className="text-cyan-400"
+                                    />
+                                    Object tracking
+                                </span>
+
+                                <span className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={17}
+                                        className="text-cyan-400"
+                                    />
+                                    Multi-level QA
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        {/* RIGHT */}
+
+                        <div className="relative">
+
+                            <div className="absolute inset-0 rounded-[2rem] bg-blue-500/20 blur-3xl" />
+
+                            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur">
+
+                                <Image
+                                    src="/images/services/video-annotation.webp"
+                                    alt="Professional video annotation for AI and machine learning"
+                                    width={900}
+                                    height={600}
+                                    priority
+                                    className="h-[420px] w-full rounded-[1.5rem] object-cover"
+                                />
+
+                                <div className="absolute bottom-8 left-8 right-8 rounded-2xl border border-white/10 bg-slate-950/85 p-5 backdrop-blur">
+
+                                    <div className="flex items-center justify-between">
+
+                                        <div>
+                                            <p className="text-sm text-cyan-400">
+                                                Video Intelligence
+                                            </p>
+
+                                            <p className="mt-1 font-bold text-white">
+                                                Frame-by-Frame Annotation
+                                            </p>
+                                        </div>
+
+                                        <PlayCircle
+                                            size={38}
+                                            className="text-cyan-400"
+                                        />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div>
-                  <h3 className="text-3xl font-bold text-blue-600">
-                    20+
-                  </h3>
+            </section>
 
-                  <p className="text-sm text-gray-600">
-                    Annotation Experts
-                  </p>
+            {/* =========================================================
+                INTRO
+            ========================================================= */}
+
+            <section className="py-24">
+
+                <div className="mx-auto max-w-7xl px-6">
+
+                    <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+
+                        <div>
+
+                            <span className="font-semibold uppercase tracking-widest text-blue-600">
+                                Video Training Data
+                            </span>
+
+                            <h2 className="mt-4 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                                Help AI Understand What Happens Over Time
+                            </h2>
+
+                        </div>
+
+                        <div className="space-y-6 text-lg leading-8 text-slate-600">
+
+                            <p>
+                                A single image tells an AI what exists in a
+                                particular moment. Video tells the model what
+                                happens before, during, and after that moment.
+                            </p>
+
+                            <p>
+                                This temporal information is essential for
+                                applications such as autonomous driving,
+                                sports analytics, robotics, surveillance,
+                                healthcare, retail intelligence, and activity
+                                recognition.
+                            </p>
+
+                            <p>
+                                Annotexia transforms complex video sequences
+                                into structured datasets that help machine
+                                learning models understand objects, movement,
+                                interactions, and events.
+                            </p>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div>
-                  <h3 className="text-3xl font-bold text-blue-600">
-                    24/7
-                  </h3>
+            </section>
 
-                  <p className="text-sm text-gray-600">
-                    Project Support
-                  </p>
+            {/* =========================================================
+                ANNOTATION TYPES
+            ========================================================= */}
+
+            <section
+                id="annotation-types"
+                className="bg-slate-50 py-24"
+            >
+
+                <div className="mx-auto max-w-7xl px-6">
+
+                    <div className="mx-auto mb-16 max-w-3xl text-center">
+
+                        <span className="font-semibold uppercase tracking-widest text-blue-600">
+                            Our Capabilities
+                        </span>
+
+                        <h2 className="mt-4 text-4xl font-bold text-slate-900 lg:text-5xl">
+                            Video Annotation Services
+                        </h2>
+
+                        <p className="mt-6 text-lg leading-8 text-slate-600">
+                            Choose the annotation approach your AI model needs,
+                            from simple object classification to complex
+                            temporal tracking and activity recognition.
+                        </p>
+
+                    </div>
+
+                    <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+
+                        {annotationTypes.map((item) => {
+                            const Icon = item.icon;
+
+                            return (
+                                <div
+                                    key={item.title}
+                                    className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                                >
+
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 transition group-hover:bg-blue-600">
+
+                                        <Icon
+                                            size={27}
+                                            className="text-blue-600 transition group-hover:text-white"
+                                        />
+
+                                    </div>
+
+                                    <h3 className="mt-7 text-2xl font-bold text-slate-900">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="mt-4 leading-8 text-slate-600">
+                                        {item.description}
+                                    </p>
+
+                                </div>
+                            );
+                        })}
+
+                    </div>
+
                 </div>
 
-              </div>
+            </section>
+
+            {/* =========================================================
+                WHY VIDEO ANNOTATION
+            ========================================================= */}
+
+            <section className="py-24">
 
-            </div>
+                <div className="mx-auto max-w-7xl px-6">
+
+                    <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+
+                        <div>
+
+                            <span className="font-semibold uppercase tracking-widest text-blue-600">
+                                Why It Matters
+                            </span>
 
-            <div>
+                            <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-5xl">
+                                Your AI Needs More Than Individual Frames
+                            </h2>
 
-              <Image
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
-                alt="Video Annotation Services"
-                width={1200}
-                height={800}
-                className="rounded-3xl shadow-2xl"
-              />
+                            <p className="mt-7 text-lg leading-8 text-slate-600">
+                                Modern AI applications increasingly need to
+                                understand movement, interaction, and context.
+                                Video annotation provides the temporal information
+                                required to train these systems.
+                            </p>
 
-            </div>
+                            <div className="mt-8 space-y-4">
 
-          </div>
+                                {[
+                                    "Understand object movement across frames",
+                                    "Recognize human actions and activities",
+                                    "Detect important events in video",
+                                    "Train models for real-world environments",
+                                    "Build consistent computer vision datasets",
+                                ].map((item) => (
+                                    <div
+                                        key={item}
+                                        className="flex items-start gap-3"
+                                    >
+                                        <CheckCircle2
+                                            size={22}
+                                            className="mt-1 shrink-0 text-blue-600"
+                                        />
 
-        </div>
+                                        <span className="text-lg text-slate-700">
+                                            {item}
+                                        </span>
+                                    </div>
+                                ))}
 
-      </section>
+                            </div>
 
+                        </div>
 
+                        <div className="rounded-[2rem] bg-slate-950 p-8 text-white shadow-2xl">
 
-      {/* ================= INTRODUCTION ================= */}
+                            <div className="grid gap-6 sm:grid-cols-2">
 
-      <section className="py-24">
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                                    <BarChart3 className="text-cyan-400" size={30} />
 
-        <div className="max-w-7xl mx-auto px-6">
+                                    <h3 className="mt-5 text-xl font-bold">
+                                        Temporal Context
+                                    </h3>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+                                    <p className="mt-3 leading-7 text-slate-400">
+                                        Capture how objects and actions change
+                                        across time.
+                                    </p>
+                                </div>
 
-            <div>
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                                    <Target className="text-cyan-400" size={30} />
 
-              <Image
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
-                alt="AI Video Dataset"
-                width={1200}
-                height={800}
-                className="rounded-2xl shadow-xl"
-              />
+                                    <h3 className="mt-5 text-xl font-bold">
+                                        Precise Tracking
+                                    </h3>
 
-            </div>
+                                    <p className="mt-3 leading-7 text-slate-400">
+                                        Maintain consistent object identities
+                                        throughout sequences.
+                                    </p>
+                                </div>
 
-            <div>
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                                    <ShieldCheck className="text-cyan-400" size={30} />
 
-              <h2 className="text-4xl font-bold mb-8">
+                                    <h3 className="mt-5 text-xl font-bold">
+                                        Quality Control
+                                    </h3>
 
-                What is Video Annotation?
+                                    <p className="mt-3 leading-7 text-slate-400">
+                                        Multi-stage review helps identify
+                                        inconsistencies and missing labels.
+                                    </p>
+                                </div>
 
-              </h2>
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                                    <BrainCircuit className="text-cyan-400" size={30} />
 
-              <p className="text-gray-600 leading-8 mb-6">
+                                    <h3 className="mt-5 text-xl font-bold">
+                                        Model-Ready Data
+                                    </h3>
 
-                Video annotation is the process of labeling objects,
-                events, movements, and activities across consecutive
-                video frames. Unlike image annotation, video
-                annotation enables AI systems to understand temporal
-                relationships, object movement, behavior, and scene
-                changes over time.
+                                    <p className="mt-3 leading-7 text-slate-400">
+                                        Receive structured datasets aligned
+                                        with your ML workflow.
+                                    </p>
+                                </div>
 
-              </p>
+                            </div>
 
-              <p className="text-gray-600 leading-8 mb-6">
+                        </div>
 
-                Video datasets are fundamental for developing
-                autonomous vehicles, intelligent surveillance,
-                robotics, action recognition, sports analytics,
-                industrial automation, healthcare AI,
-                drone analytics, and smart city applications.
+                    </div>
 
-              </p>
+                </div>
 
-              <p className="text-gray-600 leading-8">
+            </section>
 
-                At Annotexia, our annotation experts create
-                high-quality video datasets that help AI models
-                detect moving objects, understand complex scenes,
-                analyze activities, and improve real-world
-                decision-making accuracy.
+            {/* =========================================================
+                USE CASES
+            ========================================================= */}
 
-              </p>
+            <section className="bg-slate-50 py-24">
 
-            </div>
+                <div className="mx-auto max-w-7xl px-6">
 
-          </div>
+                    <div className="mb-16">
 
-        </div>
+                        <span className="font-semibold uppercase tracking-widest text-blue-600">
+                            Industry Applications
+                        </span>
 
-      </section>
-            {/* ================= SERVICES ================= */}
+                        <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
+                            Where Video Annotation Powers AI
+                        </h2>
 
-      <section className="bg-slate-50 py-24">
+                        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+                            Video datasets can support AI systems across
+                            industries where understanding movement, behavior,
+                            and real-world events is essential.
+                        </p>
 
-        <div className="max-w-7xl mx-auto px-6">
+                    </div>
 
-          <div className="text-center max-w-4xl mx-auto mb-16">
+                    <div className="grid gap-8 md:grid-cols-2">
 
-            <span className="text-blue-600 font-semibold uppercase tracking-wider">
-              Our Expertise
-            </span>
+                        {useCases.map((item) => (
+                            <Link
+                                href={item.href}
+                                key={item.title}
+                                className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                            >
 
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              Comprehensive Video Annotation Services
-            </h2>
+                                <div className="overflow-hidden">
 
-            <p className="text-lg text-gray-600 leading-8">
-              Annotexia provides end-to-end video annotation services for
-              computer vision, machine learning, deep learning, and AI
-              applications. We support custom annotation guidelines and
-              multiple output formats to meet enterprise and research
-              requirements.
-            </p>
+                                    <Image
+                                        src={item.image}
+                                        alt={`${item.title} video annotation applications`}
+                                        width={1200}
+                                        height={700}
+                                        className="h-64 w-full object-cover transition duration-700 group-hover:scale-105"
+                                    />
 
-          </div>
+                                </div>
 
-          <div className="space-y-20">
+                                <div className="p-8">
 
-            {/* Object Tracking */}
+                                    <h3 className="text-2xl font-bold">
+                                        {item.title}
+                                    </h3>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                                    <p className="mt-4 leading-8 text-slate-600">
+                                        {item.description}
+                                    </p>
 
-              <Image
-                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80"
-                alt="Object Tracking Video Annotation"
-                width={1200}
-                height={800}
-                className="rounded-2xl shadow-xl"
-              />
+                                    <div className="mt-6 flex items-center font-semibold text-blue-600">
 
-              <div>
+                                        Explore Industry
 
-                <h3 className="text-3xl font-bold mb-6">
-                  Object Tracking Annotation
-                </h3>
+                                        <ArrowRight
+                                            size={19}
+                                            className="ml-2 transition group-hover:translate-x-2"
+                                        />
 
-                <p className="text-gray-600 leading-8 mb-5">
-                  Object tracking follows a target object continuously
-                  throughout an entire video sequence. Every frame is
-                  annotated so AI models can understand object movement,
-                  trajectories, speed, interactions, and spatial behavior.
-                </p>
+                                    </div>
 
-                <p className="text-gray-600 leading-8 mb-6">
-                  Object tracking is widely used in autonomous driving,
-                  surveillance, warehouse automation, drone inspection,
-                  robotics, sports analytics, logistics, and intelligent
-                  transportation systems.
-                </p>
+                                </div>
 
-                <ul className="space-y-3 text-gray-700">
+                            </Link>
+                        ))}
 
-                  <li>✓ Vehicle Tracking</li>
-                  <li>✓ Person Tracking</li>
-                  <li>✓ Animal Tracking</li>
-                  <li>✓ Drone Object Tracking</li>
-                  <li>✓ Sports Player Tracking</li>
+                    </div>
 
-                </ul>
+                </div>
 
-              </div>
+            </section>
 
-            </div>
+            {/* =========================================================
+                WORKFLOW
+            ========================================================= */}
 
+            <section className="py-24">
 
+                <div className="mx-auto max-w-7xl px-6">
 
-            {/* Multi Object Tracking */}
+                    <div className="mx-auto mb-16 max-w-3xl text-center">
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <span className="font-semibold uppercase tracking-widest text-blue-600">
+                            Our Workflow
+                        </span>
 
-              <div>
+                        <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
+                            From Raw Video to AI-Ready Dataset
+                        </h2>
 
-                <h3 className="text-3xl font-bold mb-6">
-                  Multi-Object Tracking (MOT)
-                </h3>
+                        <p className="mt-6 text-lg leading-8 text-slate-600">
+                            A structured workflow keeps complex video annotation
+                            projects consistent, measurable, and scalable.
+                        </p>
 
-                <p className="text-gray-600 leading-8 mb-5">
-                  Multi-object tracking assigns a unique identity to each
-                  object and maintains that identity across thousands of
-                  video frames. This enables AI systems to understand
-                  interactions between multiple moving objects.
-                </p>
+                    </div>
 
-                <p className="text-gray-600 leading-8 mb-6">
-                  MOT datasets are essential for autonomous vehicles,
-                  crowd analytics, retail analytics, sports AI,
-                  warehouse robotics, manufacturing automation,
-                  airport monitoring, and smart city projects.
-                </p>
+                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-                <ul className="space-y-3 text-gray-700">
+                        {workflow.map((step) => (
+                            <div
+                                key={step.number}
+                                className="relative rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
+                            >
 
-                  <li>✓ Persistent Object IDs</li>
-                  <li>✓ Occlusion Handling</li>
-                  <li>✓ Crowd Tracking</li>
-                  <li>✓ Multiple Vehicle Tracking</li>
-                  <li>✓ Athlete Tracking</li>
+                                <span className="text-5xl font-extrabold text-blue-100">
+                                    {step.number}
+                                </span>
 
-                </ul>
+                                <h3 className="mt-4 text-2xl font-bold">
+                                    {step.title}
+                                </h3>
 
-              </div>
+                                <p className="mt-4 leading-8 text-slate-600">
+                                    {step.description}
+                                </p>
 
-              <Image
-                src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
-                alt="Multi Object Tracking"
-                width={1200}
-                height={800}
-                className="rounded-2xl shadow-xl"
-              />
+                            </div>
+                        ))}
 
-            </div>
+                    </div>
 
+                </div>
 
+            </section>
 
-            {/* Frame by Frame */}
+            {/* =========================================================
+                FORMATS
+            ========================================================= */}
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <section className="bg-slate-950 py-20">
 
-              <Image
-                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
-                alt="Frame by Frame Annotation"
-                width={1200}
-                height={800}
-                className="rounded-2xl shadow-xl"
-              />
+                <div className="mx-auto max-w-6xl px-6 text-center">
 
-              <div>
+                    <span className="font-semibold uppercase tracking-widest text-cyan-400">
+                        Flexible Delivery
+                    </span>
 
-                <h3 className="text-3xl font-bold mb-6">
-                  Frame-by-Frame Annotation
-                </h3>
+                    <h2 className="mt-4 text-4xl font-bold text-white lg:text-5xl">
+                        Annotation Formats That Fit Your Workflow
+                    </h2>
 
-                <p className="text-gray-600 leading-8 mb-5">
-                  Every video frame is individually annotated to create
-                  extremely accurate training datasets. This technique
-                  provides consistent labels across long video sequences
-                  and improves model robustness.
-                </p>
+                    <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+                        We can deliver structured annotation data in commonly
+                        used machine learning formats or adapt the output to
+                        your project requirements.
+                    </p>
 
-                <p className="text-gray-600 leading-8 mb-6">
-                  Frame-level annotation is ideal for safety-critical AI
-                  systems where every object must be precisely labeled
-                  without missing transitions between frames.
-                </p>
+                    <div className="mt-10 flex flex-wrap justify-center gap-3">
 
-                <ul className="space-y-3 text-gray-700">
+                        {formats.map((format) => (
+                            <span
+                                key={format}
+                                className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-300"
+                            >
+                                {format}
+                            </span>
+                        ))}
 
-                  <li>✓ Bounding Boxes</li>
-                  <li>✓ Polygon Annotation</li>
-                  <li>✓ Cuboids</li>
-                  <li>✓ Semantic Labels</li>
-                  <li>✓ Pixel Precision</li>
+                    </div>
 
-                </ul>
+                </div>
 
-              </div>
+            </section>
 
-            </div>
+            {/* =========================================================
+                QUALITY + SECURITY
+            ========================================================= */}
 
+            <section className="py-24">
 
+                <div className="mx-auto max-w-7xl px-6">
 
-            {/* Segmentation */}
+                    <div className="grid gap-8 md:grid-cols-2">
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="rounded-3xl bg-blue-50 p-10">
 
-              <div>
+                            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600">
 
-                <h3 className="text-3xl font-bold mb-6">
-                  Video Segmentation
-                </h3>
+                                <CheckCircle2
+                                    size={28}
+                                    className="text-white"
+                                />
 
-                <p className="text-gray-600 leading-8 mb-5">
-                  We provide semantic segmentation and instance
-                  segmentation for moving objects, enabling AI models
-                  to understand complex environments with pixel-level
-                  accuracy.
-                </p>
+                            </div>
 
-                <p className="text-gray-600 leading-8 mb-6">
-                  Segmentation datasets improve scene understanding for
-                  autonomous driving, robotics, agriculture, industrial
-                  automation, healthcare imaging, and intelligent
-                  surveillance systems.
-                </p>
+                            <h2 className="mt-7 text-3xl font-bold">
+                                Quality-Focused Annotation
+                            </h2>
 
-                <ul className="space-y-3 text-gray-700">
+                            <p className="mt-5 text-lg leading-8 text-slate-600">
+                                Video annotation requires consistency across
+                                hundreds or thousands of frames. Our quality
+                                workflow focuses on accurate labels, consistent
+                                tracking, clear guidelines, and review of
+                                difficult edge cases.
+                            </p>
 
-                  <li>✓ Semantic Segmentation</li>
-                  <li>✓ Instance Segmentation</li>
-                  <li>✓ Pixel-Level Labels</li>
-                  <li>✓ Scene Understanding</li>
-                  <li>✓ Background Separation</li>
+                            <ul className="mt-7 space-y-3">
 
-                </ul>
+                                {[
+                                    "Project-specific annotation guidelines",
+                                    "Annotator training",
+                                    "Reviewer validation",
+                                    "Random quality sampling",
+                                    "Edge-case review",
+                                ].map((item) => (
+                                    <li
+                                        key={item}
+                                        className="flex items-center gap-3"
+                                    >
+                                        <CheckCircle2
+                                            size={19}
+                                            className="text-blue-600"
+                                        />
 
-              </div>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
 
-              <Image
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-                alt="Video Segmentation"
-                width={1200}
-                height={800}
-                className="rounded-2xl shadow-xl"
-              />
+                            </ul>
 
-            </div>
+                        </div>
 
-          </div>
+                        <div className="rounded-3xl bg-slate-900 p-10 text-white">
 
-        </div>
+                            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500">
 
-      </section>
-            {/* ================= ADVANCED VIDEO ANNOTATION ================= */}
+                                <ShieldCheck
+                                    size={28}
+                                    className="text-white"
+                                />
 
-      <section className="py-24">
+                            </div>
 
-        <div className="max-w-7xl mx-auto px-6">
+                            <h2 className="mt-7 text-3xl font-bold">
+                                Secure Project Workflows
+                            </h2>
 
-          <div className="text-center max-w-4xl mx-auto mb-16">
+                            <p className="mt-5 text-lg leading-8 text-slate-300">
+                                Your video data may contain proprietary,
+                                confidential, or sensitive information.
+                                We support controlled project workflows and
+                                confidentiality requirements appropriate to
+                                your engagement.
+                            </p>
 
-            <span className="text-blue-600 font-semibold uppercase tracking-wider">
-              Advanced Annotation Solutions
-            </span>
+                            <ul className="mt-7 space-y-3">
 
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              Advanced Video Annotation Capabilities
-            </h2>
+                                {[
+                                    "NDA support",
+                                    "Controlled project access",
+                                    "Confidential workflows",
+                                    "Secure data handling practices",
+                                    "Project-specific access requirements",
+                                ].map((item) => (
+                                    <li
+                                        key={item}
+                                        className="flex items-center gap-3"
+                                    >
+                                        <CheckCircle2
+                                            size={19}
+                                            className="text-cyan-400"
+                                        />
 
-            <p className="text-lg text-gray-600 leading-8">
-              Beyond traditional object tracking, Annotexia provides
-              advanced annotation services for activity recognition,
-              human pose estimation, event detection, autonomous driving,
-              and AI-powered video intelligence applications.
-            </p>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
 
-          </div>
+                            </ul>
 
-          <div className="space-y-20">
+                        </div>
 
-            {/* Action Recognition */}
+                    </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                </div>
 
-              <div>
+            </section>
 
-                <h3 className="text-3xl font-bold mb-6">
-                  Action Recognition Annotation
-                </h3>
+            {/* =========================================================
+                FAQ
+            ========================================================= */}
 
-                <p className="text-gray-600 leading-8 mb-5">
-                  Action recognition focuses on labeling activities
-                  performed by humans, animals, or machines throughout
-                  a video sequence. AI models learn to recognize actions
-                  instead of only detecting objects.
-                </p>
+            <section className="bg-slate-50 py-24">
 
-                <p className="text-gray-600 leading-8 mb-6">
-                  This annotation is widely used in healthcare,
-                  sports analytics, security surveillance,
-                  industrial safety monitoring, workplace compliance,
-                  fitness applications, and human behavior analysis.
-                </p>
+                <div className="mx-auto max-w-5xl px-6">
 
-                <ul className="space-y-3 text-gray-700">
+                    <div className="mb-16 text-center">
 
-                  <li>✓ Walking</li>
-                  <li>✓ Running</li>
-                  <li>✓ Jumping</li>
-                  <li>✓ Fighting Detection</li>
-                  <li>✓ Human Activities</li>
+                        <span className="font-semibold uppercase tracking-widest text-blue-600">
+                            Frequently Asked Questions
+                        </span>
 
-                </ul>
+                        <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
+                            Video Annotation Questions
+                        </h2>
 
-              </div>
+                        <p className="mt-6 text-lg text-slate-600">
+                            Answers to common questions about our video
+                            annotation and labeling services.
+                        </p>
 
-              <Image
-                src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80"
-                alt="Action Recognition Annotation"
-                width={1200}
-                height={800}
-                className="rounded-2xl shadow-xl"
-              />
+                    </div>
 
-            </div>
+                    <div className="space-y-5">
 
+                        {faqs.map((faq) => (
+                            <details
+                                key={faq.question}
+                                className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                            >
 
+                                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-semibold">
 
-            {/* Event Detection */}
+                                    <span>
+                                        {faq.question}
+                                    </span>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                                    <span className="text-2xl text-blue-600 transition group-open:rotate-45">
+                                        +
+                                    </span>
 
-              <Image
-                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80"
-                alt="Event Detection Annotation"
-                width={1200}
-                height={800}
-                className="rounded-2xl shadow-xl"
-              />
+                                </summary>
 
-              <div>
+                                <p className="mt-5 max-w-4xl leading-8 text-slate-600">
+                                    {faq.answer}
+                                </p>
 
-                <h3 className="text-3xl font-bold mb-6">
-                  Event Detection Annotation
-                </h3>
+                            </details>
+                        ))}
 
-                <p className="text-gray-600 leading-8 mb-5">
-                  Event annotation labels meaningful occurrences within
-                  a video timeline. Instead of only identifying objects,
-                  AI learns exactly when specific events begin, end,
-                  and interact with other events.
-                </p>
+                    </div>
 
-                <p className="text-gray-600 leading-8 mb-6">
-                  Event detection datasets are extensively used for
-                  sports analytics, smart surveillance, manufacturing,
-                  healthcare monitoring, retail intelligence,
-                  autonomous driving, and industrial automation.
-                </p>
+                </div>
 
-                <ul className="space-y-3 text-gray-700">
+            </section>
 
-                  <li>✓ Goals & Assists</li>
-                  <li>✓ Vehicle Collision</li>
-                  <li>✓ Fall Detection</li>
-                  <li>✓ Fire Detection</li>
-                  <li>✓ Security Incidents</li>
+            {/* =========================================================
+                CTA
+            ========================================================= */}
 
-                </ul>
+            <section className="py-24">
 
-              </div>
+                <div className="mx-auto max-w-7xl px-6">
 
-            </div>
+                    <div className="overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600 p-10 text-white md:p-16">
 
+                        <div className="grid items-center gap-12 lg:grid-cols-2">
 
+                            <div>
 
-            {/* Pose Tracking */}
+                                <span className="font-semibold uppercase tracking-widest text-blue-100">
+                                    Start Your Project
+                                </span>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                                <h2 className="mt-5 text-4xl font-bold leading-tight lg:text-5xl">
+                                    Have Video Data?
+                                    <span className="block">
+                                        Let&apos;s Turn It Into AI Training Data.
+                                    </span>
+                                </h2>
 
-              <div>
+                                <p className="mt-6 text-lg leading-8 text-blue-50">
+                                    Share your video dataset, annotation
+                                    requirements, expected volume, and
+                                    timeline. Our team can help you define
+                                    the right annotation workflow.
+                                </p>
 
-                <h3 className="text-3xl font-bold mb-6">
-                  Human Pose Tracking
-                </h3>
+                            </div>
 
-                <p className="text-gray-600 leading-8 mb-5">
-                  Human pose tracking labels body joints and skeletal
-                  keypoints across video frames, enabling AI models
-                  to understand posture, movement, gestures,
-                  biomechanics, and interactions.
-                </p>
+                            <div className="lg:text-right">
 
-                <p className="text-gray-600 leading-8 mb-6">
-                  Pose estimation datasets are used in sports coaching,
-                  physiotherapy, fitness platforms, augmented reality,
-                  healthcare, robotics, workplace safety,
-                  and motion analysis systems.
-                </p>
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center rounded-2xl bg-white px-9 py-5 text-lg font-bold text-blue-700 shadow-xl transition hover:-translate-y-1 hover:bg-slate-100"
+                                >
+                                    Request a Free Consultation
 
-                <ul className="space-y-3 text-gray-700">
+                                    <ArrowRight
+                                        size={21}
+                                        className="ml-3"
+                                    />
 
-                  <li>✓ 17 Keypoints</li>
-                  <li>✓ Full Body Tracking</li>
-                  <li>✓ Face Landmarks</li>
-                  <li>✓ Hand Tracking</li>
-                  <li>✓ Motion Analysis</li>
+                                </Link>
 
-                </ul>
+                                <p className="mt-5 text-sm text-blue-100">
+                                    Start with a sample annotation.
+                                </p>
 
-              </div>
+                            </div>
 
-              <Image
-                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80"
-                alt="Pose Estimation"
-                width={1200}
-                height={800}
-                className="rounded-2xl shadow-xl"
-              />
+                        </div>
 
-            </div>
+                    </div>
 
+                </div>
 
+            </section>
 
-            {/* Lane Annotation */}
+            {/* =========================================================
+                SEO CONTENT
+            ========================================================= */}
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <section className="border-t border-slate-100 bg-white py-20">
 
-              <Image
-                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
-                alt="Lane Annotation"
-                width={1200}
-                height={800}
-                className="rounded-2xl shadow-xl"
-              />
+                <div className="mx-auto max-w-5xl px-6">
 
-              <div>
+                    <h2 className="text-3xl font-bold">
+                        Professional Video Annotation Services
+                    </h2>
 
-                <h3 className="text-3xl font-bold mb-6">
-                  Lane & Road Annotation
-                </h3>
+                    <p className="mt-6 leading-9 text-slate-600">
+                        Annotexia provides professional video annotation and
+                        video labeling services for organizations developing
+                        artificial intelligence, machine learning, and
+                        computer vision applications. Our services cover
+                        object tracking, action recognition, event detection,
+                        pose estimation, video segmentation, classification,
+                        and custom annotation requirements.
+                    </p>
 
-                <p className="text-gray-600 leading-8 mb-5">
-                  Lane annotation helps autonomous vehicles understand
-                  road boundaries, lane markings, traffic signs,
-                  pedestrian crossings, road edges, intersections,
-                  and driving conditions.
-                </p>
+                    <p className="mt-6 leading-9 text-slate-600">
+                        Video annotation enables AI systems to understand not
+                        only what appears in a frame, but also how objects,
+                        people, and events change over time. This makes
+                        high-quality video training data valuable for sports
+                        analytics, autonomous vehicles, robotics, retail
+                        intelligence, surveillance, healthcare, and other
+                        computer vision applications.
+                    </p>
 
-                <p className="text-gray-600 leading-8 mb-6">
-                  These datasets are essential for autonomous driving,
-                  ADAS systems, intelligent transportation,
-                  HD map generation, and road scene understanding.
-                </p>
+                    <p className="mt-6 leading-9 text-slate-600">
+                        Our structured workflow combines project-specific
+                        guidelines, trained annotation teams, quality
+                        assurance, validation, and flexible output formats.
+                        Whether you are developing an early-stage computer
+                        vision model or managing a large enterprise dataset,
+                        Annotexia can help transform raw video into reliable
+                        machine learning training data.
+                    </p>
 
-                <ul className="space-y-3 text-gray-700">
+                    <div className="mt-10 flex flex-wrap gap-4">
 
-                  <li>✓ Lane Markings</li>
-                  <li>✓ Road Boundaries</li>
-                  <li>✓ Traffic Signs</li>
-                  <li>✓ Crosswalks</li>
-                  <li>✓ Driving Scene Labels</li>
+                        <Link
+                            href="/services/image-annotation"
+                            className="font-semibold text-blue-600 hover:text-blue-700"
+                        >
+                            Image Annotation
+                            <ArrowRight
+                                size={17}
+                                className="ml-1 inline"
+                            />
+                        </Link>
 
-                </ul>
+                        <Link
+                            href="/services/text-annotation"
+                            className="font-semibold text-blue-600 hover:text-blue-700"
+                        >
+                            Text Annotation
+                            <ArrowRight
+                                size={17}
+                                className="ml-1 inline"
+                            />
+                        </Link>
 
-              </div>
+                        <Link
+                            href="/services/audio-annotation"
+                            className="font-semibold text-blue-600 hover:text-blue-700"
+                        >
+                            Audio Annotation
+                            <ArrowRight
+                                size={17}
+                                className="ml-1 inline"
+                            />
+                        </Link>
 
-            </div>
+                        <Link
+                            href="/services/lidar-annotation"
+                            className="font-semibold text-blue-600 hover:text-blue-700"
+                        >
+                            LiDAR Annotation
+                            <ArrowRight
+                                size={17}
+                                className="ml-1 inline"
+                            />
+                        </Link>
 
-          </div>
+                    </div>
 
-        </div>
+                </div>
 
-      </section>
-            {/* ================= INDUSTRIES ================= */}
+            </section>
 
-      <section className="bg-gray-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center max-w-4xl mx-auto mb-16">
-
-            <span className="text-blue-600 font-semibold uppercase tracking-wider">
-              Industries
-            </span>
-
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              Industries We Support
-            </h2>
-
-            <p className="text-lg text-gray-600 leading-8">
-              Our video annotation specialists support organizations
-              across multiple industries by delivering reliable,
-              scalable, and high-quality datasets for AI development.
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div className="bg-white rounded-xl border p-8">
-              <h3 className="font-bold text-xl mb-3">
-                Autonomous Vehicles
-              </h3>
-              <p className="text-gray-600">
-                Road scene understanding, vehicle tracking,
-                lane detection, pedestrian tracking,
-                traffic sign annotation, and ADAS datasets.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl border p-8">
-              <h3 className="font-bold text-xl mb-3">
-                Sports Analytics
-              </h3>
-              <p className="text-gray-600">
-                Player tracking, ball tracking,
-                tactical analysis, event detection,
-                pose estimation, and performance analytics.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl border p-8">
-              <h3 className="font-bold text-xl mb-3">
-                Retail Intelligence
-              </h3>
-              <p className="text-gray-600">
-                Customer behavior analysis,
-                store monitoring,
-                inventory tracking,
-                shelf analytics,
-                and checkout automation.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl border p-8">
-              <h3 className="font-bold text-xl mb-3">
-                Security & Surveillance
-              </h3>
-              <p className="text-gray-600">
-                Incident detection,
-                crowd monitoring,
-                perimeter security,
-                suspicious activity detection,
-                and public safety AI.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ================= PROCESS ================= */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center max-w-4xl mx-auto mb-16">
-
-            <span className="text-blue-600 font-semibold uppercase tracking-wider">
-              Workflow
-            </span>
-
-            <h2 className="text-4xl font-bold mt-4 mb-6">
-              Our Video Annotation Process
-            </h2>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div className="border rounded-xl p-8">
-
-              <div className="text-4xl font-bold text-blue-600 mb-4">
-                01
-              </div>
-
-              <h3 className="font-bold text-xl mb-3">
-                Requirement Analysis
-              </h3>
-
-              <p className="text-gray-600">
-                Understand project goals,
-                annotation guidelines,
-                output formats,
-                and AI model requirements.
-              </p>
-
-            </div>
-
-            <div className="border rounded-xl p-8">
-
-              <div className="text-4xl font-bold text-blue-600 mb-4">
-                02
-              </div>
-
-              <h3 className="font-bold text-xl mb-3">
-                Dataset Preparation
-              </h3>
-
-              <p className="text-gray-600">
-                Organize videos,
-                preprocess files,
-                and configure annotation tools
-                for maximum efficiency.
-              </p>
-
-            </div>
-
-            <div className="border rounded-xl p-8">
-
-              <div className="text-4xl font-bold text-blue-600 mb-4">
-                03
-              </div>
-
-              <h3 className="font-bold text-xl mb-3">
-                Annotation
-              </h3>
-
-              <p className="text-gray-600">
-                Expert annotators create
-                accurate labels following
-                detailed project guidelines.
-              </p>
-
-            </div>
-
-            <div className="border rounded-xl p-8">
-
-              <div className="text-4xl font-bold text-blue-600 mb-4">
-                04
-              </div>
-
-              <h3 className="font-bold text-xl mb-3">
-                QA & Delivery
-              </h3>
-
-              <p className="text-gray-600">
-                Multiple quality reviews,
-                validation,
-                consistency checks,
-                and final dataset delivery.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ================= TOOLS ================= */}
-
-      <section className="bg-gray-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <h2 className="text-4xl font-bold text-center mb-14">
-            Annotation Tools We Work With
-          </h2>
-
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-            {[
-              "CVAT",
-              "Label Studio",
-              "SuperAnnotate",
-              "Labelbox",
-              "Roboflow",
-              "V7 Darwin",
-              "Supervisely",
-              "Custom Annotation Platforms"
-            ].map((tool) => (
-
-              <div
-                key={tool}
-                className="bg-white border rounded-xl p-6 text-center font-semibold"
-              >
-                {tool}
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ================= QUALITY ================= */}
-
-      <section className="py-24">
-
-        <div className="max-w-6xl mx-auto px-6">
-
-          <div className="text-center mb-16">
-
-            <h2 className="text-4xl font-bold mb-6">
-              Our Quality Assurance Process
-            </h2>
-
-            <p className="text-lg text-gray-600">
-              Every dataset passes multiple validation stages before delivery.
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-
-            <div className="border rounded-xl p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Annotation Review
-              </h3>
-
-              <p className="text-gray-600">
-                Independent reviewers verify
-                annotations against project
-                guidelines and edge cases.
-              </p>
-
-            </div>
-
-            <div className="border rounded-xl p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Quality Metrics
-              </h3>
-
-              <p className="text-gray-600">
-                Accuracy,
-                consistency,
-                completeness,
-                temporal precision,
-                and label validation.
-              </p>
-
-            </div>
-
-            <div className="border rounded-xl p-8">
-
-              <h3 className="font-bold text-xl mb-4">
-                Continuous Feedback
-              </h3>
-
-              <p className="text-gray-600">
-                Feedback loops continuously improve
-                annotation quality throughout the project.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ================= FAQ ================= */}
-
-      <section className="bg-gray-50 py-24">
-
-        <div className="max-w-5xl mx-auto px-6">
-
-          <h2 className="text-4xl font-bold text-center mb-16">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="space-y-8">
-
-            <div>
-
-              <h3 className="font-bold text-xl mb-3">
-                What is video annotation?
-              </h3>
-
-              <p className="text-gray-600">
-                Video annotation is the process of labeling objects,
-                people, events, activities, and movements frame-by-frame
-                so AI models can understand video content accurately.
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="font-bold text-xl mb-3">
-                Which annotation formats do you support?
-              </h3>
-
-              <p className="text-gray-600">
-                We support COCO, YOLO, Pascal VOC, JSON, XML,
-                CSV, custom schemas, and client-specific formats.
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="font-bold text-xl mb-3">
-                Can you annotate large video datasets?
-              </h3>
-
-              <p className="text-gray-600">
-                Yes. Our scalable annotation teams can handle
-                enterprise-scale video datasets containing
-                thousands of hours of footage.
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="font-bold text-xl mb-3">
-                Which industries use video annotation?
-              </h3>
-
-              <p className="text-gray-600">
-                Autonomous driving, sports analytics,
-                healthcare, retail, robotics,
-                agriculture, manufacturing,
-                security, and smart city applications.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ================= CTA ================= */}
-
-      <section className="bg-gray-900 text-white py-24">
-
-        <div className="max-w-5xl mx-auto px-6 text-center">
-
-          <h2 className="text-5xl font-bold mb-6">
-            Ready to Build Better AI with High-Quality Video Annotation?
-          </h2>
-
-          <p className="text-xl text-gray-300 leading-8 mb-10">
-
-            Annotexia helps AI companies create accurate,
-            scalable, and production-ready video annotation
-            datasets for computer vision and machine learning.
-
-          </p>
-
-          <a
-            href="/contact"
-            className="inline-flex items-center bg-white text-black px-10 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"
-          >
-            Request a Free Consultation
-          </a>
-
-        </div>
-
-      </section>
-
-    </main>
-  );
+        </main>
+    );
 }

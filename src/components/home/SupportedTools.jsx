@@ -150,20 +150,16 @@ export default function SupportedTools() {
 
                             <h3 className="mt-5 text-3xl lg:text-4xl font-black text-white">
 
-                                Already Using an Annotation Platform?
-                                We Can Work With It.
+                                Already have an annotation platform? 
+                                Keep using it.
 
                             </h3>
 
                             <p className="mt-8 text-lg leading-8 text-slate-300 max-w-3xl mx-auto">
 
-                                Our annotation specialists adapt quickly to your
-                                existing annotation environment, whether you're using
-                                enterprise platforms, open-source tools, or custom
-                                in-house software. We integrate seamlessly into your
-                                workflows, follow project-specific guidelines, and
-                                deliver consistently high-quality AI training data
-                                without disrupting your development process.
+                                Our teams can work with your existing platform, 
+                                including CVAT, Label Studio, Labelbox, Roboflow, 
+                                SuperAnnotate, Supervisely or custom internal tools.
 
                             </p>
 

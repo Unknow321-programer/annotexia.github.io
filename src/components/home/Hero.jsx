@@ -19,46 +19,17 @@ export default function Hero() {
 
             <div className="inline-flex items-center rounded-full bg-blue-100 text-blue-700 px-5 py-2 text-sm font-semibold">
 
-              Trusted AI Data Annotation Company
+              High-Quality Training Data in 2-4 Weeks
 
             </div>
 
             <h1 className="mt-8 text-5xl lg:text-6xl font-black leading-tight text-white">
-
-              AI Data Annotation
-              <br />
-
-              &
-
-              <br />
-
-              Data Labeling Services
-
+              High-Quality Training Data for AI Models
             </h1>
 
             <p className="mt-8 text-xl text-slate-300 leading-9">
-
-              Annotexia provides enterprise-grade
-              <strong> AI data annotation </strong>,
-              <strong> data labeling </strong>,
-              <strong> image annotation </strong>,
-              <strong> video annotation </strong>,
-              <strong> text annotation </strong>,
-              <strong> audio annotation </strong>,
-              <strong> LiDAR annotation </strong>,
-              <strong> OCR annotation </strong>,
-              and
-              <strong> RLHF services </strong>
-              for Computer Vision, Machine Learning,
-              Large Language Models (LLMs),
-              Generative AI, Robotics,
-              Healthcare AI,
-              Agriculture,
-              Sports Analytics,
-              Retail,
-              Manufacturing,
-              and Autonomous Vehicle applications.
-
+              Turn raw <strong>images, videos, text, audio and LiDAR </strong> into accurate, production-ready training datasets. 
+              Annotexia helps AI teams scale data annotation with<strong> project-specific guidelines, quality assurance, flexible teams and delivery </strong>in the formats and platforms they already use.
             </p>
 
             {/* SERVICES */}
@@ -93,7 +64,7 @@ export default function Hero() {
                 href="/contact"
                 className="rounded-xl bg-blue-600 hover:bg-blue-700 px-8 py-4 font-semibold text-white transition"
               >
-                Request Free Quote
+                Get a Free Project Assessment
               </Link>
 
               <Link
@@ -135,7 +106,7 @@ export default function Hero() {
 
                 <p className="text-slate-400 mt-2">
 
-                  Industries
+                  Industries Supported
 
                 </p>
 
@@ -145,13 +116,13 @@ export default function Hero() {
 
                 <div className="text-4xl font-black text-white">
 
-                  99%
+                  Multi-Level
 
                 </div>
 
                 <p className="text-slate-400 mt-2">
 
-                  Quality Focus
+                  Quality Assurance
 
                 </p>
 

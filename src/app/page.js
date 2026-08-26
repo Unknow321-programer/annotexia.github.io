@@ -9,7 +9,6 @@ import FAQ from "@/components/home/FAQ";
 import CTA from "@/components/home/CTA";
 import SEOResources from "@/components/home/SEOResources";
 import AboutAnnotexia from "@/components/home/AboutAnnotexia";
-import AISolutions from "@/components/home/AISolutions";
 import QualityAssurance from "@/components/home/QualityAssurance";
 import SupportedTools from "@/components/home/SupportedTools";
 import SupportedFormats from "@/components/home/SupportedFormats";
@@ -109,15 +108,14 @@ export default function Home() {
       <AboutAnnotexia/>
       <Services />
       <Industries />
-      <AISolutions />
       <WhyChooseAnnotexia />
+      <CaseStudies />
       <QualityAssurance />
       <SupportedTools />
       <SupportedFormats />
       <Process/>
       <Technologies />
       <SecurityCompliance />
-      <CaseStudies />
       <FAQ />
       <LatestInsights />
       {/* <Testimonials /> */}

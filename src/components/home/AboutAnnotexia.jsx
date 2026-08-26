@@ -35,50 +35,22 @@ export default function AboutAnnotexia() {
 
             <h2 className="mt-5 text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
 
-              Building High-Quality
-              <br />
-              AI Training Data
-              <br />
-              for the Next Generation
-              of Intelligent Systems
+              Annotexia helps AI teams <br />turn raw data into reliable training datasets.
 
             </h2>
 
             <p className="mt-8 text-lg text-slate-600 leading-8">
 
-              Annotexia is a professional AI data annotation company
-              specializing in image annotation, video annotation,
-              text annotation, audio annotation, LiDAR annotation,
-              OCR annotation, RLHF, and enterprise data labeling
-              services for Artificial Intelligence and Machine Learning.
+              We provide image, video, text, 
+              audio, LiDAR and data labeling services for Computer Vision, 
+              NLP, LLMs, Robotics, Healthcare, Sports Analytics, 
+              Agriculture and other AI applications.
 
             </p>
 
             <p className="mt-6 text-lg text-slate-600 leading-8">
 
-              Our annotation specialists create accurate,
-              scalable, and quality-reviewed datasets that
-              help organizations train Computer Vision,
-              Natural Language Processing (NLP),
-              Large Language Models (LLMs),
-              speech recognition systems,
-              autonomous vehicles,
-              healthcare AI,
-              retail analytics,
-              agriculture AI,
-              robotics,
-              and sports analytics solutions.
-
-            </p>
-
-            <p className="mt-6 text-lg text-slate-600 leading-8">
-
-              Every dataset is reviewed through structured
-              quality assurance workflows to ensure consistency,
-              precision, and reliability before delivery.
-              Our flexible teams can support pilot projects,
-              enterprise-scale annotation programs,
-              and long-term managed data labeling operations.
+              Our teams follow project-specific annotation guidelines and structured quality checks to deliver consistent datasets that fit your existing AI workflow.
 
             </p>
 

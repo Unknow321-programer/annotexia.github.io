@@ -1,1146 +1,963 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight,
-  CheckCircle2,
+    ArrowRight,
+    CheckCircle2,
+    ShieldCheck,
+    BrainCircuit,
+    Microscope,
+    ScanLine,
+    FileSearch,
+    Activity,
+    Stethoscope,
+    Database,
 } from "lucide-react";
 
 export const metadata = {
-  title:
-    "Healthcare AI Annotation Services | Medical Image Annotation Company | Annotexia",
+    title:
+        "Healthcare AI Data Annotation Services | Medical Image Labeling | Annotexia",
 
-  description:
-    "Professional healthcare AI annotation services including medical image annotation, X-ray labeling, MRI annotation, CT scan annotation, pathology annotation, DICOM annotation, medical NLP, and AI training datasets for healthcare organizations.",
+    description:
+        "Annotexia provides high-quality healthcare AI data annotation services including medical image annotation, segmentation, radiology labeling, pathology annotation, OCR, and clinical AI datasets.",
 
-  keywords: [
-    "Healthcare AI Annotation",
-    "Medical Image Annotation",
-    "Medical Data Labeling",
-    "MRI Annotation",
-    "CT Scan Annotation",
-    "X-Ray Annotation",
-    "Radiology Annotation",
-    "Medical Segmentation",
-    "Healthcare AI Training Data",
-    "Pathology Annotation",
-    "Medical Computer Vision",
-    "Medical Dataset Annotation",
-  ],
+    keywords: [
+        "healthcare AI annotation",
+        "medical image annotation",
+        "medical data annotation",
+        "radiology annotation",
+        "medical image segmentation",
+        "pathology annotation",
+        "CT scan annotation",
+        "MRI annotation",
+        "X-ray annotation",
+        "healthcare AI training data",
+        "medical AI datasets",
+        "clinical AI annotation",
+        "medical OCR",
+        "Annotexia",
+    ],
+
+    alternates: {
+        canonical: "https://www.annotexia.com/industries/healthcare-ai",
+    },
+
+    openGraph: {
+        title:
+            "Healthcare AI Data Annotation Services | Annotexia",
+
+        description:
+            "Build reliable healthcare AI models with accurate medical image annotation, segmentation, radiology labeling, pathology datasets, and clinical data annotation.",
+
+        url: "https://www.annotexia.com/industries/healthcare-ai",
+
+        siteName: "Annotexia",
+
+        type: "website",
+
+        images: [
+            {
+                url: "https://www.annotexia.com/images/industries/healthcare-ai.webp",
+                width: 1200,
+                height: 630,
+                alt: "Healthcare AI medical image annotation services",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title:
+            "Healthcare AI Data Annotation Services | Annotexia",
+        description:
+            "Accurate medical image annotation and healthcare AI training datasets for machine learning and computer vision.",
+        images: [
+            "https://www.annotexia.com/images/industries/healthcare-ai.webp",
+        ],
+    },
 };
 
+const annotationServices = [
+    {
+        title: "Medical Image Annotation",
+        description:
+            "Label anatomical structures, abnormalities, lesions, organs, and other clinically relevant regions across medical images.",
+        icon: ScanLine,
+    },
+
+    {
+        title: "Medical Image Segmentation",
+        description:
+            "Create pixel-level and region-level masks for organs, tumors, lesions, tissues, and other structures used in medical AI.",
+        icon: Activity,
+    },
+
+    {
+        title: "Radiology Annotation",
+        description:
+            "Support radiology AI with annotations for X-rays, CT scans, MRI studies, ultrasound images, and other diagnostic imaging datasets.",
+        icon: Stethoscope,
+    },
+
+    {
+        title: "Pathology Annotation",
+        description:
+            "Create structured annotations for pathology and histopathology datasets to support computer vision and diagnostic research.",
+        icon: Microscope,
+    },
+
+    {
+        title: "Medical OCR & Document Annotation",
+        description:
+            "Extract and label information from medical documents, reports, prescriptions, forms, and clinical records.",
+        icon: FileSearch,
+    },
+
+    {
+        title: "Custom Healthcare AI Datasets",
+        description:
+            "Build project-specific datasets around your model requirements, annotation guidelines, classes, and output formats.",
+        icon: Database,
+    },
+];
+
+const dataTypes = [
+    "X-Ray Images",
+    "CT Scans",
+    "MRI Images",
+    "Ultrasound",
+    "Pathology Images",
+    "Histology Slides",
+    "Medical Documents",
+    "Clinical Text",
+];
+
+const useCases = [
+    {
+        title: "Disease Detection",
+        description:
+            "Create labeled datasets that help AI systems identify abnormalities and disease-related patterns in medical images.",
+    },
+
+    {
+        title: "Medical Image Segmentation",
+        description:
+            "Generate precise segmentation masks for organs, tumors, lesions, tissues, and anatomical structures.",
+    },
+
+    {
+        title: "Clinical Decision Support",
+        description:
+            "Prepare structured datasets that support AI-assisted clinical workflows and decision-support applications.",
+    },
+
+    {
+        title: "Radiology AI",
+        description:
+            "Train computer vision systems to identify and classify findings across X-ray, CT, MRI, and ultrasound datasets.",
+    },
+
+    {
+        title: "Digital Pathology",
+        description:
+            "Annotate tissue structures, cells, abnormalities, and regions of interest in pathology and histopathology images.",
+    },
+
+    {
+        title: "Healthcare Document AI",
+        description:
+            "Label medical documents and clinical text for OCR, information extraction, classification, and NLP applications.",
+    },
+];
+
+const qualityPoints = [
+    {
+        title: "Detailed Annotation Guidelines",
+        description:
+            "Project-specific guidelines define classes, boundaries, edge cases, and annotation rules before production begins.",
+        icon: CheckCircle2,
+    },
+
+    {
+        title: "Multi-Level Quality Review",
+        description:
+            "Annotations can pass through multiple review stages to identify inconsistencies and improve dataset reliability.",
+        icon: ShieldCheck,
+    },
+
+    {
+        title: "Domain-Aware Workflows",
+        description:
+            "Healthcare datasets require careful handling of terminology, anatomy, imaging structures, and project-specific requirements.",
+        icon: BrainCircuit,
+    },
+
+    {
+        title: "Secure Data Handling",
+        description:
+            "Confidential project workflows, access controls, NDAs, and secure data practices help protect sensitive project information.",
+        icon: ShieldCheck,
+    },
+];
+
 export default function HealthcareAIPage() {
+    return (
+        <main className="bg-white">
 
-  return (
+            {/* =========================================================
+                HERO
+            ========================================================= */}
 
-    <main className="min-h-screen bg-white">
+            <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950">
 
-      {/* ================================================= */}
-      {/* HERO */}
-      {/* ================================================= */}
+                {/* Background effects */}
 
-      <section className="relative overflow-hidden">
+                <div className="absolute inset-0 pointer-events-none">
 
-        <div className="absolute inset-0">
+                    <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-cyan-500/20 blur-[140px]" />
 
-          <Image
-            src="https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=1800&q=80"
-            alt="Healthcare AI Annotation"
-            fill
-            priority
-            className="object-cover"
-          />
-
-          <div className="absolute inset-0 bg-slate-900/75" />
-
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6 py-32">
-
-          <div className="max-w-3xl">
-
-            <span className="inline-flex bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-widest">
-
-              Healthcare AI Training Data
-
-            </span>
-
-            <h1 className="text-5xl lg:text-7xl font-black text-white mt-8 leading-tight">
-
-              Healthcare AI
-              Annotation
-              Services
-
-            </h1>
-
-            <p className="text-xl text-slate-300 leading-9 mt-8">
-
-              Accelerate healthcare innovation with high-quality
-              medical image annotation, radiology labeling,
-              pathology annotation, medical NLP, and AI training
-              datasets designed for hospitals, healthcare startups,
-              research organizations, and medical AI companies.
-
-            </p>
-
-            <div className="flex flex-wrap gap-5 mt-12">
-
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-xl font-semibold transition"
-              >
-
-                Request Free Sample
-
-                <ArrowRight size={20} />
-
-              </Link>
-
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-3 border border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-xl transition"
-              >
-
-                Explore Services
-
-              </Link>
-
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-10 mt-16 text-white">
-
-              <div>
-
-                <h3 className="text-4xl font-bold">
-
-                  99%
-
-                </h3>
-
-                <p className="text-slate-300 mt-2">
-
-                  Medical Annotation Accuracy
-
-                </p>
-
-              </div>
-
-              <div>
-
-                <h3 className="text-4xl font-bold">
-
-                  Multi-Level
-
-                </h3>
-
-                <p className="text-slate-300 mt-2">
-
-                  Quality Assurance
-
-                </p>
-
-              </div>
-
-              <div>
-
-                <h3 className="text-4xl font-bold">
-
-                  Enterprise
-
-                </h3>
-
-                <p className="text-slate-300 mt-2">
-
-                  Secure Workflow
-
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ================================================= */}
-      {/* STORY */}
-      {/* ================================================= */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-            <div>
-
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-                Building Smarter Healthcare AI
-
-              </span>
-
-              <h2 className="text-5xl font-bold mt-5 mb-8">
-
-                Better Medical AI
-                Starts With
-                Reliable Data
-
-              </h2>
-
-              <p className="text-lg leading-9 text-gray-600 mb-6">
-
-                Artificial Intelligence is transforming modern healthcare.
-                From assisting radiologists in identifying abnormalities
-                to helping pathologists detect diseases and supporting
-                clinical decision-making, AI has become an essential
-                technology across hospitals and healthcare institutions.
-
-              </p>
-
-              <p className="text-lg leading-9 text-gray-600 mb-6">
-
-                However, the effectiveness of every medical AI model
-                depends on one critical factor—accurately annotated
-                medical datasets. Without reliable training data,
-                even the most advanced machine learning algorithms
-                cannot produce trustworthy clinical predictions.
-
-              </p>
-
-              <p className="text-lg leading-9 text-gray-600">
-
-                Annotexia partners with healthcare organizations,
-                medical AI startups, research laboratories,
-                diagnostic imaging companies, and digital health
-                platforms to create secure, scalable, and
-                high-quality annotation datasets that improve
-                AI model performance while maintaining
-                strict quality standards.
-
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-5 mt-10">
-
-                {[
-                  "Medical Image Annotation",
-                  "Radiology AI",
-                  "Medical Segmentation",
-                  "Pathology Annotation",
-                  "Medical NLP",
-                  "DICOM Annotation",
-                  "Healthcare Computer Vision",
-                  "Medical Dataset Labeling",
-                ].map((item) => (
-
-                  <div
-                    key={item}
-                    className="flex items-center gap-3"
-                  >
-
-                    <CheckCircle2 className="text-cyan-500" />
-
-                    <span>
-
-                      {item}
-
-                    </span>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </div>
-
-            <div>
-
-              <Image
-                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=80"
-                alt="Healthcare AI"
-                width={700}
-                height={850}
-                className="rounded-3xl shadow-2xl"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ====================================================== */}
-      {/* HEALTHCARE AI SERVICES */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center max-w-4xl mx-auto mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Healthcare AI Services
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4 mb-8">
-
-              Comprehensive Medical
-              Annotation Solutions
-
-            </h2>
-
-            <p className="text-lg leading-9 text-gray-600">
-
-              We provide high-quality medical data annotation services
-              for healthcare organizations, AI startups, hospitals,
-              diagnostic imaging companies, pharmaceutical research,
-              and medical device manufacturers developing next-generation
-              healthcare AI solutions.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-
-            {[
-              {
-                title: "X-Ray Annotation",
-                desc: "Accurate annotation of fractures, lungs, bones, chest abnormalities, orthopedic findings, and radiographic structures."
-              },
-              {
-                title: "MRI Annotation",
-                desc: "Detailed MRI image labeling for neurological disorders, musculoskeletal imaging, and soft tissue analysis."
-              },
-              {
-                title: "CT Scan Annotation",
-                desc: "Precise CT scan annotation for organ segmentation, trauma assessment, tumor localization, and disease detection."
-              },
-              {
-                title: "Ultrasound Annotation",
-                desc: "High-quality ultrasound image labeling for obstetrics, cardiology, abdominal imaging, and diagnostic AI."
-              },
-              {
-                title: "Pathology Annotation",
-                desc: "Microscopic slide annotation supporting cancer detection, tissue classification, and digital pathology AI."
-              },
-              {
-                title: "Medical Image Segmentation",
-                desc: "Pixel-perfect segmentation of organs, tumors, lesions, blood vessels, and anatomical structures."
-              },
-              {
-                title: "Medical NLP",
-                desc: "Annotation of electronic health records, physician notes, discharge summaries, and clinical documentation."
-              },
-              {
-                title: "DICOM Annotation",
-                desc: "Professional annotation of DICOM medical imaging datasets for enterprise healthcare AI applications."
-              },
-              {
-                title: "Medical Object Detection",
-                desc: "Detection of tumors, fractures, nodules, organs, implants, and other medical abnormalities."
-              },
-              {
-                title: "Image Classification",
-                desc: "Classification datasets for disease diagnosis, severity grading, and automated medical screening."
-              },
-              {
-                title: "Medical Keypoint Annotation",
-                desc: "Landmark annotation for orthopedic measurements, anatomical structures, and surgical planning."
-              },
-              {
-                title: "Quality Assurance",
-                desc: "Every dataset undergoes multiple QA stages to ensure annotation consistency and production-level quality."
-              }
-
-            ].map((service) => (
-
-              <div
-                key={service.title}
-                className="bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-xl hover:-translate-y-2 transition duration-300"
-              >
-
-                <div className="w-16 h-16 rounded-xl bg-cyan-50 flex items-center justify-center text-3xl mb-6">
-
-                  🏥
+                    <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-600/20 blur-[140px]" />
 
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4">
+                <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
 
-                  {service.title}
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-                </h3>
+                        {/* LEFT */}
 
-                <p className="text-gray-600 leading-8">
+                        <div>
 
-                  {service.desc}
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm font-semibold mb-8">
 
-                </p>
+                                <HeartPulseIcon />
 
-              </div>
+                                Healthcare AI Data Annotation
 
-            ))}
+                            </div>
 
-          </div>
+                            <h1 className="text-5xl lg:text-6xl font-extrabold text-white leading-tight">
 
-        </div>
+                                Build Smarter
 
-      </section>
+                                <span className="block text-cyan-400">
+                                    Healthcare AI
+                                </span>
 
-      {/* ====================================================== */}
-      {/* MEDICAL IMAGING */}
-      {/* ====================================================== */}
+                                With Better Data
 
-      <section className="py-24">
+                            </h1>
 
-        <div className="max-w-7xl mx-auto px-6">
+                            <p className="mt-8 text-lg lg:text-xl text-slate-300 leading-8 max-w-2xl">
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+                                Healthcare AI depends on accurate, carefully labeled
+                                training data. Annotexia helps AI teams create
+                                reliable medical datasets through image annotation,
+                                segmentation, radiology labeling, pathology
+                                annotation, OCR, and custom healthcare data
+                                labeling workflows.
 
-            <div>
+                            </p>
 
-              <Image
-                src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=1400&q=80"
-                alt="Medical Imaging AI"
-                width={700}
-                height={900}
-                className="rounded-3xl shadow-2xl"
-              />
+                            <div className="flex flex-wrap gap-4 mt-10">
 
-            </div>
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white font-semibold transition shadow-xl shadow-cyan-500/20"
+                                >
+                                    Start Healthcare AI Project
+                                    <ArrowRight size={20} />
+                                </Link>
 
-            <div>
+                                <Link
+                                    href="/services/data-labeling"
+                                    className="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-white/20 text-white hover:bg-white/10 hover:border-cyan-400 transition"
+                                >
+                                    Explore Data Labeling
+                                </Link>
 
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
+                            </div>
 
-                Medical Imaging AI
+                            <div className="flex flex-wrap gap-6 mt-10 text-sm text-slate-300">
 
-              </span>
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={18}
+                                        className="text-cyan-400"
+                                    />
+                                    Medical Image Annotation
+                                </div>
 
-              <h2 className="text-5xl font-bold mt-5 mb-8">
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={18}
+                                        className="text-cyan-400"
+                                    />
+                                    Segmentation
+                                </div>
 
-                Supporting Medical
-                Imaging with
-                Accurate Annotation
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle2
+                                        size={18}
+                                        className="text-cyan-400"
+                                    />
+                                    Quality Assurance
+                                </div>
 
-              </h2>
+                            </div>
 
-              <p className="text-lg leading-9 text-gray-600 mb-6">
+                        </div>
 
-                Medical imaging is one of the fastest-growing applications
-                of Artificial Intelligence. AI systems assist radiologists
-                and clinicians by analyzing X-rays, CT scans, MRI scans,
-                ultrasound images, and pathology slides with remarkable speed.
+                        {/* RIGHT */}
 
-              </p>
+                        <div className="relative">
 
-              <p className="text-lg leading-9 text-gray-600 mb-8">
+                            <div className="absolute inset-0 bg-cyan-500/20 blur-3xl rounded-full" />
 
-                At Annotexia, we create high-quality medical datasets that
-                enable AI systems to recognize diseases, identify anatomical
-                structures, detect abnormalities, and improve clinical
-                decision-making while maintaining exceptional annotation quality.
+                            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl p-3 shadow-2xl">
 
-              </p>
+                                <Image
+                                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Healthcare AI medical image annotation and artificial intelligence"
+                                    width={900}
+                                    height={650}
+                                    priority
+                                    className="w-full h-[420px] lg:h-[520px] object-cover rounded-2xl"
+                                />
 
-              <div className="space-y-5">
+                            </div>
 
-                {[
-                  "Radiology AI",
-                  "Computer Vision in Healthcare",
-                  "Tumor Segmentation",
-                  "Organ Detection",
-                  "Clinical Imaging",
-                  "DICOM Dataset Preparation",
+                            {/* Floating card */}
 
-                ].map((item) => (
+                            <div className="absolute -left-8 top-10 hidden md:block rounded-2xl bg-slate-900 border border-white/10 px-6 py-5 shadow-2xl">
 
-                  <div
-                    key={item}
-                    className="flex items-center gap-4"
-                  >
+                                <p className="text-cyan-400 text-sm font-semibold">
+                                    Medical AI
+                                </p>
 
-                    <CheckCircle2 className="text-cyan-500" />
+                                <p className="text-white text-xl font-bold mt-1">
+                                    Image Segmentation
+                                </p>
 
-                    <span className="text-lg">
+                            </div>
 
-                      {item}
+                            <div className="absolute -right-8 bottom-10 hidden md:block rounded-2xl bg-slate-900 border border-white/10 px-6 py-5 shadow-2xl">
 
-                    </span>
+                                <p className="text-green-400 text-sm font-semibold">
+                                    Quality Workflow
+                                </p>
 
-                  </div>
+                                <p className="text-white text-xl font-bold mt-1">
+                                    Multi-Level QA
+                                </p>
 
-                ))}
+                            </div>
 
-              </div>
+                        </div>
 
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      {/* ====================================================== */}
-      {/* HEALTHCARE AI APPLICATIONS */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-50 py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center max-w-4xl mx-auto mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Healthcare AI Applications
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4 mb-8">
-
-              Powering the Next Generation
-              of Intelligent Healthcare
-
-            </h2>
-
-            <p className="text-lg text-gray-600 leading-9">
-
-              Healthcare Artificial Intelligence is rapidly changing how
-              clinicians diagnose diseases, monitor patients, interpret
-              medical images, and improve patient outcomes. Our annotation
-              services support AI development across numerous healthcare
-              specialties.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            {[
-              "Radiology AI",
-              "Cancer Detection",
-              "Disease Diagnosis",
-              "Clinical Decision Support",
-              "Medical Imaging",
-              "Digital Pathology",
-              "Hospital Automation",
-              "Electronic Health Records",
-              "Healthcare NLP",
-              "Remote Patient Monitoring",
-              "Medical Robotics",
-              "Telemedicine AI",
-
-            ].map((item) => (
-
-              <div
-                key={item}
-                className="bg-white rounded-2xl border p-8 hover:shadow-xl transition"
-              >
-
-                <div className="text-4xl mb-5">
-
-                  🩺
+                    </div>
 
                 </div>
 
-                <h3 className="font-bold text-xl">
+            </section>
 
-                  {item}
+            {/* =========================================================
+                INTRODUCTION
+            ========================================================= */}
 
-                </h3>
+            <section className="py-24">
 
-              </div>
+                <div className="max-w-7xl mx-auto px-6">
 
-            ))}
+                    <div className="max-w-4xl mx-auto text-center">
 
-          </div>
+                        <span className="text-cyan-600 font-semibold uppercase tracking-widest">
+                            Healthcare AI Training Data
+                        </span>
 
-        </div>
+                        <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-4">
+                            Medical AI Starts With Reliable Training Data
+                        </h2>
 
-      </section>
+                        <p className="mt-7 text-lg text-slate-600 leading-8">
 
-      {/* ====================================================== */}
-      {/* ANNOTATION TYPES */}
-      {/* ====================================================== */}
+                            Developing healthcare AI is not simply about building
+                            sophisticated algorithms. AI models need carefully
+                            prepared datasets that accurately represent the
+                            medical conditions, anatomical structures, and
+                            clinical patterns they are designed to recognize.
 
-      <section className="py-24">
+                        </p>
 
-        <div className="max-w-7xl mx-auto px-6">
+                        <p className="mt-5 text-lg text-slate-600 leading-8">
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+                            Annotexia helps healthcare technology companies,
+                            medical AI teams, research organizations, and
+                            computer vision developers transform raw medical
+                            data into structured training datasets.
 
-            <div>
+                        </p>
 
-              <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-                Annotation Expertise
-
-              </span>
-
-              <h2 className="text-5xl font-bold mt-5 mb-8">
-
-                Every Annotation
-                Technique Required
-                for Healthcare AI
-
-              </h2>
-
-              <p className="text-lg leading-9 text-gray-600 mb-10">
-
-                Healthcare AI requires multiple annotation methods depending
-                on the imaging modality, clinical objective, and machine
-                learning model. Our experienced annotation specialists
-                deliver precise labels for every medical use case.
-
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-5">
-
-                {[
-                  "Bounding Boxes",
-                  "Polygon Annotation",
-                  "Semantic Segmentation",
-                  "Instance Segmentation",
-                  "Medical Image Classification",
-                  "Keypoint Annotation",
-                  "Tumor Segmentation",
-                  "Organ Segmentation",
-                  "Lesion Annotation",
-                  "DICOM Annotation",
-                  "Medical NLP",
-                  "OCR for Healthcare",
-
-                ].map((item) => (
-
-                  <div
-                    key={item}
-                    className="flex items-center gap-3"
-                  >
-
-                    <CheckCircle2 className="text-cyan-500" />
-
-                    <span>
-
-                      {item}
-
-                    </span>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </div>
-
-            <div>
-
-              <Image
-                src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1400&q=80"
-                alt="Radiology Annotation"
-                width={700}
-                height={850}
-                className="rounded-3xl shadow-2xl"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* DATASET FORMATS */}
-      {/* ====================================================== */}
-
-      <section className="bg-slate-900 py-24 text-white">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-400 font-semibold">
-
-              Supported Formats
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4">
-
-              Delivered In Your
-              Preferred Annotation Format
-
-            </h2>
-
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-
-            {[
-              "DICOM",
-              "NIfTI",
-              "COCO",
-              "YOLO",
-              "Pascal VOC",
-              "JSON",
-              "XML",
-              "CSV",
-              "CVAT",
-              "Label Studio",
-
-            ].map((item) => (
-
-              <div
-                key={item}
-                className="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-cyan-600 transition"
-              >
-
-                <h3 className="font-semibold">
-
-                  {item}
-
-                </h3>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================== */}
-      {/* WORKFLOW */}
-      {/* ====================================================== */}
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center max-w-4xl mx-auto mb-20">
-
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-
-              Workflow
-
-            </span>
-
-            <h2 className="text-5xl font-bold mt-4 mb-8">
-
-              Our Healthcare AI
-              Annotation Process
-
-            </h2>
-
-            <p className="text-lg text-gray-600 leading-9">
-
-              Every healthcare project follows a structured workflow
-              to ensure consistent quality, compliance, and secure
-              delivery of medical datasets.
-
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-5 gap-8">
-
-            {[
-              {
-                step: "01",
-                title: "Project Planning",
-              },
-              {
-                step: "02",
-                title: "Pilot Annotation",
-              },
-              {
-                step: "03",
-                title: "Production Labeling",
-              },
-              {
-                step: "04",
-                title: "Medical QA Review",
-              },
-              {
-                step: "05",
-                title: "Secure Dataset Delivery",
-              },
-
-            ].map((item) => (
-
-              <div
-                key={item.step}
-                className="text-center"
-              >
-
-                <div className="w-20 h-20 mx-auto rounded-full bg-cyan-500 text-white flex items-center justify-center text-2xl font-bold">
-
-                  {item.step}
+                    </div>
 
                 </div>
 
-                <h3 className="font-bold text-xl mt-6">
+            </section>
 
-                  {item.title}
+            {/* =========================================================
+                SERVICES
+            ========================================================= */}
 
-                </h3>
+            <section className="py-24 bg-slate-50">
 
-              </div>
+                <div className="max-w-7xl mx-auto px-6">
 
-            ))}
+                    <div className="max-w-3xl mb-16">
 
-          </div>
+                        <span className="text-cyan-600 font-semibold uppercase tracking-widest">
+                            Our Healthcare Annotation Services
+                        </span>
 
-        </div>
+                        <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-4">
+                            Annotation Built Around Your Medical AI Workflow
+                        </h2>
 
-      </section>
-      {/* ====================================================== */}
-      {/* WHY CHOOSE ANNOTEXIA */}
-      {/* ====================================================== */}
+                        <p className="mt-6 text-lg text-slate-600 leading-8">
+                            From medical imaging to clinical documents, our
+                            annotation workflows can be adapted to your dataset,
+                            annotation guidelines, model requirements, and
+                            delivery format.
+                        </p>
 
-      <section className="bg-slate-50 py-24">
+                    </div>
 
-        <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <div className="text-center max-w-4xl mx-auto mb-20">
+                        {annotationServices.map((service) => {
 
-            <span className="uppercase tracking-widest text-cyan-600 font-semibold">
-              Why Annotexia
-            </span>
+                            const Icon = service.icon;
 
-            <h2 className="text-5xl font-bold mt-5 mb-8">
-              Trusted Partner for
-              Healthcare AI Annotation
-            </h2>
+                            return (
+                                <div
+                                    key={service.title}
+                                    className="group relative bg-white rounded-3xl border border-slate-200 p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+                                >
 
-            <p className="text-lg leading-9 text-gray-600">
-              Healthcare AI demands exceptional accuracy, secure workflows,
-              and reliable delivery. At Annotexia, we combine experienced
-              annotation specialists, structured quality assurance, and
-              enterprise-grade processes to help organizations develop
-              dependable AI solutions.
-            </p>
+                                    <div className="absolute top-0 left-0 h-1 w-0 bg-cyan-500 group-hover:w-full transition-all duration-500" />
 
-          </div>
+                                    <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-600 transition">
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+                                        <Icon
+                                            size={28}
+                                            className="text-cyan-600 group-hover:text-white transition"
+                                        />
 
-            {[
-              {
-                title: "Medical Domain Understanding",
-                desc: "Annotation teams follow detailed project guidelines and understand complex healthcare annotation requirements."
-              },
-              {
-                title: "Multi-Level Quality Assurance",
-                desc: "Every dataset passes multiple review stages before final delivery to maintain consistency and annotation accuracy."
-              },
-              {
-                title: "Scalable Workforce",
-                desc: "From pilot projects to millions of medical images, our team scales according to project requirements."
-              },
-              {
-                title: "Enterprise Security",
-                desc: "Strict NDA processes, controlled access, secure infrastructure, and confidential project handling."
-              },
-              {
-                title: "Flexible Delivery",
-                desc: "Datasets delivered in DICOM, COCO, YOLO, JSON, XML, CSV, CVAT, Label Studio and custom formats."
-              },
-              {
-                title: "Dedicated Project Manager",
-                desc: "A single point of contact ensures transparent communication and faster project execution."
-              }
+                                    </div>
 
-            ].map((item) => (
+                                    <h3 className="text-2xl font-bold text-slate-900 mt-7 group-hover:text-cyan-600 transition">
+                                        {service.title}
+                                    </h3>
 
-              <div
-                key={item.title}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition"
-              >
+                                    <p className="mt-4 text-slate-600 leading-7">
+                                        {service.description}
+                                    </p>
 
-                <CheckCircle2
-                  className="text-cyan-500 mb-5"
-                  size={36}
-                />
+                                </div>
+                            );
+                        })}
 
-                <h3 className="text-2xl font-bold mb-4">
-                  {item.title}
-                </h3>
+                    </div>
 
-                <p className="text-gray-600 leading-8">
-                  {item.desc}
-                </p>
+                </div>
 
-              </div>
+            </section>
 
-            ))}
+            {/* =========================================================
+                DATA TYPES
+            ========================================================= */}
 
-          </div>
+            <section className="py-24">
 
-        </div>
+                <div className="max-w-7xl mx-auto px-6">
 
-      </section>
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-      {/* ====================================================== */}
-      {/* FREE SAMPLE */}
-      {/* ====================================================== */}
+                        <div>
 
-      <section className="py-24">
+                            <span className="text-cyan-600 font-semibold uppercase tracking-widest">
+                                Medical Data Types
+                            </span>
 
-        <div className="max-w-6xl mx-auto px-6">
+                            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-4">
+                                Work With the Data Your AI Needs
+                            </h2>
 
-          <div className="bg-cyan-600 rounded-3xl p-16 text-center text-white">
+                            <p className="mt-6 text-lg text-slate-600 leading-8">
 
-            <h2 className="text-5xl font-bold mb-8">
+                                Different healthcare AI applications require
+                                different types of training data. Our annotation
+                                workflows can be adapted to a wide range of
+                                medical images and healthcare datasets.
 
-              Evaluate Our Annotation Quality
-              Before You Commit
+                            </p>
 
-            </h2>
+                            <div className="grid sm:grid-cols-2 gap-4 mt-10">
 
-            <p className="text-xl leading-9 max-w-4xl mx-auto mb-10">
+                                {dataTypes.map((type) => (
 
-              We understand that healthcare AI projects require absolute confidence.
-              That's why we provide a FREE sample dataset so your team can evaluate
-              our annotation accuracy, consistency, and quality before starting
-              a full production project.
+                                    <div
+                                        key={type}
+                                        className="flex items-center gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200"
+                                    >
 
-            </p>
+                                        <CheckCircle2
+                                            size={20}
+                                            className="text-cyan-600 shrink-0"
+                                        />
 
-            <div className="grid md:grid-cols-3 gap-8 text-left">
+                                        <span className="font-medium text-slate-800">
+                                            {type}
+                                        </span>
 
-              <div>
+                                    </div>
 
-                <h3 className="font-bold text-2xl mb-3">
+                                ))}
 
-                  ✓ No Cost
+                            </div>
 
-                </h3>
+                        </div>
 
-                <p>
+                        <div className="relative">
 
-                  Receive a professionally annotated sample completely free.
+                            <div className="rounded-3xl overflow-hidden shadow-2xl">
 
-                </p>
+                                <Image
+                                    src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1400&q=80"
+                                    alt="Medical imaging and healthcare artificial intelligence technology"
+                                    width={900}
+                                    height={700}
+                                    className="w-full h-[520px] object-cover"
+                                />
 
-              </div>
+                            </div>
 
-              <div>
+                        </div>
 
-                <h3 className="font-bold text-2xl mb-3">
+                    </div>
 
-                  ✓ No Commitment
+                </div>
 
-                </h3>
+            </section>
 
-                <p>
+            {/* =========================================================
+                USE CASES
+            ========================================================= */}
 
-                  Evaluate our quality before making any business decision.
+            <section className="py-24 bg-slate-900">
 
-                </p>
+                <div className="max-w-7xl mx-auto px-6">
 
-              </div>
+                    <div className="text-center max-w-3xl mx-auto mb-16">
 
-              <div>
+                        <span className="text-cyan-400 font-semibold uppercase tracking-widest">
+                            Healthcare AI Applications
+                        </span>
 
-                <h3 className="font-bold text-2xl mb-3">
+                        <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">
+                            Where Medical Annotation Makes a Difference
+                        </h2>
 
-                  ✓ Production Quality
+                        <p className="mt-6 text-lg text-slate-300 leading-8">
+                            Structured training data can support a wide range of
+                            healthcare AI and medical computer vision applications.
+                        </p>
 
-                </h3>
+                    </div>
 
-                <p>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                  The sample follows the exact workflow used for enterprise projects.
+                        {useCases.map((item) => (
 
-                </p>
+                            <div
+                                key={item.title}
+                                className="rounded-2xl border border-white/10 bg-white/5 p-7 hover:bg-white/10 transition"
+                            >
 
-              </div>
+                                <div className="flex items-start gap-4">
 
-            </div>
+                                    <div className="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center shrink-0">
 
-          </div>
+                                        <CheckCircle2
+                                            size={20}
+                                            className="text-cyan-400"
+                                        />
 
-        </div>
+                                    </div>
 
-      </section>
+                                    <div>
 
-      {/* ====================================================== */}
-      {/* FAQ */}
-      {/* ====================================================== */}
+                                        <h3 className="text-xl font-bold text-white">
+                                            {item.title}
+                                        </h3>
 
-      <section className="bg-slate-50 py-24">
+                                        <p className="mt-3 text-slate-300 leading-7">
+                                            {item.description}
+                                        </p>
 
-        <div className="max-w-5xl mx-auto px-6">
+                                    </div>
 
-          <h2 className="text-5xl font-bold text-center mb-20">
+                                </div>
 
-            Frequently Asked Questions
+                            </div>
 
-          </h2>
+                        ))}
 
-          <div className="space-y-8">
+                    </div>
 
-            {[
-              {
-                q: "How can we trust Annotexia for healthcare annotation projects?",
-                a: "We follow structured annotation workflows, multi-level quality assurance, secure project handling, and transparent communication throughout every project. We also offer a free sample dataset so you can evaluate our quality before moving forward."
-              },
-              {
-                q: "Do you provide a free sample dataset?",
-                a: "Yes. We provide a free annotated sample so you can verify our quality, consistency, and annotation guidelines before beginning production."
-              },
-              {
-                q: "Can you work with confidential healthcare data?",
-                a: "Yes. We support NDA agreements, secure file handling, restricted project access, and enterprise confidentiality practices."
-              },
-              {
-                q: "Which annotation tools do you support?",
-                a: "We work with CVAT, Label Studio, SuperAnnotate, Labelbox, Roboflow, DICOM viewers, and custom annotation platforms."
-              },
-              {
-                q: "What medical image formats do you support?",
-                a: "We support DICOM, NIfTI, PNG, JPG, TIFF, COCO, YOLO, JSON, XML, CSV, Pascal VOC, and many custom formats."
-              },
-              {
-                q: "Can you scale large healthcare AI projects?",
-                a: "Yes. Our scalable annotation team supports projects ranging from proof-of-concept datasets to enterprise-scale medical AI initiatives."
-              }
+                </div>
 
-            ].map((faq) => (
+            </section>
 
-              <div
-                key={faq.q}
-                className="bg-white rounded-2xl p-8 shadow-sm"
-              >
+            {/* =========================================================
+                QUALITY
+            ========================================================= */}
 
-                <h3 className="font-bold text-2xl mb-4">
+            <section className="py-24 bg-white">
 
-                  {faq.q}
+                <div className="max-w-7xl mx-auto px-6">
 
-                </h3>
+                    <div className="text-center max-w-3xl mx-auto mb-16">
 
-                <p className="text-gray-600 leading-8">
+                        <span className="text-cyan-600 font-semibold uppercase tracking-widest">
+                            Quality & Security
+                        </span>
 
-                  {faq.a}
+                        <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-4">
+                            Quality Matters Even More in Healthcare AI
+                        </h2>
 
-                </p>
+                        <p className="mt-6 text-lg text-slate-600 leading-8">
 
-              </div>
+                            Healthcare datasets demand consistency, precision,
+                            clear guidelines, and careful quality control.
+                            Our workflows are designed to reduce annotation
+                            errors and maintain dataset consistency.
 
-            ))}
+                        </p>
 
-          </div>
+                    </div>
 
-        </div>
+                    <div className="grid md:grid-cols-2 gap-8">
 
-      </section>
+                        {qualityPoints.map((item) => {
 
-      {/* ====================================================== */}
-      {/* SEO CONTENT */}
-      {/* ====================================================== */}
+                            const Icon = item.icon;
 
-      <section className="py-24">
+                            return (
+                                <div
+                                    key={item.title}
+                                    className="flex gap-6 p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:shadow-xl transition"
+                                >
 
-        <div className="max-w-5xl mx-auto px-6">
+                                    <div className="w-14 h-14 rounded-2xl bg-cyan-100 flex items-center justify-center shrink-0">
 
-          <h2 className="text-4xl font-bold mb-10">
+                                        <Icon
+                                            size={28}
+                                            className="text-cyan-600"
+                                        />
 
-            Healthcare AI Annotation Services for Next-Generation Medical Intelligence
+                                    </div>
 
-          </h2>
+                                    <div>
 
-          <div className="space-y-8 text-lg leading-9 text-gray-600">
+                                        <h3 className="text-2xl font-bold text-slate-900">
+                                            {item.title}
+                                        </h3>
 
-            <p>
+                                        <p className="mt-3 text-slate-600 leading-7">
+                                            {item.description}
+                                        </p>
 
-              Healthcare organizations worldwide are increasingly adopting Artificial Intelligence to improve diagnostics, automate clinical workflows, accelerate medical research, and enhance patient care. These intelligent systems rely on high-quality annotated medical datasets that accurately represent real-world clinical scenarios. Annotexia provides professional healthcare AI annotation services designed to help hospitals, medical AI startups, healthcare technology companies, research institutions, and diagnostic imaging providers develop reliable machine learning models.
+                                    </div>
 
-            </p>
+                                </div>
+                            );
+                        })}
 
-            <p>
+                    </div>
 
-              Our expertise includes medical image annotation, radiology image labeling, MRI annotation, CT scan annotation, pathology annotation, DICOM image annotation, semantic segmentation, medical NLP annotation, healthcare computer vision datasets, and production-quality AI training data. Every project follows strict quality assurance procedures to deliver consistent, accurate, and scalable datasets for healthcare AI development.
+                </div>
 
-            </p>
+            </section>
 
-            <p>
+            {/* =========================================================
+                WORKFLOW
+            ========================================================= */}
 
-              Whether you're building disease detection systems, radiology AI, cancer detection models, healthcare robotics, digital pathology solutions, or medical imaging software, Annotexia provides secure, scalable, and enterprise-ready annotation services tailored to your project requirements.
+            <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
 
-            </p>
+                <div className="max-w-7xl mx-auto px-6">
 
-          </div>
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-        </div>
+                        <div>
 
-      </section>
+                            <span className="text-cyan-600 font-semibold uppercase tracking-widest">
+                                Our Workflow
+                            </span>
 
-      {/* ====================================================== */}
-      {/* CTA */}
-      {/* ====================================================== */}
+                            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mt-4">
+                                From Medical Data to AI-Ready Dataset
+                            </h2>
 
-      <section className="bg-slate-900 text-white py-28">
+                            <p className="mt-6 text-lg text-slate-600 leading-8">
 
-        <div className="max-w-5xl mx-auto px-6 text-center">
+                                We follow a structured workflow to transform raw
+                                healthcare data into consistent, machine-learning-
+                                ready datasets.
 
-          <h2 className="text-5xl font-bold mb-8">
+                            </p>
 
-            Build Better Healthcare AI
-            With Better Training Data
+                        </div>
 
-          </h2>
+                        <div className="space-y-5">
 
-          <p className="text-xl text-slate-300 leading-9 max-w-3xl mx-auto mb-12">
+                            {[
+                                "Understand your medical AI requirements",
+                                "Review dataset and annotation guidelines",
+                                "Create project-specific labeling instructions",
+                                "Train and assign annotation teams",
+                                "Perform annotation and quality review",
+                                "Validate and deliver the final dataset",
+                            ].map((step, index) => (
 
-            From medical image annotation and radiology labeling to healthcare NLP
-            and pathology datasets, Annotexia helps healthcare organizations build
-            accurate, secure, and scalable AI training datasets that improve model
-            performance and accelerate innovation.
+                                <div
+                                    key={step}
+                                    className="flex items-center gap-5 bg-white border border-slate-200 rounded-2xl p-5 shadow-sm"
+                                >
 
-          </p>
+                                    <div className="w-10 h-10 rounded-full bg-cyan-600 text-white flex items-center justify-center font-bold shrink-0">
+                                        {index + 1}
+                                    </div>
 
-          <div className="flex flex-wrap justify-center gap-6">
+                                    <p className="font-medium text-slate-800">
+                                        {step}
+                                    </p>
 
-            <Link
-              href="/contact"
-              className="bg-cyan-500 hover:bg-cyan-600 px-8 py-4 rounded-xl font-semibold transition"
-            >
+                                </div>
 
-              Request Free Sample Dataset
+                            ))}
 
-            </Link>
+                        </div>
 
-            <Link
-              href="/services"
-              className="border border-white/20 hover:bg-white/10 px-8 py-4 rounded-xl transition"
-            >
+                    </div>
 
-              Explore Services
+                </div>
 
-            </Link>
+            </section>
 
-          </div>
+            {/* =========================================================
+                INTERNAL LINKS
+            ========================================================= */}
 
-        </div>
+            <section className="py-20">
 
-      </section>
+                <div className="max-w-7xl mx-auto px-6">
 
-    </main>
+                    <div className="rounded-3xl bg-slate-50 border border-slate-200 p-10">
 
-  );
+                        <h2 className="text-3xl font-bold text-slate-900">
+                            Explore More AI Data Annotation Services
+                        </h2>
+
+                        <p className="mt-4 text-slate-600 leading-7 max-w-3xl">
+                            Explore our other annotation services and industry
+                            solutions designed to support computer vision,
+                            machine learning, and AI development.
+                        </p>
+
+                        <div className="flex flex-wrap gap-4 mt-8">
+
+                            <Link
+                                href="/services/image-annotation"
+                                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-200 hover:border-cyan-500 hover:text-cyan-600 transition"
+                            >
+                                Image Annotation
+                                <ArrowRight size={17} />
+                            </Link>
+
+                            <Link
+                                href="/services/video-annotation"
+                                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-200 hover:border-cyan-500 hover:text-cyan-600 transition"
+                            >
+                                Video Annotation
+                                <ArrowRight size={17} />
+                            </Link>
+
+                            <Link
+                                href="/services/text-annotation"
+                                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-200 hover:border-cyan-500 hover:text-cyan-600 transition"
+                            >
+                                Text Annotation
+                                <ArrowRight size={17} />
+                            </Link>
+
+                            <Link
+                                href="/services/data-labeling"
+                                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-200 hover:border-cyan-500 hover:text-cyan-600 transition"
+                            >
+                                Data Labeling
+                                <ArrowRight size={17} />
+                            </Link>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =========================================================
+                CTA
+            ========================================================= */}
+
+            <section className="py-24 bg-gradient-to-r from-cyan-600 via-sky-600 to-blue-700">
+
+                <div className="max-w-5xl mx-auto px-6 text-center text-white">
+
+                    <span className="uppercase tracking-widest text-cyan-100 font-semibold">
+                        Build Better Healthcare AI
+                    </span>
+
+                    <h2 className="text-4xl lg:text-5xl font-bold mt-5">
+                        Have a Medical AI Dataset to Annotate?
+                    </h2>
+
+                    <p className="mt-6 text-xl text-cyan-50 leading-8 max-w-3xl mx-auto">
+
+                        Share your dataset, annotation requirements, and project
+                        goals with our team. We can help you determine the right
+                        annotation workflow for your healthcare AI application.
+
+                    </p>
+
+                    <div className="flex justify-center flex-wrap gap-5 mt-10">
+
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center gap-2 bg-white text-cyan-700 px-8 py-4 rounded-xl font-bold hover:bg-slate-100 transition"
+                        >
+                            Request Free Consultation
+                            <ArrowRight size={20} />
+                        </Link>
+
+                        <Link
+                            href="/services"
+                            className="inline-flex items-center px-8 py-4 rounded-xl border border-white/40 text-white font-semibold hover:bg-white/10 transition"
+                        >
+                            View All Services
+                        </Link>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* =========================================================
+                SEO CONTENT
+            ========================================================= */}
+
+            <section className="py-20 bg-white">
+
+                <div className="max-w-5xl mx-auto px-6">
+
+                    <h2 className="text-3xl font-bold text-slate-900 mb-7">
+                        Healthcare AI Data Annotation Services
+                    </h2>
+
+                    <p className="text-slate-600 leading-8 mb-6">
+
+                        Annotexia provides healthcare AI data annotation services
+                        for organizations developing medical artificial
+                        intelligence, computer vision, machine learning, and
+                        clinical AI applications. Our workflows support medical
+                        image annotation, segmentation, radiology labeling,
+                        pathology annotation, OCR, clinical document labeling,
+                        and custom healthcare datasets.
+
+                    </p>
+
+                    <p className="text-slate-600 leading-8 mb-6">
+
+                        Medical AI systems depend on high-quality training data.
+                        Accurate annotations help machine learning models learn
+                        how to identify anatomical structures, abnormalities,
+                        lesions, tissues, and other clinically relevant patterns.
+                        Our annotation specialists follow project-specific
+                        guidelines and quality assurance workflows to maintain
+                        consistency across healthcare datasets.
+
+                    </p>
+
+                    <p className="text-slate-600 leading-8">
+
+                        Whether you are developing a radiology AI application,
+                        medical imaging solution, digital pathology platform,
+                        healthcare document AI system, or another machine
+                        learning product, Annotexia can provide scalable and
+                        structured annotation support tailored to your project.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+            {/* =========================================================
+                FINAL CTA
+            ========================================================= */}
+
+            <section className="py-20 bg-slate-950 text-white">
+
+                <div className="max-w-6xl mx-auto px-6 text-center">
+
+                    <h2 className="text-4xl lg:text-5xl font-bold">
+                        Better Medical AI Starts With Better Data
+                    </h2>
+
+                    <p className="mt-6 text-lg text-slate-300 max-w-3xl mx-auto leading-8">
+
+                        Build reliable healthcare AI training datasets with
+                        accurate annotation, structured workflows, and scalable
+                        project support.
+
+                    </p>
+
+                    <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-2 mt-9 px-8 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white font-bold transition"
+                    >
+                        Talk to an Annotation Expert
+                        <ArrowRight size={20} />
+                    </Link>
+
+                </div>
+
+            </section>
+
+        </main>
+    );
+}
+
+/* =========================================================
+   Small reusable icon component
+========================================================= */
+
+function HeartPulseIcon() {
+    return (
+        <span className="inline-flex">
+            <Activity size={17} />
+        </span>
+    );
 }

@@ -22,7 +22,7 @@ export default function Process() {
             Managed annotation workflow
           </p>
           <h2 className="text-4xl font-bold">
-            Our Process
+            From Raw Data to Model-Ready Dataset
           </h2>
         </div>
 

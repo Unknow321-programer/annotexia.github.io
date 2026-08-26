@@ -10,6 +10,7 @@ export async function POST(req) {
       company,
       service,
       projectSize,
+      timeline,
       message,
     } = await req.json();
 
@@ -54,6 +55,8 @@ export async function POST(req) {
         <p><strong>Service:</strong> ${service}</p>
 
         <p><strong>Estimated Dataset Size:</strong> ${projectSize}</p>
+        
+        <p><strong>Expected Timeline : </strong> ${timeline} </p>
 
         <p><strong>Message:</strong></p>
 

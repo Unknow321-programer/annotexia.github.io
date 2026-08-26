@@ -65,7 +65,7 @@ export default function CaseStudies() {
         <div className="scroll-reveal max-w-3xl mx-auto text-center">
 
           <span className="uppercase tracking-[3px] text-blue-600 font-semibold">
-            AI Projects We've Supported
+            AI Projects We&apos;ve Supported
           </span>
 
           <h2 className="mt-5 text-4xl lg:text-5xl font-black text-slate-900">
@@ -195,7 +195,7 @@ export default function CaseStudies() {
             <div className="max-w-5xl mx-auto px-10 py-20 text-center">
 
               <span className="uppercase tracking-[3px] text-blue-400 font-semibold">
-                Let's Build Together
+                Let&apos;s Build Together
               </span>
 
               <h3 className="mt-5 text-3xl lg:text-4xl font-black text-white">
@@ -203,7 +203,7 @@ export default function CaseStudies() {
               </h3>
 
               <p className="mt-8 text-lg leading-8 text-slate-300 max-w-3xl mx-auto">
-                Whether you're developing AI for healthcare,
+                Whether you&apos;re developing AI for healthcare,
                 agriculture, autonomous driving, retail,
                 manufacturing, sports analytics, or computer vision,
                 Annotexia can provide scalable, high-quality
@@ -233,7 +233,6 @@ export default function CaseStudies() {
           </div>
 
         </div>
-
       </div>
 
     </section>

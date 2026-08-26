@@ -131,19 +131,13 @@ export default function SupportedFormats() {
 
           <h2 className="mt-5 text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
 
-            AI-Ready Dataset Formats
-            <br />
-            for Every Machine Learning Pipeline
+            Your Data, Your Format
 
           </h2>
 
           <p className="mt-8 text-lg text-slate-600 leading-8">
 
-            Annotexia delivers datasets in industry-standard annotation
-            formats used across Computer Vision, Machine Learning,
-            Natural Language Processing, Large Language Models,
-            Healthcare AI, Sports Analytics, Autonomous Vehicles,
-            Agriculture AI, and enterprise AI applications.
+            We deliver annotations in the format your ML pipeline requires—including COCO, YOLO, Pascal VOC, JSON, XML, CSV, JSONL and custom schemas.
 
           </p>
 
@@ -204,136 +198,6 @@ export default function SupportedFormats() {
             </div>
 
           ))}
-
-        </div>
-                {/* Format Conversion CTA */}
-
-        <div className="scroll-reveal mt-24">
-
-          <div className="rounded-3xl overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
-
-            <div className="max-w-5xl mx-auto px-10 py-20 text-center">
-
-              <span className="uppercase tracking-[3px] text-blue-400 font-semibold">
-
-                Flexible Dataset Delivery
-
-              </span>
-
-              <h3 className="mt-5 text-3xl lg:text-4xl font-black text-white">
-
-                Need a Different Dataset Format?
-                We've Got You Covered.
-
-              </h3>
-
-              <p className="mt-8 text-lg leading-8 text-slate-300 max-w-3xl mx-auto">
-
-                Every AI team has unique data requirements. Annotexia can
-                export annotations in industry-standard formats or convert
-                datasets into customer-specific structures that integrate
-                seamlessly with your existing AI training pipeline, machine
-                learning workflow, or enterprise annotation platform.
-
-              </p>
-
-              {/* Feature Cards */}
-
-              <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mt-14">
-
-                <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-
-                  <h4 className="text-white font-bold">
-
-                    Format Conversion
-
-                  </h4>
-
-                  <p className="mt-3 text-slate-300 text-sm leading-7">
-
-                    Convert between COCO, YOLO, XML, JSON, CSV, JSONL,
-                    and custom annotation formats.
-
-                  </p>
-
-                </div>
-
-                <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-
-                  <h4 className="text-white font-bold">
-
-                    Enterprise Ready
-
-                  </h4>
-
-                  <p className="mt-3 text-slate-300 text-sm leading-7">
-
-                    Compatible with enterprise AI workflows,
-                    annotation platforms, and cloud-based pipelines.
-
-                  </p>
-
-                </div>
-
-                <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-
-                  <h4 className="text-white font-bold">
-
-                    Custom Schemas
-
-                  </h4>
-
-                  <p className="mt-3 text-slate-300 text-sm leading-7">
-
-                    We can deliver annotations in your own proprietary
-                    schema or annotation structure.
-
-                  </p>
-
-                </div>
-
-                <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-
-                  <h4 className="text-white font-bold">
-
-                    AI Pipeline Integration
-
-                  </h4>
-
-                  <p className="mt-3 text-slate-300 text-sm leading-7">
-
-                    Datasets prepared for seamless integration into
-                    Computer Vision, NLP, and Machine Learning workflows.
-
-                  </p>
-
-                </div>
-
-              </div>
-
-              {/* CTA Buttons */}
-
-              <div className="flex flex-wrap justify-center gap-5 mt-14">
-
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 transition"
-                >
-                  Request Custom Format
-                </Link>
-
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center rounded-xl border border-white px-8 py-4 font-semibold text-white hover:bg-white hover:text-slate-900 transition"
-                >
-                  View Our Services
-                </Link>
-
-              </div>
-
-            </div>
-
-          </div>
 
         </div>
 
