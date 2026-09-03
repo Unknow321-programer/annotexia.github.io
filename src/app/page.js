@@ -1,4 +1,3 @@
-
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import Industries from "@/components/home/Industries";
@@ -17,24 +16,26 @@ import SecurityCompliance from "@/components/home/SecurityCompliance";
 import CaseStudies from "@/components/home/CaseStudies";
 import LatestInsights from "@/components/home/LatestInsights";
 
+// ✅ FIXED: Strong, compelling metadata that overrides layout.js default
 export const metadata = {
-  title: "AI Data Annotation & Data Labeling Services",
+  title: "Data Annotation in 2-4 Weeks | Computer Vision & Healthcare | Annotexia",
   description:
-    "Annotexia provides image annotation, video annotation, text annotation, audio annotation, and managed data labeling services for AI, machine learning, computer vision, and NLP teams.",
+    "Label 10k+ images in 2-4 weeks. Quality-reviewed datasets for Computer Vision, Healthcare, Robotics & more. Used by funded startups. Get free quote.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Annotexia | AI Data Annotation & Data Labeling Services",
+    title: "Data Annotation in 2-4 Weeks | Annotexia",
+    // ✅ Stronger for social shares
     description:
-      "Scalable, quality-reviewed AI training data services for computer vision, NLP, speech, healthcare AI, sports analytics, and agriculture.",
+      "Label images, videos & text in 2-4 weeks. Quality-reviewed datasets for Computer Vision, Healthcare, Robotics. Trusted by funded AI startups.",
     url: "https://www.annotexia.com",
     images: [
       {
-        url: "/images/company/CompanyLogo.png",
-        width: 512,
-        height: 512,
-        alt: "Annotexia AI Data Annotation Services",
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Annotexia - Professional Data Annotation Services",
       },
     ],
   },
@@ -105,7 +106,7 @@ export default function Home() {
         }}
       />
       <Hero />
-      <AboutAnnotexia/>
+      <AboutAnnotexia />
       <Services />
       <Industries />
       <WhyChooseAnnotexia />
@@ -113,7 +114,7 @@ export default function Home() {
       <QualityAssurance />
       <SupportedTools />
       <SupportedFormats />
-      <Process/>
+      <Process />
       <Technologies />
       <SecurityCompliance />
       <FAQ />

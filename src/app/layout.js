@@ -11,12 +11,12 @@ export const metadata = {
   metadataBase: new URL("https://www.annotexia.com"),
 
   title: {
-    default: "Annotexia | AI Data Annotation & Data Labeling Services",
+    default: "Data Annotation in 2-4 Weeks | Computer Vision & Healthcare | Annotexia",
     template: "%s | Annotexia",
   },
 
   description:
-    "Annotexia provides professional AI data annotation, image annotation, video annotation, text annotation, audio annotation, and data labeling services for machine learning and artificial intelligence projects.",
+    "Label 10k+ images in 2-4 weeks. Quality-reviewed datasets for Computer Vision, Healthcare, Robotics & more. Used by funded startups. Get free quote.",
 
   keywords: [
     "Data Annotation",
@@ -50,7 +50,7 @@ export const metadata = {
   openGraph: {
     title: "Annotexia | AI Data Annotation Services",
     description:
-      "Professional data annotation and AI training data solutions for machine learning projects.",
+      "Label images, videos & text in 2-4 weeks. Quality-reviewed datasets for Computer Vision, Healthcare, Robotics. Trusted by funded AI startups.",
 
     url: "https://www.annotexia.com",
 
@@ -76,7 +76,7 @@ export const metadata = {
     title: "Annotexia",
 
     description:
-      "Professional AI Data Annotation Services",
+      "Label 10k+ images in 2-4 weeks. Quality-reviewed. Computer Vision, Healthcare, Robotics. Used by funded startups.",
 
     images: ["/og-image.jpg"],
   },
