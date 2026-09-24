@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Contact Us | Annotexia",
+  title: "Contact Us",
   description:
     "Request a free assessment for your AI data annotation project. Healthcare, Computer Vision, Sports Analytics & more.",
 };
