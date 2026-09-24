@@ -17,7 +17,7 @@ import {
 export const metadata = {
     title: "Text Annotation Services | NLP & AI Training Data | Annotexia",
     description:
-        "Professional text annotation services for NLP, machine learning, Generative AI, LLMs, document AI, sentiment analysis, named entity recognition, intent classification, and text classification.",
+        "Enterprise text annotation: NER, sentiment analysis, intent classification. For LLM training & chatbots. Quality-reviewed datasets.",
     keywords: [
         "text annotation services",
         "text labeling services",

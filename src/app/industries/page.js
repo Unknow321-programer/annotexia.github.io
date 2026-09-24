@@ -22,7 +22,7 @@ export const metadata = {
     "AI Data Annotation Services by Industry | Healthcare, Sports, Automotive & More | Annotexia",
 
   description:
-    "Explore AI data annotation services for healthcare, sports analytics, autonomous vehicles, computer vision, agriculture, retail, drone imagery, manufacturing and other AI applications.",
+    "Industry-specific data annotation for Healthcare AI, Computer Vision, Sports Analytics, Agriculture, Manufacturing & more.",
 
   keywords: [
     "AI data annotation services",
@@ -393,7 +393,7 @@ export default function IndustriesPage() {
 
                 <span className="block text-cyan-400">
 
-                  Services by Industry
+                  Services by Industry: Healthcare, Sports, Agriculture, Retail & More
 
                 </span>
 

@@ -19,7 +19,7 @@ export const metadata = {
     title:
         "Audio Annotation Services | Speech & AI Training Data | Annotexia",
     description:
-        "Professional audio annotation and speech data labeling services for AI and machine learning. Speech transcription, speaker diarization, emotion, intent, sound event, keyword, and audio classification.",
+        "Professional audio annotation: transcription, diarization, emotion detection. For speech recognition & conversational AI training.",
     keywords: [
         "audio annotation services",
         "audio labeling services",

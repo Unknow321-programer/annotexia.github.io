@@ -18,7 +18,7 @@ export const metadata = {
         "Healthcare AI Data Annotation Services | Medical Image Labeling | Annotexia",
 
     description:
-        "Annotexia provides high-quality healthcare AI data annotation services including medical image annotation, segmentation, radiology labeling, pathology annotation, OCR, and clinical AI datasets.",
+        "Expert healthcare data annotation: X-rays, MRI, CT scans, pathology images. HIPAA-friendly. Trusted by medical AI startups.",
 
     keywords: [
         "healthcare AI annotation",
@@ -237,10 +237,10 @@ export default function HealthcareAIPage() {
 
                             <h1 className="text-5xl lg:text-6xl font-extrabold text-white leading-tight">
 
-                                Build Smarter
+                                Medical Image Annotation for 
 
                                 <span className="block text-cyan-400">
-                                    Healthcare AI
+                                    Healthcare AI & Diagnostics 
                                 </span>
 
                                 With Better Data

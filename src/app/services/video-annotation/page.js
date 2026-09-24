@@ -16,7 +16,7 @@ import {
 export const metadata = {
     title: "Video Annotation Services | AI & ML Training Data | Annotexia",
     description:
-        "Professional video annotation services for AI and machine learning. Annotexia provides object tracking, action recognition, event detection, pose estimation, segmentation, and frame-by-frame video labeling.",
+        "Professional video annotation: object tracking, event detection, action recognition. Perfect for sports analytics and autonomous vehicles.",
     keywords: [
         "video annotation services",
         "video labeling services",

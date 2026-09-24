@@ -20,7 +20,7 @@ import {
 
 export const metadata = {
   title:
-    "Data Annotation Services | Image, Video, Text & Audio Annotation | Annotexia",
+    "AI Data Annotation Services: Image, Video, Text & LiDAR",
 
   description:
     "Annotexia provides professional data annotation and labeling services for AI and machine learning, including image, video, text, audio, OCR, LiDAR and computer vision datasets.",

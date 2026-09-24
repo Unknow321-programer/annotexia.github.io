@@ -24,7 +24,7 @@ export default function Hero() {
             </div>
 
             <h1 className="mt-8 text-5xl lg:text-6xl font-black leading-tight text-white">
-              High-Quality Training Data for AI Models
+              High-Quality AI Training Data in 2-4 Weeks
             </h1>
 
             <p className="mt-8 text-xl text-slate-300 leading-9">
@@ -64,7 +64,7 @@ export default function Hero() {
                 href="/contact"
                 className="rounded-xl bg-blue-600 hover:bg-blue-700 px-8 py-4 font-semibold text-white transition"
               >
-                Get a Free Project Assessment
+                Get Your Free Assessment
               </Link>
 
               <Link

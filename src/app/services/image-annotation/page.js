@@ -20,7 +20,7 @@ export const metadata = {
         "Image Annotation Services | AI Training Data & Computer Vision | Annotexia",
 
     description:
-        "Annotexia provides professional image annotation services for AI and machine learning, including bounding boxes, polygon annotation, semantic segmentation, instance segmentation, keypoints, OCR, and custom computer vision datasets.",
+        "Expert image annotation: bounding box, segmentation, classification. 2-4 week delivery. Used by AI startups. Free quote.",
 
     keywords: [
         "image annotation services",
@@ -319,7 +319,7 @@ export default function ImageAnnotationPage() {
 
                             <h1 className="mt-7 text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-white">
 
-                                Image Annotation
+                                Image Annotation for Computer Vision & AI Models
 
                                 <span className="block text-cyan-400">
                                     Services for Better AI

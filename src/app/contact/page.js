@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Contact Us",
+  title: "Contact Us | Annotexia",
   description:
-    "Contact Annotexia for AI data annotation, image annotation, video annotation, text annotation, and machine learning dataset services.",
+    "Request a free assessment for your AI data annotation project. Healthcare, Computer Vision, Sports Analytics & more.",
 };
 
 import ContactClient from "./ContactClient";

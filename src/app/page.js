@@ -20,12 +20,12 @@ import LatestInsights from "@/components/home/LatestInsights";
 export const metadata = {
   title: "Data Annotation in 2-4 Weeks | Computer Vision & Healthcare | Annotexia",
   description:
-    "Label 10k+ images in 2-4 weeks. Quality-reviewed datasets for Computer Vision, Healthcare, Robotics & more. Used by funded startups. Get free quote.",
+    "Enterprise AI data annotation services. Healthcare, Computer Vision, Sports Analytics. 2-4 week delivery. Used by funded AI startups.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Data Annotation in 2-4 Weeks | Annotexia",
+    title: "Expert AI Data Annotation for Healthcare, Computer Vision & Sports Analytics | Annotexia",
     // ✅ Stronger for social shares
     description:
       "Label images, videos & text in 2-4 weeks. Quality-reviewed datasets for Computer Vision, Healthcare, Robotics. Trusted by funded AI startups.",
