@@ -48,6 +48,24 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+
+            {/* Business Information */}
+            <div className="mt-6 text-sm text-slate-400">
+              <h4 className="mb-2 font-semibold text-slate-300">
+                Business Information
+              </h4>
+
+              <div className="flex flex-col gap-1">
+                <p>
+                  GSTIN: <span className="text-slate-400">27DMUPG1013A1ZI</span>
+                </p>
+
+                <p>
+                  Udyam Registration No.:{" "}
+                  <span className="text-slate-400">UDYAM-MH-26-0092131</span>
+                </p>
+              </div>
+            </div>
           </div>
 
           <div>
@@ -57,9 +75,11 @@ export default function Footer() {
               <Link className="hover:text-cyan-200" href="/about">
                 About
               </Link>
+
               <Link className="hover:text-cyan-200" href="/contact">
                 Contact
               </Link>
+
               <Link className="hover:text-cyan-200" href="/blog">
                 Blog
               </Link>
@@ -70,19 +90,31 @@ export default function Footer() {
             <h4 className="mb-4 font-semibold">Services</h4>
 
             <div className="flex flex-col gap-2 text-slate-300">
-              <Link className="hover:text-cyan-200" href="/services/image-annotation">
+              <Link
+                className="hover:text-cyan-200"
+                href="/services/image-annotation"
+              >
                 Image Annotation
               </Link>
 
-              <Link className="hover:text-cyan-200" href="/services/video-annotation">
+              <Link
+                className="hover:text-cyan-200"
+                href="/services/video-annotation"
+              >
                 Video Annotation
               </Link>
 
-              <Link className="hover:text-cyan-200" href="/services/text-annotation">
+              <Link
+                className="hover:text-cyan-200"
+                href="/services/text-annotation"
+              >
                 Text Annotation
               </Link>
 
-              <Link className="hover:text-cyan-200" href="/services/audio-annotation">
+              <Link
+                className="hover:text-cyan-200"
+                href="/services/audio-annotation"
+              >
                 Audio Annotation
               </Link>
             </div>
@@ -103,10 +135,15 @@ export default function Footer() {
                   {link.label}
                 </a>
               ))}
+
               <Link className="hover:text-cyan-200" href="/privacy-policy">
                 Privacy Policy
               </Link>
-              <Link className="hover:text-cyan-200" href="/terms-and-conditions">
+
+              <Link
+                className="hover:text-cyan-200"
+                href="/terms-and-conditions"
+              >
                 Terms & Conditions
               </Link>
             </div>
