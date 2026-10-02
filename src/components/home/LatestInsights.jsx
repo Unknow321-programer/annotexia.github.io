@@ -10,13 +10,13 @@ const articles = [
 
 export default function LatestInsights() {
   return (
-    <section className="py-24 bg-white">
+    <section className="home-section insights-section py-20 bg-white sm:py-24">
 
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
 
-        <div className="scroll-reveal text-center max-w-3xl mx-auto">
+        <div className="scroll-reveal section-intro text-center max-w-3xl mx-auto">
 
           <span className="uppercase tracking-[3px] text-blue-600 font-semibold">
 
@@ -44,19 +44,19 @@ export default function LatestInsights() {
 
         </div>
 
-        <div className="scroll-reveal grid lg:grid-cols-3 gap-8 mt-20">
+        <div className="scroll-reveal grid insight-card-grid lg:grid-cols-3 gap-5 sm:gap-7 mt-12 sm:mt-16">
                     {articles.map((article) => (
 
           <article
             key={article.slug}
-            className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+            className="insight-card group bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 transition-all duration-500"
           >
 
             {/* Image */}
 
             <Link href={"/blog/"+article.slug}>
 
-              <div className="relative h-64 overflow-hidden">
+              <div className="insight-image relative h-56 overflow-hidden sm:h-64">
 
                 <Image
                   src={article.image}
@@ -71,7 +71,7 @@ export default function LatestInsights() {
 
             {/* Content */}
 
-            <div className="p-8">
+              <div className="flex h-full flex-col p-6 sm:p-8">
 
               <span className="inline-block rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
 
@@ -97,7 +97,7 @@ export default function LatestInsights() {
 
               <Link
                 href={"/blog/"+article.slug}
-                className="inline-flex items-center mt-8 font-semibold text-blue-600 hover:text-blue-700"
+                className="mt-auto inline-flex items-center pt-7 font-semibold text-blue-600 hover:text-blue-700"
               >
 
                 Read Article

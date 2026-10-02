@@ -115,13 +115,13 @@ const formats = [
 ];
 export default function SupportedFormats() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="home-section formats-section py-20 bg-slate-50 sm:py-24">
 
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Section Header */}
 
-        <div className="scroll-reveal max-w-3xl mx-auto text-center">
+        <div className="scroll-reveal section-intro max-w-3xl mx-auto text-center">
 
           <span className="uppercase tracking-[3px] text-blue-600 font-semibold">
 
@@ -145,18 +145,20 @@ export default function SupportedFormats() {
 
         {/* Dataset Cards */}
 
-        <div className="scroll-reveal grid lg:grid-cols-4 md:grid-cols-2 gap-8 mt-20">
+        <div className="scroll-reveal grid format-card-grid lg:grid-cols-4 md:grid-cols-2 gap-5 sm:gap-7 mt-12 sm:mt-16">
 
           {formats.map((format) => (
 
             <div
               key={format.name}
-              className="bg-white rounded-3xl border border-slate-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              className="format-card group relative overflow-hidden bg-white rounded-3xl border border-slate-200 p-6 transition-all duration-500 sm:p-8"
             >
 
               {/* Icon */}
 
-              <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-3xl">
+              <div aria-hidden="true" className="format-card-data absolute -right-8 -top-8 h-28 w-28 rounded-full" />
+
+              <div className="format-icon relative flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-3xl">
 
                 {format.icon}
 

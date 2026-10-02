@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function BlogCard({ blog }) {
   return (
-    <article className="group card overflow-hidden">
+    <article className="blog-card group card overflow-hidden">
       <Link href={`/blog/${blog.slug}`} className="block">
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image

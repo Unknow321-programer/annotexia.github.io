@@ -6,11 +6,11 @@ export default function BlogCategories({
   setActiveCategory,
 }) {
   return (
-    <div className="flex flex-wrap gap-3 mb-8">
+    <div className="blog-category-filter mb-8 flex flex-wrap gap-2.5">
 
       <button
         onClick={() => setActiveCategory("All")}
-        className={`px-4 py-2 rounded-lg border ${
+        className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
           activeCategory === "All"
             ? "bg-black text-white"
             : ""
@@ -23,7 +23,7 @@ export default function BlogCategories({
         <button
           key={category}
           onClick={() => setActiveCategory(category)}
-          className={`px-4 py-2 rounded-lg border ${
+          className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
             activeCategory === category
               ? "bg-black text-white"
               : ""

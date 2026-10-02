@@ -15,8 +15,8 @@ export default function BlogPage() {
   const [featuredPost, ...rest] = blogs;
 
   return (
-    <main className="min-h-screen bg-slate-50">
-      <section className="relative overflow-hidden bg-slate-950 text-white">
+    <main className="blog-page min-h-screen bg-slate-50">
+      <section className="blog-hero relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(2,6,23,0.96),rgba(15,118,110,0.82)_52%,rgba(37,99,235,0.72))]" />
         <Image
           src={featuredPost.image}
@@ -26,8 +26,8 @@ export default function BlogPage() {
           sizes="100vw"
           className="object-cover opacity-25"
         />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:py-28">
-          <div className="max-w-3xl scroll-reveal rounded-lg border border-white/15 bg-slate-950/45 p-6 backdrop-blur-md md:p-8">
+        <div className="relative mx-auto grid max-w-7xl gap-8 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:py-28">
+          <div className="scroll-reveal blog-hero-copy max-w-3xl rounded-2xl border border-white/15 bg-slate-950/45 p-6 backdrop-blur-md sm:p-8">
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
               Blog insights
             </p>
@@ -40,7 +40,7 @@ export default function BlogPage() {
             </p>
           </div>
 
-          <div className="scroll-reveal rounded-lg border border-white/15 bg-white/10 p-3 backdrop-blur-md">
+          <div className="scroll-reveal blog-hero-feature rounded-2xl border border-white/15 bg-white/10 p-3 backdrop-blur-md">
             <div className="relative aspect-[4/3] overflow-hidden rounded-md">
               <Image
                 src={rest[0].image}
@@ -64,10 +64,10 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[1fr_320px]">
+      <section className="blog-content-layout mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1fr_320px] lg:gap-10">
         <div>
-          <FeaturedPost blog={featuredPost} />
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
+          <div className="scroll-reveal"><FeaturedPost blog={featuredPost} /></div>
+          <div className="scroll-reveal blog-card-grid mt-10 grid gap-5 md:grid-cols-2 md:gap-7">
             <BlogCard blog={rest[0]} />
             {rest.slice(1).map((blog) => (
               <BlogCard key={blog.slug} blog={blog} />
@@ -75,7 +75,7 @@ export default function BlogPage() {
           </div>
         </div>
 
-        <div className="lg:pt-2">
+        <div className="scroll-reveal lg:pt-2">
           <BlogSidebar blogs={blogs} />
         </div>
       </section>

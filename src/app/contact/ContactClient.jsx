@@ -418,18 +418,18 @@ export default function ContactClient() {
 
             <section
                 id="contact-form"
-                className="py-24"
+                className="contact-form-section py-24"
             >
 
                 <div className="max-w-7xl mx-auto px-6">
 
-                    <div className="grid lg:grid-cols-3 gap-12">
+                    <div className="contact-form-layout grid lg:grid-cols-3 gap-12">
 
                         {/* FORM */}
 
                         <div className="lg:col-span-2">
 
-                            <div className="mb-10">
+                            <div className="contact-scroll-reveal contact-scroll-intro mb-10">
 
                                 <p className="text-sm font-bold uppercase tracking-widest text-cyan-600">
                                     Request a Consultation
@@ -449,7 +449,7 @@ export default function ContactClient() {
 
                             <form
                                 onSubmit={handleSubmit}
-                                className="rounded-3xl border border-slate-200 bg-white p-7 md:p-10 shadow-lg"
+                                className="contact-scroll-reveal contact-scroll-form contact-form-panel rounded-3xl border border-slate-200 bg-white p-7 md:p-10 shadow-lg"
                             >
 
                                 {/* NAME + EMAIL */}
@@ -719,7 +719,7 @@ export default function ContactClient() {
 
                         <aside>
 
-                            <div className="sticky top-28 overflow-hidden rounded-3xl bg-slate-950 p-8 text-white shadow-2xl">
+                            <div className="contact-scroll-reveal contact-scroll-details contact-details-panel sticky top-28 overflow-hidden rounded-3xl bg-slate-950 p-8 text-white shadow-2xl">
 
                                 <p className="text-sm font-bold uppercase tracking-widest text-cyan-400">
                                     Talk to Annotexia

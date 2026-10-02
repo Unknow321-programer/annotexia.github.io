@@ -70,13 +70,13 @@ const industries = [
 
 export default function Industries() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="home-section industries-section py-20 bg-slate-50 sm:py-24">
 
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
 
-        <div className="scroll-reveal max-w-3xl mx-auto text-center">
+        <div className="scroll-reveal section-intro max-w-3xl mx-auto text-center">
 
           <span className="uppercase tracking-[3px] text-blue-600 font-semibold">
 
@@ -102,27 +102,28 @@ export default function Industries() {
 
         {/* Cards */}
 
-        <div className="scroll-reveal grid lg:grid-cols-4 md:grid-cols-2 gap-8 mt-20">
+        <div className="scroll-reveal grid industry-card-grid lg:grid-cols-4 md:grid-cols-2 gap-5 sm:gap-7 mt-12 sm:mt-16">
 
           {industries.map((industry) => (
 
             <div
               key={industry.title}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              className="industry-card group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm transition-all duration-500"
             >
 
-              <div className="relative h-56 overflow-hidden">
+              <div className="industry-image-wrap relative h-52 overflow-hidden sm:h-56">
 
                 <Image
                   src={industry.image}
                   alt={industry.alt}
                   fill
-                  className="object-cover hover:scale-110 transition duration-500"
+                  className="industry-image object-cover transition duration-700 group-hover:scale-105"
                 />
+                <div aria-hidden="true" className="industry-image-shade absolute inset-0" />
 
               </div>
 
-              <div className="p-8">
+              <div className="flex h-full flex-col p-6 sm:p-7">
 
                 <h3 className="text-2xl font-bold text-slate-900">
 
@@ -130,7 +131,7 @@ export default function Industries() {
 
                 </h3>
 
-                <p className="mt-5 text-slate-600 leading-8">
+                <p className="mt-4 text-slate-600 leading-7">
 
                   {industry.description}
 
@@ -138,7 +139,7 @@ export default function Industries() {
 
                 <Link
                   href={industry.href}
-                  className="inline-flex items-center mt-8 text-blue-600 font-semibold hover:text-blue-800 transition"
+                  className="industry-card-link mt-auto inline-flex items-center pt-7 font-semibold text-blue-600 transition hover:text-blue-800"
                 >
 
                   Discuss Your Project →

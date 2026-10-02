@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollAnimations from "@/components/common/ScrollAnimations";
+import ScrollProgress from "@/components/common/ScrollProgress";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { organizationSchema } from "@/lib/schema";
@@ -143,6 +144,7 @@ export default function RootLayout({ children }) {
           }}
         />
         <Navbar />
+        <ScrollProgress />
         <ScrollAnimations />
         {children}
         <Footer />

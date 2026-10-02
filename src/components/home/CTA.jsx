@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600">
+    <section className="cta-section home-cta relative overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600">
 
       {/* Background Decoration */}
 
-      <div className="scroll-reveal absolute inset-0 opacity-10">
+      <div aria-hidden="true" className="cta-decoration absolute inset-0 opacity-10">
 
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-white blur-3xl"></div>
 
@@ -14,9 +14,9 @@ export default function CTA() {
 
       </div>
 
-      <div className="scroll-reveal relative max-w-6xl mx-auto px-6 py-24">
+      <div className="scroll-reveal relative max-w-6xl mx-auto px-5 py-20 sm:px-6 sm:py-24">
 
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="cta-panel mx-auto max-w-4xl text-center">
 
           <span className="uppercase tracking-[4px] text-blue-100 font-semibold">
 
@@ -53,14 +53,14 @@ export default function CTA() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-white px-10 py-5 text-lg font-bold text-blue-700 hover:scale-105 transition"
+            className="cta-primary inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-base font-bold text-blue-700 transition hover:-translate-y-1 hover:shadow-2xl sm:px-10 sm:py-5 sm:text-lg"
             >
               Request a Free Quote
             </Link>
 
             <Link
               href="/services"
-              className="inline-flex items-center justify-center rounded-xl border-2 border-white px-10 py-5 text-lg font-bold text-white hover:bg-white hover:text-blue-700 transition"
+            className="inline-flex items-center justify-center rounded-xl border-2 border-white/70 px-8 py-4 text-base font-bold text-white transition hover:-translate-y-1 hover:bg-white hover:text-blue-700 sm:px-10 sm:py-5 sm:text-lg"
             >
               Explore Services
             </Link>

@@ -63,13 +63,13 @@ const tools = [
 ];
 export default function SupportedTools() {
     return (
-        <section className="py-24 bg-white">
+        <section className="home-section platforms-section py-20 bg-white sm:py-24">
 
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Header */}
 
-                <div className="scroll-reveal max-w-3xl mx-auto text-center">
+                <div className="scroll-reveal section-intro max-w-3xl mx-auto text-center">
 
                     <span className="uppercase tracking-[3px] text-blue-600 font-semibold">
 
@@ -100,19 +100,19 @@ export default function SupportedTools() {
 
                 {/* Tools */}
 
-                <div className="scroll-reveal grid lg:grid-cols-4 md:grid-cols-2 gap-8 mt-20">
+                <div className="scroll-reveal grid platform-card-grid lg:grid-cols-4 md:grid-cols-2 gap-5 sm:gap-7 mt-12 sm:mt-16">
 
                     {tools.map((tool) => (
 
                         <div
                             key={tool.name}
-                            className="bg-slate-50 rounded-3xl border border-slate-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                            className="platform-card group bg-slate-50 rounded-3xl border border-slate-200 p-6 transition-all duration-500 sm:p-8"
                         >
 
-                            <div className="w-20 h-20 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto">
+                            <div className="platform-icon w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto sm:w-20 sm:h-20">
 
                                 <tool.icon
-                                    className="w-14 h-14 text-blue-600"
+                                    className="h-11 w-11 text-blue-600 transition-transform duration-500 group-hover:scale-110 sm:h-14 sm:w-14"
                                 />
 
                             </div>

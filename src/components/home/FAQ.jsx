@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import AnimatedNumber from "@/components/common/AnimatedNumber";
 
 const faqs = [
   {
@@ -99,13 +100,13 @@ export default function HomeFAQ() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="home-section faq-section py-20 bg-slate-50 sm:py-24">
 
       <div className="scroll-reveal max-w-5xl mx-auto px-6">
 
         {/* Heading */}
 
-        <div className="scroll-reveal text-center">
+        <div className="scroll-reveal section-intro text-center">
 
           <span className="uppercase tracking-[3px] text-blue-600 font-semibold">
 
@@ -133,7 +134,7 @@ export default function HomeFAQ() {
 
         {/* FAQ */}
 
-        <div className="scroll-reveal mt-20 space-y-5">
+        <div className="scroll-reveal faq-list mt-12 space-y-4 sm:mt-16 sm:space-y-5">
 
           {faqs.map((faq, index) => {
 
@@ -143,14 +144,15 @@ export default function HomeFAQ() {
 
               <div
                 key={faq.question}
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm"
+                className="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm"
               >
 
                 <button
                   onClick={() =>
                     setActive(open ? -1 : index)
                   }
-                  className="w-full flex items-center justify-between px-8 py-7 text-left"
+                  aria-expanded={open}
+                  className="w-full flex items-center justify-between gap-4 px-5 py-5 text-left transition sm:px-8 sm:py-7"
                 >
 
                   <h3 className="text-lg lg:text-xl font-bold text-slate-900 pr-6">
@@ -231,7 +233,7 @@ export default function HomeFAQ() {
 
                   <div className="text-3xl font-black text-white">
 
-                    5+
+                    <AnimatedNumber value="5+" />
 
                   </div>
 
@@ -247,7 +249,7 @@ export default function HomeFAQ() {
 
                   <div className="text-3xl font-black text-white">
 
-                    8+
+                    <AnimatedNumber value="8+" />
 
                   </div>
 

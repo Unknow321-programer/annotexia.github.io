@@ -1,5 +1,9 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const services = [
   {
@@ -40,18 +44,58 @@ const services = [
 ];
 
 export default function Services() {
+  const sectionRef = useRef(null);
+  const trackRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const track = trackRef.current;
+    const stage = section?.querySelector(".services-scroll-stage");
+    if (!section || !track || !stage) return;
+    const media = window.matchMedia("(min-width: 1024px) and (prefers-reduced-motion: no-preference)");
+    let frame = 0;
+    const update = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        if (!media.matches) {
+          track.style.transform = "none";
+          return;
+        }
+        const bounds = section.getBoundingClientRect();
+        const stickyTop = Number.parseFloat(getComputedStyle(stage).top) || 0;
+        const range = Math.max(1, section.offsetHeight - stage.offsetHeight);
+        const progress = Math.max(0, Math.min(1, (stickyTop - bounds.top) / range));
+        const viewportWidth = track.parentElement?.clientWidth || window.innerWidth;
+        const travel = Math.max(0, track.scrollWidth - viewportWidth);
+        track.style.transform = `translate3d(${-travel * progress}px, 0, 0)`;
+        track.style.setProperty("--services-progress", progress.toFixed(4));
+      });
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    media.addEventListener("change", update);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      media.removeEventListener("change", update);
+    };
+  }, []);
+
   return (
-    <section className="py-24 bg-slate-50">
+    <section ref={sectionRef} className="home-section services-section py-20 bg-slate-50 sm:py-24">
 
-      <div className="scroll-reveal max-w-7xl mx-auto px-6">
+      <div className="services-scroll-stage max-w-7xl mx-auto px-5 sm:px-6">
 
-        <div className="scroll-reveal text-center max-w-3xl mx-auto">
+        <div className="scroll-reveal is-visible section-intro text-center max-w-3xl mx-auto">
 
-          <span className="uppercase tracking-[3px] text-blue-600 font-semibold">
+          {/* <span className="services-eyebrow uppercase tracking-[3px] text-blue-600 font-semibold">
 
             Our Services
 
-          </span>
+          </span> */}
 
           <h2 className="mt-5 text-4xl lg:text-5xl font-black">
 
@@ -70,25 +114,28 @@ export default function Services() {
 
         </div>
 
-        <div className="scroll-reveal grid lg:grid-cols-3 md:grid-cols-2 gap-10 mt-16">
+        <div className="service-track-window mt-12 sm:mt-16">
+        <div ref={trackRef} className="scroll-reveal service-card-grid">
 
           {services.map((service) => (
 
             <Link
               key={service.title}
               href={service.href}
-              className="group rounded-3xl bg-white overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border hover:border-blue-600"
+              className="service-card group relative flex flex-col rounded-3xl border border-slate-200/80 bg-white shadow-sm transition duration-500"
             >
 
+              <div className="service-image-wrap relative overflow-hidden">
               <Image
                 src={service.image}
                 alt={service.description}
                 width={600}
                 height={350}
-                className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
+                className="service-image h-56 w-full object-cover"
               />
+              </div>
 
-              <div className="p-8">
+              <div className="flex flex-1 flex-col p-6 sm:p-7">
 
                 <h3 className="text-2xl font-bold group-hover:text-blue-600">
 
@@ -102,9 +149,10 @@ export default function Services() {
 
                 </p>
 
-                <div className="mt-8 text-blue-600 font-semibold">
+                <div className="service-card-link mt-auto flex items-center justify-between pt-7 font-semibold text-blue-600">
 
                   Learn More →
+                  <ArrowUpRight aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" size={19} />
 
                 </div>
 
@@ -114,6 +162,7 @@ export default function Services() {
 
           ))}
 
+        </div>
         </div>
 
       </div>

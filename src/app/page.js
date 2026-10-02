@@ -15,6 +15,7 @@ import Technologies from "@/components/home/Technologies";
 import SecurityCompliance from "@/components/home/SecurityCompliance";
 import CaseStudies from "@/components/home/CaseStudies";
 import LatestInsights from "@/components/home/LatestInsights";
+import AnimatedBrandIntro from "@/components/home/AnimatedBrandIntro";
 
 // ✅ FIXED: Strong, compelling metadata that overrides layout.js default
 export const metadata = {
@@ -105,16 +106,17 @@ export default function Home() {
           __html: JSON.stringify(faqSchema),
         }}
       />
+      <AnimatedBrandIntro />
       <Hero />
       <AboutAnnotexia />
       <Services />
-      <Industries />
-      <WhyChooseAnnotexia />
+      <Process />
       <CaseStudies />
       <QualityAssurance />
+      <Industries />
+      <WhyChooseAnnotexia />
       <SupportedTools />
       <SupportedFormats />
-      <Process />
       <Technologies />
       <SecurityCompliance />
       <FAQ />

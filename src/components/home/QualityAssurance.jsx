@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EvaluationVisual from "@/components/common/EvaluationVisual";
 
 const workflow = [
   {
@@ -73,13 +74,13 @@ const qualityMetrics = [
 ];
 export default function QualityAssurance() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="home-section quality-section py-20 bg-slate-50 sm:py-24">
 
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Section Header */}
 
-        <div className="scroll-reveal max-w-3xl mx-auto text-center">
+        <div className="scroll-reveal section-intro max-w-3xl mx-auto text-center">
 
           <span className="uppercase tracking-[3px] text-blue-600 font-semibold">
 
@@ -106,20 +107,22 @@ export default function QualityAssurance() {
 
         {/* Workflow */}
 
-        <div className="scroll-reveal grid lg:grid-cols-3 md:grid-cols-2 gap-8 mt-20">
+        <div className="scroll-reveal grid quality-workflow-grid lg:grid-cols-3 md:grid-cols-2 gap-5 sm:gap-7 mt-12 sm:mt-16">
+          <span aria-hidden="true" className="quality-data-particle" />
 
           {workflow.map((item) => (
 
             <div
               key={item.step}
-              className="relative bg-white rounded-3xl border border-slate-200 p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              className="quality-workflow-card relative bg-white rounded-3xl border border-slate-200 p-6 shadow-sm transition-all duration-500 sm:p-8"
             >
 
-              <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-black">
+              <div className="quality-step-number w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-black">
 
                 {item.step}
 
               </div>
+              <span aria-hidden="true" className="quality-validation-mark"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" /></svg></span>
 
               <h3 className="mt-8 text-2xl font-bold text-slate-900">
 
@@ -168,13 +171,13 @@ export default function QualityAssurance() {
 
           </div>
 
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mt-16">
+          <div className="scroll-reveal grid quality-metric-grid lg:grid-cols-3 md:grid-cols-2 gap-5 sm:gap-7 mt-12 sm:mt-16">
 
             {qualityMetrics.map((metric) => (
 
               <div
                 key={metric.title}
-                className="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+                className="quality-metric-card bg-white rounded-3xl border border-slate-200 p-6 shadow-sm transition-all duration-500 sm:p-8"
               >
 
                 <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
@@ -218,7 +221,9 @@ export default function QualityAssurance() {
 
         <div className="scroll-reveal mt-24">
 
-          <div className="rounded-3xl overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+          <div className="quality-evaluation-panel relative rounded-3xl overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+
+            <EvaluationVisual />
 
             <div className="max-w-5xl mx-auto px-10 py-20 text-center">
 

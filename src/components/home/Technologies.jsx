@@ -81,13 +81,13 @@ const technologies = [
 ];
 export default function Technologies() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="home-section technology-section py-20 bg-slate-50 sm:py-24">
 
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
 
-        <div className="scroll-reveal max-w-3xl mx-auto text-center">
+        <div className="scroll-reveal section-intro max-w-3xl mx-auto text-center">
 
           <span className="uppercase tracking-[3px] text-blue-600 font-semibold">
 
@@ -118,18 +118,18 @@ export default function Technologies() {
 
         {/* Technology Categories */}
 
-        <div className="scroll-reveal grid lg:grid-cols-3 md:grid-cols-2 gap-8 mt-20">
+        <div className="scroll-reveal grid technology-card-grid lg:grid-cols-3 md:grid-cols-2 gap-5 sm:gap-7 mt-12 sm:mt-16">
 
           {technologies.map((tech) => (
 
             <div
               key={tech.category}
-              className="bg-white rounded-3xl border border-slate-200 p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              className="technology-card group bg-white rounded-3xl border border-slate-200 p-6 transition-all duration-500 sm:p-8"
             >
 
               {/* Icon */}
 
-              <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-3xl">
+              <div className="technology-icon w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-3xl">
 
                 {tech.icon}
 
@@ -151,7 +151,7 @@ export default function Technologies() {
 
                   <span
                     key={item}
-                    className="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium hover:bg-blue-50 hover:text-blue-700 transition"
+                    className="technology-chip px-3.5 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium transition sm:px-4"
                   >
                     {item}
                   </span>

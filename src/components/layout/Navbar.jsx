@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
@@ -10,10 +11,10 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-30 border-b border-slate-200/70 bg-white/90 shadow-sm backdrop-blur">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex h-20 items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
+      <header className="site-header sticky top-0 z-30 border-b border-slate-200/70 bg-white/90 shadow-sm backdrop-blur">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <div className="navbar-inner flex h-[76px] items-center justify-between">
+            <Link href="/" className="navbar-brand flex items-center gap-2">
               <Image
                 src="/images/company/CompanyLogo.svg"
                 alt="Annotexia"
@@ -30,7 +31,7 @@ export default function Navbar() {
               </span>
             </Link>
 
-            <nav className="hidden items-center gap-8 text-sm font-semibold text-slate-700 md:flex">
+            <nav className="hidden items-center gap-1 rounded-full border border-slate-200/70 bg-white/75 p-1.5 text-sm font-semibold text-slate-700 md:flex">
               <Link className="transition hover:text-teal-700" href="/">
                 Home
               </Link>
@@ -47,7 +48,7 @@ export default function Navbar() {
                 Blog
               </Link>
               <Link
-                className="rounded-lg bg-slate-950 px-4 py-2 text-white transition hover:-translate-y-0.5 hover:bg-teal-700"
+                className="ml-2 rounded-full bg-slate-950 px-5 py-2.5 text-white transition hover:-translate-y-0.5 hover:bg-teal-700"
                 href="/contact"
               >
                 Contact
@@ -55,13 +56,12 @@ export default function Navbar() {
             </nav>
 
             <button
-              className="rounded-lg border border-slate-200 px-3 py-2 text-2xl md:hidden"
-              onClick={() => setIsOpen(true)}
-              aria-label="Open Menu"
+              className="rounded-xl border border-slate-200 bg-white p-3 text-slate-800 shadow-sm transition hover:border-blue-300 hover:text-blue-700 md:hidden"
+              onClick={() => setIsOpen((open) => !open)}
+              aria-label={isOpen ? "Close Menu" : "Open Menu"}
+              aria-expanded={isOpen}
             >
-              <span aria-hidden="true" className="block leading-none">
-                =
-              </span>
+              {isOpen ? <X aria-hidden="true" size={20} /> : <Menu aria-hidden="true" size={20} />}
             </button>
           </div>
         </div>

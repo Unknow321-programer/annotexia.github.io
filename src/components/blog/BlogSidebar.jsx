@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function BlogSidebar({ blogs }) {
   return (
-    <aside className="card overflow-hidden p-5">
+    <aside className="blog-sidebar card overflow-hidden p-5 sm:p-6">
       <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-md">
         <Image
           src={blogs[0].image}
@@ -21,7 +21,7 @@ export default function BlogSidebar({ blogs }) {
           <Link
             key={blog.slug}
             href={`/blog/${blog.slug}`}
-            className="group flex gap-3 rounded-lg p-2 transition hover:bg-teal-50"
+            className="group flex gap-3 rounded-xl p-2 transition hover:bg-blue-50"
           >
             <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-md">
               <Image

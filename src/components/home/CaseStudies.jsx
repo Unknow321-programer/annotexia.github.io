@@ -57,12 +57,14 @@ const caseStudies = [
   },
 ];
 
+const cardEntranceDirections = ["left", "top", "bottom", "right", "left", "bottom"];
+
 export default function CaseStudies() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="home-section case-studies-section py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="scroll-reveal max-w-3xl mx-auto text-center">
+        <div className="scroll-reveal case-study-intro">
 
           <span className="uppercase tracking-[3px] text-blue-600 font-semibold">
             AI Projects We&apos;ve Supported
@@ -84,14 +86,14 @@ export default function CaseStudies() {
 
         </div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mt-20">
+        <div className="case-study-grid grid grid-cols-1 gap-8 mt-20">
 
-          {caseStudies.map((project) => (
+          {caseStudies.map((project, index) => (
             <div
               key={project.title}
-              className="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+              className={`case-study-card case-study-enter-${cardEntranceDirections[index]} bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-200 transition-all duration-500`}
             >
-              <div className="relative h-60">
+              <div className="case-study-image relative h-60">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -100,7 +102,7 @@ export default function CaseStudies() {
                 />
               </div>
 
-              <div className="p-8">
+              <div className="case-study-copy p-8">
 
                 <span className="inline-block text-sm font-semibold text-blue-600 bg-blue-50 rounded-full px-4 py-2">
                   {project.category}

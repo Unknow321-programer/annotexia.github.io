@@ -3,29 +3,33 @@ import Link from "next/link";
 
 export default function AboutAnnotexia() {
   return (
-    <section className="py-24 bg-white">
+    <section className="home-section about-section py-20 bg-white sm:py-24">
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="scroll-reveal grid lg:grid-cols-2 gap-20 items-center">
+        <div className="scroll-reveal about-layout grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
           {/* LEFT IMAGE */}
 
-          <div>
+          <div className="about-visual relative">
+
+            <div aria-hidden="true" className="about-image-accent absolute -left-5 -top-5 h-1/2 w-1/2 rounded-[2rem]" />
 
             <Image
               src="/images/home/about-annotexia.webp"
               alt="Annotexia AI data annotation specialists working on image, video, text and LiDAR datasets"
               width={700}
               height={650}
-              className="rounded-3xl shadow-xl"
+              className="about-image relative z-[1] rounded-[1.7rem] border border-white shadow-2xl sm:rounded-[2rem]"
             />
+
+            <div aria-hidden="true" className="about-image-accent about-image-accent-bottom absolute -bottom-5 -right-5 h-1/2 w-1/2 rounded-[2rem]" />
 
           </div>
 
           {/* RIGHT CONTENT */}
 
-          <div>
+          <div className="about-copy">
 
             <span className="text-blue-600 font-semibold uppercase tracking-[3px]">
 
@@ -58,7 +62,7 @@ export default function AboutAnnotexia() {
 
             <div className="grid md:grid-cols-2 gap-6 mt-12">
 
-              <div className="flex gap-4">
+              <div className="about-feature flex gap-4">
 
                 <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
 
@@ -85,7 +89,7 @@ export default function AboutAnnotexia() {
 
               </div>
 
-              <div className="flex gap-4">
+              <div className="about-feature flex gap-4">
 
                 <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
 
@@ -111,7 +115,7 @@ export default function AboutAnnotexia() {
 
               </div>
 
-              <div className="flex gap-4">
+              <div className="about-feature flex gap-4">
 
                 <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
 
@@ -138,7 +142,7 @@ export default function AboutAnnotexia() {
 
               </div>
 
-              <div className="flex gap-4">
+              <div className="about-feature flex gap-4">
 
                 <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
 
