@@ -17,10 +17,10 @@ import {
 
 export const metadata = {
     title:
-        "Image Annotation Services | AI Training Data & Computer Vision | Annotexia",
+        "Image Annotation Services | AI Training Data & Computer Vision",
 
     description:
-        "Expert image annotation: bounding box, segmentation, classification. 2-4 week delivery. Used by AI startups. Free quote.",
+        "Image annotation for computer vision datasets, including bounding boxes, segmentation, keypoints, OCR, and classification with project-specific guidelines and quality checks.",
 
     keywords: [
         "image annotation services",
@@ -40,7 +40,7 @@ export const metadata = {
     ],
 
     alternates: {
-        canonical: "https://annotexia.com/services/image-annotation",
+        canonical: "https://www.annotexia.com/services/image-annotation",
     },
 
     openGraph: {
@@ -50,7 +50,7 @@ export const metadata = {
         description:
             "Build reliable computer vision datasets with professional image annotation, object detection, segmentation, keypoint, OCR, and custom labeling services.",
 
-        url: "https://annotexia.com/services/image-annotation",
+        url: "https://www.annotexia.com/services/image-annotation",
 
         siteName: "Annotexia",
 

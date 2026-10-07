@@ -19,17 +19,16 @@ import AnimatedBrandIntro from "@/components/home/AnimatedBrandIntro";
 
 // ✅ FIXED: Strong, compelling metadata that overrides layout.js default
 export const metadata = {
-  title: "Data Annotation in 2-4 Weeks | Computer Vision & Healthcare | Annotexia",
+  title: "AI Data Annotation Services | Computer Vision & Healthcare | Annotexia",
   description:
-    "Enterprise AI data annotation services. Healthcare, Computer Vision, Sports Analytics. 2-4 week delivery. Used by funded AI startups.",
+    "Build reliable AI training data with professional image, video, text, audio, and LiDAR annotation for computer vision, healthcare, sports, and robotics teams.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Expert AI Data Annotation for Healthcare, Computer Vision & Sports Analytics | Annotexia",
-    // ✅ Stronger for social shares
     description:
-      "Label images, videos & text in 2-4 weeks. Quality-reviewed datasets for Computer Vision, Healthcare, Robotics. Trusted by funded AI startups.",
+      "Professional image, video, text, audio, and LiDAR annotation for computer vision, healthcare, sports, and robotics AI teams.",
     url: "https://www.annotexia.com",
     images: [
       {
@@ -39,6 +38,13 @@ export const metadata = {
         alt: "Annotexia - Professional Data Annotation Services",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Data Annotation Services | Computer Vision & Healthcare | Annotexia",
+    description:
+      "Build reliable AI training data with professional image, video, text, audio, and LiDAR annotation.",
+    images: ["/og-image.jpg"],
   },
 };
 

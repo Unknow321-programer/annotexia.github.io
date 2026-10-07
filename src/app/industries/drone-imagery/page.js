@@ -18,7 +18,7 @@ import {
 
 export const metadata = {
     title:
-        "Drone & Aerial Imagery Annotation Services | AI Training Data | Annotexia",
+        "Drone & Aerial Imagery Annotation Services | AI Training Data",
 
     description:
         "Annotexia provides high-quality drone and aerial imagery annotation services for mapping, surveying, construction, agriculture, infrastructure inspection, remote sensing, and geospatial AI.",
@@ -40,7 +40,7 @@ export const metadata = {
     ],
 
     alternates: {
-        canonical: "https://annotexia.com/industries/drone-imagery",
+        canonical: "https://www.annotexia.com/industries/drone-imagery",
     },
 
     openGraph: {
@@ -48,12 +48,12 @@ export const metadata = {
             "Drone & Aerial Imagery Annotation Services | Annotexia",
         description:
             "Build reliable geospatial AI with accurate drone and aerial imagery annotation for mapping, surveying, agriculture, construction, infrastructure, and remote sensing.",
-        url: "https://annotexia.com/industries/drone-imagery",
+        url: "https://www.annotexia.com/industries/drone-imagery",
         siteName: "Annotexia",
         type: "website",
         images: [
             {
-                url: "https://annotexia.com/images/industries/drone-imagery.webp",
+                url: "https://www.annotexia.com/images/industries/drone-imagery.webp",
                 width: 1200,
                 height: 630,
                 alt: "Drone and aerial imagery annotation services",
@@ -68,7 +68,7 @@ export const metadata = {
         description:
             "Accurate drone and aerial imagery annotation for mapping, surveying, infrastructure, agriculture, and geospatial AI.",
         images: [
-            "https://annotexia.com/images/industries/drone-imagery.webp",
+            "https://www.annotexia.com/images/industries/drone-imagery.webp",
         ],
     },
 };

@@ -9,6 +9,23 @@ export const metadata = {
   title: "AI & Data Annotation Blog",
   description:
     "Insights about data annotation, image labeling, video annotation, machine learning datasets, and AI training data.",
+  alternates: {
+    canonical: "/blog",
+  },
+  openGraph: {
+    title: "AI & Data Annotation Blog | Annotexia",
+    description:
+      "Practical articles on data annotation, AI training datasets, computer vision, and machine learning workflows.",
+    url: "https://www.annotexia.com/blog",
+    siteName: "Annotexia",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI & Data Annotation Blog | Annotexia",
+    description:
+      "Practical articles on data annotation, AI training datasets, computer vision, and machine learning workflows.",
+  },
 };
 
 export default function BlogPage() {

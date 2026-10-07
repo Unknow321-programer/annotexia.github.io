@@ -4,6 +4,23 @@ export const metadata = {
     title: "Careers",
     description:
         "Join Annotexia as a Data Annotator. Explore career opportunities in AI data annotation, image annotation, video annotation, and machine learning datasets.",
+    alternates: {
+        canonical: "/careers",
+    },
+    openGraph: {
+        title: "Careers at Annotexia | AI Data Annotation",
+        description:
+            "Explore opportunities to work on data annotation projects supporting AI and machine learning teams.",
+        url: "https://www.annotexia.com/careers",
+        siteName: "Annotexia",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Careers at Annotexia | AI Data Annotation",
+        description:
+            "Explore opportunities to work on data annotation projects supporting AI and machine learning teams.",
+    },
 };
 
 export default function CareersPage() {

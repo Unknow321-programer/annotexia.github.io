@@ -21,6 +21,13 @@ const services = [
       "Professional video annotation services including object tracking, frame-by-frame labeling, action recognition, event detection, lane annotation, sports analytics, surveillance datasets, and autonomous driving video annotation.",
   },
   {
+    title: "Physical AI Egocentric Video Collection",
+    href: "/services/physical-ai-egocentric-video-collection",
+    image: "/images/services/physical_ai.jpg",
+    description:
+      "First-person video data collection capturing natural human actions, object interactions, and real-world task sequences for robotics and embodied AI.",
+  },
+  {
     title: "Text Annotation",
     href: "/services/text-annotation",
     image: "/images/services/text-annotation.webp",

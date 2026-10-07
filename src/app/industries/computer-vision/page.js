@@ -15,7 +15,7 @@ import {
 
 export const metadata = {
     title:
-        "Computer Vision Data Annotation Services | AI Training Data | Annotexia",
+        "Computer Vision Data Annotation Services | AI Training Data",
 
     description:
         "Annotexia provides high-quality computer vision data annotation services including image labeling, bounding boxes, segmentation, polygons, keypoints, OCR, object detection, and video annotation for AI and machine learning models.",
@@ -39,7 +39,7 @@ export const metadata = {
     ],
 
     alternates: {
-        canonical: "https://annotexia.com/industries/computer-vision",
+        canonical: "https://www.annotexia.com/industries/computer-vision",
     },
 
     openGraph: {
@@ -47,7 +47,7 @@ export const metadata = {
             "Computer Vision Data Annotation Services | Annotexia",
         description:
             "Build reliable computer vision models with accurate image, video, segmentation, object detection, OCR, and keypoint annotation services.",
-        url: "https://annotexia.com/industries/computer-vision",
+        url: "https://www.annotexia.com/industries/computer-vision",
         siteName: "Annotexia",
         type: "website",
         images: [

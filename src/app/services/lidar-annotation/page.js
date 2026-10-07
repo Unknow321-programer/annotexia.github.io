@@ -17,7 +17,7 @@ import {
 
 export const metadata = {
     title:
-        "LiDAR Annotation Services | 3D Point Cloud Labeling for AI | Annotexia",
+        "LiDAR Annotation Services | 3D Point Cloud Labeling for AI",
 
     description:
         "Annotexia provides professional LiDAR annotation and 3D point cloud labeling services for autonomous vehicles, robotics, mapping, drones, smart cities, and industrial AI.",
@@ -51,7 +51,7 @@ export const metadata = {
         type: "website",
         images: [
             {
-                url: "/images/services/lidar-annotation.webp",
+                url: "/images/services/lidar_service.jpg",
                 width: 1200,
                 height: 630,
                 alt: "LiDAR annotation and 3D point cloud labeling services",
@@ -293,7 +293,7 @@ export default function LidarAnnotationPage() {
                             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-3 backdrop-blur-xl shadow-2xl">
 
                                 <Image
-                                    src="/images/services/lidar-annotation.webp"
+                                    src="/images/services/lidar_service.jpg"
                                     alt="LiDAR point cloud annotation and 3D bounding box labeling"
                                     width={900}
                                     height={650}

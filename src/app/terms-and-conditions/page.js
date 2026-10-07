@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Terms and Conditions | Annotexia",
+  title: "Terms and Conditions",
   description:
     "Read the Terms and Conditions governing the use of the Annotexia website and our AI data annotation, data labeling, and related services.",
   alternates: {

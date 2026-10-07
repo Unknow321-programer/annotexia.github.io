@@ -15,10 +15,10 @@ import {
 
 export const metadata = {
     title:
-        "Healthcare AI Data Annotation Services | Medical Image Labeling | Annotexia",
+        "Healthcare AI Data Annotation Services | Medical Image Labeling",
 
     description:
-        "Expert healthcare data annotation: X-rays, MRI, CT scans, pathology images. HIPAA-friendly. Trusted by medical AI startups.",
+        "Medical image annotation for AI datasets, including X-ray, MRI, CT, and pathology imagery, with project-specific guidelines and quality review.",
 
     keywords: [
         "healthcare AI annotation",

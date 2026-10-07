@@ -139,6 +139,13 @@ export default function Footer() {
 
               <Link
                 className="hover:text-cyan-200"
+                href="/services/physical-ai-egocentric-video-collection"
+              >
+                Physical AI Egocentric Video Collection
+              </Link>
+
+              <Link
+                className="hover:text-cyan-200"
                 href="/services/text-annotation"
               >
                 Text Annotation

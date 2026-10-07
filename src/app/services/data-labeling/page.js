@@ -21,9 +21,12 @@ import {
 
 export const metadata = {
     title:
-        "Data Labeling Services | AI Training Data & Machine Learning | Annotexia",
+        "Data Labeling Services | AI Training Data & Machine Learning",
     description:
         "Annotexia provides accurate and scalable data labeling services for AI and machine learning, including image, video, text, audio, LiDAR, OCR, segmentation, object detection, and custom datasets.",
+    alternates: {
+        canonical: "/services/data-labeling",
+    },
     keywords: [
         "data labeling services",
         "data annotation services",

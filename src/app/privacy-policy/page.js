@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Privacy Policy | Annotexia",
+  title: "Privacy Policy",
   description:
     "Learn how Annotexia collects, uses, protects, and manages personal information and client data when you use our website or AI data annotation services.",
   keywords: [

@@ -12,6 +12,12 @@ export const services = [
       "Frame-by-frame video annotation for machine learning applications.",
   },
   {
+    slug: "physical-ai-egocentric-video-collection",
+    title: "Physical AI Egocentric Video Collection",
+    description:
+      "First-person video data collection for robotics, embodied AI, and human-environment interaction models.",
+  },
+  {
     slug: "text-annotation",
     title: "Text Annotation",
     description:

@@ -16,7 +16,7 @@ import {
 
 export const metadata = {
     title:
-        "Agriculture AI Data Annotation Services | Crop & Drone Imagery | Annotexia",
+        "Agriculture AI Data Annotation Services | Crop & Drone Imagery",
 
     description:
         "Annotexia provides high-quality agriculture data annotation services for crop monitoring, plant disease detection, weed identification, drone imagery, segmentation, object detection, and precision agriculture AI.",

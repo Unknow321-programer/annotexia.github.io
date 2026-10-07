@@ -17,7 +17,7 @@ import {
 
 export const metadata = {
     title:
-        "Retail & E-commerce Data Annotation Services | AI Training Data | Annotexia",
+        "Retail & E-commerce Data Annotation Services | AI Training Data",
 
     description:
         "Annotexia provides retail and e-commerce data annotation services for product recognition, shelf monitoring, OCR, inventory detection, visual search, customer analytics, and computer vision AI.",
@@ -46,7 +46,7 @@ export const metadata = {
             "Retail & E-commerce Data Annotation Services | Annotexia",
         description:
             "Build reliable retail and e-commerce AI systems with high-quality product, shelf, OCR, inventory, and visual search annotation.",
-        url: "https://annotexia.com/industries/retail-ecommerce",
+        url: "https://www.annotexia.com/industries/retail-ecommerce",
         siteName: "Annotexia",
         type: "website",
         images: [

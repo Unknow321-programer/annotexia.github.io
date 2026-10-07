@@ -17,7 +17,7 @@ import {
 
 export const metadata = {
     title:
-        "Audio Annotation Services | Speech & AI Training Data | Annotexia",
+        "Audio Annotation Services | Speech & AI Training Data",
     description:
         "Professional audio annotation: transcription, diarization, emotion detection. For speech recognition & conversational AI training.",
     keywords: [
@@ -35,13 +35,13 @@ export const metadata = {
         "NLP audio datasets",
     ],
     alternates: {
-        canonical: "https://annotexia.com/services/audio-annotation",
+        canonical: "https://www.annotexia.com/services/audio-annotation",
     },
     openGraph: {
         title: "Audio Annotation Services | Annotexia",
         description:
             "High-quality audio annotation and speech data labeling for AI, ML, speech recognition, conversational AI, and voice technologies.",
-        url: "https://annotexia.com/services/audio-annotation",
+        url: "https://www.annotexia.com/services/audio-annotation",
         siteName: "Annotexia",
         type: "website",
     },

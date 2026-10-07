@@ -19,7 +19,7 @@ import {
 
 export const metadata = {
   title:
-    "AI Data Annotation Services by Industry | Healthcare, Sports, Automotive & More | Annotexia",
+    "AI Data Annotation Services by Industry | Healthcare, Sports, Automotive & More",
 
   description:
     "Industry-specific data annotation for Healthcare AI, Computer Vision, Sports Analytics, Agriculture, Manufacturing & more.",

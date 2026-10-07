@@ -6,6 +6,7 @@ import {
   CheckCircle2,
   ImageIcon,
   Video,
+  Bot,
   FileText,
   Mic,
   Database,
@@ -20,10 +21,10 @@ import {
 
 export const metadata = {
   title:
-    "AI Data Annotation Services: Image, Video, Text & LiDAR",
+    "AI Data Annotation & Physical AI Services",
 
   description:
-    "Annotexia provides professional data annotation and labeling services for AI and machine learning, including image, video, text, audio, OCR, LiDAR and computer vision datasets.",
+    "Professional image, video, text, audio, LiDAR, and egocentric video collection services for computer vision, robotics, and physical AI.",
 
   alternates: {
     canonical: "https://www.annotexia.com/services",
@@ -81,6 +82,16 @@ const services = [
     alt: "Video annotation and object tracking services",
     description:
       "Frame-by-frame annotation, object tracking, event tagging and action recognition for computer vision and video AI.",
+  },
+
+  {
+    title: "Physical AI Egocentric Video Collection",
+    icon: Bot,
+    href: "/services/physical-ai-egocentric-video-collection",
+    image: "/images/services/physical_ai.jpg",
+    alt: "Robotic hand demonstrating physical AI and real-world interaction",
+    description:
+      "Collect first-person video of real-world tasks, human-object interactions, and everyday workflows for robotics and embodied AI training.",
   },
 
   {
@@ -214,6 +225,7 @@ export default function ServicesPage() {
       "Audio Annotation",
       "Data Labeling",
       "LiDAR Annotation",
+      "Physical AI Egocentric Video Collection",
     ],
     provider: {
       "@type": "Organization",
@@ -222,7 +234,7 @@ export default function ServicesPage() {
     },
     areaServed: "Worldwide",
     description:
-      "Professional data annotation and labeling services for AI and machine learning applications.",
+      "Professional image, video, text, audio, LiDAR, and egocentric video collection services for AI and machine learning applications.",
   };
 
   const itemListSchema = {

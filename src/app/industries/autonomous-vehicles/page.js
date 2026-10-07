@@ -16,7 +16,7 @@ import {
 
 export const metadata = {
     title:
-        "Autonomous Vehicle Data Annotation Services | LiDAR & Computer Vision | Annotexia",
+        "Autonomous Vehicle Data Annotation Services | LiDAR & Computer Vision",
 
     description:
         "Annotexia provides high-quality autonomous vehicle data annotation services including 2D and 3D bounding boxes, LiDAR annotation, semantic segmentation, lane marking, object tracking, sensor fusion, and perception datasets.",
@@ -45,12 +45,12 @@ export const metadata = {
             "Autonomous Vehicle Data Annotation Services | Annotexia",
         description:
             "Accurate 2D, 3D, LiDAR, lane, object tracking, and sensor-fusion annotation for autonomous driving and ADAS AI systems.",
-        url: "https://annotexia.com/industries/autonomous-vehicles",
+        url: "https://www.annotexia.com/industries/autonomous-vehicles",
         siteName: "Annotexia",
         type: "website",
         images: [
             {
-                url: "https://annotexia.com/images/industries/autonomous-vehicles.webp",
+                url: "https://www.annotexia.com/images/industries/autonomous-vehicles.webp",
                 width: 1200,
                 height: 630,
                 alt: "Autonomous vehicle data annotation services",

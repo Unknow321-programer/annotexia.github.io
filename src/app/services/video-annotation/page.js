@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "Video Annotation Services | AI & ML Training Data | Annotexia",
+    title: "Video Annotation Services | AI & ML Training Data",
     description:
         "Professional video annotation: object tracking, event detection, action recognition. Perfect for sports analytics and autonomous vehicles.",
     keywords: [
@@ -31,18 +31,18 @@ export const metadata = {
         "video training data",
     ],
     alternates: {
-        canonical: "https://annotexia.com/services/video-annotation",
+        canonical: "https://www.annotexia.com/services/video-annotation",
     },
     openGraph: {
         title: "Video Annotation Services | Annotexia",
         description:
             "Accurate and scalable video annotation services for computer vision, sports analytics, autonomous systems, robotics, surveillance, and AI applications.",
-        url: "https://annotexia.com/services/video-annotation",
+        url: "https://www.annotexia.com/services/video-annotation",
         siteName: "Annotexia",
         type: "website",
         images: [
             {
-                url: "https://annotexia.com/images/services/video-annotation.webp",
+                url: "https://www.annotexia.com/images/services/video-annotation.webp",
                 width: 1200,
                 height: 630,
                 alt: "Professional video annotation services for AI and machine learning",

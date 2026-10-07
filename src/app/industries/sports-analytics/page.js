@@ -16,7 +16,7 @@ import {
 
 export const metadata = {
     title:
-        "Sports Analytics Data Annotation Services | Player & Ball Tracking AI | Annotexia",
+        "Sports Analytics Data Annotation Services | Player & Ball Tracking AI",
 
     description:
         "Annotexia provides professional sports data annotation services including player tracking, ball tracking, pose estimation, event detection, jersey number annotation, and sports video labeling for AI and machine learning.",

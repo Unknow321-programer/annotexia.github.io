@@ -16,7 +16,7 @@ import {
 
 export const metadata = {
     title:
-        "Industrial AI Data Annotation Services | Manufacturing AI | Annotexia",
+        "Industrial AI Data Annotation Services | Manufacturing AI",
 
     description:
         "Annotexia provides industrial AI data annotation services for manufacturing, defect detection, quality inspection, robotics vision, assembly lines, safety monitoring, and industrial computer vision.",

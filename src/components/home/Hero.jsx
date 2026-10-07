@@ -113,11 +113,11 @@ export default function Hero() {
         <div className="relative z-[1] grid">
           <div className="hero-copy mx-auto w-full max-w-6xl">
             <div className="hero-eyebrow inline-flex items-center rounded-full border border-cyan-200/20 bg-white/8 px-5 py-2 text-sm font-semibold text-cyan-100 backdrop-blur">
-              High-Quality Training Data in 2-4 Weeks
+              Image, Video, Text, Audio & LiDAR Annotation
             </div>
 
             <h1 className="mt-7 max-w-5xl text-4xl font-black leading-[1.04] tracking-[-0.055em] text-white sm:text-5xl lg:text-[5rem]">
-              High-Quality AI Training Data in 2-4 Weeks
+              AI Data Annotation Services for High-Quality Training Data
             </h1>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl sm:leading-9">

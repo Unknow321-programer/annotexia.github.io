@@ -21,13 +21,32 @@ export async function generateMetadata({ params }) {
 
   if (!blog) {
     return {
-      title: "Blog Not Found",
+      title: "Article Not Found",
+      robots: { index: false, follow: true },
     };
   }
 
   return {
-    title: `${blog.title} | Annotexia`,
+    title: blog.title,
     description: blog.description,
+    alternates: {
+      canonical: `/blog/${blog.slug}`,
+    },
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      url: `https://www.annotexia.com/blog/${blog.slug}`,
+      siteName: "Annotexia",
+      type: "article",
+      publishedTime: blog.date,
+      images: [blog.image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.description,
+      images: [blog.image],
+    },
   };
 }
 

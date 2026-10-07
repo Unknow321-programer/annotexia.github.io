@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "About Annotexia | AI Data Annotation Company",
+  title: "About Our AI Data Annotation Team",
   description:
     "Learn about Annotexia, an AI data annotation company helping organizations create reliable training datasets for Computer Vision, NLP, Generative AI, Robotics, Healthcare, Sports Analytics, Agriculture, and other AI applications.",
 

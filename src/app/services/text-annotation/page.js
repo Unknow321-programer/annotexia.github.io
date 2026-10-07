@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-    title: "Text Annotation Services | NLP & AI Training Data | Annotexia",
+    title: "Text Annotation Services | NLP & AI Training Data",
     description:
         "Enterprise text annotation: NER, sentiment analysis, intent classification. For LLM training & chatbots. Quality-reviewed datasets.",
     keywords: [
@@ -34,18 +34,18 @@ export const metadata = {
         "AI training data",
     ],
     alternates: {
-        canonical: "https://annotexia.com/services/text-annotation",
+        canonical: "https://www.annotexia.com/services/text-annotation",
     },
     openGraph: {
         title: "Text Annotation Services | NLP & AI Training Data | Annotexia",
         description:
             "Accurate and scalable text annotation for NLP, LLMs, Generative AI, document intelligence, sentiment analysis, and machine learning.",
-        url: "https://annotexia.com/services/text-annotation",
+        url: "https://www.annotexia.com/services/text-annotation",
         siteName: "Annotexia",
         type: "website",
         images: [
             {
-                url: "https://annotexia.com/images/services/text-annotation.webp",
+                url: "https://www.annotexia.com/images/services/text-annotation.webp",
                 width: 1200,
                 height: 630,
                 alt: "Professional text annotation services for NLP and AI",
